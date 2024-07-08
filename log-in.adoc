@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: log-in.html 
+keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account 
+summary: 注册到Workload Factory后、您可以随时从基于Web的控制台登录、开始管理工作负载和适用于ONTAP文件系统的FSx。 
+---
+= 登录到Workload Factory
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+注册到Workload Factory后、您可以随时从基于Web的控制台登录、开始管理工作负载和适用于ONTAP文件系统的FSx。
+
+.关于此任务
+您可以使用以下选项之一登录到Workload Factory基于Web的控制台：
+
+* 您的现有NetApp 支持站点 (NSS)凭据
+* 使用您的电子邮件地址和密码登录NetApp云
+
+
+.步骤
+. 打开Web浏览器并转到 https://console.workloads.netapp.com["工作负载出厂控制台"^]。
+. 在*登录*页面上、输入与您的登录关联的电子邮件地址。
+. 根据与您的登录关联的身份验证方法、系统将提示您输入凭据：
++
+** NetApp云凭据：输入密码
+** 联合用户：输入您的联合身份凭据
+** NetApp 支持站点 帐户：输入您的NetApp 支持站点 凭据
+
+
+. 选择*登录*。
++
+如果您过去已成功登录、您将看到Workload Factory主页、并且您将使用默认帐户。
+
++
+如果这是您首次登录，您将被引导至*Account*页面。
+
++
+** 如果您是单个帐户的成员，请选择*继续*。
+** 如果您是多个帐户的成员，请选择该帐户并选择*CONTINUE*。
+
+
+
+
+.结果
+现在、您已登录并可以开始使用Workload Factory管理适用于ONTAP文件系统的FSx以及您的工作负载。

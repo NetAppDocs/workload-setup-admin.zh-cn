@@ -1,0 +1,58 @@
+---
+settings:
+  name: Setup and administration
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: 设置和管理文档
+    url: "/index.html"
+  - title: 发行说明
+    entries:
+    - title: 新增功能
+      url: "/whats-new.html"
+  - title: 开始使用
+    entries:
+    - title: 了解基础知识
+      entries:
+      - title: 工作负载工厂概述
+        url: "/workload-factory-overview.html"
+      - title: 操作模式
+        url: "/operational-modes.html"
+    - title: 快速入门
+      url: "/quick-start.html"
+    - title: 注册Workload Factory
+      url: "/sign-up-saas.html"
+    - title: 添加AWS凭据
+      url: "/add-credentials.html"
+    - title: 接下来可以执行的操作
+      url: "/whats-next.html"
+  - title: 管理工作负载工厂
+    entries:
+    - title: 登录到Workload Factory
+      url: "/log-in.html"
+    - title: 使用CodeBox自动执行任务
+      entries:
+      - title: 了解CodeBox
+        url: "/codebox-automation.html"
+      - title: 使用代码框生成代码
+        url: "/use-codebox.html"
+    - title: 删除凭据
+      url: "/manage-credentials.html"
+  - title: 知识和支持
+    entries:
+    - title: 注册以获得支持
+      url: "/support-registration.html"
+    - title: 获取帮助
+      url: "/get-help.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+product-family:
+  name: BlueXP Workload Factory for AWS
+  repo: workload-family

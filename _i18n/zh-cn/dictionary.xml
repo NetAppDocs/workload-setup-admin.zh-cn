@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="0204047d2332c588e7eb7d928e84f94a" category="summary">添加AWS凭据、以便Workload Factory拥有在AWS帐户中部署和管理云资源所需的权限。</block>
+  <block id="287ae8bc216279a75c04344894e04b7f" category="doc">将AWS凭据添加到Workload Factory</block>
+  <block id="b4b980a506b01e8ee88c1658f64ff933" category="paragraph">添加和管理AWS凭据、以便Workload Factory拥有在AWS帐户中部署和管理云资源所需的权限。</block>
+  <block id="3b878279a04dc47d60932cb294d96259" category="section-title">概述</block>
+  <block id="4dacf6e0adb6ed0f64acd514a486bf8a" category="inline-link-macro">了解有关操作模式的更多信息</block>
+  <block id="8b7ed833b15fc4a24d7c01f4ff0473e3" category="paragraph">除非您添加AWS帐户凭据、否则Workload Factory将在_BASIC模式下运行。您可以添加凭据以启用其他操作模式、例如读取模式和自动模式。<block ref="3ecbe38d325fe0025957d871a4619a77" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="7f76e91e5513affc227459b415e2e1cf" category="paragraph">您可以从凭据页面将AWS凭据添加到现有工作负载工厂帐户。这样、Workload Factory便可获得在AWS云环境中管理资源和流程所需的权限。</block>
+  <block id="df21e6f22445f7e313093546a4762e64" category="paragraph">您可以使用两种方法添加凭据：</block>
+  <block id="ebb29cdb5a9f5368e3f445c808c91552" category="list-text">*手动*：在Workload Factory中添加凭据时、您可以在AWS帐户中创建IAM策略和IAM角色。</block>
+  <block id="1a04b786edc8b8251d22307b11cb2a8d" category="list-text">*自动*：您捕获有关权限的最少信息、然后使用CloudFormation堆栈为凭据创建IAM策略和角色。</block>
+  <block id="3e704746794b6c6da13402ca9df54660" category="section-title">手动向帐户添加凭据</block>
+  <block id="c3ba6c13344137feef1d3795c8b29466" category="paragraph">您可以手动将AWS凭据添加到Workload Factory、以便为您的Workload Factory帐户授予管理用于运行唯一工作负载的AWS资源所需的权限。您添加的每组凭据都将根据要使用的工作负载功能包含一个或多个IAM策略、以及分配给您的帐户的IAM角色。</block>
+  <block id="ea106b6fa0504ddb53d4506dcd8e7755" category="paragraph">创建凭据分为三部分：</block>
+  <block id="b4968210d824a9808cbfac903e6a2461" category="list-text">选择要使用的服务和权限级别、然后从AWS管理控制台创建IAM策略。</block>
+  <block id="3b022a10e2c2436d37f59e86b18713f7" category="list-text">从AWS管理控制台创建IAM角色。</block>
+  <block id="875b761ddc794776aadfc56fc5a6fc34" category="list-text">在Workload Factory中、输入名称并添加凭据。</block>
+  <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">开始之前</block>
+  <block id="36a8744ea109fc8ef18fd018d5d97aa0" category="paragraph">您需要具有凭据才能登录到AWS帐户。</block>
+  <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
+  <block id="a8fab9cf1c5f1b2f874573a923af9503" category="list-text">在Workload Factory控制台中，选择*Account*图标，然后选择*凭 据*。</block>
+  <block id="7bb5995fb8df55fef061908839bf8869" category="inline-image-macro">显示工作负载出厂控制台中的"Account Settings"图标的屏幕截图。</block>
+  <block id="f1801c767f1fdb84cf89d4dc163ed814" category="paragraph"><block ref="f1801c767f1fdb84cf89d4dc163ed814" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dcad3915ef43cba7d550cad972fa348d" category="list-text">在*凭据*页面上，选择*添加凭据*，此时将显示添加凭据页面。</block>
+  <block id="c8df78ded4cea0598f7679f11a3c3246" category="list-text">选择*手动添加*，然后按照以下步骤填写_Permissions configuration_下的三个部分。</block>
+  <block id="ef7fe40c036b5b08d74837dcb702dc33" category="inline-image-macro">屏幕截图显示了需要为每组凭据手动定义的项目。</block>
+  <block id="083fb8583b0a2366ef9a94388dd9640f" category="paragraph"><block ref="083fb8583b0a2366ef9a94388dd9640f" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d11861b4e2dfc9ac3d86245926aa2785" category="section-title">第1步：选择工作负载功能并创建IAM策略</block>
+  <block id="530d81548274a062436af51b8c3e829f" category="paragraph">在本节中、您将选择哪些类型的工作负载功能可作为这些凭据的一部分进行管理、以及为每个工作负载启用的权限。您需要从CodeBox中复制每个选定工作负载的策略权限、并将其添加到AWS帐户中的AWS管理控制台中以创建策略。</block>
+  <block id="445f4ba50fbc8e7b285aedb4396412bb" category="inline-image-macro">屏幕截图显示哪些类型的工作负载功能可作为这些凭据中的策略的一部分进行管理。</block>
+  <block id="0edc9a25423073fcc768405f6aeda88b" category="paragraph"><block ref="0edc9a25423073fcc768405f6aeda88b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1ab1d79c6a7c98f384377942001e718" category="list-text">在*Create Policies*部分中，启用要包含在这些凭据中的每个工作负载功能。</block>
+  <block id="3b9b789374908017040d97f81eb4008d" category="paragraph">您可以稍后添加其他功能、因此只需选择当前要部署和管理的工作负载即可。</block>
+  <block id="5366a51a090d4b12810a9a8050f2fec4" category="list-text">对于可选择权限级别(操作、查看等)的工作负载功能、请选择可通过这些凭据使用的权限类型。</block>
+  <block id="6d45b51df5e4b4d742aed3a012be7ece" category="list-text">在CodeBox窗口中、复制第一个IAM策略的权限。</block>
+  <block id="d9951e6a22fb7f7d403d017e5b8ef9c6" category="list-text">打开另一个浏览器窗口、并在AWS管理控制台中登录到您的AWS帐户。</block>
+  <block id="0545945650ae73f856cfac5d203df5f5" category="list-text">打开IAM服务，然后选择*Policies*&gt;*Create Policy*。</block>
+  <block id="27b582bcbcca0fd418f9f9f855710d0a" category="list-text">选择JSON作为文件类型，粘贴您在第3步中复制的权限，然后选择*Next*。</block>
+  <block id="e8ea9480c70ef3b586604a914898eff0" category="list-text">输入策略的名称，然后选择*Create Policy*。</block>
+  <block id="c240537b83fe8c59f5bb758e5c166662" category="list-text">如果您在步骤1中选择了多个工作负载功能、请重复这些步骤为每组工作负载权限创建一个策略。</block>
+  <block id="eca99ccb2e04bfcfc06a9cb5860e53a9" category="section-title">第2步：创建使用策略的IAM角色</block>
+  <block id="30551002ceb8abd5af0ee8907423b553" category="paragraph">在本节中、您将设置一个IAM角色、工作负载工厂将假定该角色包含您刚刚创建的权限和策略。</block>
+  <block id="05e2d97b3b23a80afeb67390bad5f97c" category="inline-image-macro">屏幕截图、显示哪些权限将成为新角色的一部分。</block>
+  <block id="bfc77a43a5b610654d7d0e7bbb9162a7" category="paragraph"><block ref="bfc77a43a5b610654d7d0e7bbb9162a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c0a8070d8176ef21fdf6bc0d6b6833c9" category="list-text">在AWS管理控制台中、选择*角色&gt;创建角色*。</block>
+  <block id="e506de832b98c2693eb3f400ef0722c0" category="list-text">在 * 可信实体类型 * 下，选择 * AWS 帐户 * 。</block>
+  <block id="f0497660975536e414a629b7d4f9f276" category="list-text">选择*另一个AWS帐户*、然后从工作负载工厂UI复制并粘贴FSx for ONTAP工作负载管理的帐户ID。</block>
+  <block id="f97e7ca54bb60a402c14107162345b08" category="list-text">选择*必需的外部ID*、然后从工作负载出厂UI复制并粘贴外部ID。</block>
+  <block id="e6cd86d61f4639c8a27006c6c29b3e9f" category="list-text">选择 * 下一步 * 。</block>
+  <block id="552a0f683211339f8f7517a1d4fc804d" category="list-text">在权限策略部分中，选择先前定义的所有策略，然后选择*Next*。</block>
+  <block id="eb940e2ee0ec63786b166a518db881df" category="list-text">输入角色的名称，然后选择*Create Role*。</block>
+  <block id="38743fa9100c2dfb5d984fc45fed3de7" category="list-text">复制角色ARN。</block>
+  <block id="3ef33e9c33bb03c549beb540233aef7a" category="list-text">返回到Workload Factory、展开*Create Role*部分、然后将ARN粘贴到_Role ARN_字段中。</block>
+  <block id="c66b75fd4a0a3e3eff2094b970b0b897" category="section-title">第3步：输入名称并添加凭据</block>
+  <block id="a9c4ed0c041add98b3c1c27e6191e29e" category="paragraph">最后一步是在Workload Factory中输入凭据的名称。</block>
+  <block id="3d89a5fdb924680cf3d2a6757ec9707c" category="list-text">在Workload Factory中，展开*凭 据名称*。</block>
+  <block id="a961eea4fc631a6689d895b16be74287" category="list-text">输入要用于这些凭据的名称。</block>
+  <block id="027a8d7e43e765637f8ef1ae06ce3700" category="list-text">选择*Add*以创建凭据。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
+  <block id="47d8a5dd0796937c17e25e1cddfa4b0a" category="paragraph">此时将创建凭据、您将返回到"凭据"页面。</block>
+  <block id="5512d35e832df0796cf2e9bbfc4ef8e7" category="section-title">使用CloudFormation向帐户添加凭据</block>
+  <block id="21f73823dc240b09e9b0a0896496f95d" category="paragraph">您可以使用AWS CloudFormation堆栈向Workload Factory添加AWS凭据、方法是选择要使用的Workload Factory功能、然后在AWS帐户中启动AWS CloudFormation堆栈。CloudFormation将根据您选择的工作负载功能创建IAM策略和IAM角色。</block>
+  <block id="f48f7e164b0415ad7634845f95eb03e1" category="list-text">使用CloudFormation堆栈添加凭据时、您需要在AWS帐户中具有以下权限：</block>
+  <block id="7f1a76d5b7da63bea7c6b448303e146a" category="list-text">在*凭据*页面上，选择*添加凭据*。</block>
+  <block id="4454b47599abbe986fcc1d78e9d5c3d5" category="list-text">选择*通过AWS CloudFormation*添加。</block>
+  <block id="5ad4ec01b313b6c0c149b0ecd63aca07" category="inline-image-macro">屏幕截图显示了在启动CloudFormation以创建凭据之前需要定义的项目。</block>
+  <block id="901a75a6ee535c459b098fcdbbfb42aa" category="paragraph"><block ref="901a75a6ee535c459b098fcdbbfb42aa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3534f18786c0daea2192750276eda6f0" category="list-text">在*创建策略*下，启用要包含在这些凭据中的每个工作负载功能，然后为每个工作负载选择一个权限级别。</block>
+  <block id="fa7fbda40357a3d9d2b6286d82c737a8" category="list-text">在*凭据名称*下，输入要用于这些凭据的名称。</block>
+  <block id="55af5349296de9cc03eea75eb011b988" category="list-text">从AWS CloudFormation添加凭据：</block>
+  <block id="a83b560232f912e9085bc49e52b3b48b" category="list-text">选择*添加*(或选择*重定向到CloudFormation*)、此时将显示重定向到CloudFormation页面。</block>
+  <block id="7b8b5df6726a1112cf43c1440a2b4def" category="inline-image-macro">显示如何创建CloudFormation堆栈以添加策略和工作负载工厂凭据角色的屏幕截图。</block>
+  <block id="b0f8c37516e3eee761656df941264fa2" category="paragraph"><block ref="b0f8c37516e3eee761656df941264fa2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d1ef06b747e151725861e376eb2fca2b" category="list-text">如果在AWS中使用单点登录(SSO)、请先打开单独的浏览器选项卡并登录AWS控制台、然后再选择*继续*。</block>
+  <block id="43bcb79a644c3cd71bfe3cb4635d97a0" category="paragraph">您应登录到FSx for ONTAP文件系统所在的AWS帐户。</block>
+  <block id="3364e8fe52c54126e3d0ebbdc3ebe636" category="list-text">从重定向到CloudFormation页面中选择*继续*。</block>
+  <block id="ab44f988398acb833af7b9b2bc6c26b9" category="list-text">在Quick create堆栈页面的"Capabilities"下、选择*我确认AWS CloudFormation可能会创建IAM资源*。</block>
+  <block id="69831ef6721ecf7f184cdd4b29af8f45" category="list-text">选择*创建堆栈*。</block>
+  <block id="67a2aece01328bf00637fcc5391ba3ec" category="list-text">返回到工作负载出厂设置并监控到凭据页面、以验证新凭据是否正在运行或是否已添加。</block>
+  <block id="33806546d5449616c234971d2aa7c18b" category="summary">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行Workload Factory支持的任何操作所需的代码。CodeBox与工作负载工厂操作模式(基本、读取、自动化)保持一致、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。</block>
+  <block id="b9d92ff083cdd90473a495ae946507fa" category="doc">了解CODEBox自动化</block>
+  <block id="86df170aaac2322b854dc499ffb2f681" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行Workload Factory支持的任何操作所需的代码。CodeBox与工作负载工厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。</block>
+  <block id="c20a9fb18c5ad24194fdd7ccde0a108d" category="section-title">CodeBox功能</block>
+  <block id="a60481064d733c1b8603777a0fed54b0" category="paragraph">CodeBox提供了两项关键IAC功能：</block>
+  <block id="7b03b939d7a7886fee314498791450ce" category="list-text">_CodeBox Viewer_显示了由特定作业流操作生成的IAC，它通过匹配图形向导或对话聊天界面中的条目和选择来生成。尽管CodeBox查看器支持颜色编码以方便导航和分析，但它不允许编辑，仅允许将代码复制或保存到自动化目录中。</block>
+  <block id="e270244cb4311b8491d54c9d67c0622f" category="list-text">_CodeBox自动化目录_显示所有已保存的IAC作业、便于您轻松参考这些作业以供将来使用。自动化目录作业会另存为模板、并显示在应用于这些作业的资源的上下文中。</block>
+  <block id="11c284cdfd9860e62b7f844adeae2037" category="paragraph">此外、在设置工作负载出厂凭据时、Codebox会动态显示创建IAM策略所需的AWS权限。系统会为您计划使用的每个工作负载工厂功能(数据库、AI、FSx for ONTAP等)提供权限、这些权限会根据策略的用户是获得只读权限还是获得完全操作权限进行自定义。您只需从CodeBox复制权限、然后将其粘贴到AWS管理控制台中、即可使Workload Factory拥有管理工作负载的正确权限。</block>
+  <block id="83bc09f30d22b08aaed079135d400a58" category="section-title">支持的代码格式</block>
+  <block id="a2d178a4422e96a4ba807df17805b391" category="paragraph">支持的代码格式包括：</block>
+  <block id="2a877c6ff8f47bb17f9e4d12f8a693bc" category="list-text">工作负载出厂REST API</block>
+  <block id="7820fdb5d8b3ebe0c69c86cf8bd2d0cf" category="list-text">AWS命令行界面</block>
+  <block id="8679a1944db93938a65e47107be5d2b8" category="list-text">AWS CloudFormation</block>
+  <block id="1767b6ef838f3d4774bc0f274ffd6680" category="inline-link-macro">了解如何使用CodeBox</block>
+  <block id="431b5bf36166f939706fd1cd6625e311" category="paragraph"><block ref="58039229c34145102d9497de13b6e7b4" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="243f4102d24e538f61072e19e53b373f" category="summary">NetApp以多种方式支持工作负载工厂。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
+  <block id="3c6efe0ce159fb5b8ee4882bcf3ad973" category="paragraph">NetApp以多种方式为Workload Factory及其云服务提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="6a7b2c9c4cec65ad972b108fa0a1192b" category="section-title">获取FSx for ONTAP支持</block>
+  <block id="4435b263dd1a35bcd8dfda050db92b3b" category="paragraph">有关FSx for ONTAP、其基础架构或任何使用该服务的解决方案的技术支持、请参阅该产品的工作负载工厂文档中的"获得帮助"。</block>
+  <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">适用于 ONTAP 的 Amazon FSX</block>
+  <block id="9d06990508d25d367d9158c6558eb9c8" category="paragraph"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
+  <block id="35f9849ffdd809bda11d0fc56e1e3583" category="paragraph">要获得特定于Workload Factory及其存储解决方案和服务的技术支持、请使用下面所述的支持选项。</block>
+  <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">使用自助支持选项</block>
+  <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">这些选项每周 7 天，每天 24 小时免费提供：</block>
+  <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文档</block>
+  <block id="d935525f4850c4638cbf48ae53fb4686" category="paragraph">您当前正在查看的Workload Factory文档。</block>
+  <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知识库</block>
+  <block id="436f63b446dba5a418c698d49bd39718" category="list-text"><block ref="436f63b446dba5a418c698d49bd39718" category="inline-link-rx"></block></block>
+  <block id="ba6274b9c9d1f81bb3a648fa289986b8" category="paragraph">搜索工作负载工厂知识库、查找有助于解决问题的文章。</block>
+  <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">社区</block>
+  <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
+  <block id="7faef90df03399696ba9d4815b37171a" category="paragraph">加入Workload Factory社区、关注正在进行的讨论或创建新的讨论。</block>
+  <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">向NetApp支持部门创建案例</block>
+  <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">除了上述自助支持选项之外、您还可以在激活支持后与NetApp支持专家合作解决任何问题。</block>
+  <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">开始之前</block>
+  <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">了解如何注册获取支持</block>
+  <block id="a12ea39ddf1c98adfd7f751299705efa" category="paragraph">要使用*创建案例*功能，您必须先注册获得支持。 将您的NetApp支持站点凭据与您的工作负载出厂登录关联起来。<block ref="d9fea24984986beabae03291c4b721de" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="356c88ac4b0ec3f7689cc91f54701fef" category="list-text">在Workload Factory控制台的右上角，选择*Help &gt; Support*。</block>
+  <block id="aadd86a3fadf19221852692c6e4adc2f" category="paragraph">选择此选项将打开BlueXP控制台一个新的浏览器选项卡并加载支持信息板。</block>
+  <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">在*资源*页面上、在技术支持下选择一个可用选项：</block>
+  <block id="6a1b74969231967ed071d465206b15c7" category="list-text">如果您想通过电话与某人通话，请选择*呼叫我们*。系统会将您定向到netapp.com上的一个页面、其中列出了您可以拨打的电话号码。</block>
+  <block id="d65a2a6fc9caad1867728d4382eeb989" category="list-text">选择*创建案例*向NetApp支持专家开立TT：</block>
+  <block id="d7d0da18fbb8f8f85c1364883fbdf4c7" category="list-text">*服务*：选择*工作负载工厂*。</block>
+  <block id="e6f29fb3c7636dc0040600dd0e84bb79" category="list-text">*案例优先级*：选择案例的优先级、可以是"低"、"中"、"高"或"严重"。</block>
+  <block id="835eb4008e97c2a7f69bbb2725285e34" category="paragraph">要了解有关这些优先级的更多详细信息、请将鼠标悬停在字段名称旁边的信息图标上。</block>
+  <block id="0f7d9319c95a8be1492e74601c4b3259" category="list-text">*问题描述 *：提供问题的详细问题描述 、包括任何适用的错误消息或您执行的故障排除步骤。</block>
+  <block id="002c6f26fb01affb37b8cf3cef7a1fb0" category="list-text">*其他电子邮件地址*：如果您希望其他人了解此问题描述 、请输入其他电子邮件地址。</block>
+  <block id="c7f5c1a75acc58c6f004efc0ce1eba09" category="list-text">*附件(可选)*：一次最多上传五个附件。</block>
+  <block id="bfa80e7aaad6da353b431bff3a0e12d6" category="paragraph">每个文件的附件数限制为25 MB。支持以下文件扩展名：txt、log、pdf、jp6/jpeu、rtf、 doc/docx、xls/xlsx和csv。</block>
+  <block id="baaf0e61add7d12cf8d12e023d5aef18" category="inline-image-macro">创建案例表的屏幕截图、可用于向NetApp支持部门创建案例。</block>
+  <block id="b0c6c3ee60a29925d3f09cd609b79483" category="paragraph"><block ref="b0c6c3ee60a29925d3f09cd609b79483" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完成后</block>
+  <block id="18f487556417bb6d9721a7005ae097c9" category="paragraph">此时将显示一个弹出窗口、其中包含您的支持案例编号。NetApp支持专家将审核您的案例、并尽快与您联系。</block>
+  <block id="0ff9b4b8684b9e03c9c1e1320935eae3" category="paragraph">要查看支持案例的历史记录，您可以选择*设置&gt;时间线*并查找名为“创建支持案例”的操作。最右侧的按钮可用于展开操作以查看详细信息。</block>
+  <block id="5c56753585e89a84941bb3a78bc681af" category="paragraph">尝试创建案例时、您可能会遇到以下错误消息：</block>
+  <block id="a30f69ab0ec85d427a3e8835713525bd" category="paragraph">"您无权针对选定服务创建案例"</block>
+  <block id="c7b7a5ae9f37fd7d24e4d641b9186fe9" category="paragraph">此错误可能意味着NSS帐户及其关联的记录公司与BlueXP帐户序列号(即960xxxx)或工作环境序列号。您可以使用以下选项之一寻求帮助：</block>
+  <block id="e01df0b4dfd95eba2c59333419e4fac6" category="list-text">使用产品内聊天功能</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
+  <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">请通过提交非技术案例<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
+  <block id="898e35e1a4bf4b025c3edec879439b08" category="section-title">管理支持案例(预览)</block>
+  <block id="8b74b053fbeeff5c3b6f4991cb1d028d" category="paragraph">您可以直接从BlueXP查看和管理活动的和已解决的支持案例。您可以管理与您的NSS帐户和公司关联的案例。</block>
+  <block id="394ef093ad3259b9ff0fe7406f015b83" category="paragraph">案例管理以预览形式提供。我们计划改进此体验、并在即将发布的版本中添加增强功能。请通过产品内聊天向我们发送反馈。</block>
+  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">请注意以下事项：</block>
+  <block id="5e4e7672ec2ba2b8a763da7f6714e212" category="list-text">页面顶部的案例管理信息板提供了两个视图：</block>
+  <block id="01c3ffea552d74a5ae390b10e71a1f26" category="list-text">左侧视图显示了您提供的用户NSS帐户在过去3个月内打开的案例总数。</block>
+  <block id="e3b6c09a5686233f72ce1ea60a1eb088" category="list-text">右侧视图显示了过去3个月内根据用户NSS帐户在公司级别开立的案例总数。</block>
+  <block id="b19b168cc8a2b8c984465e140256b3a2" category="paragraph">此表中的结果反映了与选定视图相关的案例。</block>
+  <block id="56dcadeee6b0e5c47a52673f9b5a0bb3" category="list-text">您可以添加或删除感兴趣的列、也可以筛选优先级和状态等列的内容。其他列仅提供排序功能。</block>
+  <block id="6f936762e1223311f031685422fcd3a4" category="paragraph">有关更多详细信息、请查看以下步骤。</block>
+  <block id="b14929795a61440e9b4ec9f8a4885ae3" category="list-text">在每个案例级别、我们可以更新案例备注或关闭尚未处于"已关闭"或"待关闭"状态的案例。</block>
+  <block id="0a4050ac39772e9281a9aba225254bf8" category="list-text">选择*案例管理*，如果出现提示，请将您的NSS帐户添加到BlueXP。</block>
+  <block id="d8ce1865cf1fe3cffd60300b4b86ad63" category="paragraph">"*案例管理*"页面显示了与您的BlueXP用户帐户关联的NSS帐户相关的已打开案例。此NSS帐户与* NSS管理*页面顶部显示的NSS帐户相同。</block>
+  <block id="2ae5ae78bdb2d222f15fd8e89248709c" category="list-text">也可以修改表中显示的信息：</block>
+  <block id="1d39d3ab518e1e3f16cbafb2a56e1fd9" category="list-text">在“*组织案例*”下，选择“*查看*”以查看与贵公司关联的所有案例。</block>
+  <block id="059e856250b59be3069246887b74a23c" category="list-text">通过选择确切的日期范围或选择其他时间范围来修改日期范围。</block>
+  <block id="dfb3764bce2548df4e06357403f9c7d0" category="inline-image-macro">案例管理页面上表上方选项的屏幕截图、可用于选择确切的日期范围或过去7天、30天或3个月。</block>
+  <block id="4f7062c5c309a833cf46e4a1a5a5d366" category="paragraph"><block ref="4f7062c5c309a833cf46e4a1a5a5d366" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1bb576be9e5a356290f231efb51b3f5" category="list-text">筛选列的内容。</block>
+  <block id="3753f10a59e21f58b30e3e67d416453e" category="inline-image-macro">"状态"列中筛选选项的屏幕截图、可用于筛选与特定状态(如"活动"或"已关闭")匹配的案例。</block>
+  <block id="8f624dee500d9670a27c4404084a7a62" category="paragraph"><block ref="8f624dee500d9670a27c4404084a7a62" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1c6ea5ef583389e18e7d7bda70beaa71" category="inline-image-macro">表中显示的加号图标</block>
+  <block id="002f1c0a8cf4a68b888010ddef3a7f7e" category="list-text">通过选择并选择要显示的列来更改表中 <block ref="e55ec8dc42ae68d9326c51261c8a5f4f" category="inline-image-macro-rx" type="image"></block> 显示的列。</block>
+  <block id="370b44009f1b82d0b6b178bb80cc62fa" category="inline-image-macro">显示可在表中显示的列的屏幕截图。</block>
+  <block id="72c5c65442a2c44e7f2546b8b4c957df" category="paragraph"><block ref="72c5c65442a2c44e7f2546b8b4c957df" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ad0ae9ea1f2e8d973a9a0f6bb169f494" category="inline-image-macro">包含三个点的图标、显示在表的最后一列中</block>
+  <block id="000a1376035909240f559b8ab724030c" category="list-text">通过选择并选择一个可用选项来管理现有案例 <block ref="54181d1b918b28e5f92545f8b3b4a30c" category="inline-image-macro-rx" type="image"></block> ：</block>
+  <block id="6d9dd74e7709ef802d299966f7898f6b" category="list-text">*查看案例*：查看有关特定案例的完整详细信息。</block>
+  <block id="8e6b52a532a4fbbfc98dca3ebfa5f1e6" category="list-text">*更新案例注释*：提供有关您的问题的更多详细信息、或者选择*上传文件*最多附加五个文件。</block>
+  <block id="bb6d5d351525342dd6b3cf4d15b6f298" category="list-text">*关闭案例*：提供关闭案例的详细原因，然后选择*关闭案例*。</block>
+  <block id="e93217b2f709a398ce3c0fb753beb05f" category="inline-image-macro">屏幕截图、显示在表的最后一列中选择菜单后可以执行的操作。</block>
+  <block id="6f7cf78e14aa346236a87d9541221fb2" category="paragraph"><block ref="6f7cf78e14aa346236a87d9541221fb2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商标</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 徽标和 NetApp 商标页面上列出的标记是 NetApp 、 Inc. 的商标。其他公司和产品名称可能是其各自所有者的商标。</block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">专利</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">有关 NetApp 拥有的专利的最新列表，请访问：</block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隐私政策</block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
+  <block id="22e5a7336ebe77138f0282cedcb069ab" category="inline-link">工作负载工厂</block>
+  <block id="7ffcbeca3b450b8d05f9cf0eedb617f8" category="list-text"><block ref="7ffcbeca3b450b8d05f9cf0eedb617f8" category="inline-link-rx"></block></block>
+  <block id="887f800d53dc2cd5a7894464a6f60a6b" category="inline-link">数据库的工作负载工厂</block>
+  <block id="7e505d4c691d86e5bd415f9ccb849966" category="list-text"><block ref="7e505d4c691d86e5bd415f9ccb849966" category="inline-link-rx"></block></block>
+  <block id="9591e2d54c998ae1c9d48fd5be7762e9" category="inline-link">适用于GenAI的工作负载工厂</block>
+  <block id="f38c7416013fc239c3dd3288d40a40c0" category="list-text"><block ref="f38c7416013fc239c3dd3288d40a40c0" category="inline-link-rx"></block></block>
+  <block id="404a5efb62a3a3f22b02593091042608" category="inline-link">适用于VMware的工作负载工厂</block>
+  <block id="9a211183d3fa82368d76fdbab5abdeda" category="list-text"><block ref="9a211183d3fa82368d76fdbab5abdeda" category="inline-link-rx"></block></block>
+  <block id="dfccab35bc7005d989cb4561e9255ada" category="summary">注册到Workload Factory后、您可以随时从基于Web的控制台登录、开始管理工作负载和适用于ONTAP文件系统的FSx。</block>
+  <block id="7ffef60a0bb1e63a8505f9e4285dab5f" category="doc">登录到Workload Factory</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">关于此任务</block>
+  <block id="4a82c28eaf9e486d9116434f89bacba7" category="paragraph">您可以使用以下选项之一登录到Workload Factory基于Web的控制台：</block>
+  <block id="19df8bb4b5a805b23aeac731605bdf21" category="list-text">您的现有NetApp 支持站点 (NSS)凭据</block>
+  <block id="691be8e1993c2535e4afe5834afe3b01" category="list-text">使用您的电子邮件地址和密码登录NetApp云</block>
+  <block id="8fd935558171bd50056871ef9ee7bd05" category="inline-link">工作负载出厂控制台</block>
+  <block id="ba66ed28174cebd60e2e5bb8650d4aa1" category="list-text">打开Web浏览器并转到<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block>。</block>
+  <block id="03eb7e8aedd1ad900f6996ff1a9cf8dd" category="list-text">在*登录*页面上、输入与您的登录关联的电子邮件地址。</block>
+  <block id="784d4eeca11deaf4ee3f37735e4d0334" category="list-text">根据与您的登录关联的身份验证方法、系统将提示您输入凭据：</block>
+  <block id="8a7c8d2028930eaef2c3f44925994051" category="list-text">NetApp云凭据：输入密码</block>
+  <block id="a02705346febd77df5680fe2f12343a9" category="list-text">联合用户：输入您的联合身份凭据</block>
+  <block id="24bdc2b22d38abff9ff97a9c5b5e7966" category="list-text">NetApp 支持站点 帐户：输入您的NetApp 支持站点 凭据</block>
+  <block id="c4d4e21d2a557d3c9be0ce8dc071f547" category="list-text">选择*登录*。</block>
+  <block id="1c883b8b402bae840152eb96ee53c8bf" category="paragraph">如果您过去已成功登录、您将看到Workload Factory主页、并且您将使用默认帐户。</block>
+  <block id="817b94dd7f00f6dd33e23875e9f03368" category="paragraph">如果这是您首次登录，您将被引导至*Account*页面。</block>
+  <block id="3b05fd0eeb02280c9e89c847477bc0fc" category="list-text">如果您是单个帐户的成员，请选择*继续*。</block>
+  <block id="9dd8932847709b0a76c3786f584e1272" category="list-text">如果您是多个帐户的成员，请选择该帐户并选择*CONTINUE*。</block>
+  <block id="a67ab1c62f2a6164c719be422f163c0c" category="paragraph">现在、您已登录并可以开始使用Workload Factory管理适用于ONTAP文件系统的FSx以及您的工作负载。</block>
+  <block id="2f13edc244ce3aa63a739bc5418cd67f" category="summary">如果您不再需要一组凭据、可以从Workload Factory中将其删除。您只能删除与FSx for ONTAP文件系统无关的凭据。</block>
+  <block id="25f033e226552b2f5ae002edb8e5fd2f" category="doc">删除凭据</block>
+  <block id="58eed24ee19ccccfe9a117084c2d03a6" category="list-text">在*凭据*页面上，选择一组凭据的操作菜单，然后选择*删除*。</block>
+  <block id="b7dd0331ad4ede9488c2fd01dda69e83" category="list-text">选择*Remove*确认。</block>
+  <block id="be43daf19814961c1c1f681b1719f65a" category="summary">Workload Factory提供三种操作模式、使您能够根据IT策略仔细控制Workload Factory与云资产之间的访问。您使用的操作模式取决于您为Workload Factory提供的AWS权限级别。</block>
+  <block id="0261a8e2837bda78e3e9784459c8d346" category="doc">了解操作模式和AWS凭据</block>
+  <block id="3b39e22b0ceb822bf56d19eb7ec14f7f" category="section-title">操作模式</block>
+  <block id="bc63252869898532ad7c844d8447e358" category="paragraph">操作模式可根据您分配的信任级别对Workload Factory提供的功能和功能进行逻辑组织。操作模式的主要目标是明确传达Workload Factory可以在您的AWS帐户中执行或不能执行的任务。</block>
+  <block id="dad76b021334eb3d63f98648f701f598" category="list-text">基本模式</block>
+  <block id="4d34e6e6a767b4ce93680aa48cb370d0" category="list-text">表示零信任关系、其中不会向Workload Factory分配AWS权限。它旨在早期探索Workload Factory、并使用各种向导创建所需的基础架构即代码(Infrastructure as Code、IAC)。您可以通过手动输入AWS凭据来复制代码并在AWS中使用它。</block>
+  <block id="1aa9d894db1bbfc4f52d99a458da7ff9" category="list-text">读取模式</block>
+  <block id="5198d3d3b16bbd8165878b42f177a30b" category="list-text">通过添加只读权限、使IAC模板填充您的特定变量(例如VPC、安全组等)、增强基本模式体验。这样、您就可以直接从AWS帐户执行IAC、而无需向Workload Factory提供任何修改权限。</block>
+  <block id="8d350bc547891d480d771e3f371ccf36" category="list-text">自动模式</block>
+  <block id="90e0e635e22e69ee097729d5734a7d9d" category="list-text">表示完全信任关系、以便为Workload Factory分配完全权限。这样、Workload Factory便可代表您在AWS中执行和自动执行操作、并可获得分配的凭据、这些凭据具有执行所需的权限。</block>
+  <block id="ba15cdea72f76749ac3c4d115682e1d5" category="section-title">操作模式功能</block>
+  <block id="98065f8fb54547b003b502647ed5da13" category="paragraph">使用每种模式时、可用功能会随每种模式而增加。</block>
+  <block id="650be61892bf690026089544abbd9d26" category="cell">模式</block>
+  <block id="b68bbc990631af9eef3fe553c0db51c2" category="cell">从工作负载工厂实现自动化</block>
+  <block id="8b9f82548e6c7bc4008b903cade408bd" category="cell">使用IAC在AWS中实现自动化</block>
+  <block id="cb96700fed42790aca4b326c2ddf0ee1" category="cell">AWS资源发现和自动完成</block>
+  <block id="822fdc9d51edd3ea21167e6afc3133bb" category="cell">进度监控</block>
+  <block id="972e73b7a882d0802a4e3a16946a2f94" category="cell">基本</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">否</block>
+  <block id="bc459ff156247ecdc2f450d6760864e0" category="cell">至少完成IAC模板</block>
+  <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="cell">读取</block>
+  <block id="dd5bf678cc7b441324b2d76ab8b6329d" category="cell">适度填写IAC模板</block>
+  <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">是</block>
+  <block id="9ed56d4841dbb118ee9f4fc81ea82572" category="cell">自动化</block>
+  <block id="3babc847b322c661049062334b9c76b2" category="cell">完全自动化</block>
+  <block id="78ac103234082be5f5a4ea67a4551981" category="cell">完全自动化的完整IAC模板</block>
+  <block id="c1ae257d71f3632f9398109243cbfd70" category="section-title">操作模式要求</block>
+  <block id="97ad164404d252aefcb10ad97a940250" category="paragraph">您无需在Workload Factory中设置任何选择器、即可确定要使用的模式。此模式取决于您分配给Workload Factory帐户的AWS凭据和权限。</block>
+  <block id="38a12b37ae4221c5fda46c9430a61d47" category="cell">AWS帐户凭据</block>
+  <block id="97e7c9a7d06eac006a28bf05467fcc8b" category="cell">链路</block>
+  <block id="6fd5e95dc0bce8329da87e1152677b48" category="cell">不需要</block>
+  <block id="d8bd6e60adcc01ce20f509ea6800de8f" category="cell">只读</block>
+  <block id="ae4591bb8d9ec57460d11dc6394e972e" category="cell">读写凭据</block>
+  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">必填</block>
+  <block id="6015cd2e9e5bc5b037ad456163cc26cb" category="inline-link">了解有关链接的更多信息</block>
+  <block id="cea96a6659ee3b63722518018a5e6659" category="paragraph"><block ref="cea96a6659ee3b63722518018a5e6659" category="inline-link-rx"></block></block>
+  <block id="7cc58201fa83275d07886281be81a758" category="section-title">操作模式示例</block>
+  <block id="e45b6aecc9afa1e709e8df27941fce38" category="paragraph">您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如、您可以为要部署和管理FSx for ONTAP文件系统的操作配置自动模式、但只能为使用Workload Factory创建和部署数据库工作负载配置读取模式。</block>
+  <block id="1e82623c909c729fd392237767a08bbd" category="paragraph">您可以在工作负载工厂帐户的一组凭据中提供这些功能、也可以在每个凭据提供唯一的工作负载部署功能时创建多组凭据。</block>
+  <block id="5504977cb47d642da3d1264eefb7edda" category="section-title">示例1</block>
+  <block id="38356e3b8f5e0e5ad2a7ff778c4e8d82" category="paragraph">使用已授予以下权限的凭据的帐户用户将完全控制(自动模式)为ONTAP文件系统创建FSx、部署数据库以及查看帐户中使用的其他类型AWS存储。</block>
+  <block id="4cd751338620bbd6099bbf7dcff61879" category="inline-image-macro">屏幕截图显示了一组凭据、这些凭据提供了两种类型的工作负载权限。</block>
+  <block id="9d405f908b42d501e27391e88e96690c" category="paragraph"><block ref="9d405f908b42d501e27391e88e96690c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="142d2c6ddb5d16596bad6ce5f8e87fe3" category="paragraph">但是、他们无法通过Workload Factory自动控制VMware工作负载的创建和部署(基本模式)。如果他们要创建VMware工作负载、则需要从代码框中复制代码、手动登录到其AWS帐户、然后手动填充生成的代码中缺少的条目、才能使用此功能。</block>
+  <block id="5f3a8aa007370d00f3fd3b293a6a1118" category="section-title">示例2</block>
+  <block id="bad86c34eeb44e43315105ff00eb040b" category="paragraph">在此、用户创建了两组凭据、以根据所选凭据集提供不同的操作功能。通常、每组凭据都会与一个不同的AWS帐户配对。</block>
+  <block id="f043f48233d1d8f545991908ce06fc8f" category="paragraph">第一组凭据包括一些权限、可赋予用户完全控制创建FSx for ONTAP文件系统的权限(以及查看帐户中使用的其他类型AWS存储的能力)、但仅在处理VMware工作负载时具有读取权限。</block>
+  <block id="13834b608e3eab1a58b1e60d8594b010" category="paragraph"><block ref="13834b608e3eab1a58b1e60d8594b010" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7b951488dcd4f24a1001cb4ce278841f" category="paragraph">第二组凭据仅提供权限、用户可以完全控制为ONTAP文件系统创建FSx以及查看帐户中使用的其他类型AWS存储。</block>
+  <block id="a1c7a646d9f617df5f4591d961591390" category="paragraph"><block ref="a1c7a646d9f617df5f4591d961591390" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2c4eed705dd3e0adf6e7194858d8dff7" category="section-title">AWS凭据</block>
+  <block id="79c24ecd9f3b01018d8a2753b852b157" category="paragraph">我们设计了一个AWS假定角色凭据注册流、该流可：</block>
+  <block id="ea26385a0e9eb0b784d2878d8ad78cdc" category="list-text">通过允许您指定要使用的工作负载功能并根据这些选择提供IAM策略要求、支持更一致的AWS帐户权限。</block>
+  <block id="29e72ecd81812bc6e42b8fe63e32189a" category="list-text">允许您在选择加入或退出特定工作负载功能时调整已授予的AWS帐户权限。</block>
+  <block id="1638738a86a490b406672c22f563a2da" category="list-text">通过提供可在AWS控制台中应用的定制JSON策略文件、简化手动IAM策略创建。</block>
+  <block id="ba3950fc801639789c6f2c3d00092cfb" category="list-text">通过使用AWS CloudFormation堆栈为用户提供所需IAM策略和角色创建的自动化选项、进一步简化了凭据注册流程。</block>
+  <block id="4a2be88868f600a45501fde04364bae7" category="list-text">通过允许将FSx for ONTAP服务凭据存储在基于AWS的机密管理后端、更好地与FSx for ONTAP用户保持一致、他们强烈希望将其凭据存储在AWS云生态系统的边界内。</block>
+  <block id="f9e7dc895484b33db42d9ee0925e28e0" category="section-title">一个或多个AWS凭据</block>
+  <block id="9e4d021b600a18ca2bdc19e316e61a90" category="paragraph">在使用第一个工作负载出厂功能时、您需要使用这些工作负载功能所需的权限创建凭据。您需要将这些凭据添加到Workload Factory、但需要访问AWS管理控制台才能创建IAM角色和策略。在Workload Factory中使用任何功能时、您的帐户均可提供这些凭据。</block>
+  <block id="2805984a9d1d71e7e662e187f6160808" category="paragraph">您的初始AWS凭据集可以包含一项功能或多项功能的IAM策略。这完全取决于您的业务需求。</block>
+  <block id="b6cd757220290782ab371e620582ddcd" category="paragraph">通过向Workload Factory添加多组AWS凭据、可以获得使用其他功能所需的其他权限、例如FSx for ONTAP文件系统、在FSx for ONTAP上部署数据库、迁移VMware工作负载等。</block>
+  <block id="b6358992bb0152c2af9f3e2e315ef468" category="inline-link-macro">了解如何将AWS凭据添加到Workload Factory</block>
+  <block id="1350027224712371708c0a642ae2b919" category="paragraph"><block ref="bc58254869896d67e8e31b026259707a" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="e322079c316096bc16e777a93da0a332" category="summary">开始使用Workload Factory、方法是为Workload Factory控制台准备网络连接、注册和创建帐户以及添加凭据、以便Workload Factory可以直接管理AWS资源。</block>
+  <block id="1441f501677899abf4972d9286b527e5" category="doc">工作负载工厂快速入门</block>
+  <block id="cb88f58f7496fb27698451feb9736c1d" category="paragraph">通过注册并创建帐户、添加凭据以便Workload Factory可以直接管理AWS资源来开始使用Workload Factory、然后使用Amazon FSx for NetApp ONTAP优化您的工作负载。</block>
+  <block id="ba8b072b83c1e6db56e40bf48ddb0871" category="inline-link-macro">操作模式</block>
+  <block id="4c85eb71378362d162e4b7bd1c50c800" category="paragraph">用户可从基于Web的控制台以云服务的形式访问工作负载工厂。开始之前，您应了解 <block ref="fc500664a3cbaaa3aa46a84367805795" category="inline-link-macro-rx"></block> 和 <block ref="232f97f76b2e1af290ebde69715d8d8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一个</block>
+  <block id="0876e0a47d86eee44886009e6fdae6e5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 注册并创建帐户</block>
+  <block id="58902cbb0adcf45cfe72ced7fa9d043a" category="paragraph">转到<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block>，注册并创建帐户。</block>
+  <block id="996a84421252d4a7c2db622831369066" category="inline-link-macro">了解如何注册和创建帐户</block>
+  <block id="84be2f973a02d5b8bf1736d6dc104aba" category="paragraph"><block ref="e4d5af2c826e0765566919d017f9cac9" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">两个</block>
+  <block id="81fe43671919388bf418561882652f2a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 将AWS凭据添加到Workload Factory</block>
+  <block id="a96649d1a3b32786a74fc2de9529a00e" category="paragraph">此步骤为可选步骤。您可以在_Basic_模式下使用Workload Factory、而无需添加凭据即可访问您的AWS帐户。在_read_模式或_Automate _模式下向Workload Factory添加AWS凭据、可以为您的Workload Factory帐户提供创建和管理适用于ONTAP文件系统的FSx以及部署和管理特定工作负载(例如数据库和GenAI)所需的权限。</block>
+  <block id="485569d333cc1d252d174152a87152ec" category="inline-link-macro">了解如何向帐户添加凭据</block>
+  <block id="26779013e769dc74269c7261b62546d1" category="paragraph"><block ref="91f10e444bfec911e6e2bc237cc7d0c2" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三个</block>
+  <block id="5859940cb26aa023a0c3f7bc2abb0f66" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 使用FSx for ONTAP优化工作负载</block>
+  <block id="ecf12e8c9cfc73f5d81a941356b2effd" category="paragraph">现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用Workload Factory通过FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">适用于 NetApp ONTAP 的 Amazon FSX</block>
+  <block id="4d8d6f286ec4089532b442b9e29bdd84" category="list-text"><block ref="4d8d6f286ec4089532b442b9e29bdd84" category="inline-link-rx"></block></block>
+  <block id="ad5615f8474eab297b35d0cbf8020dfc" category="paragraph">通过使用FSx for ONTAP作为存储基础架构、根据最佳实践配置FSx for ONTAP部署并对其进行模板化、以及访问高级管理功能、评估和分析当前数据资产、以节省潜在成本。</block>
+  <block id="cccae24691c5ff7191f1ffebe4352285" category="inline-link">GenAI</block>
+  <block id="88575fa076e31705fdc0a050f3c46540" category="list-text"><block ref="88575fa076e31705fdc0a050f3c46540" category="inline-link-rx"></block></block>
+  <block id="1ab964190acf4217fadb080cfcbe361f" category="paragraph">部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。</block>
+  <block id="38bd169945a371832b0b65c9086b1792" category="inline-link">数据库工作负载</block>
+  <block id="7c05124c7bff1277e0dd98967825f03a" category="list-text"><block ref="7c05124c7bff1277e0dd98967825f03a" category="inline-link-rx"></block></block>
+  <block id="0b65135cac08d591d73cff9785b28f30" category="paragraph">在AWS上检测现有数据库资产、利用FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。</block>
+  <block id="a76e64a0fbf98a083080351e4cb67566" category="inline-link">VMware工作负载</block>
+  <block id="e555278247527c688d390729e5f7e123" category="list-text"><block ref="e555278247527c688d390729e5f7e123" category="inline-link-rx"></block></block>
+  <block id="bc9eaabfc00230f2aa0ab1f9dfcfb994" category="paragraph">利用智能建议和自动修复简化迁移和操作。部署高效备份和强大的灾难恢复。监控VM并对其进行故障排除。</block>
+  <block id="023c464fc92ec044e83176c4e57027c4" category="summary">可从基于Web的控制台访问工作负载工厂。开始使用Workload Factory后、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。</block>
+  <block id="86dd1f2c1da07102d586b3d680ed37a3" category="doc">注册Workload Factory</block>
+  <block id="9e9a0202d2a4a6551faca1e042e523e5" category="paragraph">您可以使用以下选项之一注册到Workload Factory：</block>
+  <block id="d7330e52ac45b9d5a769aa9a5c244319" category="list-text">通过指定您的电子邮件地址和密码来登录NetApp云</block>
+  <block id="dd8dfb2c954c59328d486f61112b7dc6" category="list-text">打开Web浏览器并转到<block ref="d98336faa10e493cfae83d68fb7054ec" category="inline-link-rx"></block></block>
+  <block id="3587d9f2b48c4f0c9c40433731329a21" category="list-text">如果您有NetApp 支持站点 帐户，请直接在*Log In*页面上输入与您的NSS帐户关联的电子邮件地址。</block>
+  <block id="9afbcf749bbbaca180b483af3042470e" category="paragraph">如果您有NSS帐户、则可以跳过注册页面。Workload Factory将在此初始登录过程中为您注册。</block>
+  <block id="7c74a9177ae92ae3e635c6ec91ce1d71" category="list-text">如果您没有NSS帐户、但要通过创建NetApp云登录来注册、请选择*注册*。</block>
+  <block id="d3ec3db6c6205c0b2c9d4904d509b3ca" category="inline-image-macro">"注册"页面的屏幕截图、您可以在其中添加用户名和密码以访问Workload Factory。</block>
+  <block id="f469d8f6e1958f36faad490b72b0ed6c" category="paragraph"><block ref="f469d8f6e1958f36faad490b72b0ed6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="871e895e179ae68a9381988dd33c133b" category="list-text">在*注册*页面上、输入创建NetApp云登录所需的信息、然后选择*下一步*。</block>
+  <block id="9998984c95caccce61e49ca25de1c99f" category="paragraph">请注意、注册表单中仅允许使用英文字符。</block>
+  <block id="ec0e398abc2c6f6a9f2afe38708291da" category="list-text">输入您公司的详细信息，然后选择*Sign Up。</block>
+  <block id="422588021a93cfdaa26ce8d7d46dfeda" category="list-text">检查您的收件箱中是否有来自NetApp的电子邮件、其中包含验证您的电子邮件地址的说明。</block>
+  <block id="94f38e991501c8594d502e52dd265abd" category="paragraph">必须先执行此步骤、然后才能登录。</block>
+  <block id="94d337ef5b62bd31ee54e5111cfec45f" category="list-text">出现提示时，查看最终用户许可协议并接受条款，然后选择*CONTINUE*。</block>
+  <block id="b789a2d1c7228d0b2d7174302e2c6996" category="list-text">在*Account*页面上，输入帐户名称，并选择您的工作描述。</block>
+  <block id="f54bc40f2305bb493aa6597d8c67d892" category="paragraph">帐户是NetApp身份平台中的顶级元素、可用于添加和管理权限和凭据。</block>
+  <block id="2b7293baeca5711138792716543c991a" category="inline-image-macro">使用新帐户登录时显示的"帐户"页面的屏幕截图。</block>
+  <block id="28fc544db57c6f54a41eaa5c6ebc4a57" category="paragraph"><block ref="28fc544db57c6f54a41eaa5c6ebc4a57" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="3ca580d5cb98bdcfa7834616d19d2eda" category="list-text">选择*创建*，将显示工作负载出厂主页。</block>
+  <block id="0fa2d9e93d2ebe5dc084c22e852d5e0e" category="paragraph">现在、您已拥有工作负载出厂登录名和帐户。您被视为帐户管理员、并且有权访问所有工作负载工厂功能。</block>
+  <block id="243263104c829e77835d632f591230d5" category="summary">在向NetApp技术支持部门创建支持案例之前、您需要向BlueXP添加一个NetApp 支持站点 帐户、然后注册获取支持。</block>
+  <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
+  <block id="996ad73a480311d4f86d6946935389d2" category="paragraph">要获得特定于Workload Factory及其存储解决方案和服务的技术支持、需要注册支持。您必须从BlueXP控制台注册获得支持、BlueXP控制台是一个与Workload Factory不同的基于Web的控制台。</block>
+  <block id="c552970fd4dc8118ba1806da596acad9" category="paragraph">注册获取支持不会为云提供商文件服务启用NetApp支持。有关与云提供商文件服务、其基础架构或任何使用该服务的解决方案相关的技术支持、请参阅该产品的Workload Factory文档中的"获得帮助"。</block>
+  <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">支持注册概述</block>
+  <block id="d7e4bb081bf4ec4814d83edcfbdb8b96" category="paragraph">注册您的帐户ID支持订阅(您的20位960xxxxxxxxx序列号位于BlueXP的支持资源页面上)将作为您的单个支持订阅ID。必须注册每个BlueXP帐户级别的支持订阅。</block>
+  <block id="f9e05c2b383e3f11e3b4bebbe8952225" category="paragraph">通过注册、您可以创建支持服务单和自动生成案例等功能。要完成注册、请按如下所述将NetApp 支持站点(NSS)帐户添加到BlueXP中。</block>
+  <block id="856edc4caec68fece6859c4be9360f3c" category="section-title">注册您的帐户以获得NetApp支持</block>
+  <block id="2d6573b6ae4c51dc24e58109473f2490" category="paragraph">要注册支持并激活支持授权、您帐户中的一个用户必须将NetApp支持站点帐户与其BlueXP登录名关联。如何注册NetApp支持取决于您是否已拥有NetApp 支持站点 (NSS)帐户。</block>
+  <block id="bf4c731c0ee7f60c8018ad8f96828dda" category="section-title">具有NSS帐户的现有客户</block>
+  <block id="7e177185e7eddff33dd8f3aeb7551132" category="paragraph">如果您是拥有NSS帐户的NetApp客户、则只需通过BlueXP注册支持即可。</block>
+  <block id="0307a12e5749f8dd930472ee78f69d2c" category="list-text">在BlueXP控制台的右上角、选择设置图标、然后选择*凭据*。</block>
+  <block id="f19ab635e6d5f884a22ee4ce067fdbfd" category="list-text">选择*用户凭据*。</block>
+  <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">选择*添加NSS凭证*，然后按照NetApp 支持站点(NSS)鉴定提示进行操作。</block>
+  <block id="cfc5506589d5a4d055e721267d5f0732" category="list-text">要确认注册过程是否成功，请选择帮助图标，然后选择*Support*。</block>
+  <block id="8add4eb0d3f6ce61d374f3df3ee4eadf" category="paragraph">“资源”页面应显示您的帐户已注册支持。</block>
+  <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">屏幕截图、显示帐户序列号、绿色复选框以及注册支持的文本。</block>
+  <block id="fa7897454f637026faa3e00ccbfec239" category="paragraph"><block ref="fa7897454f637026faa3e00ccbfec239" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9a01bdcfab6f0a10fc126999b4d5988" category="paragraph">请注意、其他BlueXP用户如果没有将NetApp 支持站点 帐户与其BlueXP登录关联、则不会看到此相同的支持注册状态。但是、这并不意味着您的BlueXP帐户未注册支持。只要帐户中有一个用户执行了这些步骤、您的帐户即已注册。</block>
+  <block id="1ff5aefce774ec72a211f2b3bb10b950" category="section-title">现有客户、但无NSS帐户</block>
+  <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">如果您是现有许可证和序列号但拥有_no_ nss帐户的现有NetApp客户、则需要创建一个NSS帐户并将其与BlueXP登录关联。</block>
+  <block id="5b2b7f628f804bcb786a097c7e45aa41" category="inline-link">NetApp 支持站点 用户注册表</block>
+  <block id="0c4a8b62da9473fbd5401273c4f85ee0" category="list-text">完成以创建NetApp支持站点帐户<block ref="041bcb6d9bdf91f7d6ac92ae3a196e12" category="inline-link-rx"></block></block>
+  <block id="d61c9f72493817776f392db42ac446a2" category="list-text">请务必选择适当的用户级别、通常为* NetApp客户/最终用户*。</block>
+  <block id="5226d4ec1f4f81b740cbbd27635b441f" category="list-text">请务必复制上面用于序列号字段的BlueXP帐户序列号(960xxxx)。这样可以加快帐户处理速度。</block>
+  <block id="0499bba105f8a891a2c671f1ba99dd34" category="list-text">通过完成下的步骤，将新的NSS帐户与BlueXP登录相关联 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">NetApp的新品牌</block>
+  <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">如果您是NetApp的新客户、并且没有NSS帐户、请按照以下每个步骤进行操作。</block>
+  <block id="f5d7029ed18f998c0a9d780b2554e538" category="list-text">从支持资源页面中找到您的帐户ID序列号。</block>
+  <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">帮助菜单的屏幕截图，其中列出的第一个选项为支持</block>
+  <block id="55adf589d087b17fca134b34f65498ed" category="paragraph"><block ref="55adf589d087b17fca134b34f65498ed" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">NetApp的支持注册站点</block>
+  <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">导航到<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> 并选择*我不是NetApp的注册客户*。</block>
+  <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">填写必填字段(带有红色星号的字段)。</block>
+  <block id="1128fc8d5ec64880f4d49337ed798d31" category="list-text">在*产品线*字段中、选择*云管理器*、然后选择适用的计费提供商。</block>
+  <block id="50a1dc01b7312307c34a888071586955" category="list-text">复制上述第2步中的帐户序列号、完成安全检查、然后确认您已阅读NetApp的全球数据隐私政策。</block>
+  <block id="3a24c87c9971d2011b4df223718f84b4" category="paragraph">系统会立即向提供的邮箱发送一封电子邮件、以完成此安全事务。如果验证电子邮件未在几分钟内收到、请务必检查您的垃圾邮件文件夹。</block>
+  <block id="03413baeca1ff7222737d8ce299bd4e8" category="list-text">在电子邮件中确认操作。</block>
+  <block id="201080500e946070a2e4873042507c77" category="paragraph">确认将向NetApp提交您的请求、并建议您创建NetApp 支持站点 帐户。</block>
+  <block id="cc8b0535948da368f832027c19b7f853" category="list-text">请务必复制上面用于序列号字段的帐户序列号(960xxxx)。这样可以加快帐户处理速度。</block>
+  <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">在此过程中、NetApp应与您联系。这是针对新用户的一次性入职练习。</block>
+  <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">拥有NetApp支持站点帐户后，请完成下的步骤，将该帐户与BlueXP登录相关联 <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="5db41fd4421f19d93e5dd91c17ef6114" category="summary">您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以生成可使用Workload Factory REST API、AWS命令行界面和AWS CloudFormation使用和运行的代码。</block>
+  <block id="74e50aedf700596c6a3592a6d25fec74" category="doc">使用CodeBox实现自动化</block>
+  <block id="04408b634d2d9206d79119d448664c52" category="paragraph">您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以使用工作负载工厂REST API、AWS命令行界面和AWS CloudFormation生成可使用和运行的代码。</block>
+  <block id="9e96cce41b7a764dc14629fa750c2747" category="paragraph">CodeBox可根据Workload Factory帐户中为每个用户提供的AWS权限在代码中填充相应的数据、从而与Workload Factory操作模式(基本、读取和自动)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。</block>
+  <block id="3d60b94b36b55e7dd31bca9ed2ce46f8" category="section-title">如何使用CodeBox</block>
+  <block id="a064715cfe4e3e4a214bc84cf0551160" category="inline-image-macro">复制按钮</block>
+  <block id="62835b251ca7e00f685a007f7c8b4941" category="paragraph">在工作负载出厂UI向导中输入值后、您可以在完成每个字段后在CodeBox中看到数据更新。完成向导后，在选择页面底部的*Creat*按钮之前，请选择 <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> 在CodeBox中复制以捕获构建配置所需的代码。例如、此创建新Microsoft SQL Server的屏幕截图显示了VPC和可用性区域的向导条目、以及Codebox中用于REST API实施的等效条目。</block>
+  <block id="502f1d03f24f8a0cfa430dc69e3b0a81" category="inline-image-macro">屏幕截图显示如何在用户界面中创建Microsoft SQL Server、以及CodeBox中VPC和可用性区域的相应条目。</block>
+  <block id="5f52d0f5bc329ec0f8b2cfd9d5a45307" category="paragraph"><block ref="5f52d0f5bc329ec0f8b2cfd9d5a45307" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e1e4d5313e88ce840e8cca3e7f84f01c" category="paragraph">对于某些代码格式，您还可以选择“下载”按钮，将代码保存在一个文件中，然后将其保存到其他系统。如果需要、您可以在下载代码后对其进行编辑、以便根据其他AWS帐户对其进行调整。</block>
+  <block id="309209712bce6112df6ef830b062c685" category="section-title">使用CodeBox中的CloudFormation代码</block>
+  <block id="ea91e366c1caa6817dd5fd6381bdcf91" category="paragraph">您可以复制从CodeBox生成的CloudFormation代码、然后在您的AWS帐户中启动Amazon Web Services CloudFormation堆栈。CloudFormation将执行您在Workload Factory UI中定义的操作。</block>
+  <block id="6b2932e540d5f7ea082e1ac798f02299" category="paragraph">根据您是要部署FSx for ONTAP文件系统、创建帐户凭据还是执行其他工作负载出厂操作、使用CloudFormation代码的步骤可能会有所不同。</block>
+  <block id="db45cb70284a7cbad935a33a0ef0b6dc" category="paragraph">请注意、出于安全原因、CloudFormation生成的YAML文件中的代码将在7天后过期。</block>
+  <block id="f4beed69f4c72e3f9969d0e2daa8cc67" category="list-text">要使用CloudFormation堆栈、您需要具有以下用户权限：</block>
+  <block id="e1e1a8055c6ecfa43b025a1584c3155f" category="list-text">在使用UI定义要执行的操作后、选择复制CodeBox中的代码。 <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="99ca7c9c85fef7c6ab0e44eb58675162" category="list-text">选择*重定向到CloudFormation*、此时将显示重定向到CloudFormation页面。</block>
+  <block id="7463b18d69a514063d0f320bc1d16b0d" category="list-text">打开另一个浏览器窗口并登录到AWS管理控制台。</block>
+  <block id="3bc22cebdcd7af89d94afadce527cc1d" category="list-text">登录到应运行此代码的AWS帐户。</block>
+  <block id="594a7e880447342dea72f44c4dc53943" category="list-text">在快速创建堆栈页面上的"功能"下、选择*我确认AWS CloudFormation可能...*。</block>
+  <block id="d097667109af7665e3dae788e8f5d9c6" category="list-text">从AWS或Workload Factory监控进度。</block>
+  <block id="5f75111d3408d87431450df4c0043a74" category="section-title">使用来自CodeBox的REST API代码</block>
+  <block id="05c017ebdfb63b85bc91ed2748f0a19f" category="paragraph">您可以使用从CodeBox生成的工作负载出厂REST API来部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。</block>
+  <block id="3c3f00270f1d36904ead2ac33f53a58f" category="paragraph">您可以从任何支持CURL且具有Internet连接的主机运行API。</block>
+  <block id="ed172ca8e9fe57859bcb8978982d2e0d" category="paragraph">请注意、身份验证令牌在CodeBox中处于隐藏状态、但在复制和粘贴API调用时会填充这些令牌。</block>
+  <block id="50bea3d64c18b01d7ce7b30ec89500d8" category="list-text">在使用UI定义要执行的操作后、选择 <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> 在"Code"框中复制API代码。</block>
+  <block id="b68f0143fe964c9ac34ce1d33e961f82" category="list-text">粘贴代码并在主机系统上运行。</block>
+  <block id="b4c82b8569210de2a2777b454448b42e" category="section-title">使用CodeBox中的AWS命令行界面代码</block>
+  <block id="8d03c4936e76f2455607364517b82e3e" category="paragraph">您可以使用从CodeBox生成的Amazon Web Services命令行界面来部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。</block>
+  <block id="4002cdda8ab65bc08a255c31321855ab" category="list-text">在使用UI定义要执行的操作后、选择 <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> 在CodeBox中复制AWS命令行界面。</block>
+  <block id="b28a0d67dfa6e54814b9650389eea71b" category="list-text">粘贴代码并运行。</block>
+  <block id="3c9ee3abb878e5099cd76beeedcb2d04" category="summary">了解Workload Factory管理功能的新增功能：云提供商凭据、Codebox增强功能等。</block>
+  <block id="490414e0366b091220802d406e52c076" category="doc">新增功能</block>
+  <block id="1d949c7c5600289e10795f178278edd1" category="section-title">2024年7月7日</block>
+  <block id="0cd06f0acd63988f29fda6d11297591b" category="section-title">Workload Factory的初始版本</block>
+  <block id="40e01e3ae3c6f388cb88b96223a5b962" category="paragraph">BlueXP Workload Factory for AWS是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。</block>
+  <block id="46e9fd42b97085e4579c13a072543d69" category="summary">现在、您已登录并设置Workload Factory、可以创建和管理适用于ONTAP文件系统的FSx、并可使用其他Workload Factory功能。</block>
+  <block id="d0a7edff5cd82c23f3d1c18e0779ccbc" category="doc">接下来可以执行的操作</block>
+  <block id="fa9fb0312fb3b93323ee60f1cf0258b7" category="paragraph">登录并设置Workload Factory后、您可以开始使用几项Workload Factory功能、例如、为ONTAP文件系统创建Amazon FSx、在适用于ONTAP文件系统的FSx上部署数据库、 并将虚拟机配置作为外部数据存储库使用FSx for ONTAP文件系统迁移到AWS上的VMware Cloud。</block>
+  <block id="452c8a300642b831148cf770baf1cd2f" category="paragraph">在AWS上检测现有数据库资产、通过迁移到FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。</block>
+  <block id="71c665ac24c583a0a9ad96a67210bac2" category="summary">NetApp Workload Factory是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。</block>
+  <block id="19954ae9949550c5366a9fb2b48def27" category="doc">了解Workload Factory</block>
+  <block id="96298fa6d94ac6f49aa36e586e268f0f" category="paragraph">Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器、VMware Cloud数据存储库和用户文件提供完全托管的AWS本机NFS、SMB/CCIFS和iSCSI存储卷。您可以通过Workload Factory和本机AWS管理工具管理FSx for ONTAP。</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
+  <block id="a0f53b5544ae2841af96b6a2c93a0849" category="paragraph">Workload Factory平台提供以下主要功能。</block>
+  <block id="6cfad4df5416db8db29bda4f011d3211" category="list-text">灵活、低成本的存储</block>
+  <block id="922bba58b532e71878d3d5858f7e8194" category="list-text">在云中发现、部署和管理Amazon FSx for NetApp ONTAP文件系统。FSx for ONTAP将ONTAP的全部功能引入原生AWS托管服务、提供一致的混合云体验。</block>
+  <block id="6d46b033eabdea8f60b174a46dfcfb14" category="list-text">将内部vSphere环境迁移到基于AWS的VMware Cloud</block>
+  <block id="f760ee48ca0d5104a3c884c851536392" category="list-text">通过VMware Cloud on AWS迁移顾问、您可以分析内部vSphere环境中的当前虚拟机配置、生成将建议的虚拟机布局部署到VMware Cloud on AWS的计划、并将适用于NetApp ONTAP文件系统的自定义Amazon FSx用作外部数据存储库。</block>
+  <block id="9a65d2a72eb8a959d799dda25fa053e1" category="list-text">经过优化的数据库部署</block>
+  <block id="65ebf27c56e124c006284c1cd9f06d3d" category="list-text">部署Microsoft SQL Server、数据库和数据库克隆、包括AWS资源配置、存储配置、网络连接和操作系统配置、利用优化的部署配置确保设置过程一致且无错误。</block>
+  <block id="c8556381857e2b130302cd1951b0b62c" category="list-text">AI聊天机器人开发</block>
+  <block id="b74c52466a8f67e18b547bf25d14844f" category="list-text">利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。</block>
+  <block id="d4dc097b509662a241b4f1d85924fdb4" category="list-text">存储计算器来节省成本</block>
+  <block id="1a78f887c27cbb9e00745a4c2bb056a1" category="list-text">分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。</block>
+  <block id="902e65d33784bd8924eb05e622aa2dda" category="section-title">支持的云提供商</block>
+  <block id="f23d73684a524dc65f1c2ab55054ed6c" category="paragraph">您可以通过Workload Factory在Amazon Web Services中管理云存储和使用工作负载功能。</block>
+  <block id="20b4f77bd00b4f63a49ec8e08f3bf6a6" category="section-title">成本</block>
+  <block id="6396fbe69c05e9a323cf53a0fbf0983d" category="paragraph">Workload Factory可免费使用。您为Amazon Web Services (AWS)支付的成本取决于您计划部署的存储和工作负载服务。其中包括适用于NetApp ONTAP文件系统、基于AWS的VMware云基础架构、AWS服务等的Amazon FSx的成本。</block>
+  <block id="d866a7eda949420ef136789c93a23ee9" category="section-title">工作负载工厂的工作原理</block>
+  <block id="20977d337d4e7d1aa80c7ebdb962f859" category="paragraph">Workload Factory包括通过SaaS层提供的基于Web的控制台、帐户、控制对云资产访问的操作模式、在Workload Factory与AWS帐户之间提供隔离连接的链接等。</block>
+  <block id="11cf550820ecd5e75ae1a9046f7f7f05" category="section-title">软件即服务</block>
+  <block id="22412f0c62e1935807bc2c96a82d38cd" category="inline-link">基于Web的控制台</block>
+  <block id="da89a2a4a0fe528ec46275a6250f3705" category="paragraph">可通过访问工作负载工厂<block ref="7c75ef957f9c2706e82e5fc687e49689" category="inline-link-rx"></block>。 通过这种SaaS体验、您可以在最新功能发布时自动访问这些功能、并在Workload Factory帐户和链接之间轻松切换。</block>
+  <block id="9b945efebb006547a94415eadaa12921" category="section-title">帐户</block>
+  <block id="0c600280e89b5a618e533108344236d5" category="paragraph">首次登录到Workload Factory时、系统会提示您创建帐户。通过此帐户、您可以使用凭据为组织组织组织组织资源、工作负载和工作负载访问。</block>
+  <block id="2edc1f0f1478d883c0d423d0d8ce8ba6" category="inline-image-macro">提示您输入Workload Factory帐户的Workload Factory设置向导的屏幕截图。</block>
+  <block id="912befb3eaba2908b9f951f6483b77fd" category="paragraph"><block ref="912befb3eaba2908b9f951f6483b77fd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6e1351546ad06187ed26aac56cc1d573" category="paragraph">创建帐户时、您是该帐户的单个帐户管理员用户。</block>
+  <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。</block>
+  <block id="c8046b7d36a4a9672ff01fb0fdfd88bf" category="admonition">如果您使用NetApp BlueXP、则您将已属于某个帐户、因为Workload Factory会使用BlueXP帐户。</block>
+  <block id="aa9b9cc18c16d4ea10f38b25b835c5aa" category="paragraph">Workload Factory提供了三种操作模式、您可以通过这些模式仔细控制对云资产的访问、并根据IT策略为Workload Factory分配增量信任。</block>
+  <block id="d41adf884cb045d0ebe1b066d2b95a2b" category="list-text">*基本模式*表示零信任关系，旨在早期探索Workload Factory，并使用各种向导创建所需的基础架构即代码。此代码可以由用户及其相关AWS凭据手动复制和使用。</block>
+  <block id="d81fee99e7fd276bb44ecddacfeba318" category="list-text">*读取模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
+  <block id="e2cde95c1c68867f8b74113e5266c7e4" category="list-text">*自动化模式*表示完全信任关系，旨在代表用户执行和自动化，以及分配的凭据，这些凭据具有执行所需的和经过验证的权限。</block>
+  <block id="cc85ceb9ec5c575a9f6e41669887b58d" category="inline-link-macro">详细了解工作负载出厂操作模式</block>
+  <block id="bc8c94f9b7d24148c98db964dcfdf4f4" category="paragraph"><block ref="122264b4ce030632c8f10e1e484f4776" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="e73298b79ea9408111cb3612bf336a0e" category="section-title">连接链路</block>
+  <block id="a74fb96e1eef90ea865f1878f02b4e15" category="paragraph">Workload Factory链接可在Workload Factory与一个或多个FSx for ONTAP文件系统之间创建信任关系和连接。这样、您就可以直接通过ONTAP REST API调用监控和管理某些文件系统功能、而这些功能不能通过Amazon FSx for ONTAP API使用。</block>
+  <block id="1e2cf39904eebcbddae0fe72e0186b8b" category="paragraph">您不需要链接即可开始使用Workload Factory、但在某些情况下、您需要创建一个链接来解锁所有Workload Factory功能和工作负载功能。</block>
+  <block id="e20e09752eeb59f7fee2ca964db1c848" category="paragraph">当前、链路会利用AWS Lamb流程。</block>
+  <block id="e3bdd5798efebca8061760f610d98bcc" category="inline-link">了解有关链接的更多信息</block>
+  <block id="cee76762b1db025f50dc7b50c80548de" category="paragraph"><block ref="cee76762b1db025f50dc7b50c80548de" category="inline-link-rx"></block></block>
+  <block id="bd282943a337f4287ca0d70f9a836261" category="section-title">CodeBox自动化</block>
+  <block id="528a4ef2f9c8bc3b67d3efa2374a45d4" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行Workload Factory支持的任何操作所需的代码。代码格式包括Workload Factory REST API、AWS CLI和AWS CloudFormation。</block>
+  <block id="8a01a94fb083632bcf067deb51f9299b" category="paragraph">CodeBox与工作负载出厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还为将来快速重复使用设置了自动化目录。</block>
+  <block id="7c408fda146892c9e1c039f91fee3cd3" category="paragraph">CodeBox窗格显示由特定作业流操作生成的IAC、并通过图形向导或对话聊天界面进行匹配。虽然CodeBox支持颜色编码和搜索、以便于导航和分析、但它不允许编辑。您只能复制或保存到自动化目录。</block>
+  <block id="ec6b8f7cd0c5cd9853d947bc13f72f4b" category="inline-link-macro">了解有关CodeBox的更多信息</block>
+  <block id="7221d615997ca03d4480df5a43dae047" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="6495534fd654d5f36372a209ee27f0a4" category="section-title">存储计算器</block>
+  <block id="8ab314706201f4dddfd4b45dee861f4a" category="paragraph">Workload Factory提供了一个存储计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
+  <block id="3d40a6fbdf1b779c8b032be37bcf95a4" category="paragraph">在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。</block>
+  <block id="c8d9b9f1a68d559ab984d4aa5efa4076" category="inline-link">了解如何使用存储计算器了解节省的空间</block>
+  <block id="62ee06e3888f5791ca82b765e4aa3773" category="paragraph"><block ref="62ee06e3888f5791ca82b765e4aa3773" category="inline-link-rx"></block></block>
+  <block id="c257f5c852c12409e63afb17104f69c5" category="section-title">REST API</block>
+  <block id="cfcd02bc3ad349605f667b1db0164fe0" category="paragraph">通过Workload Factory、您可以针对特定工作负载优化、自动化和运行FSx for ONTAP文件系统。每个工作负载都会公开一个关联的REST API。这些工作负载和API共同构成一个灵活且可扩展的开发平台、您可以使用它来管理FSx for ONTAP文件系统。</block>
+  <block id="49dac47ef61c863ab22404394b6c84e7" category="paragraph">使用工作负载出厂REST API具有以下优势：</block>
+  <block id="0fe398a436a33849be29455ed17d4185" category="list-text">这些API是根据REST技术和当前最佳实践设计的。核心技术包括HTTP和JSON。</block>
+  <block id="b5b61948785c8f81b44871382cf798d9" category="list-text">工作负载出厂身份验证基于OAuth2标准。NetApp依赖于Auth0服务实施。</block>
+  <block id="cbc4c63269886120ca8da87d6017c0ca" category="list-text">基于Web的工作负载出厂控制台使用相同的核心REST API、因此两个访问路径之间保持一致。</block>
+  <block id="7d4c208fb5531fb6f56eb2444364de9a" category="inline-link">查看工作负载出厂REST API文档</block>
+  <block id="855730139927264118c576e496933287" category="paragraph"><block ref="855730139927264118c576e496933287" category="inline-link-rx"></block></block>
+  <block id="cf95d3228718365c810531ae8c95e31a" category="sidebar">开始使用Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码合作伙伴实现跨平台自动化、以及在Workload Factory中管理工作负载。</block>
+  <block id="88978255b949b7e0bfa9219676906cec" category="sidebar">工作负载出厂设置和管理文档</block>
+  <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">开始使用</block>
+  <block id="d9776f0775997b2e698c6975420b5c5d" category="sidebar">注册</block>
+  <block id="1c71023bf289bc297d09be71221ff819" category="sidebar">操作模式和凭据</block>
+  <block id="65179615095fe42a8a47efc1a529ea2f" category="sidebar">了解操作模式</block>
+  <block id="196a1b1d4d7eff75b0b7bc0f6fa282e7" category="sidebar">添加AWS凭据</block>
+  <block id="b60830c9ff5a76f323a283c0cae1b47a" category="sidebar">使用CodeBox实现自动化</block>
+  <block id="6359b03a7ff6ac7a9c38c6edebcd1408" category="sidebar">了解CodeBox</block>
+  <block id="f53835e0f369158c476f99fda577e700" category="sidebar">设置和管理文档</block>
+  <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">发行说明</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="e4c53684ddd66ee4898db459d57514e8" category="sidebar">了解基础知识</block>
+  <block id="6ae8e58cb52cd45b321927bcb2961f4e" category="sidebar">工作负载工厂概述</block>
+  <block id="06ad314b340900d226b1196e1fe289e9" category="sidebar">快速入门</block>
+  <block id="bec1e3daee54f5a9410751eb03bd867e" category="sidebar">管理工作负载工厂</block>
+  <block id="3700c3dfbf95d68b06191b4a4cbb7592" category="sidebar">使用CodeBox自动执行任务</block>
+  <block id="733ae60890dc5503303e1f5780ac5c9b" category="sidebar">使用代码框生成代码</block>
+  <block id="0adc03eac86772ad2c75c8f140be417e" category="sidebar">知识和支持</block>
+</blocks>

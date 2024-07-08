@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: use-codebox.html 
+keywords: codebox, automation, cloudformation, rest api, aws cli, permissions 
+summary: 您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以生成可使用Workload Factory REST API、AWS命令行界面和AWS CloudFormation使用和运行的代码。 
+---
+= 使用CodeBox实现自动化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以使用工作负载工厂REST API、AWS命令行界面和AWS CloudFormation生成可使用和运行的代码。
+
+CodeBox可根据Workload Factory帐户中为每个用户提供的AWS权限在代码中填充相应的数据、从而与Workload Factory操作模式(基本、读取和自动)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。
+
+
+
+== 如何使用CodeBox
+
+在工作负载出厂UI向导中输入值后、您可以在完成每个字段后在CodeBox中看到数据更新。完成向导后，在选择页面底部的*Creat*按钮之前，请选择 image:button-copy-codebox.png["复制按钮"] 在CodeBox中复制以捕获构建配置所需的代码。例如、此创建新Microsoft SQL Server的屏幕截图显示了VPC和可用性区域的向导条目、以及Codebox中用于REST API实施的等效条目。
+
+image:screenshot-codebox-example1.png["屏幕截图显示如何在用户界面中创建Microsoft SQL Server、以及CodeBox中VPC和可用性区域的相应条目。"]
+
+对于某些代码格式，您还可以选择“下载”按钮，将代码保存在一个文件中，然后将其保存到其他系统。如果需要、您可以在下载代码后对其进行编辑、以便根据其他AWS帐户对其进行调整。
+
+
+
+== 使用CodeBox中的CloudFormation代码
+
+您可以复制从CodeBox生成的CloudFormation代码、然后在您的AWS帐户中启动Amazon Web Services CloudFormation堆栈。CloudFormation将执行您在Workload Factory UI中定义的操作。
+
+根据您是要部署FSx for ONTAP文件系统、创建帐户凭据还是执行其他工作负载出厂操作、使用CloudFormation代码的步骤可能会有所不同。
+
+请注意、出于安全原因、CloudFormation生成的YAML文件中的代码将在7天后过期。
+
+.开始之前
+* 您需要具有凭据才能登录到AWS帐户。
+* 要使用CloudFormation堆栈、您需要具有以下用户权限：
++
+[%collapsible]
+====
+[source, json]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeChangeSet",
+                "cloudformation:ExecuteChangeSet",
+                "cloudformation:ListStacks",
+                "cloudformation:ListStackResources",
+                "cloudformation:GetTemplate",
+                "cloudformation:ValidateTemplate",
+                "lambda:InvokeFunction",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
+====
+
+
+.步骤
+. 在使用UI定义要执行的操作后、选择复制CodeBox中的代码。 image:button-copy-codebox.png["复制按钮"]
+. 选择*重定向到CloudFormation*、此时将显示重定向到CloudFormation页面。
+. 打开另一个浏览器窗口并登录到AWS管理控制台。
+. 从重定向到CloudFormation页面中选择*继续*。
+. 登录到应运行此代码的AWS帐户。
+. 在快速创建堆栈页面上的"功能"下、选择*我确认AWS CloudFormation可能...*。
+. 选择*创建堆栈*。
+. 从AWS或Workload Factory监控进度。
+
+
+
+
+== 使用来自CodeBox的REST API代码
+
+您可以使用从CodeBox生成的工作负载出厂REST API来部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。
+
+您可以从任何支持CURL且具有Internet连接的主机运行API。
+
+请注意、身份验证令牌在CodeBox中处于隐藏状态、但在复制和粘贴API调用时会填充这些令牌。
+
+.步骤
+. 在使用UI定义要执行的操作后、选择 image:button-copy-codebox.png["复制按钮"] 在"Code"框中复制API代码。
+. 粘贴代码并在主机系统上运行。
+
+
+
+
+== 使用CodeBox中的AWS命令行界面代码
+
+您可以使用从CodeBox生成的Amazon Web Services命令行界面来部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。
+
+.步骤
+. 在使用UI定义要执行的操作后、选择 image:button-copy-codebox.png["复制按钮"] 在CodeBox中复制AWS命令行界面。
+. 打开另一个浏览器窗口并登录到AWS管理控制台。
+. 粘贴代码并运行。
+

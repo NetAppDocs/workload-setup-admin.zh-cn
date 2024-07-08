@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: codebox-automation.html 
+keywords: codebox, automation 
+summary: 'CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行Workload Factory支持的任何操作所需的代码。CodeBox与工作负载工厂操作模式(基本、读取、自动化)保持一致、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。' 
+---
+= 了解CODEBox自动化
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行Workload Factory支持的任何操作所需的代码。CodeBox与工作负载工厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。
+
+
+
+== CodeBox功能
+
+CodeBox提供了两项关键IAC功能：
+
+* _CodeBox Viewer_显示了由特定作业流操作生成的IAC，它通过匹配图形向导或对话聊天界面中的条目和选择来生成。尽管CodeBox查看器支持颜色编码以方便导航和分析，但它不允许编辑，仅允许将代码复制或保存到自动化目录中。
+* _CodeBox自动化目录_显示所有已保存的IAC作业、便于您轻松参考这些作业以供将来使用。自动化目录作业会另存为模板、并显示在应用于这些作业的资源的上下文中。
+
+
+此外、在设置工作负载出厂凭据时、Codebox会动态显示创建IAM策略所需的AWS权限。系统会为您计划使用的每个工作负载工厂功能(数据库、AI、FSx for ONTAP等)提供权限、这些权限会根据策略的用户是获得只读权限还是获得完全操作权限进行自定义。您只需从CodeBox复制权限、然后将其粘贴到AWS管理控制台中、即可使Workload Factory拥有管理工作负载的正确权限。
+
+
+
+== 支持的代码格式
+
+支持的代码格式包括：
+
+* 工作负载出厂REST API
+* AWS命令行界面
+* AWS CloudFormation
+
+
+link:use-codebox.html["了解如何使用CodeBox"](英文)

@@ -13,6 +13,8 @@ summary: NetApp Workload Factory是一款功能强大的生命周期管理平台
 [role="lead"]
 NetApp Workload Factory是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。
 
+工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。
+
 Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器、VMware Cloud数据存储库和用户文件提供完全托管的AWS本机NFS、SMB/CCIFS和iSCSI存储卷。您可以通过Workload Factory和本机AWS管理工具管理FSx for ONTAP。
 
 
@@ -106,9 +108,9 @@ link:codebox-automation.html["了解有关CodeBox的更多信息"](英文)
 
 
 
-=== 存储计算器
+=== 节省计算器
 
-Workload Factory提供了一个存储计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
+Workload Factory提供了一个节省计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
 
 在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。
 

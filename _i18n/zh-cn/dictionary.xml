@@ -463,8 +463,6 @@
   <block id="7c408fda146892c9e1c039f91fee3cd3" category="paragraph">CodeBox窗格显示由特定作业流操作生成的IAC、并通过图形向导或对话聊天界面进行匹配。虽然CodeBox支持颜色编码和搜索、以便于导航和分析、但它不允许编辑。您只能复制或保存到自动化目录。</block>
   <block id="ec6b8f7cd0c5cd9853d947bc13f72f4b" category="inline-link-macro">了解有关CodeBox的更多信息</block>
   <block id="7221d615997ca03d4480df5a43dae047" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block>(英文)</block>
-  <block id="6495534fd654d5f36372a209ee27f0a4" category="section-title">存储计算器</block>
-  <block id="8ab314706201f4dddfd4b45dee861f4a" category="paragraph">Workload Factory提供了一个存储计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
   <block id="3d40a6fbdf1b779c8b032be37bcf95a4" category="paragraph">在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。</block>
   <block id="c8d9b9f1a68d559ab984d4aa5efa4076" category="inline-link">了解如何使用存储计算器了解节省的空间</block>
   <block id="62ee06e3888f5791ca82b765e4aa3773" category="paragraph"><block ref="62ee06e3888f5791ca82b765e4aa3773" category="inline-link-rx"></block></block>
@@ -507,4 +505,7 @@
   <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Terraform支持</block>
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。</block>
   <block id="1a83a24f33c92a88ea922a23bd6cf4e5" category="paragraph"><block ref="1a83a24f33c92a88ea922a23bd6cf4e5" category="inline-link-macro-rx"></block></block>
+  <block id="462c14d3e045d4b0b69cee0781df3207" category="paragraph">工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。</block>
+  <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">节省计算器</block>
+  <block id="6904c85b1af908213d1642916b521739" category="paragraph">Workload Factory提供了一个节省计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
 </blocks>

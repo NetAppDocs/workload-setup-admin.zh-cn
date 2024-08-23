@@ -504,8 +504,8 @@
   <block id="691e71734464aaf43017f5b033e54559" category="section-title">2024 年 8 月 4 日</block>
   <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Terraform支持</block>
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。</block>
-  <block id="1a83a24f33c92a88ea922a23bd6cf4e5" category="paragraph"><block ref="1a83a24f33c92a88ea922a23bd6cf4e5" category="inline-link-macro-rx"></block></block>
   <block id="462c14d3e045d4b0b69cee0781df3207" category="paragraph">工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。</block>
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">节省计算器</block>
   <block id="6904c85b1af908213d1642916b521739" category="paragraph">Workload Factory提供了一个节省计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
+  <block id="11cb17d1b990bbf37a24337d5692efa1" category="paragraph"><block ref="11cb17d1b990bbf37a24337d5692efa1" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -1,0 +1,11 @@
+= Terraform支持
+:allow-uri-read: 
+
+
+
+
+=== Terraform支持
+
+Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-codebox.html["使用CodeBox中的Terraform"^]

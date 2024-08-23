@@ -1,0 +1,9 @@
+= Workload Factory的初始版本
+:allow-uri-read: 
+
+
+
+
+=== Workload Factory的初始版本
+
+BlueXP Workload Factory for AWS是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。

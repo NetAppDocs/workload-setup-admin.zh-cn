@@ -508,4 +508,14 @@
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">节省计算器</block>
   <block id="6904c85b1af908213d1642916b521739" category="paragraph">Workload Factory提供了一个节省计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
   <block id="11cb17d1b990bbf37a24337d5692efa1" category="paragraph"><block ref="11cb17d1b990bbf37a24337d5692efa1" category="inline-link-macro-rx"></block></block>
+  <block id="2fd1745cefcdce50d6467d96e693f6b7" category="doc">RSS订阅</block>
+  <block id="0fa776fabe30e41d70bd8d9c9e64c974" category="paragraph">可从获取RSS订阅<block ref="372504cb6bb48559009ff8f8cdb9a245" category="inline-link-macro-rx"></block>。使用RSS源是一种简单的使用方法、可以了解BlueXP  Workload Factory中的变化。</block>
+  <block id="447fb3de7bec10468f55367375163603" category="inline-image-macro">工作负载出厂控制台帮助下拉菜单的屏幕截图。用于订阅RSS的新按钮将作为选项显示在下拉菜单中。</block>
+  <block id="c508966f04ada556baaaa0b94e781209" category="paragraph"><block ref="c508966f04ada556baaaa0b94e781209" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80f4b5aa553e3a44455088c83954a088" category="section-title">支持每个工作负载使用一个权限策略</block>
+  <block id="c876ca70d1ae73b09cdc0004b328448e" category="paragraph">在Workload Factory中添加AWS凭据时、您现在可以为每个工作负载和存储管理选择一个权限策略、可以是读取模式、也可以是自动模式。</block>
+  <block id="41b3a089d4fbacfb53e9a5634cfc6647" category="inline-image-macro">凭据页面上的权限配置部分的屏幕截图、您可以在其中选择读取或自动执行存储管理、AI工作负载、数据库工作负载和VMware工作负载的权限策略。</block>
+  <block id="fa5f572610383fbc01cbba40c0f535e2" category="paragraph"><block ref="fa5f572610383fbc01cbba40c0f535e2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1db25aada4bff8233b24c1d7b39230cd" category="paragraph"><block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block></block>
+  <block id="b5cef683aab00353096b98823a237e69" category="section-title">2024年9月1日</block>
 </blocks>

@@ -120,12 +120,12 @@ image:screenshot-codebox-example1.png["屏幕截图显示如何在用户界面�
 您可以使用Terraform部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。
 
 .开始之前
-* 您需要使用Terraform服务器来运行命令。
+* 您需要安装Terraform的系统(Windows/Mac/Linux)。
 * 您需要具有凭据才能登录到AWS帐户。
 
 
 .步骤
-. 使用用户界面定义要执行的操作后、复制或下载CodeBox中的Terraform代码。
-. 连接到服务器。
-. 粘贴代码并运行。
+. 在使用用户界面定义要执行的操作后、从CodeBox下载Terraform代码。
+. 将下载的脚本归档文件复制到安装了Terraform的系统。
+. 解压缩zip文件、然后按照README.MD文件中的步骤进行操作。
 

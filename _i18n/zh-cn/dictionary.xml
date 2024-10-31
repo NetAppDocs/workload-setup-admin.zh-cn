@@ -498,9 +498,6 @@
   <block id="1b2b6bf8e053a2f8088251c3a2cc65f9" category="list-text">在使用UI定义要执行的操作后、复制CodeBox中的AWS命令行界面。</block>
   <block id="2532cd63354e6e99119077d45134b5ef" category="section-title">使用CodeBox中的Terraform</block>
   <block id="a5a1cedd11df4667bf63eec57c1622aa" category="paragraph">您可以使用Terraform部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。</block>
-  <block id="372393cee3187826465089e7fa3db98e" category="list-text">您需要使用Terraform服务器来运行命令。</block>
-  <block id="90d8257298c061974c94790388e32bbd" category="list-text">使用用户界面定义要执行的操作后、复制或下载CodeBox中的Terraform代码。</block>
-  <block id="a2417f4d64bad3dff09f2bdbce4dc0e2" category="list-text">连接到服务器。</block>
   <block id="691e71734464aaf43017f5b033e54559" category="section-title">2024 年 8 月 4 日</block>
   <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Terraform支持</block>
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。</block>
@@ -518,4 +515,8 @@
   <block id="fa5f572610383fbc01cbba40c0f535e2" category="paragraph"><block ref="fa5f572610383fbc01cbba40c0f535e2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1db25aada4bff8233b24c1d7b39230cd" category="paragraph"><block ref="1db25aada4bff8233b24c1d7b39230cd" category="inline-link-macro-rx"></block></block>
   <block id="b5cef683aab00353096b98823a237e69" category="section-title">2024年9月1日</block>
+  <block id="6e9e8f336be02f99477adc019bfcd183" category="list-text">您需要安装Terraform的系统(Windows/Mac/Linux)。</block>
+  <block id="613670bc7ca8a45f31728d87474749ac" category="list-text">在使用用户界面定义要执行的操作后、从CodeBox下载Terraform代码。</block>
+  <block id="53e9887aa73e6bb1fcf6b5b002e7f175" category="list-text">将下载的脚本归档文件复制到安装了Terraform的系统。</block>
+  <block id="8db9de1de3844107194be0555d5ceb7c" category="list-text">解压缩zip文件、然后按照README.MD文件中的步骤进行操作。</block>
 </blocks>

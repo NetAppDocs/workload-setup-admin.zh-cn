@@ -1,0 +1,11 @@
+= 工作负载在出厂时集成在BlueXP  控制台中
+:allow-uri-read: 
+
+
+
+
+=== 工作负载在出厂时集成在BlueXP  控制台中
+
+现在，您可以从使用工作负载工厂link:https://console.bluexp.netapp.com["BlueXP控制台"^]。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。
+
+link:https://docs.netapp.com/workload-setup-admin/console-experiences.html["了解如何从BlueXP  控制台访问工作负载工厂"]

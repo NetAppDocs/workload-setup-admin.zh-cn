@@ -1,16 +1,16 @@
 ---
 indexpage:
-  title: 工作负载出厂设置和管理文档
-  summary: 开始使用Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
-    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码合作伙伴实现跨平台自动化、以及在Workload Factory中管理工作负载。
+  title: BlueXP  工作负载出厂设置和管理文档
+  summary: 开始使用BlueXP  Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
+    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码联合技术实现跨平台自动化、以及在工作负载出厂时管理工作负载。
   keywords: workload factory, fsx, account, credentials, users, permissions, log in,
     calculator, codebox
-  lead: 开始使用Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
-    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码合作伙伴实现跨平台自动化、以及在Workload Factory中管理工作负载。
+  lead: 开始使用BlueXP  Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
+    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码联合技术实现跨平台自动化、以及在工作负载出厂时管理工作负载。
   tiles:
   - title: 开始使用
     links:
-    - title: 了解Workload Factory
+    - title: 了解BlueXP  工作负载工厂
       url: workload-factory-overview.html
     - title: 注册
       url: sign-up-saas.html

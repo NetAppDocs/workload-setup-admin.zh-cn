@@ -2,80 +2,82 @@
 sidebar: sidebar 
 permalink: workload-factory-overview.html 
 keywords: overview, concepts, features, use case, workloads, how workload factory works 
-summary: NetApp Workload Factory是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。 
+summary: BlueXP  工作负载工厂是一个功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。 
 ---
-= 了解Workload Factory
+= 了解BlueXP  工作负载工厂
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-NetApp Workload Factory是一款功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用Workload Factory和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。
+BlueXP  工作负载工厂是一个功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用工作负载工厂和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。
 
 工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。
 
-Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器、VMware Cloud数据存储库和用户文件提供完全托管的AWS本机NFS、SMB/CCIFS和iSCSI存储卷。您可以通过Workload Factory和本机AWS管理工具管理FSx for ONTAP。
+Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器、VMware Cloud数据存储库和用户文件提供完全托管的AWS本机NFS、SMB/CCIFS和iSCSI存储卷。您可以通过工作负载工厂和本机AWS管理工具管理FSx for ONTAP。
 
 
 
 == 功能
 
-Workload Factory平台提供以下主要功能。
+工作负载出厂平台提供以下主要功能。
 
 灵活、低成本的存储:: 在云中发现、部署和管理Amazon FSx for NetApp ONTAP文件系统。FSx for ONTAP将ONTAP的全部功能引入原生AWS托管服务、提供一致的混合云体验。
 将内部vSphere环境迁移到基于AWS的VMware Cloud:: 通过VMware Cloud on AWS迁移顾问、您可以分析内部vSphere环境中的当前虚拟机配置、生成将建议的虚拟机布局部署到VMware Cloud on AWS的计划、并将适用于NetApp ONTAP文件系统的自定义Amazon FSx用作外部数据存储库。
 经过优化的数据库部署:: 部署Microsoft SQL Server、数据库和数据库克隆、包括AWS资源配置、存储配置、网络连接和操作系统配置、利用优化的部署配置确保设置过程一致且无错误。
 AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。
-存储计算器来节省成本:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
+节省成本的计算器:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
 
 
 
 
 == 支持的云提供商
 
-您可以通过Workload Factory在Amazon Web Services中管理云存储和使用工作负载功能。
+通过工作负载工厂、您可以管理云存储并使用Amazon Web Services中的工作负载功能。
 
 
 
 == 成本
 
-Workload Factory可免费使用。您为Amazon Web Services (AWS)支付的成本取决于您计划部署的存储和工作负载服务。其中包括适用于NetApp ONTAP文件系统、基于AWS的VMware云基础架构、AWS服务等的Amazon FSx的成本。
+工作负载工厂可免费使用。您为Amazon Web Services (AWS)支付的成本取决于您计划部署的存储和工作负载服务。其中包括适用于NetApp ONTAP文件系统、基于AWS的VMware云基础架构、AWS服务等的Amazon FSx的成本。
 
 
 
 == 工作负载工厂的工作原理
 
-Workload Factory包括通过SaaS层提供的基于Web的控制台、帐户、控制对云资产访问的操作模式、在Workload Factory与AWS帐户之间提供隔离连接的链接等。
+工作负载工厂包括通过SaaS层提供的基于Web的控制台、帐户、控制对云资产访问的操作模式、在工作负载工厂和AWS帐户之间提供隔离连接的链接等。
 
 
 
 === 软件即服务
 
-可通过访问工作负载工厂 https://console.workloads.netapp.com["基于Web的控制台"^]。 通过这种SaaS体验、您可以在最新功能发布时自动访问这些功能、并在Workload Factory帐户和链接之间轻松切换。
+可通过BlueXP  工作负载工厂和BlueXP  访问工作负载工厂 https://console.workloads.netapp.com["基于Web的控制台"^]link:https://console.bluexp.netapp.com["基于Web的控制台"^]。通过这些SaaS体验、您可以在最新功能发布时自动访问这些功能、并在工作负载工厂帐户和链接之间轻松切换。
+
+了解有关不同的的更多信息link:console-experiences.html["控制台体验"]。
 
 
 
 === 帐户
 
-首次登录到Workload Factory时、系统会提示您创建帐户。通过此帐户、您可以使用凭据为组织组织组织组织资源、工作负载和工作负载访问。
+首次登录到工作负载工厂时、系统会提示您创建帐户。通过此帐户、您可以使用凭据为组织组织组织组织资源、工作负载和工作负载访问。
 
-image:screenshot-account-selection.png["提示您输入Workload Factory帐户的Workload Factory设置向导的屏幕截图。"]
+image:screenshot-account-selection.png["提示您输入工作负载出厂帐户的工作负载出厂设置向导的屏幕截图。"]
 
 创建帐户时、您是该帐户的单个帐户管理员用户。
 
 如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。
 
 
-TIP: 如果您使用NetApp BlueXP、则您将已属于某个帐户、因为Workload Factory会使用BlueXP帐户。
+TIP: 如果您使用NetApp BlueXP 、则您将已属于某个帐户、因为工作负载工厂会利用BlueXP  帐户。
 
 
 
 === 操作模式
 
-Workload Factory提供了三种操作模式、您可以通过这些模式仔细控制对云资产的访问、并根据IT策略为Workload Factory分配增量信任。
+工作负载工厂提供三种操作模式、您可以通过这些模式仔细控制对云资产的访问、并根据IT策略为工作负载工厂分配增量信任。
 
-* *基本模式*表示零信任关系，旨在早期探索Workload Factory，并使用各种向导创建所需的基础架构即代码。此代码可以由用户及其相关AWS凭据手动复制和使用。
+* *基本模式*代表零信任关系，旨在早期探索工作负载工厂，并使用各种向导创建所需的基础架构即代码。此代码可以由用户及其相关AWS凭据手动复制和使用。
 * *读取模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。
 * *自动化模式*表示完全信任关系，旨在代表用户执行和自动化，以及分配的凭据，这些凭据具有执行所需的和经过验证的权限。
 
@@ -86,9 +88,9 @@ link:operational-modes.html["详细了解工作负载出厂操作模式"](英文
 
 === 连接链路
 
-Workload Factory链接可在Workload Factory与一个或多个FSx for ONTAP文件系统之间创建信任关系和连接。这样、您就可以直接通过ONTAP REST API调用监控和管理某些文件系统功能、而这些功能不能通过Amazon FSx for ONTAP API使用。
+工作负载工厂链接可在工作负载工厂与一个或多个FSx for ONTAP文件系统之间创建信任关系和连接。这样、您就可以直接通过ONTAP REST API调用监控和管理某些文件系统功能、而这些功能不能通过Amazon FSx for ONTAP API使用。
 
-您不需要链接即可开始使用Workload Factory、但在某些情况下、您需要创建一个链接来解锁所有Workload Factory功能和工作负载功能。
+您不需要链接即可开始使用工作负载工厂、但在某些情况下、您需要创建一个链接来解锁所有工作负载工厂功能和工作负载功能。
 
 当前、链路会利用AWS Lamb流程。
 
@@ -98,7 +100,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 === CodeBox自动化
 
-CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行Workload Factory支持的任何操作所需的代码。代码格式包括Workload Factory REST API、AWS CLI和AWS CloudFormation。
+CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行工作负载工厂支持的任何操作所需的代码。代码格式包括工作负载工厂REST API、AWS CLI和AWS CloudFormation。
 
 CodeBox与工作负载出厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还为将来快速重复使用设置了自动化目录。
 
@@ -110,7 +112,7 @@ link:codebox-automation.html["了解有关CodeBox的更多信息"](英文)
 
 === 节省计算器
 
-Workload Factory提供了一个节省计算器、用于将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
+工作负载工厂提供了一个节省计算器、您可以将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
 
 在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。
 
@@ -118,9 +120,22 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["了解如
 
 
 
+== 用于工作负载工厂的工具
+
+您可以将BlueXP  工作负载工厂与以下工具结合使用：
+
+* *工作负载工厂控制台*：工作负载工厂控制台提供了一个可视化界面，可让您全面了解应用程序和项目
+* BlueXP  console*：BlueXP  控制台提供了混合接口体验，因此您可以将BlueXP  工作负载出厂配置与其他BlueXP  服务结合使用
+* *REST API*：工作负载出厂REST API允许您部署和管理适用于ONTAP文件系统和其他AWS资源的FSx
+* *CloudFormation*：AWS CloudFormation代码可用于执行您在工作负载工厂控制台中定义的操作、以便在AWS帐户中对CloudFormation堆栈中的AWS和第三方资源进行建模、配置和管理
+* *Terraform BlueXP  工作负载工厂提供程序*：Terraform支持您构建和管理在工作负载工厂控制台中生成的基础架构工作流
+
+
+
+
 === REST API
 
-通过Workload Factory、您可以针对特定工作负载优化、自动化和运行FSx for ONTAP文件系统。每个工作负载都会公开一个关联的REST API。这些工作负载和API共同构成一个灵活且可扩展的开发平台、您可以使用它来管理FSx for ONTAP文件系统。
+通过工作负载工厂、您可以针对特定工作负载优化、自动化和运行FSx for ONTAP文件系统。每个工作负载都会公开一个关联的REST API。这些工作负载和API共同构成一个灵活且可扩展的开发平台、您可以使用它来管理FSx for ONTAP文件系统。
 
 使用工作负载出厂REST API具有以下优势：
 

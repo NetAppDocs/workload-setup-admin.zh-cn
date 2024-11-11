@@ -2,18 +2,18 @@
 sidebar: sidebar 
 permalink: use-codebox.html 
 keywords: codebox, automation, cloudformation, rest api, aws cli, permissions 
-summary: 您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以生成可使用Workload Factory REST API、AWS命令行界面和AWS CloudFormation使用和运行的代码。 
+summary: 您可以使用CodeBox生成执行BlueXP  工作负载工厂支持的任何操作所需的代码。 
 ---
-= 使用CodeBox实现自动化
+= 使用CodeBox在BlueXP  工作负载工厂实现自动化
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-您可以使用CodeBox生成执行Workload Factory支持的任何操作所需的代码。您可以使用工作负载工厂REST API、AWS命令行界面和AWS CloudFormation生成可使用和运行的代码。
+您可以使用CodeBox生成执行BlueXP  工作负载工厂支持的任何操作所需的代码。您可以使用工作负载出厂REST API、AWS命令行界面和AWS CloudFormation生成可使用和运行的代码。
 
-CodeBox可根据Workload Factory帐户中为每个用户提供的AWS权限在代码中填充相应的数据、从而与Workload Factory操作模式(基本、读取和自动)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。
+Codebox可根据每个用户的工作负载工厂帐户中提供的AWS权限在代码中填充相应的数据、从而与工作负载工厂操作模式(基本、读取和自动)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。
 
 
 
@@ -29,7 +29,7 @@ image:screenshot-codebox-example1.png["屏幕截图显示如何在用户界面�
 
 == 使用CodeBox中的CloudFormation代码
 
-您可以复制从CodeBox生成的CloudFormation代码、然后在您的AWS帐户中启动Amazon Web Services CloudFormation堆栈。CloudFormation将执行您在Workload Factory UI中定义的操作。
+您可以复制从CodeBox生成的CloudFormation代码、然后在您的AWS帐户中启动Amazon Web Services CloudFormation堆栈。CloudFormation将执行您在工作负载出厂UI中定义的操作。
 
 根据您是要部署FSx for ONTAP文件系统、创建帐户凭据还是执行其他工作负载出厂操作、使用CloudFormation代码的步骤可能会有所不同。
 
@@ -83,7 +83,7 @@ image:screenshot-codebox-example1.png["屏幕截图显示如何在用户界面�
 . 登录到应运行此代码的AWS帐户。
 . 在快速创建堆栈页面上的"功能"下、选择*我确认AWS CloudFormation可能...*。
 . 选择*创建堆栈*。
-. 从AWS或Workload Factory监控进度。
+. 从AWS或工作负载工厂监控进度。
 
 
 

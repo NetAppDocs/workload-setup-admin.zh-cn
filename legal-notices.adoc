@@ -4,10 +4,10 @@ sidebar: sidebar
 keywords:  
 summary:  
 ---
-= 法律声明
+= BlueXP  Workload Factory的法律声明
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

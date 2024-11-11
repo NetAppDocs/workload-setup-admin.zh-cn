@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: whats-next.html 
 keywords: what you can do 
-summary: 现在、您已登录并设置Workload Factory、可以创建和管理适用于ONTAP文件系统的FSx、并可使用其他Workload Factory功能。 
+summary: 现在、您已登录并设置工作负载工厂、可以创建和管理适用于ONTAP文件系统的FSx、并可使用其他工作负载工厂功能。 
 ---
-= 接下来可以执行的操作
+= 接下来、您可以使用BlueXP  工作负载工厂执行哪些操作
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-登录并设置Workload Factory后、您可以开始使用几项Workload Factory功能、例如、为ONTAP文件系统创建Amazon FSx、在适用于ONTAP文件系统的FSx上部署数据库、 并将虚拟机配置作为外部数据存储库使用FSx for ONTAP文件系统迁移到AWS上的VMware Cloud。
+现在、您已登录并设置BlueXP  工作负载工厂、可以开始使用几项工作负载工厂功能、例如、创建适用于ONTAP文件系统的Amazon FSx、在适用于ONTAP文件系统的FSx上部署数据库、以及使用适用于ONTAP文件系统的FSx作为外部数据存储库将虚拟机配置迁移到AWS上的VMware Cloud。
 
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
 +

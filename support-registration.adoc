@@ -7,7 +7,7 @@ summary: 在向NetApp技术支持部门创建支持案例之前、您需要向Bl
 = 注册以获得支持
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/
+:imagesdir: ./media/
 
 
 [role="lead"]

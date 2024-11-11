@@ -2,16 +2,16 @@
 sidebar: sidebar 
 permalink: quick-start.html 
 keywords: quick start 
-summary: 开始使用Workload Factory、方法是为Workload Factory控制台准备网络连接、注册和创建帐户以及添加凭据、以便Workload Factory可以直接管理AWS资源。 
+summary: 通过为工作负载工厂控制台准备网络、注册和创建帐户以及添加凭据以使工作负载工厂可以直接管理AWS资源、开始使用工作负载工厂。 
 ---
-= 工作负载工厂快速入门
+= BlueXP  工作负载工厂快速入门
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-通过注册并创建帐户、添加凭据以便Workload Factory可以直接管理AWS资源来开始使用Workload Factory、然后使用Amazon FSx for NetApp ONTAP优化您的工作负载。
+通过注册并创建帐户、添加凭据以便工作负载工厂可以直接管理AWS资源、然后使用Amazon FSx for NetApp ONTAP优化您的工作负载、开始使用工作负载工厂。
 
 用户可从基于Web的控制台以云服务的形式访问工作负载工厂。开始之前，您应了解 link:workload-factory-overview.html["工作负载工厂"] 和 link:operational-modes.html["操作模式"]。
 
@@ -22,16 +22,16 @@ summary: 开始使用Workload Factory、方法是为Workload Factory控制台准
 [role="quick-margin-para"]
 link:sign-up-saas.html["了解如何注册和创建帐户"](英文)
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 将AWS凭据添加到Workload Factory
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]将AWS凭据添加到工作负载工厂
 [role="quick-margin-para"]
-此步骤为可选步骤。您可以在_Basic_模式下使用Workload Factory、而无需添加凭据即可访问您的AWS帐户。在_read_模式或_Automate _模式下向Workload Factory添加AWS凭据、可以为您的Workload Factory帐户提供创建和管理适用于ONTAP文件系统的FSx以及部署和管理特定工作负载(例如数据库和GenAI)所需的权限。
+此步骤为可选步骤。您可以在_Basic_模式下使用工作负载工厂、而无需添加凭据即可访问AWS帐户。在_read_模式或_Automate _模式下向工作负载工厂添加AWS凭据、可以为您的工作负载工厂帐户提供创建和管理FSx for ONTAP文件系统以及部署和管理特定工作负载(例如数据库和GenAI)所需的权限。
 
 [role="quick-margin-para"]
 link:add-credentials.html["了解如何向帐户添加凭据"](英文)
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 使用FSx for ONTAP优化工作负载
 [role="quick-margin-para"]
-现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用Workload Factory通过FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。
+现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用工作负载工厂使用FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。
 
 [role="quick-margin-list"]
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["适用于 NetApp ONTAP 的 Amazon FSX"^]

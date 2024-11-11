@@ -6,7 +6,7 @@
 
 === RSS订阅
 
-可从获取RSS订阅link:https://console.workloads.netapp.com/["工作负载出厂控制台"^]。使用RSS源是一种简单的使用方法、可以了解BlueXP  Workload Factory中的变化。
+可从获取RSS订阅link:https://console.workloads.netapp.com/["工作负载出厂控制台"^]。使用RSS源是一种简单的使用方法、可以了解BlueXP  工作负载工厂中的变化。
 
 image:screenshot-rss-subscribe-button.png["工作负载出厂控制台帮助下拉菜单的屏幕截图。用于订阅RSS的新按钮将作为选项显示在下拉菜单中。"]
 
@@ -14,8 +14,8 @@ image:screenshot-rss-subscribe-button.png["工作负载出厂控制台帮助下�
 
 === 支持每个工作负载使用一个权限策略
 
-在Workload Factory中添加AWS凭据时、您现在可以为每个工作负载和存储管理选择一个权限策略、可以是读取模式、也可以是自动模式。
+现在、在工作负载工厂添加AWS凭据时、您可以为每个工作负载和存储管理选择一个读取或自动模式权限策略。
 
 image:screenshot-single-permission-policy-support.png["凭据页面上的权限配置部分的屏幕截图、您可以在其中选择读取或自动执行存储管理、AI工作负载、数据库工作负载和VMware工作负载的权限策略。"]
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["将AWS凭据添加到Workload Factory"^]
+link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html["将AWS凭据添加到工作负载工厂"^]

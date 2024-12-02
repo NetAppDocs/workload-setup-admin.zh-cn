@@ -163,14 +163,6 @@
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
-  <block id="22e5a7336ebe77138f0282cedcb069ab" category="inline-link">工作负载工厂</block>
-  <block id="7ffcbeca3b450b8d05f9cf0eedb617f8" category="list-text"><block ref="7ffcbeca3b450b8d05f9cf0eedb617f8" category="inline-link-rx"></block></block>
-  <block id="887f800d53dc2cd5a7894464a6f60a6b" category="inline-link">数据库的工作负载工厂</block>
-  <block id="7e505d4c691d86e5bd415f9ccb849966" category="list-text"><block ref="7e505d4c691d86e5bd415f9ccb849966" category="inline-link-rx"></block></block>
-  <block id="9591e2d54c998ae1c9d48fd5be7762e9" category="inline-link">适用于GenAI的工作负载工厂</block>
-  <block id="f38c7416013fc239c3dd3288d40a40c0" category="list-text"><block ref="f38c7416013fc239c3dd3288d40a40c0" category="inline-link-rx"></block></block>
-  <block id="404a5efb62a3a3f22b02593091042608" category="inline-link">适用于VMware的工作负载工厂</block>
-  <block id="9a211183d3fa82368d76fdbab5abdeda" category="list-text"><block ref="9a211183d3fa82368d76fdbab5abdeda" category="inline-link-rx"></block></block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">关于此任务</block>
   <block id="19df8bb4b5a805b23aeac731605bdf21" category="list-text">您的现有NetApp 支持站点 (NSS)凭据</block>
   <block id="691be8e1993c2535e4afe5834afe3b01" category="list-text">使用您的电子邮件地址和密码登录NetApp云</block>
@@ -564,4 +556,6 @@
   <block id="cb1411d161cdf3fea65b5b1351ffa45b" category="sidebar">管理工作负载工厂</block>
   <block id="2003c10ae1eaa96c8dd0c849f3e0b79e" category="sidebar">登录到工作负载工厂</block>
   <block id="1a34f743bd98b1658401ce2f8206ff9a" category="paragraph"><block ref="1a34f743bd98b1658401ce2f8206ff9a" category="inline-link-macro-rx"></block></block>
+  <block id="428b0b39be2352757edeb5f9f12a7bdd" category="inline-link">BlueXP  工作负载工厂</block>
+  <block id="7cf449620aa459bc5c449db69b07e507" category="paragraph"><block ref="7cf449620aa459bc5c449db69b07e507" category="inline-link-rx"></block></block>
 </blocks>

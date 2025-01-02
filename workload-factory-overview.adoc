@@ -25,7 +25,7 @@ Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器�
 
 灵活、低成本的存储:: 在云中发现、部署和管理Amazon FSx for NetApp ONTAP文件系统。FSx for ONTAP将ONTAP的全部功能引入原生AWS托管服务、提供一致的混合云体验。
 将内部vSphere环境迁移到基于AWS的VMware Cloud:: 通过VMware Cloud on AWS迁移顾问、您可以分析内部vSphere环境中的当前虚拟机配置、生成将建议的虚拟机布局部署到VMware Cloud on AWS的计划、并将适用于NetApp ONTAP文件系统的自定义Amazon FSx用作外部数据存储库。
-经过优化的数据库部署:: 部署Microsoft SQL Server、数据库和数据库克隆、包括AWS资源配置、存储配置、网络连接和操作系统配置、利用优化的部署配置确保设置过程一致且无错误。
+数据库生命周期管理:: 利用Amazon FSx for NetApp ONTAP发现数据库工作负载并分析节省的成本；在将SQL Server数据库迁移到FSx for ONTAP存储时利用存储和应用程序的优势；部署SQL Server、数据库和数据库克隆以实施供应商最佳实践；使用基础架构即代码联合试点来自动执行操作；持续监控和优化SQL Server资产以提高性能、可用性、保护能力和成本效益。
 AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。
 节省成本的计算器:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
 
@@ -112,11 +112,11 @@ link:codebox-automation.html["了解有关CodeBox的更多信息"](英文)
 
 === 节省计算器
 
-工作负载工厂提供了一个节省计算器、您可以将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
+Workload Factory提供了节省量计算器、因此您可以将FSx for ONTAP文件系统上的存储环境或数据库工作负载的成本与Elasic Block Store (EBS)、Elasic File Systems (EFS)和FSx for Windows File Server进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。
 
-在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["了解如何探索存储环境的节省"^]
+* link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html["了解如何探索为数据库工作负载节省的空间"^]
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html["了解如何使用存储计算器了解节省的空间"^]
 
 
 

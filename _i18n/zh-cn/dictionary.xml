@@ -69,28 +69,21 @@
   <block id="1767b6ef838f3d4774bc0f274ffd6680" category="inline-link-macro">了解如何使用CodeBox</block>
   <block id="431b5bf36166f939706fd1cd6625e311" category="paragraph"><block ref="58039229c34145102d9497de13b6e7b4" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
-  <block id="3c6efe0ce159fb5b8ee4882bcf3ad973" category="paragraph">NetApp以多种方式为Workload Factory及其云服务提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
   <block id="6a7b2c9c4cec65ad972b108fa0a1192b" category="section-title">获取FSx for ONTAP支持</block>
-  <block id="4435b263dd1a35bcd8dfda050db92b3b" category="paragraph">有关FSx for ONTAP、其基础架构或任何使用该服务的解决方案的技术支持、请参阅该产品的工作负载工厂文档中的"获得帮助"。</block>
   <block id="18cf072964a583150dd247485ba75b92" category="inline-link-macro">适用于 ONTAP 的 Amazon FSX</block>
   <block id="9d06990508d25d367d9158c6558eb9c8" category="paragraph"><block ref="9d06990508d25d367d9158c6558eb9c8" category="inline-link-macro-rx"></block></block>
   <block id="35f9849ffdd809bda11d0fc56e1e3583" category="paragraph">要获得特定于Workload Factory及其存储解决方案和服务的技术支持、请使用下面所述的支持选项。</block>
   <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">使用自助支持选项</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">这些选项每周 7 天，每天 24 小时免费提供：</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文档</block>
-  <block id="d935525f4850c4638cbf48ae53fb4686" category="paragraph">您当前正在查看的Workload Factory文档。</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知识库</block>
   <block id="436f63b446dba5a418c698d49bd39718" category="list-text"><block ref="436f63b446dba5a418c698d49bd39718" category="inline-link-rx"></block></block>
-  <block id="ba6274b9c9d1f81bb3a648fa289986b8" category="paragraph">搜索工作负载工厂知识库、查找有助于解决问题的文章。</block>
   <block id="14526abd8bda5af347775025cd5342cf" category="inline-link">社区</block>
   <block id="410fdb9caa9c64da2ff3f88f4836960d" category="list-text"><block ref="410fdb9caa9c64da2ff3f88f4836960d" category="inline-link-rx"></block></block>
-  <block id="7faef90df03399696ba9d4815b37171a" category="paragraph">加入Workload Factory社区、关注正在进行的讨论或创建新的讨论。</block>
   <block id="d88bacf2a9fdcbbc844edcba97c34e30" category="section-title">向NetApp支持部门创建案例</block>
   <block id="82812db645b6ff5e9c2a24ddfb66c8d6" category="paragraph">除了上述自助支持选项之外、您还可以在激活支持后与NetApp支持专家合作解决任何问题。</block>
   <block id="8fece025a1a8fef7018449bf104a2527" category="paragraph-title">开始之前</block>
   <block id="e2a733504c4088b809813bbb35a3ddfd" category="inline-link-macro">了解如何注册获取支持</block>
-  <block id="a12ea39ddf1c98adfd7f751299705efa" category="paragraph">要使用*创建案例*功能，您必须先注册获得支持。 将您的NetApp支持站点凭据与您的工作负载出厂登录关联起来。<block ref="d9fea24984986beabae03291c4b721de" category="inline-link-macro-rx"></block>(英文)</block>
-  <block id="356c88ac4b0ec3f7689cc91f54701fef" category="list-text">在Workload Factory控制台的右上角，选择*Help &gt; Support*。</block>
   <block id="aadd86a3fadf19221852692c6e4adc2f" category="paragraph">选择此选项将打开BlueXP控制台一个新的浏览器选项卡并加载支持信息板。</block>
   <block id="08d96fdd1a845d80db99e6e1dffb8bc7" category="list-text">在*资源*页面上、在技术支持下选择一个可用选项：</block>
   <block id="6a1b74969231967ed071d465206b15c7" category="list-text">如果您想通过电话与某人通话，请选择*呼叫我们*。系统会将您定向到netapp.com上的一个页面、其中列出了您可以拨打的电话号码。</block>
@@ -264,8 +257,6 @@
   <block id="28fc544db57c6f54a41eaa5c6ebc4a57" category="paragraph"><block ref="28fc544db57c6f54a41eaa5c6ebc4a57" category="inline-image-macro-rx" type="image"></block></block>
   <block id="243263104c829e77835d632f591230d5" category="summary">在向NetApp技术支持部门创建支持案例之前、您需要向BlueXP添加一个NetApp 支持站点 帐户、然后注册获取支持。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
-  <block id="996ad73a480311d4f86d6946935389d2" category="paragraph">要获得特定于Workload Factory及其存储解决方案和服务的技术支持、需要注册支持。您必须从BlueXP控制台注册获得支持、BlueXP控制台是一个与Workload Factory不同的基于Web的控制台。</block>
-  <block id="c552970fd4dc8118ba1806da596acad9" category="paragraph">注册获取支持不会为云提供商文件服务启用NetApp支持。有关与云提供商文件服务、其基础架构或任何使用该服务的解决方案相关的技术支持、请参阅该产品的Workload Factory文档中的"获得帮助"。</block>
   <block id="0b0e252af8897fbe981ec6682d2aa33b" category="section-title">支持注册概述</block>
   <block id="d7e4bb081bf4ec4814d83edcfbdb8b96" category="paragraph">注册您的帐户ID支持订阅(您的20位960xxxxxxxxx序列号位于BlueXP的支持资源页面上)将作为您的单个支持订阅ID。必须注册每个BlueXP帐户级别的支持订阅。</block>
   <block id="f9e05c2b383e3f11e3b4bebbe8952225" category="paragraph">通过注册、您可以创建支持服务单和自动生成案例等功能。要完成注册、请按如下所述将NetApp 支持站点(NSS)帐户添加到BlueXP中。</block>
@@ -332,8 +323,6 @@
   <block id="922bba58b532e71878d3d5858f7e8194" category="list-text">在云中发现、部署和管理Amazon FSx for NetApp ONTAP文件系统。FSx for ONTAP将ONTAP的全部功能引入原生AWS托管服务、提供一致的混合云体验。</block>
   <block id="6d46b033eabdea8f60b174a46dfcfb14" category="list-text">将内部vSphere环境迁移到基于AWS的VMware Cloud</block>
   <block id="f760ee48ca0d5104a3c884c851536392" category="list-text">通过VMware Cloud on AWS迁移顾问、您可以分析内部vSphere环境中的当前虚拟机配置、生成将建议的虚拟机布局部署到VMware Cloud on AWS的计划、并将适用于NetApp ONTAP文件系统的自定义Amazon FSx用作外部数据存储库。</block>
-  <block id="9a65d2a72eb8a959d799dda25fa053e1" category="list-text">经过优化的数据库部署</block>
-  <block id="65ebf27c56e124c006284c1cd9f06d3d" category="list-text">部署Microsoft SQL Server、数据库和数据库克隆、包括AWS资源配置、存储配置、网络连接和操作系统配置、利用优化的部署配置确保设置过程一致且无错误。</block>
   <block id="c8556381857e2b130302cd1951b0b62c" category="list-text">AI聊天机器人开发</block>
   <block id="b74c52466a8f67e18b547bf25d14844f" category="list-text">利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。</block>
   <block id="1a78f887c27cbb9e00745a4c2bb056a1" category="list-text">分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。</block>
@@ -354,9 +343,6 @@
   <block id="7c408fda146892c9e1c039f91fee3cd3" category="paragraph">CodeBox窗格显示由特定作业流操作生成的IAC、并通过图形向导或对话聊天界面进行匹配。虽然CodeBox支持颜色编码和搜索、以便于导航和分析、但它不允许编辑。您只能复制或保存到自动化目录。</block>
   <block id="ec6b8f7cd0c5cd9853d947bc13f72f4b" category="inline-link-macro">了解有关CodeBox的更多信息</block>
   <block id="7221d615997ca03d4480df5a43dae047" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block>(英文)</block>
-  <block id="3d40a6fbdf1b779c8b032be37bcf95a4" category="paragraph">在不同类型的存储系统之间进行比较的标准包括所需总容量和总性能、其中包括所需IOPS和所需吞吐量。</block>
-  <block id="c8d9b9f1a68d559ab984d4aa5efa4076" category="inline-link">了解如何使用存储计算器了解节省的空间</block>
-  <block id="62ee06e3888f5791ca82b765e4aa3773" category="paragraph"><block ref="62ee06e3888f5791ca82b765e4aa3773" category="inline-link-rx"></block></block>
   <block id="c257f5c852c12409e63afb17104f69c5" category="section-title">REST API</block>
   <block id="0fe398a436a33849be29455ed17d4185" category="list-text">这些API是根据REST技术和当前最佳实践设计的。核心技术包括HTTP和JSON。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">开始使用</block>
@@ -535,7 +521,6 @@
   <block id="691199ddecf65c4783496c94612dd07f" category="paragraph">您不需要链接即可开始使用工作负载工厂、但在某些情况下、您需要创建一个链接来解锁所有工作负载工厂功能和工作负载功能。</block>
   <block id="977c73c0914e897973f4ba0be879711f" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行工作负载工厂支持的任何操作所需的代码。代码格式包括工作负载工厂REST API、AWS CLI和AWS CloudFormation。</block>
   <block id="4d062c42aef687546a9198cf40695389" category="paragraph">CodeBox与工作负载出厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还为将来快速重复使用设置了自动化目录。</block>
-  <block id="4242d4bda912ada98fa8b7882d2419a1" category="paragraph">工作负载工厂提供了一个节省计算器、您可以将ONTAP文件系统FSx上的存储成本与Windows文件服务器的Elelic Block Store (EBS)、Elelic File Systems (EFS)和FSx上的存储成本进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
   <block id="200e3179449390bdf5f3f8d9a199630c" category="section-title">用于工作负载工厂的工具</block>
   <block id="b5a374f3f5b31b5057808689d26fe2c4" category="paragraph">您可以将BlueXP  工作负载工厂与以下工具结合使用：</block>
   <block id="d5688c5bf16d0126d5b27759385bd41e" category="list-text">*工作负载工厂控制台*：工作负载工厂控制台提供了一个可视化界面，可让您全面了解应用程序和项目</block>
@@ -558,4 +543,20 @@
   <block id="1a34f743bd98b1658401ce2f8206ff9a" category="paragraph"><block ref="1a34f743bd98b1658401ce2f8206ff9a" category="inline-link-macro-rx"></block></block>
   <block id="428b0b39be2352757edeb5f9f12a7bdd" category="inline-link">BlueXP  工作负载工厂</block>
   <block id="7cf449620aa459bc5c449db69b07e507" category="paragraph"><block ref="7cf449620aa459bc5c449db69b07e507" category="inline-link-rx"></block></block>
+  <block id="b6a4501cc05e54e2e5a513c3b552183a" category="paragraph">NetApp以多种方式为BlueXP  工作负载工厂及其云服务提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和社区论坛。您的支持注册包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="261966eaf033c38f6934f2c8fc36d79c" category="paragraph">有关FSx for ONTAP、其基础架构或任何使用该服务的解决方案的技术支持、请参阅该产品的工作负载工厂文档中的"获得帮助"。</block>
+  <block id="5b49df4e58e2a4750acd8bfa8687ccd6" category="paragraph">您当前正在查看的工作负载工厂文档。</block>
+  <block id="ba51332e265e54eb4295d6e7d057bad8" category="paragraph">搜索工作负载工厂知识库、查找有助于解决问题的文章。</block>
+  <block id="fc3e8f3c2017c33d444d483913a485ba" category="paragraph">加入工作负载工厂社区、关注正在进行的讨论或创建新的讨论。</block>
+  <block id="ffa18fada5deeeb1e533786297855e7d" category="paragraph">要使用*创建案例*功能，您必须先注册支持。请将您的NetApp支持站点凭据与您的工作负载出厂登录名关联起来。<block ref="d9fea24984986beabae03291c4b721de" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="e13a5649dfef3a1c76c4be8e463226d7" category="list-text">在工作负载工厂控制台的右上角，选择*Help &gt; Support*。</block>
+  <block id="ce638fcfafd4d79a49524062225d7fbc" category="paragraph">要获得特定于BlueXP  工作负载工厂及其存储解决方案和服务的技术支持、需要注册支持。您必须从BlueXP  控制台注册获取支持、该控制台是工作负载出厂时单独的基于Web的控制台。</block>
+  <block id="2cbcc262b0a39ec19c5f69bffccb70fb" category="paragraph">注册获取支持不会为云提供商文件服务启用NetApp支持。有关与云提供商文件服务、其基础架构或任何使用该服务的解决方案相关的技术支持、请参阅该产品的工作负载工厂文档中的"获得帮助"。</block>
+  <block id="fd1a283b46f9e16faf592b1eb5138a94" category="list-text">数据库生命周期管理</block>
+  <block id="47b4ea23585c5454c4427e68acf95fc4" category="list-text">利用Amazon FSx for NetApp ONTAP发现数据库工作负载并分析节省的成本；在将SQL Server数据库迁移到FSx for ONTAP存储时利用存储和应用程序的优势；部署SQL Server、数据库和数据库克隆以实施供应商最佳实践；使用基础架构即代码联合试点来自动执行操作；持续监控和优化SQL Server资产以提高性能、可用性、保护能力和成本效益。</block>
+  <block id="9c38730e32d53f3eda487d3abd1ce6e9" category="paragraph">Workload Factory提供了节省量计算器、因此您可以将FSx for ONTAP文件系统上的存储环境或数据库工作负载的成本与Elasic Block Store (EBS)、Elasic File Systems (EFS)和FSx for Windows File Server进行比较。根据您的存储要求、您可能会发现FSx for ONTAP文件系统是最经济高效的选择。</block>
+  <block id="9f346a017efd92b537be153b5fc3b7d1" category="inline-link-macro">了解如何探索存储环境的节省</block>
+  <block id="764ffbbd234e8c610462259cf8d50b5a" category="list-text"><block ref="764ffbbd234e8c610462259cf8d50b5a" category="inline-link-macro-rx"></block></block>
+  <block id="28926214529dd2082ee42d4efccc4f1e" category="inline-link-macro">了解如何探索为数据库工作负载节省的空间</block>
+  <block id="ec6c7e2795e3d76a80250e83f4a0055e" category="list-text"><block ref="ec6c7e2795e3d76a80250e83f4a0055e" category="inline-link-macro-rx"></block></block>
 </blocks>

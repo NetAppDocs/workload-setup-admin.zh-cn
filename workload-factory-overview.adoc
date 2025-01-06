@@ -28,6 +28,7 @@ Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器�
 数据库生命周期管理:: 利用Amazon FSx for NetApp ONTAP发现数据库工作负载并分析节省的成本；在将SQL Server数据库迁移到FSx for ONTAP存储时利用存储和应用程序的优势；部署SQL Server、数据库和数据库克隆以实施供应商最佳实践；使用基础架构即代码联合试点来自动执行操作；持续监控和优化SQL Server资产以提高性能、可用性、保护能力和成本效益。
 AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。
 节省成本的计算器:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
+服务帐户以促进自动化:: 使用服务帐户安全可靠地自动执行BlueXP  工作负载出厂操作。服务帐户提供可靠、持久的自动化、不受任何用户管理限制、而且由于它们仅提供API访问、因此更安全。
 
 
 
@@ -64,12 +65,20 @@ AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天�
 
 image:screenshot-account-selection.png["提示您输入工作负载出厂帐户的工作负载出厂设置向导的屏幕截图。"]
 
-创建帐户时、您是该帐户的单个帐户管理员用户。
+创建帐户时、您是该帐户的单个_account admin_用户。
 
 如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。
 
 
 TIP: 如果您使用NetApp BlueXP 、则您将已属于某个帐户、因为工作负载工厂会利用BlueXP  帐户。
+
+
+
+==== 服务帐户
+
+服务帐户充当"用户"、可通过授权的API调用BlueXP  工作负载工厂以实现自动化。这样可以更轻松地管理自动化，因为您不需要基于可以随时离开公司的真实用户帐户构建自动化脚本。Workload Factory中的所有帐户持有人均视为帐户管理员。帐户管理员可以创建和删除多个服务帐户。
+
+link:manage-service-accounts.html["了解如何管理服务帐户"](英文)
 
 
 

@@ -331,7 +331,6 @@
   <block id="11cf550820ecd5e75ae1a9046f7f7f05" category="section-title">软件即服务</block>
   <block id="22412f0c62e1935807bc2c96a82d38cd" category="inline-link">基于Web的控制台</block>
   <block id="9b945efebb006547a94415eadaa12921" category="section-title">帐户</block>
-  <block id="6e1351546ad06187ed26aac56cc1d573" category="paragraph">创建帐户时、您是该帐户的单个帐户管理员用户。</block>
   <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。</block>
   <block id="d81fee99e7fd276bb44ecddacfeba318" category="list-text">*读取模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
   <block id="e2cde95c1c68867f8b74113e5266c7e4" category="list-text">*自动化模式*表示完全信任关系，旨在代表用户执行和自动化，以及分配的凭据，这些凭据具有执行所需的和经过验证的权限。</block>
@@ -559,4 +558,49 @@
   <block id="764ffbbd234e8c610462259cf8d50b5a" category="list-text"><block ref="764ffbbd234e8c610462259cf8d50b5a" category="inline-link-macro-rx"></block></block>
   <block id="28926214529dd2082ee42d4efccc4f1e" category="inline-link-macro">了解如何探索为数据库工作负载节省的空间</block>
   <block id="ec6c7e2795e3d76a80250e83f4a0055e" category="list-text"><block ref="ec6c7e2795e3d76a80250e83f4a0055e" category="inline-link-macro-rx"></block></block>
+  <block id="5baf4417d867f07ce7f16e7810f044d7" category="doc">支持BlueXP  工作负载工厂中的服务帐户</block>
+  <block id="369af9c9eae8f9673850f588a7ed5272" category="paragraph">现在、BlueXP  工作负载工厂支持服务帐户。您可以创建服务帐户、以充当自动化基础架构操作的计算机用户。</block>
+  <block id="f932d2619edea0dc69b40e9be53abdc4" category="inline-link-macro">创建和管理服务帐户</block>
+  <block id="3d6080aa10267e8c67d5c76a2bc1a9f3" category="paragraph"><block ref="3d6080aa10267e8c67d5c76a2bc1a9f3" category="inline-link-macro-rx"></block></block>
+  <block id="932645866653570a60b05477eb9d244b" category="summary">您可以通过创建自动化服务帐户来管理您的帐户、以满足您的需求。</block>
+  <block id="7b05bdd67cf260b16b28715ae682b5db" category="doc">管理服务帐户</block>
+  <block id="7e25e6f3444627cdd0a9518ea63a557b" category="paragraph">创建服务帐户、充当自动化基础架构操作的计算机用户。您可以随时撤消或更改对服务帐户的访问权限。</block>
+  <block id="bb121f2e42609305e9a35e628d683a11" category="paragraph">服务帐户是BlueXP  提供的多租户功能。帐户管理员可创建服务帐户、控制访问和删除服务帐户。您可以在BlueXP  控制台中或BlueXP  工作负载出厂控制台中管理服务帐户。</block>
+  <block id="e6a44c030404947ef9ee349b021fc03d" category="inline-xref">删除服务帐户</block>
+  <block id="2d81d4fc8d386aa7db8bcac9b1d0b306" category="inline-xref">创建一个新的</block>
+  <block id="8a8feea1d87a91424b49ee757e409e8b" category="paragraph">与在BlueXP  中管理服务帐户(您可以重新创建客户端密钥)不同、Workload Factory仅支持创建和删除服务帐户。如果要在BlueXP  工作负载出厂控制台中为特定服务帐户重新创建客户端密钥，则需要<block ref="f3841cd8a6d92483cb4b2a04ae8d7e16" category="inline-xref-macro-rx"></block>依次执行、和<block ref="117d146838ec9f8b2a3508452b4bae51" category="inline-xref-macro-rx"></block>。</block>
+  <block id="de3df2812a77857f11a4d58813051825" category="paragraph">服务帐户使用客户端ID和密钥进行身份验证、而不是使用密码。客户端ID和密钥将一直固定、直到帐户管理员决定更改它们为止。要使用服务帐户、您将需要客户端ID和密钥来生成访问令牌、否则您将无法获得访问权限。请注意、访问令牌寿命很短、只能使用几个小时。</block>
+  <block id="4297b1c4d208bcc93d459bd6c06031df" category="paragraph">确定要在BlueXP  控制台中还是在BlueXP  工作负载出厂控制台中创建服务帐户。存在细微差别。以下说明介绍如何在BlueXP  工作负载出厂控制台中管理服务帐户。</block>
+  <block id="3ae998467dc1449fb591d75901000406" category="inline-link-macro">了解BlueXP  身份和访问管理</block>
+  <block id="97a3c660b50f6bf13e2dacbc15e9c830" category="inline-link-macro">了解如何添加BlueXP  IAM成员并管理其权限</block>
+  <block id="9c5579c348844cc1b850bd02a96ffe67" category="paragraph">在BlueXP 、和中管理服务帐户<block ref="1d755ffa92795de859e3dba230e1f04d" category="inline-link-macro-rx"></block><block ref="aa435623882bd3c92d8bd95e95dc35fe" category="inline-link-macro-rx"></block>。</block>
+  <block id="41d9e1257b3e21add2e59d038938ea94" category="section-title">创建服务帐户</block>
+  <block id="3f196be1bd5cfb3c4da4e6f58d7c33ed" category="paragraph">在创建服务帐户时、您可以通过BlueXP  Workload Factory为该服务帐户复制或下载客户端ID和客户端密钥。此密钥对用于向BlueXP  工作负载工厂进行身份验证。</block>
+  <block id="7361ae18df6957cd233a2900fa56a3a3" category="list-text">在工作负载出厂控制台中，选择*Account*图标，然后选择*Service accounts*。</block>
+  <block id="c3408ec590d1e3b7e7f77d145b976fb6" category="inline-image-macro">显示BlueXP  工作负载出厂用户界面帐户菜单选项的屏幕截图。其中一个选项是服务帐户。</block>
+  <block id="2bf662d0fe68884c8c6bfbf1c7e19b28" category="paragraph"><block ref="2bf662d0fe68884c8c6bfbf1c7e19b28" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ebbfd5cf39924ef59304d3b2d03bfad0" category="list-text">在*服务帐户*页面上，选择*创建服务帐户*。</block>
+  <block id="0631e752a6ccf3310e9ff6b0aba74a38" category="list-text">在“创建服务帐户”对话框中，在*Service account name*字段中输入服务帐户的名称。</block>
+  <block id="c151e8d990a5b1f7552461d4a7727f4a" category="paragraph">此时将预选*角色*作为*帐户管理员*。</block>
+  <block id="136dc09835924029e4299fa28f17233d" category="list-text">选择 * 继续 * 。</block>
+  <block id="a708a553b3abfac9aade748b9d27bc4e" category="list-text">复制或下载客户端 ID 和客户端密钥。</block>
+  <block id="8bfab18bdb5a0cbcfb26837e26880088" category="paragraph">客户端密钥仅显示一次、工作负载出厂时不会存储在任何位置。复制或下载密钥并将其安全存储。</block>
+  <block id="f487083f9c2db211b137935b7fc9dece" category="list-text">您也可以通过执行客户端凭据交换来获取Auth0管理API的访问令牌。CURL示例显示了如何获取客户端ID和密钥并使用API生成有时间限制的访问令牌。通过此令牌、您可以访问BlueXP  工作负载出厂API几小时。</block>
+  <block id="4a553bf9ebe9a32a6743c78be912cfbc" category="list-text">选择 * 关闭 * 。</block>
+  <block id="80487d01b1c728a010d93038c1678fff" category="paragraph">此时将创建新的服务帐户、并将其列在服务帐户页面上。</block>
+  <block id="30b299e9cb0ca616520dfdc739caa685" category="section-title">删除服务帐户</block>
+  <block id="22afe6994929c83f3a017a74a15c514d" category="paragraph">如果不再需要使用某个服务帐户，请将其删除。</block>
+  <block id="76eda590152f52e14b5333efced53ebe" category="list-text">在Workload Factory控制台中，选择*Account*图标，然后选择*Service accounts*。</block>
+  <block id="14c8c293bfd0a79761df78d64a7cdc09" category="list-text">在*Service accounts*页面上，选择三点菜单，然后选择*Delete*。</block>
+  <block id="897945ecf5c18d38834da2efd9b74699" category="list-text">在“删除服务帐户”对话框中，在文本框中输入*DELETE*。</block>
+  <block id="6b7a52834d577f2e4ac4d587036728f4" category="list-text">选择*Delete*确认删除。</block>
+  <block id="0b296fc415fe75b2e0eb7ea5db103354" category="paragraph">已删除此服务帐户。</block>
+  <block id="37b8354fe553b0151888468751ea8eb0" category="section-title">2025年1月5日</block>
+  <block id="99b22223be957cc9c37eee0aecb2007b" category="list-text">服务帐户以促进自动化</block>
+  <block id="cb62deea87371902deaeb1b0a009e387" category="list-text">使用服务帐户安全可靠地自动执行BlueXP  工作负载出厂操作。服务帐户提供可靠、持久的自动化、不受任何用户管理限制、而且由于它们仅提供API访问、因此更安全。</block>
+  <block id="13b1a844b08d2d7b8144e4c0db6b5552" category="paragraph">创建帐户时、您是该帐户的单个_account admin_用户。</block>
+  <block id="c33f7c2cbeaca5f1462c1b3e1c276145" category="section-title">服务帐户</block>
+  <block id="05cf180c93dd06147c24c610cae8dd96" category="paragraph">服务帐户充当"用户"、可通过授权的API调用BlueXP  工作负载工厂以实现自动化。这样可以更轻松地管理自动化，因为您不需要基于可以随时离开公司的真实用户帐户构建自动化脚本。Workload Factory中的所有帐户持有人均视为帐户管理员。帐户管理员可以创建和删除多个服务帐户。</block>
+  <block id="25e9dc09fd109741b1c7237f825ab46e" category="inline-link-macro">了解如何管理服务帐户</block>
+  <block id="09c9cabc1664a7683d1d411a37775b39" category="paragraph"><block ref="f09e11341fa2be3f754588bca37990f8" category="inline-link-macro-rx"></block>(英文)</block>
 </blocks>

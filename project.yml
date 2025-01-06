@@ -41,6 +41,8 @@ sidebar:
     entries:
     - title: 登录到工作负载工厂
       url: "/log-in.html"
+    - title: 管理服务帐户
+      url: "/manage-service-accounts.html"
     - title: 使用CodeBox自动执行任务
       entries:
       - title: 了解CodeBox

@@ -1,0 +1,11 @@
+= 支持BlueXP  工作负载工厂中的服务帐户
+:allow-uri-read: 
+
+
+
+
+=== 支持BlueXP  工作负载工厂中的服务帐户
+
+现在、BlueXP  工作负载工厂支持服务帐户。您可以创建服务帐户、以充当自动化基础架构操作的计算机用户。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-service-accounts.html["创建和管理服务帐户"]

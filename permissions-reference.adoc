@@ -1,0 +1,2067 @@
+---
+sidebar: sidebar 
+permalink: permissions-reference.html 
+keywords: permissions, actions 
+summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供权限、以便工作负载工厂可以在云环境中执行操作。 
+---
+= BlueXP  工作负载出厂时的权限
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+要使用BlueXP  工作负载工厂功能和服务、您需要提供权限、以便工作负载工厂可以在云环境中执行操作。
+
+
+
+== 为什么要使用权限
+
+提供读取或自动模式权限时、Workload Factory会将一个策略附加到实例、并为其授予管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。
+
+例如、对于数据库工作负载、如果为工作负载工厂授予了所需权限、则它会扫描给定帐户和区域中的所有EC2实例、并筛选所有基于Windows的计算机。如果在主机上安装了AWS Systems Manager (SSM)代理并运行此代理、并且System Manager网络配置正确、则工作负载工厂可以访问Windows计算机并验证是否安装了SQL Server软件。
+
+
+
+== 按工作负载划分的权限
+
+每个工作负载都使用权限在工作负载出厂时执行某些任务。滚动到您使用的工作负载以查看权限列表、其用途、使用位置以及支持这些权限的模式。
+
+
+
+=== 存储的权限
+
+可用于存储的IAM策略可根据您的操作模式为工作负载工厂提供管理公有云环境中的资源和流程所需的权限。
+
+选择操作模式以查看所需的IAM策略：
+
+.存储的IAM策略
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.读取模式
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:Describe*",
+        "fsx:ListTagsForResource",
+        "ec2:Describe*",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+.自动模式
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
+        }
+      }
+    }
+  ]
+}
+----
+--
+=====
+====
+下表显示了存储的权限。
+
+.存储权限表
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| 目的 | 操作 | 使用位置 | 模式 
+
+
+| 创建FSx for ONTAP文件系统 | FSx：CreateFileSystem* | 部署 | 自动化 
+
+
+| 为FSx for ONTAP文件系统创建安全组 | EC2：CreateSecurityGroup | 部署 | 自动化 
+
+
+| 为FSx for ONTAP文件系统的安全组添加标记 | EC2：CreateTags | 部署 | 自动化 
+
+
+.2+| 授权FSx for ONTAP文件系统的安全组传出和传入 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+
+
+.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 自动化 
+
+
+| EC2：DeleteSecurityGroup | 管理操作 | 自动化 
+
+
+.16+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolumes* | 管理操作 | 自动化 
+
+
+| FSx：TagResource* | 管理操作 | 自动化 
+
+
+| FSx：CreateStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：DeleteFileSystem* | 管理操作 | 自动化 
+
+
+| FSx：DeleteStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：可通过它来对FileSystems*进行操作 | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：可对StorageVirtualMachines*进行分型 | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：UpdateFileSystem* | 管理操作 | 自动化 
+
+
+| FSx：UpdateStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：可对卷进行分过程* | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：UpdateVolumes* | 管理操作 | 自动化 
+
+
+| FSx：DeleteVolumes* | 管理操作 | 自动化 
+
+
+| FSx：UnTagResource* | 管理操作 | 自动化 
+
+
+| FSx：可对备份进行分型* | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：CreateBackup* | 管理操作 | 自动化 
+
+
+| FSx：CreateVolume F生成 备份* | 管理操作 | 自动化 
+
+
+| 列出FSx for ONTAP资源的标记 | FSx：ListTagsForResource | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+.7+| 获取详细信息以填写FSx for ONTAP文件系统部署表 | EC2：Describe  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe子网  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe注册  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe安全性组  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe RouteTables  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe网络接口  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：描述卷状态  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取EC2实例的卷详细信息 | EC2：Describe卷  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取EC2实例的详细信息 | EC2：Describe实例 | 了解节省量  a| 
+* 读取
+* 自动化
+
+
+
+
+.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+
+
+| 公里：描述* | 部署 | 自动化 
+
+
+| 公里：列表* | 部署 | 自动化 
+
+
+| 在节省量计算器中描述Elelic File System | 文件系统的设置：描述* | 了解节省量 | 读取 
+
+
+| 报告CloudWatch指标 | CloudWatch：PutMetricData | 管理操作 | 自动化 
+
+
+.2+| 获取文件系统和卷指标 | CloudWatch：GetMetricData | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+| CloudWatch：GetMetricStatistics | 管理操作  a| 
+* 读取
+* 自动化
+
+
+|===
+====
+
+
+=== 数据库工作负载的权限
+
+可用于数据库工作负载的IAM策略可根据您的操作模式为工作负载工厂提供管理公有云环境中的资源和流程所需的权限。
+
+选择操作模式以查看所需的IAM策略：
+
+.数据库工作负载的IAM策略
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.读取模式
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "sns:ListTopics",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeAddresses",
+        "kms:ListAliases",
+        "kms:ListKeys",
+        "kms:DescribeKey",
+        "cloudformation:ListStacks",
+        "cloudformation:DescribeAccountLimits",
+        "ds:DescribeDirectories",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeBackups",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeFileSystems",
+        "servicequotas:ListServiceQuotas",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:SendCommand",
+        "ssm:DescribePatchBaselines",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:ListCommands",
+        "fsx:ListTagsForResource"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    }
+  ]
+}
+----
+--
+.自动模式
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EC2Group",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AllocateAddress",
+        "ec2:AllocateHosts",
+        "ec2:AssignPrivateIpAddresses",
+        "ec2:AssociateAddress",
+        "ec2:AssociateRouteTable",
+        "ec2:AssociateSubnetCidrBlock",
+        "ec2:AssociateVpcCidrBlock",
+        "ec2:AttachInternetGateway",
+        "ec2:AttachNetworkInterface",
+        "ec2:AttachVolume",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:CreateVolume",
+        "ec2:DeleteNetworkInterface",
+        "ec2:DeleteSecurityGroup",
+        "ec2:DeleteTags",
+        "ec2:DeleteVolume",
+        "ec2:DetachNetworkInterface",
+        "ec2:DetachVolume",
+        "ec2:DisassociateAddress",
+        "ec2:DisassociateIamInstanceProfile",
+        "ec2:DisassociateRouteTable",
+        "ec2:DisassociateSubnetCidrBlock",
+        "ec2:DisassociateVpcCidrBlock",
+        "ec2:ModifyInstanceAttribute",
+        "ec2:ModifyInstancePlacement",
+        "ec2:ModifyNetworkInterfaceAttribute",
+        "ec2:ModifySubnetAttribute",
+        "ec2:ModifyVolume",
+        "ec2:ModifyVolumeAttribute",
+        "ec2:ReleaseAddress",
+        "ec2:ReplaceRoute",
+        "ec2:ReplaceRouteTableAssociation",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:StartInstances",
+        "ec2:StopInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+        }
+      }
+    },
+    {
+      "Sid": "FSxNGroup",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:TagResource"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "aws:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+        }
+      }
+    },
+    {
+      "Sid": "CommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStacks",
+        "cloudformation:ListStacks",
+        "cloudformation:ValidateTemplate",
+        "cloudformation:DescribeAccountLimits",
+        "cloudwatch:GetMetricStatistics",
+        "ds:DescribeDirectories",
+        "ec2:CreateLaunchTemplate",
+        "ec2:CreateLaunchTemplateVersion",
+        "ec2:CreateNetworkInterface",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:CreateVpcEndpoint",
+        "ec2:Describe*",
+        "ec2:Get*",
+        "ec2:RunInstances",
+        "ec2:ModifyVpcAttribute",
+        "ec2messages:*",
+        "fsx:CreateFileSystem",
+        "fsx:UpdateFileSystem",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:CreateVolume",
+        "fsx:UpdateVolume",
+        "fsx:Describe*",
+        "fsx:List*",
+        "kms:CreateGrant",
+        "kms:Describe*",
+        "kms:List*",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLog*",
+        "logs:GetLog*",
+        "logs:ListLogDeliveries",
+        "logs:PutLogEvents",
+        "logs:TagResource",
+        "servicequotas:ListServiceQuotas",
+        "sns:ListTopics",
+        "sns:Publish",
+        "ssm:Describe*",
+        "ssm:Get*",
+        "ssm:List*",
+        "ssm:PutComplianceItems",
+        "ssm:PutConfigurePackageResult",
+        "ssm:PutInventory",
+        "ssm:SendCommand",
+        "ssm:UpdateAssociationStatus",
+        "ssm:UpdateInstanceAssociationStatus",
+        "ssm:UpdateInstanceInformation",
+        "ssmmessages:*",
+        "compute-optimizer:GetEnrollmentStatus",
+        "compute-optimizer:PutRecommendationPreferences",
+        "compute-optimizer:GetEffectiveRecommendationPreferences",
+        "compute-optimizer:GetEC2InstanceRecommendations",
+        "autoscaling:DescribeAutoScalingGroups",
+        "autoscaling:DescribeAutoScalingInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ArnGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:SignalResource"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:*:*:stack/WLMDB*",
+        "arn:aws:logs:*:*:log-group:WLMDB*"
+      ]
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AddRoleToInstanceProfile",
+        "iam:CreateInstanceProfile",
+        "iam:CreateRole",
+        "iam:DeleteInstanceProfile",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser",
+        "iam:PutRolePolicy",
+        "iam:RemoveRoleFromInstanceProfile",
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup1",
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "IAMGroup2",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    }
+  ]
+}
+----
+--
+=====
+====
+下表显示了数据库工作负载的权限。
+
+.数据库工作负载的权限表
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| 目的 | 操作 | 使用位置 | 模式 
+
+
+| 获取FSx for ONTAP、EBS和FSx for Windows File Server的指标统计信息 | CloudWatch：GetMetricStatistics  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 列出并设置事件触发器 | SnS：ListTopics | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+.4+| 获取EC2实例的详细信息 | EC2：Describe实例  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe KeyPairs | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe网络接口 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：可说明实例型  a| 
+* 部署
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+.6+| 获取详细信息以填写FSx for ONTAP部署表 | EC2：Describe  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe子网  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe安全性组 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe注册 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| EC2：Describe RouteTables  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取任何现有VPC端点、以确定是否需要在部署之前创建新端点 | EC2：Describe VpcEndpoints  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取验证节点所在地区可用的实例类型(t2.micro/t3.micro) | EC2：说明InstanceTypeOfferings | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取所连接的每个EBS卷的快照详细信息、以了解定价和预计节省量 | EC2：Describe Snapshot | 了解节省量  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取所连接的每个EBS卷的详细信息、以了解定价和预计节省量 | EC2：Describe卷  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+.3+| 获取FSx for ONTAP文件系统加密的KMS密钥详细信息 | Kms：ListAliases | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| Kms：ListKey | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| Kms：可通过键进行操作 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取环境中运行的CloudFormation堆栈列表以检查配额限制 | CloudFormation：ListStack | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取区域中AWS管理的Active Directory列表 | DS：可通过子目录进行操作 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+.5+| 获取适用于ONTAP文件系统的FSx的卷、备份、SVM、文件系统(以英文)和标记的列表和详细信息 | FSx：可对卷进行分过程  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：对备份进行了分过程  a| 
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：讲解StorageVirtualMachine  a| 
+* 部署
+* 管理操作
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：可对FileSystems进行情况分类  a| 
+* 部署
+* 管理操作
+* 清单
+* 了解节省量
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：ListTagsForResource | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取CloudFormation和VPC的服务配额限制 | serviceequotas：ListServiceQuotas | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 使用基于SSM的查询获取FSx for ONTAP支持的区域的更新列表 | SSM：GetPathetersByPath | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 在部署后发送管理操作命令后轮询SSM响应 | SSM：GetCommandInvation  a| 
+* 管理操作
+* 清单
+* 了解节省量
+* 优化
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 通过SSM向EC2实例发送命令 | SSM：SendCommand  a| 
+* 管理操作
+* 清单
+* 了解节省量
+* 优化
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取部署后实例的SSM连接状态 | SSM：GetConnectionStatus  a| 
+* 管理操作
+* 清单
+* 优化
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取可用于操作系统修补程序评估的修补程序基线列表 | SSM：对修补程序基准线进行了详述 | 优化  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取Windows EC2实例上的修补状态、以进行操作系统修补程序评估 | SSM：说明InstancePatchStates | 优化  a| 
+* 读取
+* 自动化
+
+
+
+
+| 列出AWS Patch Manager在EC2实例上执行的命令、用于管理操作系统修补程序 | SSM：ListCommands | 优化  a| 
+* 读取
+* 自动化
+
+
+
+
+.4+| 获取、列出、创建和删除在部署期间使用或在AWS帐户中管理的AD、FSx for ONTAP和SQL用户凭据的SSM参数 | SSM：Get参 比器^1^  a| 
+* 部署
+* 管理操作
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| SSM：GetParameters ^1^ | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+| SSM：Put参 比器^1^  a| 
+* 部署
+* 管理操作
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| SSM：删除参数^1^ | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+.9+| 将网络资源与SQL节点和验证节点相关联、并向SQL节点添加其他辅助IP | EC2：AllocateAddress ^1^ | 部署 | 自动化 
+
+
+| EC2：AllocateHsts ^1^ | 部署 | 自动化 
+
+
+| EC2：AssignPrivateIpAddresses ^1^ | 部署 | 自动化 
+
+
+| EC2：AssociateAddress ^1^ | 部署 | 自动化 
+
+
+| EC2：AssociateRouteTable ^1^ | 部署 | 自动化 
+
+
+| EC2：AssociateSubnetCindrBlock ^1^ | 部署 | 自动化 
+
+
+| EC2：AssociateVpcCindrBlock ^1^ | 部署 | 自动化 
+
+
+| EC2：AttachInternetGateway ^1^ | 部署 | 自动化 
+
+
+| EC2：AttachNetworkInterface ^1^ | 部署 | 自动化 
+
+
+| 将所需的EBS卷连接到SQL节点以进行部署 | EC2：Attach卷 | 部署 | 自动化 
+
+
+.2+| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+
+
+| 创建部署SQL节点所需的EBS卷 | EC2：CreateVolume | 部署 | 自动化 
+
+
+.11+| 删除为类型T2.micro创建的临时验证节点、以便回滚或重试失败的EC2 SQL节点 | EC2：DeleteNetworkInterface | 部署 | 自动化 
+
+
+| EC2：DeleteSecurityGroup | 部署 | 自动化 
+
+
+| EC2：DeleteTags | 部署 | 自动化 
+
+
+| EC2：DeleteVolume | 部署 | 自动化 
+
+
+| EC2：DetachNetworkInterface | 部署 | 自动化 
+
+
+| EC2：分离卷 | 部署 | 自动化 
+
+
+| EC2：与地址断开关联 | 部署 | 自动化 
+
+
+| EC2：DisassociateIamInstanceProfile | 部署 | 自动化 
+
+
+| EC2：与RouteTable断开关联 | 部署 | 自动化 
+
+
+| EC2：DisAssociateSubnetCindrBlock | 部署 | 自动化 
+
+
+| EC2：与VpcCindrBlock断开关联 | 部署 | 自动化 
+
+
+.7+| 修改已创建SQL实例的属性。仅适用于以“以期名”开头的名称。 | EC2：ModifyInstance属性 | 部署 | 自动化 
+
+
+| EC2：可通过实例布局进行设置 | 部署 | 自动化 
+
+
+| EC2：ModifyNetworkInterfaceAttribute | 部署 | 自动化 
+
+
+| EC2：可使用的子网属性 | 部署 | 自动化 
+
+
+| EC2：ModifyVolume | 部署 | 自动化 
+
+
+| EC2：ModifyVolumeAttribute | 部署 | 自动化 
+
+
+| EC2：modfyVpcAttribute. | 部署 | 自动化 
+
+
+.5+| 取消关联并销毁验证实例 | EC2：ReleraAddress | 部署 | 自动化 
+
+
+| EC2：ReteraRoute | 部署 | 自动化 
+
+
+| EC2：ReporteRouteTableAssociation | 部署 | 自动化 
+
+
+| EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：RevokeSecurityGroupIngress | 部署 | 自动化 
+
+
+| 启动已部署的实例 | EC2：StartInstances | 部署 | 自动化 
+
+
+| 停止已部署的实例 | EC2：StopInstances | 部署 | 自动化 
+
+
+| 标记由Windows资源管理组织创建的Amazon FSx for NetApp ONTAP资源的自定义值、以便在资源管理期间获取帐单详细信息 | FSx：TagResource ^1^  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+.5+| 创建并验证用于部署的CloudFormation模板 | CloudFormation：CreateStack | 部署 | 自动化 
+
+
+| CloudFormation：Describe StackEvents | 部署 | 自动化 
+
+
+| CloudFormation：Describe堆栈 | 部署 | 自动化 
+
+
+| CloudFormation：ListStack | 部署 | 自动化 
+
+
+| CloudFormation：验证模板 | 部署 | 自动化 
+
+
+| 提取计算优化建议的指标 | CloudWatch：GetMetricStatistics | 了解节省量 | 自动化 
+
+
+| 提取区域中可用的目录 | DS：可通过子目录进行操作 | 部署 | 自动化 
+
+
+.2+| 为附加到已配置EC2实例的安全组添加规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+
+
+.2+| 创建嵌套堆栈模板以重试和回滚 | EC2：CreateLaunch模板 | 部署 | 自动化 
+
+
+| EC2：CreateLaunch模板版本 | 部署 | 自动化 
+
+
+.3+| 管理已创建实例上的标记和网络安全性 | EC2：CreateNetworkInterface | 部署 | 自动化 
+
+
+| EC2：CreateSecurityGroup | 部署 | 自动化 
+
+
+| EC2：CreateTags | 部署 | 自动化 
+
+
+| 删除为验证节点临时创建的安全组 | EC2：DeleteSecurityGroup | 部署 | 自动化 
+
+
+.2+| 获取用于配置的实例详细信息 | EC2：描述*  a| 
+* 部署
+* 清单
+* 了解节省量
+
+| 自动化 
+
+
+| EC2：获取*  a| 
+* 部署
+* 清单
+* 了解节省量
+
+| 自动化 
+
+
+| 启动已创建的实例 | EC2：RunInstances | 部署 | 自动化 
+
+
+| System Manager使用AWS消息交付服务端点执行API操作 | ec2messages：*  a| 
+* 部署*清单
+
+| 自动化 
+
+
+.3+| 创建配置所需的FSx for ONTAP资源。对于现有FSx for ONTAP系统、将创建一个新的SVM来托管SQL卷。 | FSx：CreateFileSystem | 部署 | 自动化 
+
+
+| FSx：CreateStorageVirtualMachine | 部署 | 自动化 
+
+
+| FSx：CreateVolume  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+.2+| 获取FSx for ONTAP详细信息 | FSX：描述*  a| 
+* 部署
+* 清单
+* 管理操作
+* 了解节省量
+
+| 自动化 
+
+
+| FSX：List*  a| 
+* 部署
+* 清单
+
+| 自动化 
+
+
+| 调整FSx for ONTAP文件系统的大小以修复文件系统余量 | FSx：UpdateFilesystem | 优化 | 自动化 
+
+
+| 调整卷大小以修复日志和TempDB驱动器大小 | FSx：UpdateVolume | 优化 | 自动化 
+
+
+.4+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+
+
+| 公里：描述* | 部署 | 自动化 
+
+
+| 公里：列表* | 部署 | 自动化 
+
+
+| Kms：GenerateDataKey | 部署 | 自动化 
+
+
+.7+| 为在EC2实例上运行的验证和配置脚本创建CloudWatch日志 | 日志：CreateLogGroup | 部署 | 自动化 
+
+
+| 日志：CreateLogStream | 部署 | 自动化 
+
+
+| 日志:~日志* | 部署 | 自动化 
+
+
+| 日志:getlog* | 部署 | 自动化 
+
+
+| 日志：ListLogDelivery | 部署 | 自动化 
+
+
+| 日志：PutLogEvents  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| 日志:TagResource | 部署 | 自动化 
+
+
+| 在用户帐户中为为SQL、域和FSx for ONTAP提供的凭据创建机密 | serviceequotas：ListServiceQuotas | 部署 | 自动化 
+
+
+.2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 | 自动化 
+
+
+| SNS：发布 | 部署 | 自动化 
+
+
+.11+| 在已配置的SQL实例上运行发现脚本以及提取FSx for ONTAP支持的AWS区域的最新列表所需的SSM权限。 | SSM：描述* | 部署 | 自动化 
+
+
+| SSM：获取*  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| SSM：列表* | 部署 | 自动化 
+
+
+| SSM：PutCompletianceItems | 部署 | 自动化 
+
+
+| SSM：PutConfigurePackageResult | 部署 | 自动化 
+
+
+| SSM：PutInventory | 部署 | 自动化 
+
+
+| SSM：SendCommand  a| 
+* 部署
+* 清单
+* 管理操作
+
+| 自动化 
+
+
+| SSM：UpdateAssociationStatus | 部署 | 自动化 
+
+
+| SSM：UpdateInstanceAssociationStatus | 部署 | 自动化 
+
+
+| SSM：UpdateInstanceInformation | 部署 | 自动化 
+
+
+| ssmmessages：*  a| 
+* 部署
+* 清单
+* 管理操作
+
+| 自动化 
+
+
+.4+| 保存FSx for ONTAP、Active Directory和SQL用户的凭据(仅用于SQL用户身份验证) | SSM：Get参 比器^1^  a| 
+* 部署
+* 管理操作
+* 清单
+
+| 自动化 
+
+
+| SSM：GetParameters ^1^  a| 
+* 部署
+* 清单
+
+| 自动化 
+
+
+| SSM：Put参 比器^1^  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| SSM：删除参数^1^  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| 成功或失败时向CloudFormation堆栈发送信号。 | CloudFormation：SignalResource ^1^ | 部署 | 自动化 
+
+
+| 将模板创建的EC2角色添加到EC2的实例配置文件中、以允许EC2上的脚本访问部署所需的资源。 | IAM：AddRoleToInstanceProfile | 部署 | 自动化 
+
+
+| 为EC2创建实例配置文件并附加已创建的EC2角色。 | IAM：CreateInstanceProfile | 部署 | 自动化 
+
+
+| 使用下面列出的权限通过模板创建EC2角色 | IAM：CreateRole | 部署 | 自动化 
+
+
+| 创建链接到EC2服务的角色 | IAM：CreateServiceLinkedIn Role ^2^ | 部署 | 自动化 
+
+
+| 删除在部署期间专为验证节点创建的实例配置文件 | IAM：DeleteInstanceProfile | 部署 | 自动化 
+
+
+.5+| 获取角色和策略详细信息、以确定权限方面的任何差距并进行部署验证 | IAM：GetPolicy | 部署 | 自动化 
+
+
+| IAM：GetPolicyVersion | 部署 | 自动化 
+
+
+| IAM：GetRole | 部署 | 自动化 
+
+
+| IAM：GetRolePolicy | 部署 | 自动化 
+
+
+| IAM：GetUser | 部署 | 自动化 
+
+
+| 将创建的角色传递到EC2实例 | IAM：PassRole ^3^ | 部署 | 自动化 
+
+
+| 将具有所需权限的策略添加到已创建的EC2角色 | IAM：PutRolePolicy | 部署 | 自动化 
+
+
+| 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 自动化 
+
+
+| 验证角色中的可用权限、并与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+|===
+. 权限仅限于从“资源管理模块”开始的资源。
+. "IAM：CreateServiceLinkedIn Role"受"iam：AVsServiceName"限制：ec2.amazonaws.com"*
+. "IAM：PassRole"受"iam：PassedToService"限制：ec2.amazonaws.com"*
+
+
+====
+
+
+=== GenAI工作负载的权限
+
+适用于VMware工作负载的IAM策略提供了VMware工作负载工厂根据您的操作模式管理公有云环境中的资源和流程所需的权限。
+
+GenAI IAM策略仅在操作模式下可用：
+
+.适用于GenAI工作负载的IAM策略
+[%collapsible]
+====
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudformationGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack",
+        "cloudformation:DescribeStacks"
+      ],
+      "Resource": "arn:aws:cloudformation:*:*:stack/wlmai*/*"
+    },
+    {
+      "Sid": "EC2Group",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/aws:cloudformation:stack-name": "wlmai*"
+        }
+      }
+    },
+    {
+      "Sid": "EC2DescribeGroup",
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeTags",
+        "ec2:CreateVpcEndpoint",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstances",
+        "ec2:DescribeImages",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RunInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole",
+        "iam:CreateInstanceProfile",
+        "iam:AddRoleToInstanceProfile",
+        "iam:PutRolePolicy",
+        "iam:SimulatePrincipalPolicy",
+        "iam:GetRolePolicy",
+        "iam:GetRole",
+        "iam:TagRole"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "IAMGroup2",
+      "Effect": "Allow",
+      "Action": "iam:PassRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:PassedToService": "ec2.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "FSXNGroup",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:DescribeVolumes",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:ListTagsForResource"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "FSXNGroup2",
+      "Effect": "Allow",
+      "Action": [
+        "fsx:UntagResource",
+        "fsx:TagResource"
+      ],
+      "Resource": [
+        "arn:aws:fsx:*:*:volume/*/*",
+        "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+      ]
+    },
+    {
+      "Sid": "BedrockGroup",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
+        "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetModelInvocationLoggingConfiguration"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:PutParameter"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmai/*"
+    },
+    {
+      "Sid": "SSM",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameters",
+        "ssm:GetParametersByPath"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/aws/service/*"
+    },
+    {
+      "Sid": "SSMMessages",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetCommandInvocation"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SSMCommandDocument",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand"
+      ],
+      "Resource": [
+        "arn:aws:ssm:*:*:document/AWS-RunShellScript"
+      ]
+    },
+    {
+      "Sid": "SSMCommandInstance",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:SendCommand",
+        "ssm:GetConnectionStatus"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "ssm:resourceTag/aws:cloudformation:stack-name": "wlmai-*"
+        }
+      }
+    },
+    {
+      "Sid": "KMS",
+      "Effect": "Allow",
+      "Action": [
+        "kms:GenerateDataKey",
+        "kms:Decrypt"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SNS",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchAiEngine",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:TagResource",
+        "logs:DescribeLogStreams"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*"
+    },
+    {
+      "Sid": "CloudWatchAiEngineLogStream",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
+    },
+    {
+      "Sid": "CloudWatch2",
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:PutRetentionPolicy",
+        "logs:TagResource"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+    }
+  ]
+}
+----
+====
+下表提供了有关GenAI工作负载的权限的详细信息。
+
+.GenAI工作负载的权限表
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| 目的 | 操作 | 使用位置 | 模式 
+
+
+| 在部署和重建操作期间创建AI引擎CloudFormation堆栈 | CloudFormation：CreateStack | 部署 | 自动化 
+
+
+| 创建AI引擎CloudFormation堆栈 | CloudFormation：Describe堆栈 | 部署 | 自动化 
+
+
+| 列出AI引擎部署向导的区域 | EC2：Describe注册 | 部署 | 自动化 
+
+
+| 显示AI引擎标签 | EC2：Describe标记 | 部署 | 自动化 
+
+
+| 在创建AI引擎堆栈之前列出VPC端点 | EC2：CreateVpcEndpoint | 部署 | 自动化 
+
+
+| 在部署和重建操作期间创建AI引擎堆栈期间创建AI引擎安全组 | EC2：CreateSecurityGroup | 部署 | 自动化 
+
+
+| 标记在部署和重建操作期间创建AI引擎堆栈所创建的资源 | EC2：CreateTags | 部署 | 自动化 
+
+
+| 在AI引擎部署向导期间列出vPC | EC2：Describe | 部署 | 自动化 
+
+
+| 在AI引擎部署向导中列出子网 | EC2：Describe子网 | 部署 | 自动化 
+
+
+| 在AI引擎部署和重建期间获取路由表 | EC2：Describe RouteTables | 部署 | 自动化 
+
+
+| 在AI引擎部署向导期间列出密钥对 | EC2：Describe KeyPairs | 部署 | 自动化 
+
+
+| 在创建AI引擎堆栈期间列出安全组(以在专用端点上查找安全组) | EC2：Describe安全性组 | 部署 | 自动化 
+
+
+| 获取VPC端点以确定是否应在AI引擎部署期间创建任何端点 | EC2：Describe VpcEndpoints | 部署 | 自动化 
+
+
+| 列出实例以了解AI引擎状态 | EC2：Describe实例 | 故障排除 | 自动化 
+
+
+| 在部署和重建操作期间创建AI引擎堆栈期间列出映像 | EC2：Describe | 部署 | 自动化 
+
+
+.2+| 在部署和重建操作期间创建AI实例堆栈期间创建和更新AI实例和专用端点安全组 | EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：RevokeSecurityGroupIngress | 部署 | 自动化 
+
+
+| 在部署和重建操作期间创建CloudFormation堆栈期间运行AI引擎 | EC2：RunInstances | 部署 | 自动化 
+
+
+.2+| 在部署和重建操作期间创建堆栈期间、附加安全组并修改AI引擎的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+
+
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+
+
+| 在AI引擎部署期间查询Amazon Brock / Amazon CloudWatch日志记录状态 | Bedrock：GetLogocationLoggingConfiguration | 部署 | 自动化 
+
+
+| 向其中一个基础模型发起聊天请求 | Bedrock：Invoke的 使用ResponseStream的数据 | 部署 | 自动化 
+
+
+| 开始聊天/嵌入基础模型请求 | 基岩：InvokeModel | 部署 | 自动化 
+
+
+| 显示一个区域中可用的基础模型 | Bound：ListFoundation们 | 部署 | 自动化 
+
+
+| 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 自动化 
+
+
+| 在AI引擎向导期间获取支持FSx和基岩的区域 | SSM：GetPathetersByPath | 部署 | 自动化 
+
+
+| 获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像 | SSM：GetParameters | 部署 | 自动化 
+
+
+| 从发送到AI引擎的命令中获取SSM响应 | SSM：GetCommandInvation | 部署 | 自动化 
+
+
+.3+| 检查与AI发动机的SSM连接 | SSM：SendCommand | 部署 | 自动化 
+
+
+| SSM：GetConnectionStatus | 部署 | 自动化 
+
+
+| SSM：SendCommand | 部署 | 自动化 
+
+
+.8+| 在部署和重建操作期间创建堆栈期间创建AI引擎实例配置文件 | IAM：CreateRole | 部署 | 自动化 
+
+
+| IAM：CreateInstanceProfile | 部署 | 自动化 
+
+
+| IAM：AddRoleToInstanceProfile | 部署 | 自动化 
+
+
+| IAM：PutRolePolicy | 部署 | 自动化 
+
+
+| IAM：GetRolePolicy | 部署 | 自动化 
+
+
+| IAM：GetRole | 部署 | 自动化 
+
+
+| IAM：TagRole | 部署 | 自动化 
+
+
+| IAM：PassRole | 部署 | 自动化 
+
+
+| 验证角色中可用的权限、并在部署和重建操作期间与所需的权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+
+
+| 在"创建数据库"向导期间列出FSx文件系统 | FSx：可对卷进行分过程 | 创建知识库 | 自动化 
+
+
+| 在"创建集群"向导期间列出FSx文件系统卷 | FSx：可对FileSystems进行情况分类 | 创建知识库 | 自动化 
+
+
+| 在重建操作期间管理AI引擎上的数据库 | FSx：ListTagsForResource | 故障排除 | 自动化 
+
+
+| 在"创建集群"向导期间列出FSx文件系统Storage Virtual Machine | FSx：讲解StorageVirtualMachine | 部署 | 自动化 
+
+
+| 将此信息文档移至新实例 | FSx：UnTagResource | 故障排除 | 自动化 
+
+
+| 在重建期间管理AI引擎上的信息存储 | FSx：TagResource | 故障排除 | 自动化 
+
+
+.2+| 以安全的方式保存SSM密钥(ECR令牌、CIFS凭据、租户服务帐户密钥) | SSM：Get参 比器 | 部署 | 自动化 
+
+
+| SSM：Put\n参比器 | 部署 | 自动化 
+
+
+| 确认是否需要在部署和重建操作期间创建CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
+
+
+.2+| 在部署和重建操作期间、将AI引擎日志发送到CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+
+
+| 日志：PutRettionPolicy | 部署 | 自动化 
+
+
+| 将AI引擎日志发送到CloudWatch日志组 | 日志:TagResource | 故障排除 | 自动化 
+
+
+| 从CloudWatch获取SSM响应(响应时间过长) | 日志：特性日志流 | 故障排除 | 自动化 
+
+
+| 从CloudWatch获取SSM响应 | 日志：GetLogEvents | 故障排除 | 自动化 
+
+
+.3+| 在部署和重建操作期间创建堆栈期间、为基岩日志创建CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+
+
+| 日志：PutRettionPolicy | 部署 | 自动化 
+
+
+| 日志:TagResource | 部署 | 自动化 
+|===
+====
+
+
+=== VMware工作负载的权限
+
+适用于VMware工作负载的IAM策略提供了VMware工作负载工厂根据您的操作模式管理公有云环境中的资源和流程所需的权限。
+
+选择操作模式以查看所需的IAM策略：
+
+.VMware工作负载的IAM策略
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.读取模式
+--
+[source, json]
+----
+{
+  "Effect": "Allow",
+  "Action": [
+    "ec2:DescribeRegions",
+    "ec2:DescribeAvailabilityZones",
+    "ec2:DescribeVpcs",
+    "ec2:DescribeSecurityGroups",
+    "ec2:DescribeSubnets",
+    "ssm:GetParametersByPath",
+    "kms:DescribeKey",
+    "kms:ListKeys",
+    "kms:ListAliases"
+  ],
+  "Resource": "*"
+}
+----
+--
+.操作模式
+--
+[source, json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateFileSystem",
+        "fsx:DescribeFileSystems",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:CreateVolume",
+        "fsx:DescribeVolumes",
+        "fsx:TagResource",
+        "sns:Publish",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:CreateGrant"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:RunInstances",
+        "ec2:DescribeInstances",
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:CreateSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DescribeImages"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParametersByPath",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+=====
+====
+下表提供了有关VMware工作负载权限的详细信息。
+
+.VMware工作负载的权限表
+[%collapsible]
+====
+[cols="2, 2, 1, 1"]
+|===
+| 目的 | 操作 | 使用位置 | 模式 
+
+
+| 获取选定环境中的vPC以完成部署表单 | EC2：Describe  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取选定环境中的子网以完成部署表单 | EC2：Describe子网  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取选定环境中的安全组以完成部署表单 | EC2：Describe安全性组 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取选定环境中的可用性分区 | EC2：特性可用性区域  a| 
+* 部署
+* 清单
+
+ a| 
+* 读取
+* 自动化
+
+
+
+
+| 通过Amazon FSx for NetApp ONTAP支持获取各个地区的信息 | EC2：Describe注册 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥别名 | Kms：ListAliases | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥 | Kms：ListKey | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥到期详细信息 | Kms：可通过键进行操作 | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 基于SSM的查询用于获取Amazon FSx for NetApp ONTAP支持的区域的更新列表 | SSM：GetPathetersByPath | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+.3+| 创建配置所需的Amazon FSx for NetApp ONTAP资源 | FSx：CreateFileSystem | 部署 | 自动化 
+
+
+| FSx：CreateStorageVirtualMachine | 部署 | 自动化 
+
+
+| FSx：CreateVolume  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+.2+| 获取Amazon FSx for NetApp ONTAP详细信息 | FSX：描述*  a| 
+* 部署
+* 清单
+* 管理操作
+* 了解节省量
+
+| 自动化 
+
+
+| FSX：List*  a| 
+* 部署
+* 清单
+
+| 自动化 
+
+
+.4+| 获取KMS密钥详细信息并用于Amazon FSx以进行NetApp ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+
+
+| 公里：描述* | 部署 | 自动化 
+
+
+| 公里：列表* | 部署 | 自动化 
+
+
+| Kms：GenerateDataKey | 部署 | 自动化 
+
+
+| 列出客户SNS主题并发布到WLMVMC后端SNS以及客户SNS (如果选择) | SNS：发布 | 部署 | 自动化 
+
+
+| 用于提取Amazon FSx for NetApp ONTAP支持的AWS区域的最新列表 | SSM：获取*  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| 需要执行SimulatePrincipalPolicy以验证角色中可用的权限、并将其与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+
+
+.4+| SSM参数存储用于保存Amazon FSx for NetApp ONTAP的凭据 | SSM：Get参 比器  a| 
+* 部署
+* 管理操作
+* 清单
+
+| 自动化 
+
+
+| SSM：PutParameters  a| 
+* 部署
+* 清单
+
+| 自动化 
+
+
+| SSM：Put\n参比器  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+
+
+| SSM：删除参数  a| 
+* 部署
+* 管理操作
+
+| 自动化 
+|===
+====
+
+
+== 更改日志
+
+添加和删除权限后、我们将在以下各节中记录这些权限。

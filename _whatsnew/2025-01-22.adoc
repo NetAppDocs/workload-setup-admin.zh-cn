@@ -1,0 +1,11 @@
+= BlueXP  工作负载出厂权限
+:allow-uri-read: 
+
+
+
+
+=== BlueXP  工作负载出厂权限
+
+现在、您可以查看BlueXP  工作负载工厂执行各种操作所使用的权限、这些操作从发现存储环境到为GenAI工作负载部署AWS资源(例如存储中的文件系统或知识库)不等。您可以查看存储、数据库、VMware和GenAI工作负载的IAM策略和权限。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["BlueXP  工作负载出厂权限"]

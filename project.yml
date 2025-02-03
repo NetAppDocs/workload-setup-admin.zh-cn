@@ -51,6 +51,8 @@ sidebar:
         url: "/codebox-automation.html"
       - title: 使用代码框生成代码
         url: "/use-codebox.html"
+    - title: 使用CloudShell
+      url: "/use-cloudshell.html"
     - title: 删除凭据
       url: "/manage-credentials.html"
   - title: 知识和支持

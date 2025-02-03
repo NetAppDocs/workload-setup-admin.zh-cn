@@ -1373,7 +1373,11 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 自动化 
 
 
-| 验证角色中的可用权限、并与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+| 验证角色中的可用权限、并与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署  a| 
+* 读取
+* 自动化
+
+
 |===
 . 权限仅限于从“资源管理模块”开始的资源。
 . "IAM：CreateServiceLinkedIn Role"受"iam：AVsServiceName"限制：ec2.amazonaws.com"*
@@ -2073,3 +2077,9 @@ GenAI IAM策略仅在操作模式下可用：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年2月3日
+
+现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。

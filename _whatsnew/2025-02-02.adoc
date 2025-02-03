@@ -1,0 +1,19 @@
+= BlueXP  工作负载出厂控制台中提供了CloudShell
+:allow-uri-read: 
+
+
+
+
+=== BlueXP  工作负载出厂控制台中提供了CloudShell
+
+您可以从BlueXP  工作负载出厂控制台中的任何位置访问CloudShell。通过CloudShell、您可以使用在BlueXP  帐户中提供的AWS和ONTAP凭据、并在类似于Shell的环境中执行AWS命令行界面命令或ONTAP命令行界面命令。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html["使用CloudShell"]
+
+
+
+=== 更新数据库的权限
+
+现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限引用更改日志"]

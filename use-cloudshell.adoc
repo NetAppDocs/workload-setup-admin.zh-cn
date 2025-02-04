@@ -49,11 +49,8 @@ NOTE: 您可以使用CloudShell执行任何AWS或ONTAP命令行界面命令。�
 --
 .步骤
 . 使用其中一个登录link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^]。
-. 从顶部导航栏打开CloudShell。
-+
-image:screenshot-select-cloudshell-icon.png["在顶部导航栏中显示CloudShell图标的屏幕截图。"]
-
-. 选择CloudShell会话的凭据和区域、然后选择箭头以继续。
+. 从顶部导航栏打开CloudShellimage:cloudshell-icon.png["云Shell图标的屏幕截图"]。
+. 在CloudShell窗口中、为CloudShell会话选择凭据和区域、然后选择箭头以继续。
 +
 image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏幕截图。"]
 

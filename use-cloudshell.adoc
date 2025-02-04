@@ -155,9 +155,7 @@ image:screenshot-cloudshell-split-view.png["屏幕截图、显示两个CloudShel
 如果您偶然关闭了CloudShell会话、则可以重新打开它。
 
 .步骤
-选择顶部导航栏中的CloudShell图标。
-
-image:screenshot-select-cloudshell-icon.png["在顶部导航栏中显示CloudShell图标的屏幕截图。"]
+选择CloudShell图标image:cloudshell-icon.png["云Shell图标的屏幕截图"]从顶部导航栏中。
 
 .结果
 最新的CloudShell会话已打开。

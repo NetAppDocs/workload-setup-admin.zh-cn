@@ -140,81 +140,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
 
 
-.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 自动化 
-
-
-| EC2：DeleteSecurityGroup | 管理操作 | 自动化 
-
-
-.16+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolumes* | 管理操作 | 自动化 
-
-
-| FSx：TagResource* | 管理操作 | 自动化 
-
-
-| FSx：CreateStorageVirtualMachine* | 管理操作 | 自动化 
-
-
-| FSx：DeleteFileSystem* | 管理操作 | 自动化 
-
-
-| FSx：DeleteStorageVirtualMachine* | 管理操作 | 自动化 
-
-
-| FSx：可通过它来对FileSystems*进行操作 | 清单  a| 
-* 读取
-* 自动化
-
-
-
-
-| FSx：可对StorageVirtualMachines*进行分型 | 清单  a| 
-* 读取
-* 自动化
-
-
-
-
-| FSx：UpdateFileSystem* | 管理操作 | 自动化 
-
-
-| FSx：UpdateStorageVirtualMachine* | 管理操作 | 自动化 
-
-
-| FSx：可对卷进行分过程* | 清单  a| 
-* 读取
-* 自动化
-
-
-
-
-| FSx：UpdateVolumes* | 管理操作 | 自动化 
-
-
-| FSx：DeleteVolumes* | 管理操作 | 自动化 
-
-
-| FSx：UnTagResource* | 管理操作 | 自动化 
-
-
-| FSx：可对备份进行分型* | 管理操作  a| 
-* 读取
-* 自动化
-
-
-
-
-| FSx：CreateBackup* | 管理操作 | 自动化 
-
-
-| FSx：CreateVolume F生成 备份* | 管理操作 | 自动化 
-
-
-| 列出FSx for ONTAP资源的标记 | FSx：ListTagsForResource | 清单  a| 
-* 读取
-* 自动化
-
-
+| 已授予角色可在FSx for ONTAP与其他AWS服务之间进行通信 | IAM：CreateServiceLinkedIn | 部署 | 自动化 
 
 
 .7+| 获取详细信息以填写FSx for ONTAP文件系统部署表 | EC2：Describe  a| 
@@ -294,6 +220,23 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 
+.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+
+
+| 公里：描述* | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 公里：列表* | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
 | 获取EC2实例的卷详细信息 | EC2：Describe卷  a| 
 * 清单
 * 了解节省量
@@ -312,24 +255,84 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 
-.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
-
-
-| 公里：描述* | 部署  a| 
-* 读取
-* 自动化
-
-
-
-
-| 公里：列表* | 部署  a| 
-* 读取
-* 自动化
-
-
-
-
 | 在节省量计算器中描述Elelic File System | 文件系统的设置：描述* | 了解节省量 | 读取 
+
+
+| 列出FSx for ONTAP资源的标记 | FSx：ListTagsForResource | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 自动化 
+
+
+| EC2：DeleteSecurityGroup | 管理操作 | 自动化 
+
+
+.16+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolumes* | 管理操作 | 自动化 
+
+
+| FSx：TagResource* | 管理操作 | 自动化 
+
+
+| FSx：CreateStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：DeleteFileSystem* | 管理操作 | 自动化 
+
+
+| FSx：DeleteStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：可通过它来对FileSystems*进行操作 | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：可对StorageVirtualMachines*进行分型 | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：UpdateFileSystem* | 管理操作 | 自动化 
+
+
+| FSx：UpdateStorageVirtualMachine* | 管理操作 | 自动化 
+
+
+| FSx：可对卷进行分过程* | 清单  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：UpdateVolumes* | 管理操作 | 自动化 
+
+
+| FSx：DeleteVolumes* | 管理操作 | 自动化 
+
+
+| FSx：UnTagResource* | 管理操作 | 自动化 
+
+
+| FSx：可对备份进行分型* | 管理操作  a| 
+* 读取
+* 自动化
+
+
+
+
+| FSx：CreateBackup* | 管理操作 | 自动化 
+
+
+| FSx：CreateVolume F生成 备份* | 管理操作 | 自动化 
 
 
 | 报告CloudWatch指标 | CloudWatch：PutMetricData | 管理操作 | 自动化 

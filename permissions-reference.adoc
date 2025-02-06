@@ -1652,6 +1652,15 @@ GenAI IAM策略仅在操作模式下可用：
 | 标记在部署和重建操作期间创建AI引擎堆栈所创建的资源 | EC2：CreateTags | 部署 | 自动化 
 
 
+.2+| 从AI引擎堆栈将加密事件发布到WLAMAI后端 | Kms：GenerateDataKey | 部署 | 自动化 
+
+
+| Kms：解密 | 部署 | 自动化 
+
+
+| 将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端 | SNS：发布 | 部署 | 自动化 
+
+
 | 在AI引擎部署向导期间列出vPC | EC2：Describe | 部署 | 自动化 
 
 
@@ -1706,6 +1715,9 @@ GenAI IAM策略仅在操作模式下可用：
 | 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 自动化 
 
 
+| 确认是否需要在部署和重建操作期间创建CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
+
+
 | 在AI引擎向导期间获取支持FSx和基岩的区域 | SSM：GetPathetersByPath | 部署 | 自动化 
 
 
@@ -1715,13 +1727,10 @@ GenAI IAM策略仅在操作模式下可用：
 | 从发送到AI引擎的命令中获取SSM响应 | SSM：GetCommandInvation | 部署 | 自动化 
 
 
-.3+| 检查与AI发动机的SSM连接 | SSM：SendCommand | 部署 | 自动化 
+.2+| 检查与AI发动机的SSM连接 | SSM：SendCommand | 部署 | 自动化 
 
 
 | SSM：GetConnectionStatus | 部署 | 自动化 
-
-
-| SSM：SendCommand | 部署 | 自动化 
 
 
 .8+| 在部署和重建操作期间创建堆栈期间创建AI引擎实例配置文件 | IAM：CreateRole | 部署 | 自动化 
@@ -1773,9 +1782,6 @@ GenAI IAM策略仅在操作模式下可用：
 
 
 | SSM：Put\n参比器 | 部署 | 自动化 
-
-
-| 确认是否需要在部署和重建操作期间创建CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
 
 
 .2+| 在部署和重建操作期间、将AI引擎日志发送到CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
@@ -1917,6 +1923,30 @@ GenAI IAM策略仅在操作模式下可用：
 | 目的 | 操作 | 使用位置 | 模式 
 
 
+| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+
+
+| 创建EBS卷 | EC2：CreateVolume | 部署 | 自动化 
+
+
+| 为VMware工作负载创建的FSx for NetApp ONTAP资源标记自定义值 | FSx：TagResource | 部署 | 自动化 
+
+
+| 创建并验证CloudFormation模板 | CloudFormation：CreateStack | 部署 | 自动化 
+
+
+| 管理已创建实例上的标记和网络安全性 | EC2：CreateSecurityGroup | 部署 | 自动化 
+
+
+| 启动已创建的实例 | EC2：RunInstances | 部署 | 自动化 
+
+
+| 获取EC2实例详细信息 | EC2：Describe实例 | 部署 | 自动化 
+
+
+| 在部署和重建操作期间创建堆栈期间列出映像 | EC2：Describe | 部署 | 自动化 
+
+
 | 获取选定环境中的vPC以完成部署表单 | EC2：Describe  a| 
 * 部署
 * 清单
@@ -2021,13 +2051,16 @@ GenAI IAM策略仅在操作模式下可用：
 | 自动化 
 
 
-.4+| 获取KMS密钥详细信息并用于Amazon FSx以进行NetApp ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+.5+| 获取KMS密钥详细信息并用于Amazon FSx以进行NetApp ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
 
 
 | 公里：描述* | 部署 | 自动化 
 
 
 | 公里：列表* | 部署 | 自动化 
+
+
+| Kms：解密 | 部署 | 自动化 
 
 
 | Kms：GenerateDataKey | 部署 | 自动化 

@@ -1046,4 +1046,12 @@
   <block id="7413e05cafe498b54ab1b5640cc3ba82" category="paragraph">选择CloudShell图标<block ref="22292d13795e0e4de9ba364021c92eab" category="inline-image-macro-rx" type="image"></block>从顶部导航栏中。</block>
   <block id="a5fab0062142f5ef0615c361259b0b89" category="cell">已授予角色可在FSx for ONTAP与其他AWS服务之间进行通信</block>
   <block id="8832fb7d0699d4878c8449616cd47613" category="cell">IAM：CreateServiceLinkedIn</block>
+  <block id="f018d84c71280c7c2350ecdc41af9036" category="cell">从AI引擎堆栈将加密事件发布到WLAMAI后端</block>
+  <block id="e3fee6f099023b5f4b39c1c744c6ea99" category="cell">Kms：解密</block>
+  <block id="5407beb6c8285b66530a423f5e1a1c44" category="cell">将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端</block>
+  <block id="85f90a8db0a64c1052007e6603c729f3" category="cell">创建EBS卷</block>
+  <block id="9b72805c27ddeb5ac656bcddaa415cb8" category="cell">为VMware工作负载创建的FSx for NetApp ONTAP资源标记自定义值</block>
+  <block id="043622d556b2884b98fb152bcf740dcd" category="cell">创建并验证CloudFormation模板</block>
+  <block id="7396fdf6f4dfc93451cc96093ccbe43e" category="cell">获取EC2实例详细信息</block>
+  <block id="1be679c04c8e52e60ad090d4b7848d64" category="cell">在部署和重建操作期间创建堆栈期间列出映像</block>
 </blocks>

@@ -1054,4 +1054,18 @@
   <block id="043622d556b2884b98fb152bcf740dcd" category="cell">创建并验证CloudFormation模板</block>
   <block id="7396fdf6f4dfc93451cc96093ccbe43e" category="cell">获取EC2实例详细信息</block>
   <block id="1be679c04c8e52e60ad090d4b7848d64" category="cell">在部署和重建操作期间创建堆栈期间列出映像</block>
+  <block id="4dcec483cf1f239f85db3400f495b54a" category="cell">如果所需服务不存在VPC端点、则无论EC2实例上的公共网络连接如何、均可创建VPC端点</block>
+  <block id="5e5a90d60662f7306336a047b5b3b7f6" category="cell">在触发部署之前、请检查资源的帐户限制</block>
+  <block id="da7dbf1119bff3389296d7d9a38be487" category="cell">CloudFormation：可进行详细信息帐户限制</block>
+  <block id="e0db06144a611c9dacbb1cbdc47398a2" category="cell">检查帐户是否已在AWS计算控制器中注册</block>
+  <block id="68f6ffe8302b37908ab1031d603a8537" category="cell">计算优化器：GetEnrollmentStatus</block>
+  <block id="e1b0fb1c7834e30cc2855e9e5978a6b2" category="cell">更新AWS计算改进器中的现有建议首选项、以便为SQL Server工作负载量身定制建议</block>
+  <block id="e7878b5da7a61064cc75fec0ae2842c4" category="cell">计算优化器:PutRecommentationPreferences</block>
+  <block id="e1faa0bf56d94349eb5128478fc9e6c9" category="cell">从AWS计算最佳器中获取对给定资源有效的建议首选项</block>
+  <block id="f4003017b8bd9e7024276d1eae7c252d" category="cell">计算优化器：GetEffectiveRecommentationPreferences</block>
+  <block id="bb90c212b52ea746f2de78f88fd32dfa" category="cell">提取AWS计算最佳器为Amazon Elecic计算云(Amazon EC2)实例生成的建议</block>
+  <block id="1b9183fc54789ff2117d927730975ee9" category="cell">计算优化器：GetEC2InstanceRecommandations</block>
+  <block id="38b28dd168a209df2daf8eaf5b0fc216" category="cell">检查实例是否与自动缩放组关联</block>
+  <block id="841ea3d3891ce9dc21992730680d4dac" category="cell">自动缩放：自适应缩放组的情况</block>
+  <block id="9d85d66bd60c64faffe2799f428cd8b3" category="cell">自动缩放：可通过它来进行自适应缩放</block>
 </blocks>

@@ -763,6 +763,9 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 
+| 如果所需服务不存在VPC端点、则无论EC2实例上的公共网络连接如何、均可创建VPC端点 | EC2：CreateVpcEndpoint | 部署 | 自动化 
+
+
 | 获取验证节点所在地区可用的实例类型(t2.micro/t3.micro) | EC2：说明InstanceTypeOfferings | 部署  a| 
 * 读取
 * 自动化
@@ -810,6 +813,13 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 | 获取环境中运行的CloudFormation堆栈列表以检查配额限制 | CloudFormation：ListStack | 部署  a| 
+* 读取
+* 自动化
+
+
+
+
+| 在触发部署之前、请检查资源的帐户限制 | CloudFormation：可进行详细信息帐户限制 | 部署  a| 
 * 读取
 * 自动化
 
@@ -948,6 +958,48 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 自动化
 
 
+
+
+| 检查帐户是否已在AWS计算控制器中注册 | 计算优化器：GetEnrollmentStatus  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
+
+
+| 更新AWS计算改进器中的现有建议首选项、以便为SQL Server工作负载量身定制建议 | 计算优化器:PutRecommentationPreferences  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
+
+
+| 从AWS计算最佳器中获取对给定资源有效的建议首选项 | 计算优化器：GetEffectiveRecommentationPreferences  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
+
+
+| 提取AWS计算最佳器为Amazon Elecic计算云(Amazon EC2)实例生成的建议 | 计算优化器：GetEC2InstanceRecommandations  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
+
+
+.2+| 检查实例是否与自动缩放组关联 | 自动缩放：自适应缩放组的情况  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
+
+
+| 自动缩放：可通过它来进行自适应缩放  a| 
+* 了解节省量
+* 优化
+
+| 自动化 
 
 
 .4+| 获取、列出、创建和删除在部署期间使用或在AWS帐户中管理的AD、FSx for ONTAP和SQL用户凭据的SSM参数 | SSM：Get参 比器^1^  a| 

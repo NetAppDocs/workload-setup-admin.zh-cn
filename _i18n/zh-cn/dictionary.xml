@@ -366,7 +366,6 @@
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。</block>
   <block id="462c14d3e045d4b0b69cee0781df3207" category="paragraph">工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。</block>
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">节省计算器</block>
-  <block id="11cb17d1b990bbf37a24337d5692efa1" category="paragraph"><block ref="11cb17d1b990bbf37a24337d5692efa1" category="inline-link-macro-rx"></block></block>
   <block id="2fd1745cefcdce50d6467d96e693f6b7" category="doc">RSS订阅</block>
   <block id="80f4b5aa553e3a44455088c83954a088" category="section-title">支持每个工作负载使用一个权限策略</block>
   <block id="41b3a089d4fbacfb53e9a5634cfc6647" category="inline-image-macro">凭据页面上的权限配置部分的屏幕截图、您可以在其中选择读取或自动执行存储管理、AI工作负载、数据库工作负载和VMware工作负载的权限策略。</block>
@@ -379,15 +378,12 @@
   <block id="ebcd96574a726227b2c1017e8efe81c1" category="doc">BlueXP  工作负载出厂初始版本</block>
   <block id="d2587bb8ad424cee3050c3b7958dd388" category="paragraph">BlueXP  工作负载工厂是一个功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。可以使用工作负载工厂和FSx for ONTAP简化的工作负载包括数据库、VMware迁移到VMware Cloud on AWS、AI聊天机器人等。</block>
   <block id="e5d3c7248ff4540f88c13fbf9252d0a3" category="inline-link-macro">工作负载出厂控制台</block>
-  <block id="3171014553de64cf509a3b587c8baeb3" category="paragraph">可从获取RSS订阅<block ref="9d5ad87a67c1830e37fdd19a7a179db6" category="inline-link-macro-rx"></block>。使用RSS源是一种简单的使用方法、可以了解BlueXP  工作负载工厂中的变化。</block>
   <block id="0796995437665af1d920169e03b4542b" category="inline-image-macro">工作负载出厂控制台帮助下拉菜单的屏幕截图。用于订阅RSS的新按钮将作为选项显示在下拉菜单中。</block>
   <block id="482a329f24c123c31a109c24729cb2cd" category="paragraph"><block ref="482a329f24c123c31a109c24729cb2cd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4e47b743d0cc8e0b8906e37286d9b43b" category="paragraph">现在、在工作负载工厂添加AWS凭据时、您可以为每个工作负载和存储管理选择一个读取或自动模式权限策略。</block>
   <block id="9f46892803d8b6c63d3b7f51fd44a421" category="inline-link-macro">将AWS凭据添加到工作负载工厂</block>
-  <block id="d9dd14fb1d1e7ca9c6da6770d9176783" category="paragraph"><block ref="d9dd14fb1d1e7ca9c6da6770d9176783" category="inline-link-macro-rx"></block></block>
   <block id="dfc4a97a3fe947a314ae908cf036cbfe" category="doc">工作负载在出厂时集成在BlueXP  控制台中</block>
   <block id="5975f7e9036c78e6217b16f295f0ca75" category="inline-link-macro">BlueXP控制台</block>
-  <block id="d2feef96259a41a7842dc5e7af577d63" category="paragraph">现在，您可以从使用工作负载工厂<block ref="391de7a3bac2bc77fa53dffb3f53801a" category="inline-link-macro-rx"></block>。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。</block>
   <block id="717f9c6475fbb39a24ab9942c1a903c0" category="inline-link-macro">了解如何从BlueXP  控制台访问工作负载工厂</block>
   <block id="4fa2f246a664251a157926c2e11e1eb3" category="summary">添加AWS凭据、以便工作负载工厂拥有在AWS帐户中部署和管理云资源所需的权限。</block>
   <block id="188c7f44ffe17186c8dcbc38640d54e1" category="paragraph">添加和管理AWS凭据、以便工作负载工厂拥有在AWS帐户中部署和管理云资源所需的权限。</block>
@@ -1068,4 +1064,8 @@
   <block id="38b28dd168a209df2daf8eaf5b0fc216" category="cell">检查实例是否与自动缩放组关联</block>
   <block id="841ea3d3891ce9dc21992730680d4dac" category="cell">自动缩放：自适应缩放组的情况</block>
   <block id="9d85d66bd60c64faffe2799f428cd8b3" category="cell">自动缩放：可通过它来进行自适应缩放</block>
+  <block id="7115d78353263dbb2dbe063624f9f601" category="paragraph"><block ref="7115d78353263dbb2dbe063624f9f601" category="inline-link-macro-rx"></block></block>
+  <block id="bf2cca138f5e3f74f2e6b73d8e8b2452" category="paragraph">可从获取RSS订阅<block ref="a65cf6b405017af965199f55f7b4fce1" category="inline-link-macro-rx"></block>。使用RSS源是一种简单的使用方法、可以了解BlueXP  工作负载工厂中的变化。</block>
+  <block id="1a88151efda7b7ae7945b1161fe70fdc" category="paragraph"><block ref="1a88151efda7b7ae7945b1161fe70fdc" category="inline-link-macro-rx"></block></block>
+  <block id="cf1f4a083afa7ccb1141e827deb4cdc2" category="paragraph">现在，您可以从使用工作负载工厂<block ref="4623dd80d89c29fbf0d2b04387a56c33" category="inline-link-macro-rx"></block>。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。</block>
 </blocks>

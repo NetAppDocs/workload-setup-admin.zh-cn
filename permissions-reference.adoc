@@ -1558,6 +1558,7 @@ GenAI IAM策略仅在操作模式下可用：
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
         "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModel",
         "bedrock:GetFoundationModelAvailability",
         "bedrock:GetModelInvocationLoggingConfiguration"
       ],
@@ -1762,6 +1763,9 @@ GenAI IAM策略仅在操作模式下可用：
 
 
 | 显示一个区域中可用的基础模型 | Bound：ListFoundation们 | 部署 | 自动化 
+
+
+| 获取有关基础模型的信息 | 基岩：GetFoundationModel | 部署 | 自动化 
 
 
 | 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 自动化 
@@ -2165,6 +2169,12 @@ GenAI IAM策略仅在操作模式下可用：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年3月2日
+
+现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。
 
 
 

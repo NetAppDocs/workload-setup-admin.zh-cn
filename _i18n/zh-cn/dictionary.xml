@@ -897,7 +897,6 @@
   <block id="8a71d22cd00a39460a071b070099b8d6" category="cell">验证对基础模型的访问权限</block>
   <block id="c812f1cb829c6d16da192b12e04d78ff" category="cell">Bound：GetFoundation论 可用性</block>
   <block id="77771f1732da043133eab422a7e43291" category="cell">在AI引擎向导期间获取支持FSx和基岩的区域</block>
-  <block id="d4f0fee980f03c8a663dda4a1d3623de" category="cell">获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像</block>
   <block id="302112cb321a929a6d9830e917817acb" category="cell">SSM：GetParameters</block>
   <block id="37cc48b6baed18a8130ec18d97544390" category="cell">从发送到AI引擎的命令中获取SSM响应</block>
   <block id="97128676550f404369a4900a6b92a6a7" category="cell">检查与AI发动机的SSM连接</block>
@@ -1068,4 +1067,8 @@
   <block id="bf2cca138f5e3f74f2e6b73d8e8b2452" category="paragraph">可从获取RSS订阅<block ref="a65cf6b405017af965199f55f7b4fce1" category="inline-link-macro-rx"></block>。使用RSS源是一种简单的使用方法、可以了解BlueXP  工作负载工厂中的变化。</block>
   <block id="1a88151efda7b7ae7945b1161fe70fdc" category="paragraph"><block ref="1a88151efda7b7ae7945b1161fe70fdc" category="inline-link-macro-rx"></block></block>
   <block id="cf1f4a083afa7ccb1141e827deb4cdc2" category="paragraph">现在，您可以从使用工作负载工厂<block ref="4623dd80d89c29fbf0d2b04387a56c33" category="inline-link-macro-rx"></block>。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。</block>
+  <block id="fb2b74ed81679192134e9c2c07019b42" category="cell">获取有关基础模型的信息</block>
+  <block id="1311c4cbbe5b925c15d25fe5ff7b022b" category="cell">基岩：GetFoundationModel</block>
+  <block id="dec23cffbd0de1b8096bc26072eb0b7d" category="cell">获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像</block>
+  <block id="6928ceecf566ab44f308d64b3806a0bc" category="section-title">2025年3月2日</block>
 </blocks>

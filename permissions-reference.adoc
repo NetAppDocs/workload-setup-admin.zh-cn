@@ -2174,7 +2174,7 @@ GenAI IAM策略仅在操作模式下可用：
 
 === 2025年3月2日
 
-现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。
+现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。现在，在_Autome_模式下，可以对GenAI使用以下权限： `bedrock:GetFoundationModel`。
 
 
 

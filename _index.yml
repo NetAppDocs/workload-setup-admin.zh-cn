@@ -28,3 +28,11 @@ indexpage:
       url: codebox-automation.html
     - title: 使用CodeBox实现自动化
       url: use-codebox.html
+  - title: 博客和社区
+    links:
+    - title: NetApp 社区
+      url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+    - title: BlueXP博客
+      url: https://bluexp.netapp.com/blog
+    - title: 云网络研讨会
+      url: https://bluexp.netapp.com/events

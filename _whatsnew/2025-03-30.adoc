@@ -1,0 +1,19 @@
+= CloudShell会报告ONTAP命令行界面命令的AI生成错误
+:allow-uri-read: 
+
+
+
+
+=== CloudShell会报告ONTAP命令行界面命令的AI生成错误
+
+使用CloudShell时、每次发出ONTAP命令行界面命令并出现错误时、您都可以获得AI生成的错误响应、其中包括故障说明、故障原因和详细解决方案。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html["使用CloudShell"]
+
+
+
+=== IAM：SimulatePermission Policy权限更新
+
+现在、当您添加其他AWS帐户凭据或添加新工作负载功能(例如GenAI工作负载)时、您可以从工作负载出厂控制台管理此 `iam:SimulatePrincipalPolicy`权限。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限引用更改日志"]

@@ -24,6 +24,8 @@ summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略
 自动模式:: 表示完全信任关系、以便为工作负载工厂分配完全权限。这样、工作负载工厂便可代表您在AWS中执行和自动执行操作、并可获得分配的凭据、这些凭据具有执行所需的权限。
 
 
+详细了解 link:https://review.docs.netapp.com/us-en/workload-setup-admin_simulation-permission-update/permissions-reference.html["BlueXP  工作负载出厂时的权限"]。
+
 
 
 === 操作模式功能

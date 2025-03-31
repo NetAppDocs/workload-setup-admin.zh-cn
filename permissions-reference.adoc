@@ -63,6 +63,13 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -89,6 +96,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "kms:CreateGrant",
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
+        "iam:SimulatePrincipalPolicy",
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
@@ -407,6 +415,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "ssm:GetParametersByPath",
         "ssm:GetCommandInvocation",
         "ssm:SendCommand",
+        "ssm:GetConnectionStatus",
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
@@ -426,6 +435,14 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -1428,7 +1445,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 自动化 
 
 
-| 验证角色中的可用权限、并与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署  a| 
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署  a| 
 * 读取
 * 自动化
 
@@ -1507,10 +1524,10 @@ GenAI IAM策略仅在操作模式下可用：
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
+        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
-        "iam:SimulatePrincipalPolicy",
         "iam:GetRolePolicy",
         "iam:GetRole",
         "iam:TagRole"
@@ -1550,19 +1567,6 @@ GenAI IAM策略仅在操作模式下可用：
         "arn:aws:fsx:*:*:volume/*/*",
         "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
       ]
-    },
-    {
-      "Sid": "BedrockGroup",
-      "Effect": "Allow",
-      "Action": [
-        "bedrock:InvokeModelWithResponseStream",
-        "bedrock:InvokeModel",
-        "bedrock:ListFoundationModels",
-        "bedrock:GetFoundationModel",
-        "bedrock:GetFoundationModelAvailability",
-        "bedrock:GetModelInvocationLoggingConfiguration"
-      ],
-      "Resource": "*"
     },
     {
       "Sid": "SSMParameterStore",
@@ -1661,7 +1665,21 @@ GenAI IAM策略仅在操作模式下可用：
       "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
     },
     {
-      "Sid": "CloudWatch2",
+      "Sid": "BedrockGroup",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
+        "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetModelInvocationLoggingConfiguration",
+        "bedrock:PutModelInvocationLoggingConfiguration",
+        "bedrock:ListInferenceProfiles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchBedrock",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -1669,6 +1687,22 @@ GenAI IAM策略仅在操作模式下可用：
         "logs:TagResource"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+    },
+    {
+      "Sid": "BedrockLoggingAttachRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -1717,7 +1751,7 @@ GenAI IAM策略仅在操作模式下可用：
 | 在AI引擎部署向导期间列出vPC | EC2：Describe | 部署 | 自动化 
 
 
-| 在AI引擎部署向导中列出子网 | EC2：Describe子网 | 部署 | 自动化 
+| 在AI引擎部署向导上列出子网 | EC2：Describe子网 | 部署 | 自动化 
 
 
 | 在AI引擎部署和重建期间获取路由表 | EC2：Describe RouteTables | 部署 | 自动化 
@@ -1738,7 +1772,7 @@ GenAI IAM策略仅在操作模式下可用：
 | 在部署和重建操作期间创建AI引擎堆栈期间列出映像 | EC2：Describe | 部署 | 自动化 
 
 
-.2+| 在部署和重建操作期间创建AI实例堆栈期间创建和更新AI实例和专用端点安全组 | EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
+.2+| 在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组 | EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
 
 
 | EC2：RevokeSecurityGroupIngress | 部署 | 自动化 
@@ -1765,16 +1799,13 @@ GenAI IAM策略仅在操作模式下可用：
 | 显示一个区域中可用的基础模型 | Bound：ListFoundation们 | 部署 | 自动化 
 
 
-| 获取有关基础模型的信息 | 基岩：GetFoundationModel | 部署 | 自动化 
-
-
 | 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 自动化 
 
 
-| 确认是否需要在部署和重建操作期间创建CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
+| 验证是否需要在部署和重建操作期间创建Amazon CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
 
 
-| 在AI引擎向导期间获取支持FSx和基岩的区域 | SSM：GetPathetersByPath | 部署 | 自动化 
+| 在AI引擎向导期间获取支持FSx和Amazon Brock的区域 | SSM：GetPathetersByPath | 部署 | 自动化 
 
 
 | 获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像 | SSM：GetParameters | 部署 | 自动化 
@@ -1813,19 +1844,19 @@ GenAI IAM策略仅在操作模式下可用：
 | IAM：PassRole | 部署 | 自动化 
 
 
-| 验证角色中可用的权限、并在部署和重建操作期间与所需的权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
 
 
-| 在"创建数据库"向导期间列出FSx文件系统 | FSx：可对卷进行分过程 | 创建知识库 | 自动化 
+| 在"创建数据库"向导期间列出FSx for ONTAP文件系统 | FSx：可对卷进行分过程 | 创建知识库 | 自动化 
 
 
-| 在"创建集群"向导期间列出FSx文件系统卷 | FSx：可对FileSystems进行情况分类 | 创建知识库 | 自动化 
+| 在"创建集群"向导期间列出适用于ONTAP文件系统卷的FSx | FSx：可对FileSystems进行情况分类 | 创建知识库 | 自动化 
 
 
-| 在重建操作期间管理AI引擎上的数据库 | FSx：ListTagsForResource | 故障排除 | 自动化 
+| 在重建操作期间管理有关AI引擎的知识库 | FSx：ListTagsForResource | 故障排除 | 自动化 
 
 
-| 在"创建集群"向导期间列出FSx文件系统Storage Virtual Machine | FSx：讲解StorageVirtualMachine | 部署 | 自动化 
+| 在"创建信息库"向导期间列出FSx for ONTAP文件系统Storage Virtual Machine | FSx：讲解StorageVirtualMachine | 部署 | 自动化 
 
 
 | 将此信息文档移至新实例 | FSx：UnTagResource | 故障排除 | 自动化 
@@ -1840,28 +1871,43 @@ GenAI IAM策略仅在操作模式下可用：
 | SSM：Put\n参比器 | 部署 | 自动化 
 
 
-.2+| 在部署和重建操作期间、将AI引擎日志发送到CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+.2+| 在部署和重建操作期间、将AI引擎日志发送到Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
 
 
 | 日志：PutRettionPolicy | 部署 | 自动化 
 
 
-| 将AI引擎日志发送到CloudWatch日志组 | 日志:TagResource | 故障排除 | 自动化 
+| 将AI引擎日志发送到Amazon CloudWatch日志组 | 日志:TagResource | 故障排除 | 自动化 
 
 
-| 从CloudWatch获取SSM响应(响应时间过长) | 日志：特性日志流 | 故障排除 | 自动化 
+| 从Amazon CloudWatch获取SSM响应(响应时间过长) | 日志：特性日志流 | 故障排除 | 自动化 
 
 
-| 从CloudWatch获取SSM响应 | 日志：GetLogEvents | 故障排除 | 自动化 
+| 从Amazon CloudWatch获取SSM响应 | 日志：GetLogEvents | 故障排除 | 自动化 
 
 
-.3+| 在部署和重建操作期间创建堆栈期间、为基岩日志创建CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+.3+| 在部署和重建操作期间创建堆栈期间、为Amazon基本日志创建Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
 
 
 | 日志：PutRettionPolicy | 部署 | 自动化 
 
 
 | 日志:TagResource | 部署 | 自动化 
+
+
+| 将基岩日志发送到Amazon CloudWatch | Bedrock：PutConfigurationLoggingConfiguration | 故障排除 | 自动化 
+
+
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：AttachRolePolicy | 故障排除 | 自动化 
+
+
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：PassRole | 故障排除 | 自动化 
+
+
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：createPolicy | 故障排除 | 自动化 
+
+
+| 列出模型的参考轮廓 | Bedrock：ListInferenceProfile | 故障排除 | 自动化 
 |===
 ====
 
@@ -1882,23 +1928,35 @@ GenAI IAM策略仅在操作模式下可用：
 [source, json]
 ----
 {
-  "Effect": "Allow",
-  "Action": [
-    "ec2:DescribeRegions",
-    "ec2:DescribeAvailabilityZones",
-    "ec2:DescribeVpcs",
-    "ec2:DescribeSecurityGroups",
-    "ec2:DescribeSubnets",
-    "ssm:GetParametersByPath",
-    "kms:DescribeKey",
-    "kms:ListKeys",
-    "kms:ListAliases"
-  ],
-  "Resource": "*"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ssm:GetParametersByPath",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ----
 --
-.操作模式
+.自动模式
 --
 [source, json]
 ----
@@ -2132,7 +2190,7 @@ GenAI IAM策略仅在操作模式下可用：
 | 自动化 
 
 
-| 需要执行SimulatePrincipalPolicy以验证角色中可用的权限、并将其与所需权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
 
 
 .4+| SSM参数存储用于保存Amazon FSx for NetApp ONTAP的凭据 | SSM：Get参 比器  a| 
@@ -2169,6 +2227,31 @@ GenAI IAM策略仅在操作模式下可用：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年3月30日
+
+
+
+==== GenAI工作负载权限更新
+
+现在、以下权限可在_Automate mode_中用于GenAI：
+
+* `bedrock:PutModelInvocationLoggingConfiguration`
+* `iam:AttachRolePolicy`
+* `iam:PassRole`
+* `iam:createPolicy`
+* `bedrock:ListInferenceProfiles`
+
+
+已从_Automate mode_中删除GenAI的以下权限： `Bedrock:GetFoundationModel`。
+
+
+
+==== IAM：SimulatePrincipalPolicy权限更新
+
+如果您在从工作负载出厂控制台添加其他AWS帐户凭据或添加新工作负载功能时启用了自动权限检查、则此 `iam:SimulatePrincipalPolicy`权限将成为所有工作负载权限策略的一部分。此权限可模拟工作负载操作、并在从工作负载工厂部署资源之前检查您是否具有所需的AWS帐户权限。启用此检查可减少清理失败操作中的资源以及添加缺少的权限所需的时间和工作量。
 
 
 

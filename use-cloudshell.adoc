@@ -26,6 +26,57 @@ CloudShell功能包括：
 * 会话重命名：根据需要重命名会话
 * 上次会话内容持久性：如果您错误地关闭了上次会话、请重新打开它
 * 设置首选项：更改字体大小和输出类型
+* AI生成的ONTAP命令行界面命令错误响应
+
+
+
+
+=== CloudShell命令
+
+在CloudShell图形用户界面中、您可以输入 `help`以查看可用的CloudShell命令。发出命令后 `help`、将显示以下参考信息。
+
+说明:: NetApp CloudShell是BlueXP  工作负载出厂时内置的GUI界面、可用于在类似于Shell的环境中执行AWS命令行界面命令或ONTAP命令行界面命令。它模拟浏览器中的终端会话、提供终端功能并通过工作负载工厂的后端代理消息。您可以使用在BlueXP  帐户中提供的AWS凭据和ONTAP凭据。
+可用命令::
++
+--
+* `clear`
+* `help`
+* `[--fsx <fsxId>] <ontap-command> [parameters]`
+* `aws <aws-command> <aws-sub-command> [parameters]`
+
+
+--
+环境:: 每个终端会话都在特定环境下运行：凭据、区域以及可选的FSx for ONTAP文件系统。
++
+--
+所有AWS命令都会在提供的上下文中执行。只有在提供的凭据具有指定区域的权限时、AWS命令才会成功。
+
+您可以使用可选指定ONTAP命令 `fsxId`。如果您为提供了 `fsxId`一个单独的ONTAP命令、则此ID将覆盖上下文中的ID。如果终端会话没有FSx for ONTAP文件系统ID上下文、则必须在每个ONTAP命令中提供 `fsxId`。
+
+要更新不同的上下文具体信息、请执行以下操作：*要更改凭据："Using cred凭 据FSX"*要更改区域："Using region <regionCode>"*要更改FSx for ONTAP文件系统："Using FSx <credentialId><fileSystemId>"
+
+--
+显示项目::
++
+--
+* 要显示可用凭据、请执行以下操作："显示凭据"
+* 要显示可用区域："显示区域"
+* 要显示命令历史记录："show histy"
+
+
+--
+变量:: 以下是设置和使用变量的示例。如果变量值包含空格、则应将其设置在引号内。
++
+--
+* 要设置变量：<variable>=<value>
+* 要使用变量：<variable>
+* 变量设置示例：$svm1 = svm123
+* 使用变量的示例：--FSx FileSystem-1 volumes" show --vserver $svm1
+* 设置字符串值为$Comment1 ="带有空格的注释"的变量的示例
+
+
+--
+运算符:: 不支持管道、后台执行 `&`和重定向 `>`等Shell运算符 `|`。如果包含这些运算符、则命令执行将失败。
 
 
 
@@ -54,13 +105,16 @@ NOTE: 您可以使用CloudShell执行任何AWS或ONTAP命令行界面命令。�
 +
 image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏幕截图。"]
 
-. 输入 `help`以查看可用的CloudShell命令和说明、或者参阅以下命令行界面参考文档以了解可用命令：
+. 输入 `help`以查看可用<<CloudShell命令,CloudShell命令>>命令和说明、或者参阅以下命令行界面参考文档以了解可用命令：
 +
 ** link:https://docs.aws.amazon.com/cli/latest/reference/["AWS CLI参考"^]：对于与FSx for ONTAP相关的命令，请选择*FSX*。
 ** link:https://docs.netapp.com/us-en/ontap-cli/["ONTAP命令行界面参考"^]
 
 
 . 在CloudShell会话中发出命令。
++
+如果在发出ONTAP命令行界面命令后发生错误、请选择灯泡图标以获取由AI生成的简短错误响应、并提供故障说明、故障原因和详细解决方案。有关详细信息，请选择*阅读更多*。
+
 
 
 --
@@ -80,6 +134,9 @@ image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏�
 
 
 . 在CloudShell会话中发出命令。
++
+如果在发出ONTAP命令行界面命令后发生错误、请选择灯泡图标以获取由AI生成的简短错误响应、并提供故障说明、故障原因和详细解决方案。有关详细信息，请选择*阅读更多*。
+
 
 
 --

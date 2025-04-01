@@ -1,10 +1,10 @@
-= CloudShell会报告ONTAP命令行界面命令的AI生成错误
+= CloudShell会报告ONTAP命令行界面命令的AI生成的错误响应
 :allow-uri-read: 
 
 
 
 
-=== CloudShell会报告ONTAP命令行界面命令的AI生成错误
+=== CloudShell会报告ONTAP命令行界面命令的AI生成的错误响应
 
 使用CloudShell时、每次发出ONTAP命令行界面命令并出现错误时、您都可以获得AI生成的错误响应、其中包括故障说明、故障原因和详细解决方案。
 

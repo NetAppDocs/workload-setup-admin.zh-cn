@@ -1051,7 +1051,6 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="abd0fe91ce589ecf3c7bad0543ccad16" category="sidebar">BlueXP博客</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">云网络研讨会</block>
-  <block id="42bc8432872c22cf4fdbb156ae58a17e" category="doc">CloudShell会报告ONTAP命令行界面命令的AI生成错误</block>
   <block id="3450754e7ec63bd0a961376c9928752a" category="paragraph">使用CloudShell时、每次发出ONTAP命令行界面命令并出现错误时、您都可以获得AI生成的错误响应、其中包括故障说明、故障原因和详细解决方案。</block>
   <block id="4ef50e373522b91f7df59d5cba69a8b7" category="section-title">IAM：SimulatePermission Policy权限更新</block>
   <block id="906699741ebd9905a07af900abcfd438" category="paragraph">现在、当您添加其他AWS帐户凭据或添加新工作负载功能(例如GenAI工作负载)时、您可以从工作负载出厂控制台管理此<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>权限。</block>
@@ -1126,4 +1125,5 @@
   <block id="da1654cced07f7b0be3ee4215ae83b0b" category="list-text">不支持管道、后台执行<block ref="c2249209343ab488c055da76368f04a0" prefix=" " category="inline-code"></block>和重定向<block ref="58ba3bb1a1772a74392e5e86bd2be4b7" prefix=" " category="inline-code"></block>等Shell运算符<block ref="b99834bc19bbad24580b3adfa04fb947" prefix=" " category="inline-code"></block>。如果包含这些运算符、则命令执行将失败。</block>
   <block id="bc7864e70344eae19121f3e6408c5e04" category="list-text">输入<block ref="657f8b8da628ef83cf69101b6817150a" prefix=" " category="inline-code"></block>以查看可用<block ref="0bdecf44265be755040a6284b4703b71" category="inline-xref-macro-rx"></block>命令和说明、或者参阅以下命令行界面参考文档以了解可用命令：</block>
   <block id="34b14d4981e88ee13798aea3eecf0674" category="paragraph">如果在发出ONTAP命令行界面命令后发生错误、请选择灯泡图标以获取由AI生成的简短错误响应、并提供故障说明、故障原因和详细解决方案。有关详细信息，请选择*阅读更多*。</block>
+  <block id="ef74d01649997b60252254da8a1573fd" category="doc">CloudShell会报告ONTAP命令行界面命令的AI生成的错误响应</block>
 </blocks>

@@ -419,6 +419,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
+        "ssm:DescribeInstanceInformation",
         "fsx:ListTagsForResource"
       ],
       "Resource": [
@@ -437,7 +438,6 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
-      "Sid": "IAMGroup",
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -954,6 +954,9 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 自动化
 
 
+
+
+| 提取一组受管EC2实例(SQL节点)的SSM关联状态 | SSM：说明实例信息 | 清单 | 读取 
 
 
 | 获取可用于操作系统修补程序评估的修补程序基线列表 | SSM：对修补程序基准线进行了详述 | 优化  a| 
@@ -2227,6 +2230,12 @@ GenAI IAM策略仅在操作模式下可用：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年4月2日
+
+现在、以下权限可在_read mode_中用于数据库："sm：本身是InstanceInformation"。
 
 
 

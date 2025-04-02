@@ -1126,4 +1126,8 @@
   <block id="bc7864e70344eae19121f3e6408c5e04" category="list-text">输入<block ref="657f8b8da628ef83cf69101b6817150a" prefix=" " category="inline-code"></block>以查看可用<block ref="0bdecf44265be755040a6284b4703b71" category="inline-xref-macro-rx"></block>命令和说明、或者参阅以下命令行界面参考文档以了解可用命令：</block>
   <block id="34b14d4981e88ee13798aea3eecf0674" category="paragraph">如果在发出ONTAP命令行界面命令后发生错误、请选择灯泡图标以获取由AI生成的简短错误响应、并提供故障说明、故障原因和详细解决方案。有关详细信息，请选择*阅读更多*。</block>
   <block id="ef74d01649997b60252254da8a1573fd" category="doc">CloudShell会报告ONTAP命令行界面命令的AI生成的错误响应</block>
+  <block id="e388026a0cea886de58a344e102aff29" category="cell">提取一组受管EC2实例(SQL节点)的SSM关联状态</block>
+  <block id="3320749a6854264e1889d72d7f41a0bf" category="cell">SSM：说明实例信息</block>
+  <block id="99e26a6b02df18a6d3fcaa201c832eff" category="section-title">2025年4月2日</block>
+  <block id="3721724ce177d539f2733638cda0c562" category="paragraph">现在、以下权限可在_read mode_中用于数据库："sm：本身是InstanceInformation"。</block>
 </blocks>

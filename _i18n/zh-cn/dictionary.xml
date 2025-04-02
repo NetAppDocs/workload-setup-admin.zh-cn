@@ -1129,5 +1129,5 @@
   <block id="e388026a0cea886de58a344e102aff29" category="cell">提取一组受管EC2实例(SQL节点)的SSM关联状态</block>
   <block id="3320749a6854264e1889d72d7f41a0bf" category="cell">SSM：说明实例信息</block>
   <block id="99e26a6b02df18a6d3fcaa201c832eff" category="section-title">2025年4月2日</block>
-  <block id="3721724ce177d539f2733638cda0c562" category="paragraph">现在、以下权限可在_read mode_中用于数据库："sm：本身是InstanceInformation"。</block>
+  <block id="ecffd7b63fa9fc5c65235a6db0f2a9b2" category="paragraph">现在，以下权限可在_Read mode_中用于数据库：<block ref="3320749a6854264e1889d72d7f41a0bf" prefix=" " category="inline-code"></block>。</block>
 </blocks>

@@ -2235,7 +2235,7 @@ GenAI IAM策略仅在操作模式下可用：
 
 === 2025年4月2日
 
-现在、以下权限可在_read mode_中用于数据库："sm：本身是InstanceInformation"。
+现在，以下权限可在_Read mode_中用于数据库： `ssm:DescribeInstanceInformation`。
 
 
 

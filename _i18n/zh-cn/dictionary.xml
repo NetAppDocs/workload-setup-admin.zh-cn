@@ -1059,7 +1059,6 @@
   <block id="04c38dfa84592feebab3e30dfe4a019a" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将添加<block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="c3c7c9c146408a0ee564eedba4821f52" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将权限添加<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="ad9001b544dade5536691ec3feee578f" category="inline-link-macro">BlueXP  工作负载出厂时的权限</block>
-  <block id="4c1bf71f3b414847584faa395569aa99" category="paragraph">详细了解 <block ref="0ea8d4071df9710eb1c660a6314e7a7f" category="inline-link-macro-rx"></block>。</block>
   <block id="2a358d687197b0311c68b4c8a7e35e1c" category="cell">模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较</block>
   <block id="8c5e268f15aeebda6b5b234b3f7c7174" category="cell">从AI引擎堆栈将加密事件发布到WLAMAI后端</block>
   <block id="9b1384398d4de5545bd0dad2106d6b0d" category="cell">将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端</block>
@@ -1130,4 +1129,5 @@
   <block id="3320749a6854264e1889d72d7f41a0bf" category="cell">SSM：说明实例信息</block>
   <block id="99e26a6b02df18a6d3fcaa201c832eff" category="section-title">2025年4月2日</block>
   <block id="ecffd7b63fa9fc5c65235a6db0f2a9b2" category="paragraph">现在，以下权限可在_Read mode_中用于数据库：<block ref="3320749a6854264e1889d72d7f41a0bf" prefix=" " category="inline-code"></block>。</block>
+  <block id="0c749cb02f361ac40b1f6fc23a0feaf9" category="paragraph">详细了解 <block ref="8b9a4f89ed6bf874edd6af12deea004c" category="inline-link-macro-rx"></block>。</block>
 </blocks>

@@ -23,7 +23,7 @@ sidebar:
     entries:
     - title: 了解基础知识
       entries:
-      - title: 工作负载出厂概述
+      - title: 了解BlueXP  工作负载工厂
         url: "/workload-factory-overview.html"
       - title: 操作模式
         url: "/operational-modes.html"

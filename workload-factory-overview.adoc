@@ -87,8 +87,8 @@ link:manage-service-accounts.html["了解如何管理服务帐户"](英文)
 工作负载工厂提供三种操作模式、您可以通过这些模式仔细控制对云资产的访问、并根据IT策略为工作负载工厂分配增量信任。
 
 * *基本模式*代表零信任关系，旨在早期探索工作负载工厂，并使用各种向导创建所需的基础架构即代码。此代码可以由用户及其相关AWS凭据手动复制和使用。
-* *读取模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。
-* *自动化模式*表示完全信任关系，旨在代表用户执行和自动化，以及分配的凭据，这些凭据具有执行所需的和经过验证的权限。
+* *只读模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。
+* *读/写模式*代表完全信任关系，旨在代表用户执行和自动执行，以及分配的凭据，这些凭据具有执行所需的经验证权限。
 
 
 link:operational-modes.html["详细了解工作负载出厂操作模式"](英文)
@@ -127,18 +127,7 @@ Workload Factory提供了节省量计算器、因此您可以将FSx for ONTAP文
 * link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html["了解如何探索为数据库工作负载节省的空间"^]
 
 
-
-
-== 用于工作负载工厂的工具
-
-您可以将BlueXP  工作负载工厂与以下工具结合使用：
-
-* *工作负载工厂控制台*：工作负载工厂控制台提供了一个可视化界面，可让您全面了解应用程序和项目
-* BlueXP  console*：BlueXP  控制台提供了混合接口体验，因此您可以将BlueXP  工作负载出厂配置与其他BlueXP  服务结合使用
-* *REST API*：工作负载出厂REST API允许您部署和管理适用于ONTAP文件系统和其他AWS资源的FSx
-* *CloudFormation*：AWS CloudFormation代码可用于执行您在工作负载工厂控制台中定义的操作、以便在AWS帐户中对CloudFormation堆栈中的AWS和第三方资源进行建模、配置和管理
-* *Terraform BlueXP  工作负载工厂提供程序*：Terraform支持您构建和管理在工作负载工厂控制台中生成的基础架构工作流
-
+https://raw.githubusercontent.com/NetAppDocs/workload-family/main/_include/learn-about-tools.adoc[]
 
 
 

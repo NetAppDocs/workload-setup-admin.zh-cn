@@ -169,8 +169,6 @@
   <block id="0261a8e2837bda78e3e9784459c8d346" category="doc">了解操作模式和AWS凭据</block>
   <block id="3b39e22b0ceb822bf56d19eb7ec14f7f" category="section-title">操作模式</block>
   <block id="dad76b021334eb3d63f98648f701f598" category="list-text">基本模式</block>
-  <block id="1aa9d894db1bbfc4f52d99a458da7ff9" category="list-text">读取模式</block>
-  <block id="8d350bc547891d480d771e3f371ccf36" category="list-text">自动模式</block>
   <block id="ba15cdea72f76749ac3c4d115682e1d5" category="section-title">操作模式功能</block>
   <block id="98065f8fb54547b003b502647ed5da13" category="paragraph">使用每种模式时、可用功能会随每种模式而增加。</block>
   <block id="650be61892bf690026089544abbd9d26" category="cell">模式</block>
@@ -183,7 +181,6 @@
   <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="cell">读取</block>
   <block id="dd5bf678cc7b441324b2d76ab8b6329d" category="cell">适度填写IAC模板</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">是</block>
-  <block id="9ed56d4841dbb118ee9f4fc81ea82572" category="cell">自动化</block>
   <block id="3babc847b322c661049062334b9c76b2" category="cell">完全自动化</block>
   <block id="78ac103234082be5f5a4ea67a4551981" category="cell">完全自动化的完整IAC模板</block>
   <block id="c1ae257d71f3632f9398109243cbfd70" category="section-title">操作模式要求</block>
@@ -197,7 +194,6 @@
   <block id="cea96a6659ee3b63722518018a5e6659" category="paragraph"><block ref="cea96a6659ee3b63722518018a5e6659" category="inline-link-rx"></block></block>
   <block id="7cc58201fa83275d07886281be81a758" category="section-title">操作模式示例</block>
   <block id="5504977cb47d642da3d1264eefb7edda" category="section-title">示例1</block>
-  <block id="38356e3b8f5e0e5ad2a7ff778c4e8d82" category="paragraph">使用已授予以下权限的凭据的帐户用户将完全控制(自动模式)为ONTAP文件系统创建FSx、部署数据库以及查看帐户中使用的其他类型AWS存储。</block>
   <block id="4cd751338620bbd6099bbf7dcff61879" category="inline-image-macro">屏幕截图显示了一组凭据、这些凭据提供了两种类型的工作负载权限。</block>
   <block id="9d405f908b42d501e27391e88e96690c" category="paragraph"><block ref="9d405f908b42d501e27391e88e96690c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5f3a8aa007370d00f3fd3b293a6a1118" category="section-title">示例2</block>
@@ -327,8 +323,6 @@
   <block id="22412f0c62e1935807bc2c96a82d38cd" category="inline-link">基于Web的控制台</block>
   <block id="9b945efebb006547a94415eadaa12921" category="section-title">帐户</block>
   <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。</block>
-  <block id="d81fee99e7fd276bb44ecddacfeba318" category="list-text">*读取模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
-  <block id="e2cde95c1c68867f8b74113e5266c7e4" category="list-text">*自动化模式*表示完全信任关系，旨在代表用户执行和自动化，以及分配的凭据，这些凭据具有执行所需的和经过验证的权限。</block>
   <block id="e73298b79ea9408111cb3612bf336a0e" category="section-title">连接链路</block>
   <block id="e20e09752eeb59f7fee2ca964db1c848" category="paragraph">当前、链路会利用AWS Lamb流程。</block>
   <block id="e3bdd5798efebca8061760f610d98bcc" category="inline-link">了解有关链接的更多信息</block>
@@ -385,7 +379,6 @@
   <block id="717f9c6475fbb39a24ab9942c1a903c0" category="inline-link-macro">了解如何从BlueXP  控制台访问工作负载工厂</block>
   <block id="4fa2f246a664251a157926c2e11e1eb3" category="summary">添加AWS凭据、以便工作负载工厂拥有在AWS帐户中部署和管理云资源所需的权限。</block>
   <block id="188c7f44ffe17186c8dcbc38640d54e1" category="paragraph">添加和管理AWS凭据、以便工作负载工厂拥有在AWS帐户中部署和管理云资源所需的权限。</block>
-  <block id="ef76867d2d387a61f890c38a33b72db2" category="paragraph">除非添加AWS帐户凭据、否则工作负载工厂将在_BASIC模式下运行。您可以添加凭据以启用其他操作模式、例如读取模式和自动模式。<block ref="3ecbe38d325fe0025957d871a4619a77" category="inline-link-macro-rx"></block>(英文)</block>
   <block id="46d8bcaa7ad323ed43d1470da9f4d8d4" category="paragraph">您可以从凭据页面将AWS凭据添加到现有工作负载工厂帐户。这样、工作负载工厂便可获得在AWS云环境中管理资源和流程所需的权限。</block>
   <block id="a8d22daacb593b2058549a21847e76f3" category="list-text">*手动*：在工作负载工厂添加凭据的同时、在AWS帐户中创建IAM策略和IAM角色。</block>
   <block id="d57580b6e425a294d78d2a742a402af8" category="paragraph">您可以手动将AWS凭据添加到工作负载工厂、以便为您的工作负载工厂帐户授予管理用于运行您的唯一工作负载的AWS资源所需的权限。您添加的每组凭据都将根据要使用的工作负载功能包含一个或多个IAM策略、以及分配给您的帐户的IAM角色。</block>
@@ -408,8 +401,6 @@
   <block id="bd8d6e5dfffb67199ddeb1c155bc6e48" category="paragraph"><block ref="bd8d6e5dfffb67199ddeb1c155bc6e48" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3aa9d8c5e3261007f739ce4fad58363e" category="list-text">返回到工作负载出厂设置并监控到凭据页面、以验证新凭据是否正在运行或是否已添加。</block>
   <block id="9e45a841cd3d04ddc3431cb5c2faefdc" category="summary">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行工作负载工厂支持的任何操作所需的代码。CodeBox符合工作负载出厂操作模式(基本、读取、自动化)、并为执行准备工作设定了明确的路径、同时还提供了一个自动化目录以供将来快速重复使用。</block>
-  <block id="1fa615fd351b087a76b1e2c3e58b88aa" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行工作负载工厂支持的任何操作所需的代码。CodeBox符合工作负载出厂操作模式(基本、读取和自动)、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。</block>
-  <block id="43121d36d9075d72f302f224d3e42ae1" category="paragraph">此外、在设置工作负载出厂凭据时、Codebox会动态显示创建IAM策略所需的AWS权限。系统会为您计划使用的每个工作负载出厂功能(数据库、AI、FSx for ONTAP等)提供权限、这些权限会根据策略的用户将获得只读权限还是完全操作权限进行自定义。您只需从CodeBox复制权限、然后将其粘贴到AWS管理控制台中、以便工作负载工厂拥有正确的权限来管理您的工作负载。</block>
   <block id="4dbdfdd6a8563d138a057f5cd3bb0f0b" category="list-text">工作负载出厂REST API</block>
   <block id="7f13adabeed591303c3a10ee4980d5a1" category="summary">可通过两个基于Web的控制台访问BlueXP  工作负载工厂。</block>
   <block id="c938676b28ab6dd4d5cc28ebdf8c49b9" category="doc">控制台体验</block>
@@ -446,9 +437,7 @@
   <block id="9317db7f25495b088f6318d86dfd14bf" category="list-text">表示完全信任关系、以便为工作负载工厂分配完全权限。这样、工作负载工厂便可代表您在AWS中执行和自动执行操作、并可获得分配的凭据、这些凭据具有执行所需的权限。</block>
   <block id="c733eb78f31844c1e1433a374c901d1e" category="cell">从工作负载工厂实现自动化</block>
   <block id="b1ac12ec9d4b511fa08a587be1be8b4d" category="paragraph">您无需在工作负载出厂时设置任何选择器、即可确定要使用的模式。模式取决于您分配给工作负载工厂帐户的AWS凭据和权限。</block>
-  <block id="64c0a6c81b6c3af3765c25256dcbf047" category="paragraph">您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如、您可以为要部署和管理FSx for ONTAP文件系统的操作配置自动模式、但只能为使用工作负载工厂创建和部署数据库工作负载配置读取模式。</block>
   <block id="20f75920053dcff627d860520f371b26" category="paragraph">您可以在一个工作负载工厂帐户的一组凭据中提供这些功能、也可以在每个凭据提供独特的工作负载部署功能时创建多组凭据。</block>
-  <block id="ccff80abdf432e228d3c0d30a4a114de" category="paragraph">但是、他们在工作负载出厂时没有用于创建和部署VMware工作负载(基本模式)的自动化控制。如果他们要创建VMware工作负载、则需要从代码框中复制代码、手动登录到其AWS帐户、然后手动填充生成的代码中缺少的条目、才能使用此功能。</block>
   <block id="2fb909c54550b56bac338e985277eb1a" category="paragraph">在使用第一个工作负载出厂功能时、您需要使用这些工作负载功能所需的权限创建凭据。您需要将凭据添加到工作负载工厂、但需要访问AWS管理控制台才能创建IAM角色和策略。在工作负载工厂中使用任何功能时、您的帐户中都可以提供这些凭据。</block>
   <block id="929b839513dbfff16e7804628038a9a8" category="paragraph">向工作负载工厂添加多组AWS凭据可提供使用其他功能所需的额外权限、例如FSx for ONTAP文件系统、在FSx for ONTAP上部署数据库、迁移VMware工作负载等。</block>
   <block id="5145374f219e1c177ab5588a5344aa6e" category="inline-link-macro">了解如何将AWS凭据添加到工作负载工厂</block>
@@ -460,7 +449,6 @@
   <block id="70d0aaf5f480c6663d11cba807745150" category="paragraph">用户可从基于Web的控制台以云服务的形式访问工作负载工厂。开始之前，您应了解 <block ref="e8fd0c1fcb8ab0b007f06daaaaad1620" category="inline-link-macro-rx"></block> 和 <block ref="232f97f76b2e1af290ebde69715d8d8f" category="inline-link-macro-rx"></block>。</block>
   <block id="5aef544885f83ccc840e539c33cb1025" category="paragraph">转到<block ref="c88df82826d36e57e6bb9062bf07b8b2" category="inline-link-rx"></block>，注册并创建帐户。</block>
   <block id="60606490df41979dfeb5466c4c9f1288" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>将AWS凭据添加到工作负载工厂</block>
-  <block id="8240cb8cdbe0ba3f858b0fda1bb07bfc" category="paragraph">此步骤为可选步骤。您可以在_Basic_模式下使用工作负载工厂、而无需添加凭据即可访问AWS帐户。在_read_模式或_Automate _模式下向工作负载工厂添加AWS凭据、可以为您的工作负载工厂帐户提供创建和管理FSx for ONTAP文件系统以及部署和管理特定工作负载(例如数据库和GenAI)所需的权限。</block>
   <block id="51ff16c71246f19573efec76f8f088e4" category="paragraph">现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用工作负载工厂使用FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。</block>
   <block id="9ec9485bf8174a52fd8f6a62564d8738" category="summary">可从基于Web的控制台访问工作负载工厂。开始使用工作负载工厂时、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。</block>
   <block id="a51339d19908e6fdb3902e2656db64d1" category="doc">注册BlueXP  工作负载工厂</block>
@@ -475,7 +463,6 @@
   <block id="3acdefd13933ae891b18dfca314c3ae8" category="summary">您可以使用CodeBox生成执行BlueXP  工作负载工厂支持的任何操作所需的代码。</block>
   <block id="7a722a65def6075db353b70066e35707" category="doc">使用CodeBox在BlueXP  工作负载工厂实现自动化</block>
   <block id="a874d0883486fcca7aa1243ef9acc01d" category="paragraph">您可以使用CodeBox生成执行BlueXP  工作负载工厂支持的任何操作所需的代码。您可以使用工作负载出厂REST API、AWS命令行界面和AWS CloudFormation生成可使用和运行的代码。</block>
-  <block id="3e529d693ad9e838d629617602ce7195" category="paragraph">Codebox可根据每个用户的工作负载工厂帐户中提供的AWS权限在代码中填充相应的数据、从而与工作负载工厂操作模式(基本、读取和自动)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。</block>
   <block id="5a43715fb7078b4045756abce9da826e" category="paragraph">在工作负载出厂UI向导中输入值后、您可以在完成每个字段后在CodeBox中看到数据更新。完成向导后，在选择页面底部的*Creat*按钮之前，请选择 <block ref="4b7dbf915ce902400e3f4172621123eb" category="inline-image-macro-rx" type="image"></block> 在CodeBox中复制以捕获构建配置所需的代码。例如、此创建新Microsoft SQL Server的屏幕截图显示了VPC和可用性区域的向导条目、以及Codebox中用于REST API实施的等效条目。</block>
   <block id="d10cc376cc863f01ec47fab56e956119" category="paragraph">您可以复制从CodeBox生成的CloudFormation代码、然后在您的AWS帐户中启动Amazon Web Services CloudFormation堆栈。CloudFormation将执行您在工作负载出厂UI中定义的操作。</block>
   <block id="d4483cf5ec74c50b2bf5b0430ea00d3e" category="paragraph">根据您是要部署FSx for ONTAP文件系统、创建帐户凭据还是执行其他工作负载出厂操作、使用CloudFormation代码的步骤可能会有所不同。</block>
@@ -510,13 +497,6 @@
   <block id="691199ddecf65c4783496c94612dd07f" category="paragraph">您不需要链接即可开始使用工作负载工厂、但在某些情况下、您需要创建一个链接来解锁所有工作负载工厂功能和工作负载功能。</block>
   <block id="977c73c0914e897973f4ba0be879711f" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行工作负载工厂支持的任何操作所需的代码。代码格式包括工作负载工厂REST API、AWS CLI和AWS CloudFormation。</block>
   <block id="4d062c42aef687546a9198cf40695389" category="paragraph">CodeBox与工作负载出厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还为将来快速重复使用设置了自动化目录。</block>
-  <block id="200e3179449390bdf5f3f8d9a199630c" category="section-title">用于工作负载工厂的工具</block>
-  <block id="b5a374f3f5b31b5057808689d26fe2c4" category="paragraph">您可以将BlueXP  工作负载工厂与以下工具结合使用：</block>
-  <block id="d5688c5bf16d0126d5b27759385bd41e" category="list-text">*工作负载工厂控制台*：工作负载工厂控制台提供了一个可视化界面，可让您全面了解应用程序和项目</block>
-  <block id="38f4e563ea70a0c42a140783a152e82f" category="list-text">BlueXP  console*：BlueXP  控制台提供了混合接口体验，因此您可以将BlueXP  工作负载出厂配置与其他BlueXP  服务结合使用</block>
-  <block id="a3ee2d6d4606b21bc131c4389e63413b" category="list-text">*REST API*：工作负载出厂REST API允许您部署和管理适用于ONTAP文件系统和其他AWS资源的FSx</block>
-  <block id="35507c73673fd91f2b540f5ac22435e2" category="list-text">*CloudFormation*：AWS CloudFormation代码可用于执行您在工作负载工厂控制台中定义的操作、以便在AWS帐户中对CloudFormation堆栈中的AWS和第三方资源进行建模、配置和管理</block>
-  <block id="2b796a233d6b48fb3e49b8c71a2addb1" category="list-text">*Terraform BlueXP  工作负载工厂提供程序*：Terraform支持您构建和管理在工作负载工厂控制台中生成的基础架构工作流</block>
   <block id="8ced11608886f669c92a28dad366c83f" category="paragraph">通过工作负载工厂、您可以针对特定工作负载优化、自动化和运行FSx for ONTAP文件系统。每个工作负载都会公开一个关联的REST API。这些工作负载和API共同构成一个灵活且可扩展的开发平台、您可以使用它来管理FSx for ONTAP文件系统。</block>
   <block id="0839f9866a5d09d079388954e0119ee3" category="paragraph">使用工作负载出厂REST API具有以下优势：</block>
   <block id="ee784d1edaf22c0f803f2403be1903b8" category="list-text">工作负载出厂身份验证基于OAuth2标准。NetApp依赖于Auth0服务实施。</block>
@@ -525,7 +505,6 @@
   <block id="a6e871d2d7edd183ddc76f5c82f81c51" category="paragraph"><block ref="a6e871d2d7edd183ddc76f5c82f81c51" category="inline-link-rx"></block></block>
   <block id="ad58fbedc89b687da72b83c65c94187c" category="sidebar">开始使用BlueXP  Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码联合技术实现跨平台自动化、以及在工作负载出厂时管理工作负载。</block>
   <block id="9d99dd80a147b3b1376d73b8b105b981" category="sidebar">BlueXP  工作负载出厂设置和管理文档</block>
-  <block id="b5be8d4327a5f5a8cb712336382b2c2c" category="sidebar">工作负载出厂概述</block>
   <block id="280ab23085110ae96b1c8df197382d0b" category="sidebar">注册工作负载工厂</block>
   <block id="cb1411d161cdf3fea65b5b1351ffa45b" category="sidebar">管理工作负载工厂</block>
   <block id="2003c10ae1eaa96c8dd0c849f3e0b79e" category="sidebar">登录到工作负载工厂</block>
@@ -598,7 +577,6 @@
   <block id="43fcd221af337ae9a32718b7ef097cf2" category="summary">要使用BlueXP  工作负载工厂功能和服务、您需要提供权限、以便工作负载工厂可以在云环境中执行操作。</block>
   <block id="d6a57e4245c0b8a043004e7acd2a2bd9" category="doc">BlueXP  工作负载出厂时的权限</block>
   <block id="700a021d89dc2381c64a3ed9192ee53f" category="section-title">为什么要使用权限</block>
-  <block id="65508cebd422d78a4b01b7d67145b61f" category="paragraph">提供读取或自动模式权限时、Workload Factory会将一个策略附加到实例、并为其授予管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。</block>
   <block id="141fc03482c74c6707d4666e1b85c2cf" category="paragraph">例如、对于数据库工作负载、如果为工作负载工厂授予了所需权限、则它会扫描给定帐户和区域中的所有EC2实例、并筛选所有基于Windows的计算机。如果在主机上安装了AWS Systems Manager (SSM)代理并运行此代理、并且System Manager网络配置正确、则工作负载工厂可以访问Windows计算机并验证是否安装了SQL Server软件。</block>
   <block id="a6a12fe94711dfdea0fcf1676358e0b3" category="section-title">按工作负载划分的权限</block>
   <block id="fc80f33c496e0821a5411de4d55a7eb7" category="paragraph">每个工作负载都使用权限在工作负载出厂时执行某些任务。滚动到您使用的工作负载以查看权限列表、其用途、使用位置以及支持这些权限的模式。</block>
@@ -857,7 +835,6 @@
   <block id="a7170e00216d426ffa1b5c8b1ad8faf2" category="list-text">"IAM：PassRole"受"iam：PassedToService"限制：ec2.amazonaws.com"*</block>
   <block id="be5d4fafcc5fc8ef08ec4bd4f076e815" category="section-title">GenAI工作负载的权限</block>
   <block id="c01e6e48c9dd3d58f56addc8ddd893e8" category="paragraph">适用于VMware工作负载的IAM策略提供了VMware工作负载工厂根据您的操作模式管理公有云环境中的资源和流程所需的权限。</block>
-  <block id="bc3cde15ee34ad6f9b8ff7079275d49d" category="paragraph">GenAI IAM策略仅在操作模式下可用：</block>
   <block id="fc52d9d99561c2b721d43bdd4d36b615" category="example-title">适用于GenAI工作负载的IAM策略</block>
   <block id="2d8cf1aba2af04b1b4fd9bd3d7d6905f" category="paragraph">下表提供了有关GenAI工作负载的权限的详细信息。</block>
   <block id="64f5bb9f44fff01f3adc6fad9e6240f7" category="example-title">GenAI工作负载的权限表</block>
@@ -1046,7 +1023,6 @@
   <block id="cf1f4a083afa7ccb1141e827deb4cdc2" category="paragraph">现在，您可以从使用工作负载工厂<block ref="4623dd80d89c29fbf0d2b04387a56c33" category="inline-link-macro-rx"></block>。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。</block>
   <block id="dec23cffbd0de1b8096bc26072eb0b7d" category="cell">获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像</block>
   <block id="6928ceecf566ab44f308d64b3806a0bc" category="section-title">2025年3月2日</block>
-  <block id="d783298edb81a604dd8765a5040ef52e" category="paragraph">现在，在_Autome_模式下，可以对GenAI使用以下权限：<block ref="1311c4cbbe5b925c15d25fe5ff7b022b" prefix=" " category="inline-code"></block>。</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客和社区</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
   <block id="abd0fe91ce589ecf3c7bad0543ccad16" category="sidebar">BlueXP博客</block>
@@ -1055,7 +1031,6 @@
   <block id="4ef50e373522b91f7df59d5cba69a8b7" category="section-title">IAM：SimulatePermission Policy权限更新</block>
   <block id="906699741ebd9905a07af900abcfd438" category="paragraph">现在、当您添加其他AWS帐户凭据或添加新工作负载功能(例如GenAI工作负载)时、您可以从工作负载出厂控制台管理此<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>权限。</block>
   <block id="c1bc5d8eeb872326cb512499f02befb5" category="paragraph"><block ref="c1bc5d8eeb872326cb512499f02befb5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f7b9069b6f855261dc3e63baeaa5531f" category="list-text">对于可选择权限级别(读取或自动执行)的工作负载功能、请选择可通过这些凭据使用的权限类型。</block>
   <block id="04c38dfa84592feebab3e30dfe4a019a" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将添加<block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="c3c7c9c146408a0ee564eedba4821f52" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将权限添加<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="ad9001b544dade5536691ec3feee578f" category="inline-link-macro">BlueXP  工作负载出厂时的权限</block>
@@ -1063,7 +1038,6 @@
   <block id="8c5e268f15aeebda6b5b234b3f7c7174" category="cell">从AI引擎堆栈将加密事件发布到WLAMAI后端</block>
   <block id="9b1384398d4de5545bd0dad2106d6b0d" category="cell">将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端</block>
   <block id="359cacd98d9742aded751741e70dce82" category="cell">在AI引擎部署向导上列出子网</block>
-  <block id="b2009fdc9170f9b13160d7da2fbab6aa" category="cell">在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组</block>
   <block id="f0f0a4abc20f5a5e438ac1da53b231af" category="cell">向其中一个基础模型发起聊天请求</block>
   <block id="ffd1e194cd59f12c42768a9effd5aa2f" category="cell">验证是否需要在部署和重建操作期间创建Amazon CloudWatch日志组</block>
   <block id="2887c4c92d65effaf012b7ca2f914958" category="cell">在AI引擎向导期间获取支持FSx和Amazon Brock的区域</block>
@@ -1075,7 +1049,6 @@
   <block id="a89bcda1bd913f5d2c92bb3afd10848c" category="cell">将AI引擎日志发送到Amazon CloudWatch日志组</block>
   <block id="1ae2d90929ed009fb7cb0c3215e704ed" category="cell">从Amazon CloudWatch获取SSM响应(响应时间过长)</block>
   <block id="58401e538d76248fba41eb3d4b00ff5b" category="cell">从Amazon CloudWatch获取SSM响应</block>
-  <block id="79b580d74ffecaf0e2c1b9af0ac5f882" category="cell">在部署和重建操作期间创建堆栈期间、为Amazon基本日志创建Amazon CloudWatch日志组</block>
   <block id="4a5e33ece3615dac1032e841cde40447" category="cell">将基岩日志发送到Amazon CloudWatch</block>
   <block id="add4bf257ce9e3b25c497de343e52632" category="cell">Bedrock：PutConfigurationLoggingConfiguration</block>
   <block id="60932b6084feefeacceacd749dcdedc9" category="cell">创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色</block>
@@ -1085,13 +1058,11 @@
   <block id="9aa5a97dfe3f7608d8ee28e7db3c4e2c" category="cell">Bedrock：ListInferenceProfile</block>
   <block id="db54384248c75c5896f34bcb0879b66c" category="section-title">2025年3月30日</block>
   <block id="68ef824f4316a8546891ab93ee11d77f" category="section-title">GenAI工作负载权限更新</block>
-  <block id="f587eed9c7dc8910227d7d906f2261fd" category="paragraph">现在、以下权限可在_Automate mode_中用于GenAI：</block>
   <block id="8478b63212964b55320b9d61c0737e08" category="list-text"><block ref="add4bf257ce9e3b25c497de343e52632" prefix="" category="inline-code"></block></block>
   <block id="d07fde30621d1890701e3ba8f6d492ad" category="list-text"><block ref="b76a6c7392362eeb73fd252a4af062ca" prefix="" category="inline-code"></block></block>
   <block id="a39790181f1fd72ef9537ae34545ff02" category="list-text"><block ref="f6ae0a8a1321975a6474722dcafe1322" prefix="" category="inline-code"></block></block>
   <block id="e1c6dba31ff47898c553f6707ccfbdb0" category="list-text"><block ref="8de34002c35d0d4a13280a50047e76e4" prefix="" category="inline-code"></block></block>
   <block id="71d01806cd25e89067c25b4f03e9a607" category="list-text"><block ref="9aa5a97dfe3f7608d8ee28e7db3c4e2c" prefix="" category="inline-code"></block></block>
-  <block id="4d3f55c3707ec2803e7eaf6d7b978451" category="paragraph">已从_Automate mode_中删除GenAI的以下权限：<block ref="8a44b1c8d2e06b1acd7404fbb70437cc" prefix=" " category="inline-code"></block>。</block>
   <block id="4e1a858f8ffb4228ac62fb2a65e14e11" category="section-title">IAM：SimulatePrincipalPolicy权限更新</block>
   <block id="ebbd089f3b834616ea3613bf16e46cbf" category="paragraph">如果您在从工作负载出厂控制台添加其他AWS帐户凭据或添加新工作负载功能时启用了自动权限检查、则此<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>权限将成为所有工作负载权限策略的一部分。此权限可模拟工作负载操作、并在从工作负载工厂部署资源之前检查您是否具有所需的AWS帐户权限。启用此检查可减少清理失败操作中的资源以及添加缺少的权限所需的时间和工作量。</block>
   <block id="e81d623c1eabf7a990c647cdb9dc4de8" category="list-text">AI生成的ONTAP命令行界面命令错误响应</block>
@@ -1128,6 +1099,45 @@
   <block id="e388026a0cea886de58a344e102aff29" category="cell">提取一组受管EC2实例(SQL节点)的SSM关联状态</block>
   <block id="3320749a6854264e1889d72d7f41a0bf" category="cell">SSM：说明实例信息</block>
   <block id="99e26a6b02df18a6d3fcaa201c832eff" category="section-title">2025年4月2日</block>
-  <block id="ecffd7b63fa9fc5c65235a6db0f2a9b2" category="paragraph">现在，以下权限可在_Read mode_中用于数据库：<block ref="3320749a6854264e1889d72d7f41a0bf" prefix=" " category="inline-code"></block>。</block>
   <block id="0c749cb02f361ac40b1f6fc23a0feaf9" category="paragraph">详细了解 <block ref="8b9a4f89ed6bf874edd6af12deea004c" category="inline-link-macro-rx"></block>。</block>
+  <block id="74d516ef8dfa098bb4cd92313c403475" category="doc">CloudShell自动完成支持</block>
+  <block id="df96b6f4ceabb5c4dbc915475fd821fe" category="paragraph">使用BlueXP  Workload Factory CloudShell时、您可以开始键入命令、然后按Tab键查看可用选项。如果存在多种可能、命令行界面将显示建议列表。此功能可最大限度地减少错误并加快命令执行速度、从而提高工作效率。</block>
+  <block id="514f1fc0ac0ff6e4200d3637146367f1" category="section-title">更新了权限术语</block>
+  <block id="a7b97ab7d88b015e92ed51ef4bee9c25" category="paragraph">现在、工作负载出厂用户界面和文档使用"只读"来表示读取权限、使用"读写"来表示自动执行权限。</block>
+  <block id="5a92867eb042f7dcff91a1de74a2aa76" category="paragraph">工作负载工厂将在_Basic_模式下运行、除非您添加AWS帐户凭据。您可以添加凭据以启用其他操作模式、例如_read-only模式和_read/Write_模式。<block ref="3ecbe38d325fe0025957d871a4619a77" category="inline-link-macro-rx"></block>(英文)</block>
+  <block id="015d402cdd34eee3e53cdd7bf1bde60e" category="list-text">对于可选择权限级别(只读、读/写等)的工作负载功能、请选择可通过这些凭据获得的权限类型。</block>
+  <block id="33690931e0014f506be3c7e723737562" category="paragraph">CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合产品、可帮助开发人员和开发运营团队生成执行工作负载工厂支持的任何操作所需的代码。CodeBox与工作负载出厂操作模式(基本、只读和读/写)保持一致、并为执行准备工作设置了明确的路径、同时还提供了一个自动化目录、以供将来快速重复使用。</block>
+  <block id="fcb28ed33fed27ffbcd995263190fd03" category="paragraph">此外、在设置工作负载出厂凭据时、Codebox会动态显示创建IAM策略所需的AWS权限。系统会为您计划使用的每个工作负载工厂功能(数据库、AI、FSx for ONTAP等)提供权限、这些权限会根据策略的用户是获得只读权限还是完全读/写权限进行自定义。您只需从CodeBox复制权限、然后将其粘贴到AWS管理控制台中、以便工作负载工厂拥有正确的权限来管理您的工作负载。</block>
+  <block id="ac811c471ef716f9c8a3865d7f14caa3" category="list-text">只读模式</block>
+  <block id="817855bb538dbbb63c56d38fc57684f5" category="list-text">读/写模式</block>
+  <block id="db3317ceb65be02e43db6f277e0ad94e" category="cell">读/写</block>
+  <block id="27026b2887f7523ec1293c67830e4430" category="paragraph">您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如、您可以为要部署和管理FSx for ONTAP文件系统的操作配置读/写模式、但只能为使用工作负载工厂创建和部署数据库工作负载配置读取模式。</block>
+  <block id="e6cecb421f7b5203c2daf4f545364558" category="paragraph">使用已授予以下权限的凭据的帐户用户将拥有创建FSx for ONTAP文件系统、部署数据库以及查看帐户中使用的其他类型AWS存储的完全控制权(读/写模式)。</block>
+  <block id="c0ee691320caa89b529bc0bcaf9cc696" category="paragraph">但是、他们在工作负载出厂时没有用于创建和部署VMware工作负载(基本模式)的自动化控制。如果他们要创建VMware工作负载、则需要从代码框中复制代码、手动登录到其AWS帐户、然后手动填充生成的代码中缺少的条目、才能使用此功能。</block>
+  <block id="b91c58f3e94e0488074053d96cd4bbec" category="paragraph">如果您提供只读或读/写模式权限、则Workload Factory会将一个策略附加到实例、该策略具有管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。</block>
+  <block id="4d372922f30597b3e046274dbb3cecd2" category="list-text">只读</block>
+  <block id="d066bc059c61c75a41706f175a5b3f8b" category="cell">在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志。</block>
+  <block id="2e50818bd890a03b645105690ca2ee60" category="list-text">存储评估</block>
+  <block id="38ef2c2517cd341233b9181c09ba8071" category="paragraph">GenAI IAM策略仅在读/写模式下可用：</block>
+  <block id="123ce9aa4e0770ecb435c005fa9b436c" category="cell">列出Amazon Q Business应用程序</block>
+  <block id="4f3c534c90392632c7d275f54d5b35a0" category="cell">qBusiness：ListApplications</block>
+  <block id="ff49b9449e169eb2a6d647cdd5416940" category="cell">在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组</block>
+  <block id="fb2b74ed81679192134e9c2c07019b42" category="cell">获取有关基础模型的信息</block>
+  <block id="1311c4cbbe5b925c15d25fe5ff7b022b" category="cell">基岩：GetFoundationModel</block>
+  <block id="9dd35b54afccc27a1cc96eab777dbc8e" category="cell">在部署和重建操作期间创建堆栈期间、为Amazon基岩日志创建Amazon CloudWatch日志组</block>
+  <block id="dac96c84baa92faab0eb342df5283a1b" category="section-title">2025年5月4日</block>
+  <block id="b1351fb22e71d3c2b886e8e0819e632f" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="4f3c534c90392632c7d275f54d5b35a0" prefix=" " category="inline-code"></block>。</block>
+  <block id="17cf827d0ea669f390d3f954ed27424d" category="paragraph">现在，以下权限在_read-only (只读)模式下可用于数据库：<block ref="6d952035baa97bd601f4d280f10fcc53" prefix=" " category="inline-code"></block>。</block>
+  <block id="83300e091c617144cede34b6c898e63b" category="paragraph">现在，以下权限在_read-only (只读)模式下可用于数据库：<block ref="3320749a6854264e1889d72d7f41a0bf" prefix=" " category="inline-code"></block>。</block>
+  <block id="be999711faeee231a254e996141ed09f" category="paragraph">现在、可以在_Read/Write mode_中为GenAI提供以下权限：</block>
+  <block id="9f4fc0ded0d1671253e5c8e38cd9464f" category="paragraph">已从GenAI的_Read/Write mode_中删除以下权限：<block ref="8a44b1c8d2e06b1acd7404fbb70437cc" prefix=" " category="inline-code"></block>。</block>
+  <block id="879d4518dddfda849555dedfa0344aba" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="1311c4cbbe5b925c15d25fe5ff7b022b" prefix=" " category="inline-code"></block>。</block>
+  <block id="3089e2c4b3d7f4a789cb18dfd97328e5" category="paragraph">现在，以下权限在_read-only (只读)模式下可用于数据库：<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>。</block>
+  <block id="44e520fbea54c952ad648780f8fb60f3" category="paragraph">此步骤为可选步骤。您可以在_Basic_模式下使用工作负载工厂、而无需添加凭据即可访问AWS帐户。在_read-only _模式或_read/Write_模式下向工作负载工厂添加AWS凭据、可为您的工作负载工厂帐户提供创建和管理适用于ONTAP文件系统的FSx以及部署和管理特定工作负载(例如数据库和GenAI)所需的权限。</block>
+  <block id="bf0dcc34b100cf0ff91c26bbd98029f7" category="list-text">自动完成支持：开始键入命令，然后使用*Tab*键查看可用选项</block>
+  <block id="d1d81e390c1cc90777aae9880935cf73" category="paragraph">CodeBox可根据每个用户的工作负载工厂帐户中提供的AWS权限在代码中填充相应的数据、从而与工作负载工厂操作模式(基本、只读和读/写)保持一致。代码可以像模板一样使用、您可以在模板中填写缺少的信息(例如凭据)、也可以在运行代码之前自定义某些数据。</block>
+  <block id="822748e99c70e9162ce5432b2e1eff5c" category="section-title">2025年5月4日</block>
+  <block id="7a0e532396f167d85a7b425f941d0613" category="list-text">*只读模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
+  <block id="4951a0172d4fd2c8116296e71073f31c" category="list-text">*读/写模式*代表完全信任关系，旨在代表用户执行和自动执行，以及分配的凭据，这些凭据具有执行所需的经验证权限。</block>
+  <block id="1c9640aa9075334712c6c2b922771c50" category="paragraph"><block ref="1c9640aa9075334712c6c2b922771c50" category="inline-link-rx"></block></block>
 </blocks>

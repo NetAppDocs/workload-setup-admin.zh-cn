@@ -20,7 +20,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 == 为什么要使用权限
 
-提供读取或自动模式权限时、Workload Factory会将一个策略附加到实例、并为其授予管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。
+如果您提供只读或读/写模式权限、则Workload Factory会将一个策略附加到实例、该策略具有管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。
 
 例如、对于数据库工作负载、如果为工作负载工厂授予了所需权限、则它会扫描给定帐户和区域中的所有EC2实例、并筛选所有基于Windows的计算机。如果在主机上安装了AWS Systems Manager (SSM)代理并运行此代理、并且System Manager网络配置正确、则工作负载工厂可以访问Windows计算机并验证是否安装了SQL Server软件。
 
@@ -43,7 +43,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 ====
 [role="tabbed-block"]
 =====
-.读取模式
+.只读模式
 --
 [source, json]
 ----
@@ -75,7 +75,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 }
 ----
 --
-.自动模式
+.读/写模式
 --
 [source, json]
 ----
@@ -133,22 +133,22 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | 目的 | 操作 | 使用位置 | 模式 
 
 
-| 创建FSx for ONTAP文件系统 | FSx：CreateFileSystem* | 部署 | 自动化 
+| 创建FSx for ONTAP文件系统 | FSx：CreateFileSystem* | 部署 | 读/写 
 
 
-| 为FSx for ONTAP文件系统创建安全组 | EC2：CreateSecurityGroup | 部署 | 自动化 
+| 为FSx for ONTAP文件系统创建安全组 | EC2：CreateSecurityGroup | 部署 | 读/写 
 
 
-| 为FSx for ONTAP文件系统的安全组添加标记 | EC2：CreateTags | 部署 | 自动化 
+| 为FSx for ONTAP文件系统的安全组添加标记 | EC2：CreateTags | 部署 | 读/写 
 
 
-.2+| 授权FSx for ONTAP文件系统的安全组传出和传入 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+.2+| 授权FSx for ONTAP文件系统的安全组传出和传入 | EC2：AuthorizeSecurityGroupEgress | 部署 | 读/写 
 
 
-| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 读/写 
 
 
-| 已授予角色可在FSx for ONTAP与其他AWS服务之间进行通信 | IAM：CreateServiceLinkedIn | 部署 | 自动化 
+| 已授予角色可在FSx for ONTAP与其他AWS服务之间进行通信 | IAM：CreateServiceLinkedIn | 部署 | 读/写 
 
 
 .7+| 获取详细信息以填写FSx for ONTAP文件系统部署表 | EC2：Describe  a| 
@@ -156,8 +156,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -167,8 +167,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -178,8 +178,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -189,8 +189,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -200,8 +200,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -211,8 +211,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -222,25 +222,25 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 读/写 
 
 
 | 公里：描述* | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 公里：列表* | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -250,112 +250,112 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取EC2实例的详细信息 | EC2：Describe实例 | 了解节省量  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-| 在节省量计算器中描述Elelic File System | 文件系统的设置：描述* | 了解节省量 | 读取 
+| 在节省量计算器中描述Elelic File System | 文件系统的设置：描述* | 了解节省量 | 只读 
 
 
 | 列出FSx for ONTAP资源的标记 | FSx：ListTagsForResource | 清单  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 自动化 
+.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 读/写 
 
 
-| EC2：DeleteSecurityGroup | 管理操作 | 自动化 
+| EC2：DeleteSecurityGroup | 管理操作 | 读/写 
 
 
-.16+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolumes* | 管理操作 | 自动化 
+.16+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolumes* | 管理操作 | 读/写 
 
 
-| FSx：TagResource* | 管理操作 | 自动化 
+| FSx：TagResource* | 管理操作 | 读/写 
 
 
-| FSx：CreateStorageVirtualMachine* | 管理操作 | 自动化 
+| FSx：CreateStorageVirtualMachine* | 管理操作 | 读/写 
 
 
-| FSx：DeleteFileSystem* | 管理操作 | 自动化 
+| FSx：DeleteFileSystem* | 管理操作 | 读/写 
 
 
-| FSx：DeleteStorageVirtualMachine* | 管理操作 | 自动化 
+| FSx：DeleteStorageVirtualMachine* | 管理操作 | 读/写 
 
 
 | FSx：可通过它来对FileSystems*进行操作 | 清单  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | FSx：可对StorageVirtualMachines*进行分型 | 清单  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-| FSx：UpdateFileSystem* | 管理操作 | 自动化 
+| FSx：UpdateFileSystem* | 管理操作 | 读/写 
 
 
-| FSx：UpdateStorageVirtualMachine* | 管理操作 | 自动化 
+| FSx：UpdateStorageVirtualMachine* | 管理操作 | 读/写 
 
 
 | FSx：可对卷进行分过程* | 清单  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-| FSx：UpdateVolumes* | 管理操作 | 自动化 
+| FSx：UpdateVolumes* | 管理操作 | 读/写 
 
 
-| FSx：DeleteVolumes* | 管理操作 | 自动化 
+| FSx：DeleteVolumes* | 管理操作 | 读/写 
 
 
-| FSx：UnTagResource* | 管理操作 | 自动化 
+| FSx：UnTagResource* | 管理操作 | 读/写 
 
 
 | FSx：可对备份进行分型* | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-| FSx：CreateBackup* | 管理操作 | 自动化 
+| FSx：CreateBackup* | 管理操作 | 读/写 
 
 
-| FSx：CreateVolume F生成 备份* | 管理操作 | 自动化 
+| FSx：CreateVolume F生成 备份* | 管理操作 | 读/写 
 
 
-| 报告CloudWatch指标 | CloudWatch：PutMetricData | 管理操作 | 自动化 
+| 报告CloudWatch指标 | CloudWatch：PutMetricData | 管理操作 | 读/写 
 
 
 .2+| 获取文件系统和卷指标 | CloudWatch：GetMetricData | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | CloudWatch：GetMetricStatistics | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 |===
@@ -373,7 +373,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 ====
 [role="tabbed-block"]
 =====
-.读取模式
+.只读模式
 --
 [source, json]
 ----
@@ -438,6 +438,15 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
+      "Sid": "SSMResponseCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -448,7 +457,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 }
 ----
 --
-.自动模式
+.读/写模式
 --
 [source, json]
 ----
@@ -607,8 +616,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "iam:GetRolePolicy",
         "iam:GetUser",
         "iam:PutRolePolicy",
-        "iam:RemoveRoleFromInstanceProfile",
-        "iam:SimulatePrincipalPolicy"
+        "iam:RemoveRoleFromInstanceProfile"
       ],
       "Resource": "*"
     },
@@ -644,6 +652,13 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -661,20 +676,31 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | 目的 | 操作 | 使用位置 | 模式 
 
 
+| 在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志。 | 日志：GetLogEvents  a| 
+* 存储评估
+* 清单
+
+ a| 
+* 只读
+* 读/写
+
+
+
+
 | 获取FSx for ONTAP、EBS和FSx for Windows File Server的指标统计信息 | CloudWatch：GetMetricStatistics  a| 
 * 清单
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 列出并设置事件触发器 | SnS：ListTopics | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -684,22 +710,22 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | EC2：Describe KeyPairs | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | EC2：Describe网络接口 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -709,8 +735,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -720,8 +746,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -731,29 +757,29 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | EC2：Describe安全性组 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | EC2：Describe | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | EC2：Describe注册 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -763,8 +789,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -774,25 +800,25 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-| 如果所需服务不存在VPC端点、则无论EC2实例上的公共网络连接如何、均可创建VPC端点 | EC2：CreateVpcEndpoint | 部署 | 自动化 
+| 如果所需服务不存在VPC端点、则无论EC2实例上的公共网络连接如何、均可创建VPC端点 | EC2：CreateVpcEndpoint | 部署 | 读/写 
 
 
 | 获取验证节点所在地区可用的实例类型(t2.micro/t3.micro) | EC2：说明InstanceTypeOfferings | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取所连接的每个EBS卷的快照详细信息、以了解定价和预计节省量 | EC2：Describe Snapshot | 了解节省量  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -802,50 +828,50 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 .3+| 获取FSx for ONTAP文件系统加密的KMS密钥详细信息 | Kms：ListAliases | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | Kms：ListKey | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | Kms：可通过键进行操作 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取环境中运行的CloudFormation堆栈列表以检查配额限制 | CloudFormation：ListStack | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 在触发部署之前、请检查资源的帐户限制 | CloudFormation：可进行详细信息帐户限制 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取区域中AWS管理的Active Directory列表 | DS：可通过子目录进行操作 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -855,8 +881,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -866,8 +892,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -878,8 +904,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -891,29 +917,29 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | FSx：ListTagsForResource | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取CloudFormation和VPC的服务配额限制 | serviceequotas：ListServiceQuotas | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 使用基于SSM的查询获取FSx for ONTAP支持的区域的更新列表 | SSM：GetPathetersByPath | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -925,8 +951,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 优化
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -938,8 +964,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 优化
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -950,8 +976,8 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 优化
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -960,22 +986,22 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 | 获取可用于操作系统修补程序评估的修补程序基线列表 | SSM：对修补程序基准线进行了详述 | 优化  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取Windows EC2实例上的修补状态、以进行操作系统修补程序评估 | SSM：说明InstancePatchStates | 优化  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 列出AWS Patch Manager在EC2实例上执行的命令、用于管理操作系统修补程序 | SSM：ListCommands | 优化  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -984,42 +1010,42 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 | 更新AWS计算改进器中的现有建议首选项、以便为SQL Server工作负载量身定制建议 | 计算优化器:PutRecommentationPreferences  a| 
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 | 从AWS计算最佳器中获取对给定资源有效的建议首选项 | 计算优化器：GetEffectiveRecommentationPreferences  a| 
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 | 提取AWS计算最佳器为Amazon Elecic计算云(Amazon EC2)实例生成的建议 | 计算优化器：GetEC2InstanceRecommandations  a| 
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 .2+| 检查实例是否与自动缩放组关联 | 自动缩放：自适应缩放组的情况  a| 
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 | 自动缩放：可通过它来进行自适应缩放  a| 
 * 了解节省量
 * 优化
 
-| 自动化 
+| 读/写 
 
 
 .4+| 获取、列出、创建和删除在部署期间使用或在AWS帐户中管理的AD、FSx for ONTAP和SQL用户凭据的SSM参数 | SSM：Get参 比器^1^  a| 
@@ -1027,15 +1053,15 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 管理操作
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | SSM：GetParameters ^1^ | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -1045,183 +1071,183 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 管理操作
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | SSM：删除参数^1^ | 管理操作  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-.9+| 将网络资源与SQL节点和验证节点相关联、并向SQL节点添加其他辅助IP | EC2：AllocateAddress ^1^ | 部署 | 自动化 
+.9+| 将网络资源与SQL节点和验证节点相关联、并向SQL节点添加其他辅助IP | EC2：AllocateAddress ^1^ | 部署 | 读/写 
 
 
-| EC2：AllocateHsts ^1^ | 部署 | 自动化 
+| EC2：AllocateHsts ^1^ | 部署 | 读/写 
 
 
-| EC2：AssignPrivateIpAddresses ^1^ | 部署 | 自动化 
+| EC2：AssignPrivateIpAddresses ^1^ | 部署 | 读/写 
 
 
-| EC2：AssociateAddress ^1^ | 部署 | 自动化 
+| EC2：AssociateAddress ^1^ | 部署 | 读/写 
 
 
-| EC2：AssociateRouteTable ^1^ | 部署 | 自动化 
+| EC2：AssociateRouteTable ^1^ | 部署 | 读/写 
 
 
-| EC2：AssociateSubnetCindrBlock ^1^ | 部署 | 自动化 
+| EC2：AssociateSubnetCindrBlock ^1^ | 部署 | 读/写 
 
 
-| EC2：AssociateVpcCindrBlock ^1^ | 部署 | 自动化 
+| EC2：AssociateVpcCindrBlock ^1^ | 部署 | 读/写 
 
 
-| EC2：AttachInternetGateway ^1^ | 部署 | 自动化 
+| EC2：AttachInternetGateway ^1^ | 部署 | 读/写 
 
 
-| EC2：AttachNetworkInterface ^1^ | 部署 | 自动化 
+| EC2：AttachNetworkInterface ^1^ | 部署 | 读/写 
 
 
-| 将所需的EBS卷连接到SQL节点以进行部署 | EC2：Attach卷 | 部署 | 自动化 
+| 将所需的EBS卷连接到SQL节点以进行部署 | EC2：Attach卷 | 部署 | 读/写 
 
 
-.2+| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+.2+| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 读/写 
 
 
-| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 读/写 
 
 
-| 创建部署SQL节点所需的EBS卷 | EC2：CreateVolume | 部署 | 自动化 
+| 创建部署SQL节点所需的EBS卷 | EC2：CreateVolume | 部署 | 读/写 
 
 
-.11+| 删除为类型T2.micro创建的临时验证节点、以便回滚或重试失败的EC2 SQL节点 | EC2：DeleteNetworkInterface | 部署 | 自动化 
+.11+| 删除为类型T2.micro创建的临时验证节点、以便回滚或重试失败的EC2 SQL节点 | EC2：DeleteNetworkInterface | 部署 | 读/写 
 
 
-| EC2：DeleteSecurityGroup | 部署 | 自动化 
+| EC2：DeleteSecurityGroup | 部署 | 读/写 
 
 
-| EC2：DeleteTags | 部署 | 自动化 
+| EC2：DeleteTags | 部署 | 读/写 
 
 
-| EC2：DeleteVolume | 部署 | 自动化 
+| EC2：DeleteVolume | 部署 | 读/写 
 
 
-| EC2：DetachNetworkInterface | 部署 | 自动化 
+| EC2：DetachNetworkInterface | 部署 | 读/写 
 
 
-| EC2：分离卷 | 部署 | 自动化 
+| EC2：分离卷 | 部署 | 读/写 
 
 
-| EC2：与地址断开关联 | 部署 | 自动化 
+| EC2：与地址断开关联 | 部署 | 读/写 
 
 
-| EC2：DisassociateIamInstanceProfile | 部署 | 自动化 
+| EC2：DisassociateIamInstanceProfile | 部署 | 读/写 
 
 
-| EC2：与RouteTable断开关联 | 部署 | 自动化 
+| EC2：与RouteTable断开关联 | 部署 | 读/写 
 
 
-| EC2：DisAssociateSubnetCindrBlock | 部署 | 自动化 
+| EC2：DisAssociateSubnetCindrBlock | 部署 | 读/写 
 
 
-| EC2：与VpcCindrBlock断开关联 | 部署 | 自动化 
+| EC2：与VpcCindrBlock断开关联 | 部署 | 读/写 
 
 
-.7+| 修改已创建SQL实例的属性。仅适用于以“以期名”开头的名称。 | EC2：ModifyInstance属性 | 部署 | 自动化 
+.7+| 修改已创建SQL实例的属性。仅适用于以“以期名”开头的名称。 | EC2：ModifyInstance属性 | 部署 | 读/写 
 
 
-| EC2：可通过实例布局进行设置 | 部署 | 自动化 
+| EC2：可通过实例布局进行设置 | 部署 | 读/写 
 
 
-| EC2：ModifyNetworkInterfaceAttribute | 部署 | 自动化 
+| EC2：ModifyNetworkInterfaceAttribute | 部署 | 读/写 
 
 
-| EC2：可使用的子网属性 | 部署 | 自动化 
+| EC2：可使用的子网属性 | 部署 | 读/写 
 
 
-| EC2：ModifyVolume | 部署 | 自动化 
+| EC2：ModifyVolume | 部署 | 读/写 
 
 
-| EC2：ModifyVolumeAttribute | 部署 | 自动化 
+| EC2：ModifyVolumeAttribute | 部署 | 读/写 
 
 
-| EC2：modfyVpcAttribute. | 部署 | 自动化 
+| EC2：modfyVpcAttribute. | 部署 | 读/写 
 
 
-.5+| 取消关联并销毁验证实例 | EC2：ReleraAddress | 部署 | 自动化 
+.5+| 取消关联并销毁验证实例 | EC2：ReleraAddress | 部署 | 读/写 
 
 
-| EC2：ReteraRoute | 部署 | 自动化 
+| EC2：ReteraRoute | 部署 | 读/写 
 
 
-| EC2：ReporteRouteTableAssociation | 部署 | 自动化 
+| EC2：ReporteRouteTableAssociation | 部署 | 读/写 
 
 
-| EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
+| EC2：RevokeSecurityGroupEgress | 部署 | 读/写 
 
 
-| EC2：RevokeSecurityGroupIngress | 部署 | 自动化 
+| EC2：RevokeSecurityGroupIngress | 部署 | 读/写 
 
 
-| 启动已部署的实例 | EC2：StartInstances | 部署 | 自动化 
+| 启动已部署的实例 | EC2：StartInstances | 部署 | 读/写 
 
 
-| 停止已部署的实例 | EC2：StopInstances | 部署 | 自动化 
+| 停止已部署的实例 | EC2：StopInstances | 部署 | 读/写 
 
 
 | 标记由Windows资源管理组织创建的Amazon FSx for NetApp ONTAP资源的自定义值、以便在资源管理期间获取帐单详细信息 | FSx：TagResource ^1^  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-.5+| 创建并验证用于部署的CloudFormation模板 | CloudFormation：CreateStack | 部署 | 自动化 
+.5+| 创建并验证用于部署的CloudFormation模板 | CloudFormation：CreateStack | 部署 | 读/写 
 
 
-| CloudFormation：Describe StackEvents | 部署 | 自动化 
+| CloudFormation：Describe StackEvents | 部署 | 读/写 
 
 
-| CloudFormation：Describe堆栈 | 部署 | 自动化 
+| CloudFormation：Describe堆栈 | 部署 | 读/写 
 
 
-| CloudFormation：ListStack | 部署 | 自动化 
+| CloudFormation：ListStack | 部署 | 读/写 
 
 
-| CloudFormation：验证模板 | 部署 | 自动化 
+| CloudFormation：验证模板 | 部署 | 读/写 
 
 
-| 提取计算优化建议的指标 | CloudWatch：GetMetricStatistics | 了解节省量 | 自动化 
+| 提取计算优化建议的指标 | CloudWatch：GetMetricStatistics | 了解节省量 | 读/写 
 
 
-| 提取区域中可用的目录 | DS：可通过子目录进行操作 | 部署 | 自动化 
+| 提取区域中可用的目录 | DS：可通过子目录进行操作 | 部署 | 读/写 
 
 
-.2+| 为附加到已配置EC2实例的安全组添加规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+.2+| 为附加到已配置EC2实例的安全组添加规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 读/写 
 
 
-| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 读/写 
 
 
-.2+| 创建嵌套堆栈模板以重试和回滚 | EC2：CreateLaunch模板 | 部署 | 自动化 
+.2+| 创建嵌套堆栈模板以重试和回滚 | EC2：CreateLaunch模板 | 部署 | 读/写 
 
 
-| EC2：CreateLaunch模板版本 | 部署 | 自动化 
+| EC2：CreateLaunch模板版本 | 部署 | 读/写 
 
 
-.3+| 管理已创建实例上的标记和网络安全性 | EC2：CreateNetworkInterface | 部署 | 自动化 
+.3+| 管理已创建实例上的标记和网络安全性 | EC2：CreateNetworkInterface | 部署 | 读/写 
 
 
-| EC2：CreateSecurityGroup | 部署 | 自动化 
+| EC2：CreateSecurityGroup | 部署 | 读/写 
 
 
-| EC2：CreateTags | 部署 | 自动化 
+| EC2：CreateTags | 部署 | 读/写 
 
 
-| 删除为验证节点临时创建的安全组 | EC2：DeleteSecurityGroup | 部署 | 自动化 
+| 删除为验证节点临时创建的安全组 | EC2：DeleteSecurityGroup | 部署 | 读/写 
 
 
 .2+| 获取用于配置的实例详细信息 | EC2：描述*  a| 
@@ -1229,7 +1255,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 * 了解节省量
 
-| 自动化 
+| 读/写 
 
 
 | EC2：获取*  a| 
@@ -1237,29 +1263,29 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 * 了解节省量
 
-| 自动化 
+| 读/写 
 
 
-| 启动已创建的实例 | EC2：RunInstances | 部署 | 自动化 
+| 启动已创建的实例 | EC2：RunInstances | 部署 | 读/写 
 
 
 | System Manager使用AWS消息交付服务端点执行API操作 | ec2messages：*  a| 
 * 部署*清单
 
-| 自动化 
+| 读/写 
 
 
-.3+| 创建配置所需的FSx for ONTAP资源。对于现有FSx for ONTAP系统、将创建一个新的SVM来托管SQL卷。 | FSx：CreateFileSystem | 部署 | 自动化 
+.3+| 创建配置所需的FSx for ONTAP资源。对于现有FSx for ONTAP系统、将创建一个新的SVM来托管SQL卷。 | FSx：CreateFileSystem | 部署 | 读/写 
 
 
-| FSx：CreateStorageVirtualMachine | 部署 | 自动化 
+| FSx：CreateStorageVirtualMachine | 部署 | 读/写 
 
 
 | FSx：CreateVolume  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
 .2+| 获取FSx for ONTAP详细信息 | FSX：描述*  a| 
@@ -1268,88 +1294,88 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 管理操作
 * 了解节省量
 
-| 自动化 
+| 读/写 
 
 
 | FSX：List*  a| 
 * 部署
 * 清单
 
-| 自动化 
+| 读/写 
 
 
-| 调整FSx for ONTAP文件系统的大小以修复文件系统余量 | FSx：UpdateFilesystem | 优化 | 自动化 
+| 调整FSx for ONTAP文件系统的大小以修复文件系统余量 | FSx：UpdateFilesystem | 优化 | 读/写 
 
 
-| 调整卷大小以修复日志和TempDB驱动器大小 | FSx：UpdateVolume | 优化 | 自动化 
+| 调整卷大小以修复日志和TempDB驱动器大小 | FSx：UpdateVolume | 优化 | 读/写 
 
 
-.4+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+.4+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 读/写 
 
 
-| 公里：描述* | 部署 | 自动化 
+| 公里：描述* | 部署 | 读/写 
 
 
-| 公里：列表* | 部署 | 自动化 
+| 公里：列表* | 部署 | 读/写 
 
 
-| Kms：GenerateDataKey | 部署 | 自动化 
+| Kms：GenerateDataKey | 部署 | 读/写 
 
 
-.7+| 为在EC2实例上运行的验证和配置脚本创建CloudWatch日志 | 日志：CreateLogGroup | 部署 | 自动化 
+.7+| 为在EC2实例上运行的验证和配置脚本创建CloudWatch日志 | 日志：CreateLogGroup | 部署 | 读/写 
 
 
-| 日志：CreateLogStream | 部署 | 自动化 
+| 日志：CreateLogStream | 部署 | 读/写 
 
 
-| 日志:~日志* | 部署 | 自动化 
+| 日志:~日志* | 部署 | 读/写 
 
 
-| 日志:getlog* | 部署 | 自动化 
+| 日志:getlog* | 部署 | 读/写 
 
 
-| 日志：ListLogDelivery | 部署 | 自动化 
+| 日志：ListLogDelivery | 部署 | 读/写 
 
 
 | 日志：PutLogEvents  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-| 日志:TagResource | 部署 | 自动化 
+| 日志:TagResource | 部署 | 读/写 
 
 
-| 在用户帐户中为为SQL、域和FSx for ONTAP提供的凭据创建机密 | serviceequotas：ListServiceQuotas | 部署 | 自动化 
+| 在用户帐户中为为SQL、域和FSx for ONTAP提供的凭据创建机密 | serviceequotas：ListServiceQuotas | 部署 | 读/写 
 
 
-.2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 | 自动化 
+.2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 | 读/写 
 
 
-| SNS：发布 | 部署 | 自动化 
+| SNS：发布 | 部署 | 读/写 
 
 
-.11+| 在已配置的SQL实例上运行发现脚本以及提取FSx for ONTAP支持的AWS区域的最新列表所需的SSM权限。 | SSM：描述* | 部署 | 自动化 
+.11+| 在已配置的SQL实例上运行发现脚本以及提取FSx for ONTAP支持的AWS区域的最新列表所需的SSM权限。 | SSM：描述* | 部署 | 读/写 
 
 
 | SSM：获取*  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-| SSM：列表* | 部署 | 自动化 
+| SSM：列表* | 部署 | 读/写 
 
 
-| SSM：PutCompletianceItems | 部署 | 自动化 
+| SSM：PutCompletianceItems | 部署 | 读/写 
 
 
-| SSM：PutConfigurePackageResult | 部署 | 自动化 
+| SSM：PutConfigurePackageResult | 部署 | 读/写 
 
 
-| SSM：PutInventory | 部署 | 自动化 
+| SSM：PutInventory | 部署 | 读/写 
 
 
 | SSM：SendCommand  a| 
@@ -1357,16 +1383,16 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-| SSM：UpdateAssociationStatus | 部署 | 自动化 
+| SSM：UpdateAssociationStatus | 部署 | 读/写 
 
 
-| SSM：UpdateInstanceAssociationStatus | 部署 | 自动化 
+| SSM：UpdateInstanceAssociationStatus | 部署 | 读/写 
 
 
-| SSM：UpdateInstanceInformation | 部署 | 自动化 
+| SSM：UpdateInstanceInformation | 部署 | 读/写 
 
 
 | ssmmessages：*  a| 
@@ -1374,7 +1400,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 清单
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
 .4+| 保存FSx for ONTAP、Active Directory和SQL用户的凭据(仅用于SQL用户身份验证) | SSM：Get参 比器^1^  a| 
@@ -1382,75 +1408,75 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 管理操作
 * 清单
 
-| 自动化 
+| 读/写 
 
 
 | SSM：GetParameters ^1^  a| 
 * 部署
 * 清单
 
-| 自动化 
+| 读/写 
 
 
 | SSM：Put参 比器^1^  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
 | SSM：删除参数^1^  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-| 成功或失败时向CloudFormation堆栈发送信号。 | CloudFormation：SignalResource ^1^ | 部署 | 自动化 
+| 成功或失败时向CloudFormation堆栈发送信号。 | CloudFormation：SignalResource ^1^ | 部署 | 读/写 
 
 
-| 将模板创建的EC2角色添加到EC2的实例配置文件中、以允许EC2上的脚本访问部署所需的资源。 | IAM：AddRoleToInstanceProfile | 部署 | 自动化 
+| 将模板创建的EC2角色添加到EC2的实例配置文件中、以允许EC2上的脚本访问部署所需的资源。 | IAM：AddRoleToInstanceProfile | 部署 | 读/写 
 
 
-| 为EC2创建实例配置文件并附加已创建的EC2角色。 | IAM：CreateInstanceProfile | 部署 | 自动化 
+| 为EC2创建实例配置文件并附加已创建的EC2角色。 | IAM：CreateInstanceProfile | 部署 | 读/写 
 
 
-| 使用下面列出的权限通过模板创建EC2角色 | IAM：CreateRole | 部署 | 自动化 
+| 使用下面列出的权限通过模板创建EC2角色 | IAM：CreateRole | 部署 | 读/写 
 
 
-| 创建链接到EC2服务的角色 | IAM：CreateServiceLinkedIn Role ^2^ | 部署 | 自动化 
+| 创建链接到EC2服务的角色 | IAM：CreateServiceLinkedIn Role ^2^ | 部署 | 读/写 
 
 
-| 删除在部署期间专为验证节点创建的实例配置文件 | IAM：DeleteInstanceProfile | 部署 | 自动化 
+| 删除在部署期间专为验证节点创建的实例配置文件 | IAM：DeleteInstanceProfile | 部署 | 读/写 
 
 
-.5+| 获取角色和策略详细信息、以确定权限方面的任何差距并进行部署验证 | IAM：GetPolicy | 部署 | 自动化 
+.5+| 获取角色和策略详细信息、以确定权限方面的任何差距并进行部署验证 | IAM：GetPolicy | 部署 | 读/写 
 
 
-| IAM：GetPolicyVersion | 部署 | 自动化 
+| IAM：GetPolicyVersion | 部署 | 读/写 
 
 
-| IAM：GetRole | 部署 | 自动化 
+| IAM：GetRole | 部署 | 读/写 
 
 
-| IAM：GetRolePolicy | 部署 | 自动化 
+| IAM：GetRolePolicy | 部署 | 读/写 
 
 
-| IAM：GetUser | 部署 | 自动化 
+| IAM：GetUser | 部署 | 读/写 
 
 
-| 将创建的角色传递到EC2实例 | IAM：PassRole ^3^ | 部署 | 自动化 
+| 将创建的角色传递到EC2实例 | IAM：PassRole ^3^ | 部署 | 读/写 
 
 
-| 将具有所需权限的策略添加到已创建的EC2角色 | IAM：PutRolePolicy | 部署 | 自动化 
+| 将具有所需权限的策略添加到已创建的EC2角色 | IAM：PutRolePolicy | 部署 | 读/写 
 
 
-| 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 自动化 
+| 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 读/写 
 
 
 | 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 |===
@@ -1466,7 +1492,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 适用于VMware工作负载的IAM策略提供了VMware工作负载工厂根据您的操作模式管理公有云环境中的资源和流程所需的权限。
 
-GenAI IAM策略仅在操作模式下可用：
+GenAI IAM策略仅在读/写模式下可用：
 
 .适用于GenAI工作负载的IAM策略
 [%collapsible]
@@ -1527,7 +1553,6 @@ GenAI IAM策略仅在操作模式下可用：
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
-        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
@@ -1701,6 +1726,22 @@ GenAI IAM策略仅在操作模式下可用：
       "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
     },
     {
+      "Sid": "BedrockLoggingIamOperations",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreatePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "QBusiness",
+      "Effect": "Allow",
+      "Action": [
+        "qbusiness:ListApplications"
+      ],
+      "Resource": "*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -1721,196 +1762,202 @@ GenAI IAM策略仅在操作模式下可用：
 | 目的 | 操作 | 使用位置 | 模式 
 
 
-| 在部署和重建操作期间创建AI引擎CloudFormation堆栈 | CloudFormation：CreateStack | 部署 | 自动化 
+| 在部署和重建操作期间创建AI引擎CloudFormation堆栈 | CloudFormation：CreateStack | 部署 | 读/写 
 
 
-| 创建AI引擎CloudFormation堆栈 | CloudFormation：Describe堆栈 | 部署 | 自动化 
+| 创建AI引擎CloudFormation堆栈 | CloudFormation：Describe堆栈 | 部署 | 读/写 
 
 
-| 列出AI引擎部署向导的区域 | EC2：Describe注册 | 部署 | 自动化 
+| 列出AI引擎部署向导的区域 | EC2：Describe注册 | 部署 | 读/写 
 
 
-| 显示AI引擎标签 | EC2：Describe标记 | 部署 | 自动化 
+| 显示AI引擎标签 | EC2：Describe标记 | 部署 | 读/写 
 
 
-| 在创建AI引擎堆栈之前列出VPC端点 | EC2：CreateVpcEndpoint | 部署 | 自动化 
+| 在创建AI引擎堆栈之前列出VPC端点 | EC2：CreateVpcEndpoint | 部署 | 读/写 
 
 
-| 在部署和重建操作期间创建AI引擎堆栈期间创建AI引擎安全组 | EC2：CreateSecurityGroup | 部署 | 自动化 
+| 在部署和重建操作期间创建AI引擎堆栈期间创建AI引擎安全组 | EC2：CreateSecurityGroup | 部署 | 读/写 
 
 
-| 标记在部署和重建操作期间创建AI引擎堆栈所创建的资源 | EC2：CreateTags | 部署 | 自动化 
+| 标记在部署和重建操作期间创建AI引擎堆栈所创建的资源 | EC2：CreateTags | 部署 | 读/写 
 
 
-.2+| 从AI引擎堆栈将加密事件发布到WLAMAI后端 | Kms：GenerateDataKey | 部署 | 自动化 
+.2+| 从AI引擎堆栈将加密事件发布到WLAMAI后端 | Kms：GenerateDataKey | 部署 | 读/写 
 
 
-| Kms：解密 | 部署 | 自动化 
+| Kms：解密 | 部署 | 读/写 
 
 
-| 将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端 | SNS：发布 | 部署 | 自动化 
+| 将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端 | SNS：发布 | 部署 | 读/写 
 
 
-| 在AI引擎部署向导期间列出vPC | EC2：Describe | 部署 | 自动化 
+| 在AI引擎部署向导期间列出vPC | EC2：Describe | 部署 | 读/写 
 
 
-| 在AI引擎部署向导上列出子网 | EC2：Describe子网 | 部署 | 自动化 
+| 在AI引擎部署向导上列出子网 | EC2：Describe子网 | 部署 | 读/写 
 
 
-| 在AI引擎部署和重建期间获取路由表 | EC2：Describe RouteTables | 部署 | 自动化 
+| 在AI引擎部署和重建期间获取路由表 | EC2：Describe RouteTables | 部署 | 读/写 
 
 
-| 在AI引擎部署向导期间列出密钥对 | EC2：Describe KeyPairs | 部署 | 自动化 
+| 在AI引擎部署向导期间列出密钥对 | EC2：Describe KeyPairs | 部署 | 读/写 
 
 
-| 在创建AI引擎堆栈期间列出安全组(以在专用端点上查找安全组) | EC2：Describe安全性组 | 部署 | 自动化 
+| 在创建AI引擎堆栈期间列出安全组(以在专用端点上查找安全组) | EC2：Describe安全性组 | 部署 | 读/写 
 
 
-| 获取VPC端点以确定是否应在AI引擎部署期间创建任何端点 | EC2：Describe VpcEndpoints | 部署 | 自动化 
+| 获取VPC端点以确定是否应在AI引擎部署期间创建任何端点 | EC2：Describe VpcEndpoints | 部署 | 读/写 
 
 
-| 列出实例以了解AI引擎状态 | EC2：Describe实例 | 故障排除 | 自动化 
+| 列出Amazon Q Business应用程序 | qBusiness：ListApplications | 部署 | 读/写 
 
 
-| 在部署和重建操作期间创建AI引擎堆栈期间列出映像 | EC2：Describe | 部署 | 自动化 
+| 列出实例以了解AI引擎状态 | EC2：Describe实例 | 故障排除 | 读/写 
 
 
-.2+| 在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组 | EC2：RevokeSecurityGroupEgress | 部署 | 自动化 
+| 在部署和重建操作期间创建AI引擎堆栈期间列出映像 | EC2：Describe | 部署 | 读/写 
 
 
-| EC2：RevokeSecurityGroupIngress | 部署 | 自动化 
+.2+| 在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组 | EC2：RevokeSecurityGroupEgress | 部署 | 读/写 
 
 
-| 在部署和重建操作期间创建CloudFormation堆栈期间运行AI引擎 | EC2：RunInstances | 部署 | 自动化 
+| EC2：RevokeSecurityGroupIngress | 部署 | 读/写 
 
 
-.2+| 在部署和重建操作期间创建堆栈期间、附加安全组并修改AI引擎的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 自动化 
+| 在部署和重建操作期间创建CloudFormation堆栈期间运行AI引擎 | EC2：RunInstances | 部署 | 读/写 
 
 
-| EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+.2+| 在部署和重建操作期间创建堆栈期间、附加安全组并修改AI引擎的规则 | EC2：AuthorizeSecurityGroupEgress | 部署 | 读/写 
 
 
-| 在AI引擎部署期间查询Amazon Brock / Amazon CloudWatch日志记录状态 | Bedrock：GetLogocationLoggingConfiguration | 部署 | 自动化 
+| EC2：AuthorizeSecurityGroupIngress | 部署 | 读/写 
 
 
-| 向其中一个基础模型发起聊天请求 | Bedrock：Invoke的 使用ResponseStream的数据 | 部署 | 自动化 
+| 在AI引擎部署期间查询Amazon Brock / Amazon CloudWatch日志记录状态 | Bedrock：GetLogocationLoggingConfiguration | 部署 | 读/写 
 
 
-| 开始聊天/嵌入基础模型请求 | 基岩：InvokeModel | 部署 | 自动化 
+| 向其中一个基础模型发起聊天请求 | Bedrock：Invoke的 使用ResponseStream的数据 | 部署 | 读/写 
 
 
-| 显示一个区域中可用的基础模型 | Bound：ListFoundation们 | 部署 | 自动化 
+| 开始聊天/嵌入基础模型请求 | 基岩：InvokeModel | 部署 | 读/写 
 
 
-| 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 自动化 
+| 显示一个区域中可用的基础模型 | Bound：ListFoundation们 | 部署 | 读/写 
 
 
-| 验证是否需要在部署和重建操作期间创建Amazon CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 自动化 
+| 获取有关基础模型的信息 | 基岩：GetFoundationModel | 部署 | 读/写 
 
 
-| 在AI引擎向导期间获取支持FSx和Amazon Brock的区域 | SSM：GetPathetersByPath | 部署 | 自动化 
+| 验证对基础模型的访问权限 | Bound：GetFoundation论 可用性 | 部署 | 读/写 
 
 
-| 获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像 | SSM：GetParameters | 部署 | 自动化 
+| 验证是否需要在部署和重建操作期间创建Amazon CloudWatch日志组 | 日志：可通过"LogBeLogGroup"进行操作 | 部署 | 读/写 
 
 
-| 从发送到AI引擎的命令中获取SSM响应 | SSM：GetCommandInvation | 部署 | 自动化 
+| 在AI引擎向导期间获取支持FSx和Amazon Brock的区域 | SSM：GetPathetersByPath | 部署 | 读/写 
 
 
-.2+| 检查与AI发动机的SSM连接 | SSM：SendCommand | 部署 | 自动化 
+| 获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像 | SSM：GetParameters | 部署 | 读/写 
 
 
-| SSM：GetConnectionStatus | 部署 | 自动化 
+| 从发送到AI引擎的命令中获取SSM响应 | SSM：GetCommandInvation | 部署 | 读/写 
 
 
-.8+| 在部署和重建操作期间创建堆栈期间创建AI引擎实例配置文件 | IAM：CreateRole | 部署 | 自动化 
+.2+| 检查与AI发动机的SSM连接 | SSM：SendCommand | 部署 | 读/写 
 
 
-| IAM：CreateInstanceProfile | 部署 | 自动化 
+| SSM：GetConnectionStatus | 部署 | 读/写 
 
 
-| IAM：AddRoleToInstanceProfile | 部署 | 自动化 
+.8+| 在部署和重建操作期间创建堆栈期间创建AI引擎实例配置文件 | IAM：CreateRole | 部署 | 读/写 
 
 
-| IAM：PutRolePolicy | 部署 | 自动化 
+| IAM：CreateInstanceProfile | 部署 | 读/写 
 
 
-| IAM：GetRolePolicy | 部署 | 自动化 
+| IAM：AddRoleToInstanceProfile | 部署 | 读/写 
 
 
-| IAM：GetRole | 部署 | 自动化 
+| IAM：PutRolePolicy | 部署 | 读/写 
 
 
-| IAM：TagRole | 部署 | 自动化 
+| IAM：GetRolePolicy | 部署 | 读/写 
 
 
-| IAM：PassRole | 部署 | 自动化 
+| IAM：GetRole | 部署 | 读/写 
 
 
-| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+| IAM：TagRole | 部署 | 读/写 
 
 
-| 在"创建数据库"向导期间列出FSx for ONTAP文件系统 | FSx：可对卷进行分过程 | 创建知识库 | 自动化 
+| IAM：PassRole | 部署 | 读/写 
 
 
-| 在"创建集群"向导期间列出适用于ONTAP文件系统卷的FSx | FSx：可对FileSystems进行情况分类 | 创建知识库 | 自动化 
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 读/写 
 
 
-| 在重建操作期间管理有关AI引擎的知识库 | FSx：ListTagsForResource | 故障排除 | 自动化 
+| 在"创建数据库"向导期间列出FSx for ONTAP文件系统 | FSx：可对卷进行分过程 | 创建知识库 | 读/写 
 
 
-| 在"创建信息库"向导期间列出FSx for ONTAP文件系统Storage Virtual Machine | FSx：讲解StorageVirtualMachine | 部署 | 自动化 
+| 在"创建集群"向导期间列出适用于ONTAP文件系统卷的FSx | FSx：可对FileSystems进行情况分类 | 创建知识库 | 读/写 
 
 
-| 将此信息文档移至新实例 | FSx：UnTagResource | 故障排除 | 自动化 
+| 在重建操作期间管理有关AI引擎的知识库 | FSx：ListTagsForResource | 故障排除 | 读/写 
 
 
-| 在重建期间管理AI引擎上的信息存储 | FSx：TagResource | 故障排除 | 自动化 
+| 在"创建信息库"向导期间列出FSx for ONTAP文件系统Storage Virtual Machine | FSx：讲解StorageVirtualMachine | 部署 | 读/写 
 
 
-.2+| 以安全的方式保存SSM密钥(ECR令牌、CIFS凭据、租户服务帐户密钥) | SSM：Get参 比器 | 部署 | 自动化 
+| 将此信息文档移至新实例 | FSx：UnTagResource | 故障排除 | 读/写 
 
 
-| SSM：Put\n参比器 | 部署 | 自动化 
+| 在重建期间管理AI引擎上的信息存储 | FSx：TagResource | 故障排除 | 读/写 
 
 
-.2+| 在部署和重建操作期间、将AI引擎日志发送到Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+.2+| 以安全的方式保存SSM密钥(ECR令牌、CIFS凭据、租户服务帐户密钥) | SSM：Get参 比器 | 部署 | 读/写 
 
 
-| 日志：PutRettionPolicy | 部署 | 自动化 
+| SSM：Put\n参比器 | 部署 | 读/写 
 
 
-| 将AI引擎日志发送到Amazon CloudWatch日志组 | 日志:TagResource | 故障排除 | 自动化 
+.2+| 在部署和重建操作期间、将AI引擎日志发送到Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 读/写 
 
 
-| 从Amazon CloudWatch获取SSM响应(响应时间过长) | 日志：特性日志流 | 故障排除 | 自动化 
+| 日志：PutRettionPolicy | 部署 | 读/写 
 
 
-| 从Amazon CloudWatch获取SSM响应 | 日志：GetLogEvents | 故障排除 | 自动化 
+| 将AI引擎日志发送到Amazon CloudWatch日志组 | 日志:TagResource | 故障排除 | 读/写 
 
 
-.3+| 在部署和重建操作期间创建堆栈期间、为Amazon基本日志创建Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 自动化 
+| 从Amazon CloudWatch获取SSM响应(响应时间过长) | 日志：特性日志流 | 故障排除 | 读/写 
 
 
-| 日志：PutRettionPolicy | 部署 | 自动化 
+| 从Amazon CloudWatch获取SSM响应 | 日志：GetLogEvents | 故障排除 | 读/写 
 
 
-| 日志:TagResource | 部署 | 自动化 
+.3+| 在部署和重建操作期间创建堆栈期间、为Amazon基岩日志创建Amazon CloudWatch日志组 | 日志：CreateLogGroup | 部署 | 读/写 
 
 
-| 将基岩日志发送到Amazon CloudWatch | Bedrock：PutConfigurationLoggingConfiguration | 故障排除 | 自动化 
+| 日志：PutRettionPolicy | 部署 | 读/写 
 
 
-| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：AttachRolePolicy | 故障排除 | 自动化 
+| 日志:TagResource | 部署 | 读/写 
 
 
-| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：PassRole | 故障排除 | 自动化 
+| 将基岩日志发送到Amazon CloudWatch | Bedrock：PutConfigurationLoggingConfiguration | 故障排除 | 读/写 
 
 
-| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：createPolicy | 故障排除 | 自动化 
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：AttachRolePolicy | 故障排除 | 读/写 
 
 
-| 列出模型的参考轮廓 | Bedrock：ListInferenceProfile | 故障排除 | 自动化 
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：PassRole | 故障排除 | 读/写 
+
+
+| 创建用于将Amazon基岩日志发送到Amazon CloudWatch的角色 | IAM：createPolicy | 故障排除 | 读/写 
+
+
+| 列出模型的参考轮廓 | Bedrock：ListInferenceProfile | 故障排除 | 读/写 
 |===
 ====
 
@@ -1926,7 +1973,7 @@ GenAI IAM策略仅在操作模式下可用：
 ====
 [role="tabbed-block"]
 =====
-.读取模式
+.只读模式
 --
 [source, json]
 ----
@@ -1959,7 +2006,7 @@ GenAI IAM策略仅在操作模式下可用：
 }
 ----
 --
-.自动模式
+.读/写模式
 --
 [source, json]
 ----
@@ -2040,28 +2087,28 @@ GenAI IAM策略仅在操作模式下可用：
 | 目的 | 操作 | 使用位置 | 模式 
 
 
-| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupIngress | 部署 | 自动化 
+| 附加安全组并修改已配置节点的规则 | EC2：AuthorizeSecurityGroupIngress | 部署 | 读/写 
 
 
-| 创建EBS卷 | EC2：CreateVolume | 部署 | 自动化 
+| 创建EBS卷 | EC2：CreateVolume | 部署 | 读/写 
 
 
-| 为VMware工作负载创建的FSx for NetApp ONTAP资源标记自定义值 | FSx：TagResource | 部署 | 自动化 
+| 为VMware工作负载创建的FSx for NetApp ONTAP资源标记自定义值 | FSx：TagResource | 部署 | 读/写 
 
 
-| 创建并验证CloudFormation模板 | CloudFormation：CreateStack | 部署 | 自动化 
+| 创建并验证CloudFormation模板 | CloudFormation：CreateStack | 部署 | 读/写 
 
 
-| 管理已创建实例上的标记和网络安全性 | EC2：CreateSecurityGroup | 部署 | 自动化 
+| 管理已创建实例上的标记和网络安全性 | EC2：CreateSecurityGroup | 部署 | 读/写 
 
 
-| 启动已创建的实例 | EC2：RunInstances | 部署 | 自动化 
+| 启动已创建的实例 | EC2：RunInstances | 部署 | 读/写 
 
 
-| 获取EC2实例详细信息 | EC2：Describe实例 | 部署 | 自动化 
+| 获取EC2实例详细信息 | EC2：Describe实例 | 部署 | 读/写 
 
 
-| 在部署和重建操作期间创建堆栈期间列出映像 | EC2：Describe | 部署 | 自动化 
+| 在部署和重建操作期间创建堆栈期间列出映像 | EC2：Describe | 部署 | 读/写 
 
 
 | 获取选定环境中的vPC以完成部署表单 | EC2：Describe  a| 
@@ -2069,8 +2116,8 @@ GenAI IAM策略仅在操作模式下可用：
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -2080,15 +2127,15 @@ GenAI IAM策略仅在操作模式下可用：
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取选定环境中的安全组以完成部署表单 | EC2：Describe安全性组 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
@@ -2098,58 +2145,58 @@ GenAI IAM策略仅在操作模式下可用：
 * 清单
 
  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 通过Amazon FSx for NetApp ONTAP支持获取各个地区的信息 | EC2：Describe注册 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥别名 | Kms：ListAliases | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥 | Kms：ListKey | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 获取用于Amazon FSx for NetApp ONTAP加密的KMS密钥到期详细信息 | Kms：可通过键进行操作 | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
 | 基于SSM的查询用于获取Amazon FSx for NetApp ONTAP支持的区域的更新列表 | SSM：GetPathetersByPath | 部署  a| 
-* 读取
-* 自动化
+* 只读
+* 读/写
 
 
 
 
-.3+| 创建配置所需的Amazon FSx for NetApp ONTAP资源 | FSx：CreateFileSystem | 部署 | 自动化 
+.3+| 创建配置所需的Amazon FSx for NetApp ONTAP资源 | FSx：CreateFileSystem | 部署 | 读/写 
 
 
-| FSx：CreateStorageVirtualMachine | 部署 | 自动化 
+| FSx：CreateStorageVirtualMachine | 部署 | 读/写 
 
 
 | FSx：CreateVolume  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
 .2+| 获取Amazon FSx for NetApp ONTAP详细信息 | FSX：描述*  a| 
@@ -2158,42 +2205,42 @@ GenAI IAM策略仅在操作模式下可用：
 * 管理操作
 * 了解节省量
 
-| 自动化 
+| 读/写 
 
 
 | FSX：List*  a| 
 * 部署
 * 清单
 
-| 自动化 
+| 读/写 
 
 
-.5+| 获取KMS密钥详细信息并用于Amazon FSx以进行NetApp ONTAP加密 | 公里：CreateGrant | 部署 | 自动化 
+.5+| 获取KMS密钥详细信息并用于Amazon FSx以进行NetApp ONTAP加密 | 公里：CreateGrant | 部署 | 读/写 
 
 
-| 公里：描述* | 部署 | 自动化 
+| 公里：描述* | 部署 | 读/写 
 
 
-| 公里：列表* | 部署 | 自动化 
+| 公里：列表* | 部署 | 读/写 
 
 
-| Kms：解密 | 部署 | 自动化 
+| Kms：解密 | 部署 | 读/写 
 
 
-| Kms：GenerateDataKey | 部署 | 自动化 
+| Kms：GenerateDataKey | 部署 | 读/写 
 
 
-| 列出客户SNS主题并发布到WLMVMC后端SNS以及客户SNS (如果选择) | SNS：发布 | 部署 | 自动化 
+| 列出客户SNS主题并发布到WLMVMC后端SNS以及客户SNS (如果选择) | SNS：发布 | 部署 | 读/写 
 
 
 | 用于提取Amazon FSx for NetApp ONTAP支持的AWS区域的最新列表 | SSM：获取*  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
-| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 自动化 
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 读/写 
 
 
 .4+| SSM参数存储用于保存Amazon FSx for NetApp ONTAP的凭据 | SSM：Get参 比器  a| 
@@ -2201,28 +2248,28 @@ GenAI IAM策略仅在操作模式下可用：
 * 管理操作
 * 清单
 
-| 自动化 
+| 读/写 
 
 
 | SSM：PutParameters  a| 
 * 部署
 * 清单
 
-| 自动化 
+| 读/写 
 
 
 | SSM：Put\n参比器  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 
 
 | SSM：删除参数  a| 
 * 部署
 * 管理操作
 
-| 自动化 
+| 读/写 
 |===
 ====
 
@@ -2233,9 +2280,17 @@ GenAI IAM策略仅在操作模式下可用：
 
 
 
+=== 2025年5月4日
+
+现在，在GenAI的_Read/Write_模式中可以使用以下权限： `qbusiness:ListApplications`。
+
+现在，以下权限在_read-only (只读)模式下可用于数据库： `logs:GetLogEvents`。
+
+
+
 === 2025年4月2日
 
-现在，以下权限可在_Read mode_中用于数据库： `ssm:DescribeInstanceInformation`。
+现在，以下权限在_read-only (只读)模式下可用于数据库： `ssm:DescribeInstanceInformation`。
 
 
 
@@ -2245,7 +2300,7 @@ GenAI IAM策略仅在操作模式下可用：
 
 ==== GenAI工作负载权限更新
 
-现在、以下权限可在_Automate mode_中用于GenAI：
+现在、可以在_Read/Write mode_中为GenAI提供以下权限：
 
 * `bedrock:PutModelInvocationLoggingConfiguration`
 * `iam:AttachRolePolicy`
@@ -2254,7 +2309,7 @@ GenAI IAM策略仅在操作模式下可用：
 * `bedrock:ListInferenceProfiles`
 
 
-已从_Automate mode_中删除GenAI的以下权限： `Bedrock:GetFoundationModel`。
+已从GenAI的_Read/Write mode_中删除以下权限： `Bedrock:GetFoundationModel`。
 
 
 
@@ -2266,10 +2321,10 @@ GenAI IAM策略仅在操作模式下可用：
 
 === 2025年3月2日
 
-现在，在_Autome_模式下，可以对GenAI使用以下权限： `bedrock:GetFoundationModel`。
+现在，在GenAI的_Read/Write_模式中可以使用以下权限： `bedrock:GetFoundationModel`。
 
 
 
 === 2025年2月3日
 
-现在，以下权限在_read_模式下可用于数据库： `iam:SimulatePrincipalPolicy`。
+现在，以下权限在_read-only (只读)模式下可用于数据库： `iam:SimulatePrincipalPolicy`。

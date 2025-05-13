@@ -1116,8 +1116,6 @@
   <block id="c0ee691320caa89b529bc0bcaf9cc696" category="paragraph">但是、他们在工作负载出厂时没有用于创建和部署VMware工作负载(基本模式)的自动化控制。如果他们要创建VMware工作负载、则需要从代码框中复制代码、手动登录到其AWS帐户、然后手动填充生成的代码中缺少的条目、才能使用此功能。</block>
   <block id="b91c58f3e94e0488074053d96cd4bbec" category="paragraph">如果您提供只读或读/写模式权限、则Workload Factory会将一个策略附加到实例、该策略具有管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。</block>
   <block id="4d372922f30597b3e046274dbb3cecd2" category="list-text">只读</block>
-  <block id="d066bc059c61c75a41706f175a5b3f8b" category="cell">在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志。</block>
-  <block id="2e50818bd890a03b645105690ca2ee60" category="list-text">存储评估</block>
   <block id="38ef2c2517cd341233b9181c09ba8071" category="paragraph">GenAI IAM策略仅在读/写模式下可用：</block>
   <block id="123ce9aa4e0770ecb435c005fa9b436c" category="cell">列出Amazon Q Business应用程序</block>
   <block id="4f3c534c90392632c7d275f54d5b35a0" category="cell">qBusiness：ListApplications</block>
@@ -1127,7 +1125,6 @@
   <block id="9dd35b54afccc27a1cc96eab777dbc8e" category="cell">在部署和重建操作期间创建堆栈期间、为Amazon基岩日志创建Amazon CloudWatch日志组</block>
   <block id="dac96c84baa92faab0eb342df5283a1b" category="section-title">2025年5月4日</block>
   <block id="b1351fb22e71d3c2b886e8e0819e632f" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="4f3c534c90392632c7d275f54d5b35a0" prefix=" " category="inline-code"></block>。</block>
-  <block id="17cf827d0ea669f390d3f954ed27424d" category="paragraph">现在，以下权限在_read-only (只读)模式下可用于数据库：<block ref="6d952035baa97bd601f4d280f10fcc53" prefix=" " category="inline-code"></block>。</block>
   <block id="83300e091c617144cede34b6c898e63b" category="paragraph">现在，以下权限在_read-only (只读)模式下可用于数据库：<block ref="3320749a6854264e1889d72d7f41a0bf" prefix=" " category="inline-code"></block>。</block>
   <block id="be999711faeee231a254e996141ed09f" category="paragraph">现在、可以在_Read/Write mode_中为GenAI提供以下权限：</block>
   <block id="9f4fc0ded0d1671253e5c8e38cd9464f" category="paragraph">已从GenAI的_Read/Write mode_中删除以下权限：<block ref="8a44b1c8d2e06b1acd7404fbb70437cc" prefix=" " category="inline-code"></block>。</block>
@@ -1140,4 +1137,12 @@
   <block id="7a0e532396f167d85a7b425f941d0613" category="list-text">*只读模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
   <block id="4951a0172d4fd2c8116296e71073f31c" category="list-text">*读/写模式*代表完全信任关系，旨在代表用户执行和自动执行，以及分配的凭据，这些凭据具有执行所需的经验证权限。</block>
   <block id="1c9640aa9075334712c6c2b922771c50" category="paragraph"><block ref="1c9640aa9075334712c6c2b922771c50" category="inline-link-rx"></block></block>
+  <block id="5474924c6e07cdae5b2fb3dcc561d06d" category="cell">在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志</block>
+  <block id="5d1d5ff6c3c427c682d491550e8f89b3" category="list-text">存储评估(优化)</block>
+  <block id="515b5649d13529809187e8bce4dca692" category="cell">允许工作负载工厂获取当前日志组、并检查是否为工作负载工厂创建的日志组设置了保留期限</block>
+  <block id="c1fe33a4a51fbfbc7672aeed10dd19b9" category="cell">允许工作负载工厂为工作负载工厂创建的日志组设置一个为期一天的保留策略、以避免为SSM命令输出累积不必要的日志流</block>
+  <block id="19c89da108a378e8d938a37afe67bcab" category="paragraph">现在、以下权限可在_read-only _模式下用于数据库：</block>
+  <block id="1636ccb01570c55081666deb02ddfb9c" category="list-text"><block ref="6d952035baa97bd601f4d280f10fcc53" prefix="" category="inline-code"></block></block>
+  <block id="c4a094604e7db845f5356b4563efc223" category="list-text"><block ref="99a70cb6d5b807589a0a1aa9bbcfea7d" prefix="" category="inline-code"></block></block>
+  <block id="555669c70b999168141bdf48d9c2de24" category="paragraph">现在，以下权限在_Read/Write_模式下可用于数据库：<block ref="9c72603737d6e2074ae7fab048b5d3d1" prefix=" " category="inline-code"></block>。</block>
 </blocks>

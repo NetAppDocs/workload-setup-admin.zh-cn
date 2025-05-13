@@ -1140,9 +1140,9 @@
   <block id="5474924c6e07cdae5b2fb3dcc561d06d" category="cell">在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志</block>
   <block id="5d1d5ff6c3c427c682d491550e8f89b3" category="list-text">存储评估(优化)</block>
   <block id="515b5649d13529809187e8bce4dca692" category="cell">允许工作负载工厂获取当前日志组、并检查是否为工作负载工厂创建的日志组设置了保留期限</block>
-  <block id="c1fe33a4a51fbfbc7672aeed10dd19b9" category="cell">允许工作负载工厂为工作负载工厂创建的日志组设置一个为期一天的保留策略、以避免为SSM命令输出累积不必要的日志流</block>
   <block id="19c89da108a378e8d938a37afe67bcab" category="paragraph">现在、以下权限可在_read-only _模式下用于数据库：</block>
   <block id="1636ccb01570c55081666deb02ddfb9c" category="list-text"><block ref="6d952035baa97bd601f4d280f10fcc53" prefix="" category="inline-code"></block></block>
   <block id="c4a094604e7db845f5356b4563efc223" category="list-text"><block ref="99a70cb6d5b807589a0a1aa9bbcfea7d" prefix="" category="inline-code"></block></block>
   <block id="555669c70b999168141bdf48d9c2de24" category="paragraph">现在，以下权限在_Read/Write_模式下可用于数据库：<block ref="9c72603737d6e2074ae7fab048b5d3d1" prefix=" " category="inline-code"></block>。</block>
+  <block id="b29cc709bba52572eccdff0248448fed" category="cell">允许工作负载工厂为工作负载工厂创建的日志组设置一个为期一天的保留策略、以避免为SSM命令输出累积不必要的日志流</block>
 </blocks>

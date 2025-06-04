@@ -111,7 +111,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 CodeBox是一款基础架构即代码(Infrastructure as Code、IAC)联合试点产品、可帮助开发人员和开发运营工程师生成执行工作负载工厂支持的任何操作所需的代码。代码格式包括工作负载工厂REST API、AWS CLI和AWS CloudFormation。
 
-CodeBox与工作负载出厂操作模式(基本、读取和自动)保持一致、并为执行准备工作设置了明确的路径、同时还为将来快速重复使用设置了自动化目录。
+Codebox 与工作负载工厂操作模式（_basic_、_read-only_ 和 _read/write_）保持一致，并为执行准备设置了清晰的路径以及自动化目录，以便将来快速重用。
 
 CodeBox窗格显示由特定作业流操作生成的IAC、并通过图形向导或对话聊天界面进行匹配。虽然CodeBox支持颜色编码和搜索、以便于导航和分析、但它不允许编辑。您只能复制或保存到自动化目录。
 

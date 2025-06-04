@@ -20,7 +20,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 == 为什么要使用权限
 
-如果您提供只读或读/写模式权限、则Workload Factory会将一个策略附加到实例、该策略具有管理该AWS帐户中资源和进程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。
+当您提供_只读_或_读/写_模式权限时，工作负载工厂会将一个策略附加到实例，并授予其管理该 AWS 账户内的资源和流程的权限。这样、工作负载工厂就可以执行各种操作、从发现存储环境到为GenAI工作负载部署AWS资源(例如存储管理中的文件系统或知识库)。
 
 例如、对于数据库工作负载、如果为工作负载工厂授予了所需权限、则它会扫描给定帐户和区域中的所有EC2实例、并筛选所有基于Windows的计算机。如果在主机上安装了AWS Systems Manager (SSM)代理并运行此代理、并且System Manager网络配置正确、则工作负载工厂可以访问Windows计算机并验证是否安装了SQL Server软件。
 
@@ -1512,7 +1512,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 适用于VMware工作负载的IAM策略提供了VMware工作负载工厂根据您的操作模式管理公有云环境中的资源和流程所需的权限。
 
-GenAI IAM策略仅在读/写模式下可用：
+GenAI IAM 策略仅在读/写模式下可用：
 
 .适用于GenAI工作负载的IAM策略
 [%collapsible]
@@ -2327,14 +2327,14 @@ GenAI IAM策略仅在读/写模式下可用：
 * `logs:DescribeLogGroups`
 
 
-现在，以下权限在_Read/Write_模式下可用于数据库：
-`logs:PutRetentionPolicy`。
+现在，数据库在读/写模式下具有以下权限： 
+`logs:PutRetentionPolicy` 。
 
 
 
 === 2025年4月2日
 
-现在，以下权限在_read-only (只读)模式下可用于数据库： `ssm:DescribeInstanceInformation`。
+现在，数据库在只读模式下具有以下权限：  `ssm:DescribeInstanceInformation` 。
 
 
 
@@ -2344,7 +2344,7 @@ GenAI IAM策略仅在读/写模式下可用：
 
 ==== GenAI工作负载权限更新
 
-现在、可以在_Read/Write mode_中为GenAI提供以下权限：
+GenAI 的“读/写模式”下现在提供以下权限：
 
 * `bedrock:PutModelInvocationLoggingConfiguration`
 * `iam:AttachRolePolicy`
@@ -2353,7 +2353,7 @@ GenAI IAM策略仅在读/写模式下可用：
 * `bedrock:ListInferenceProfiles`
 
 
-已从GenAI的_Read/Write mode_中删除以下权限： `Bedrock:GetFoundationModel`。
+已从 GenAI 的“读/写模式”中删除以下权限：  `Bedrock:GetFoundationModel` 。
 
 
 
@@ -2365,10 +2365,10 @@ GenAI IAM策略仅在读/写模式下可用：
 
 === 2025年3月2日
 
-现在，在GenAI的_Read/Write_模式中可以使用以下权限： `bedrock:GetFoundationModel`。
+现在，GenAI 在读/写模式下具有以下权限：  `bedrock:GetFoundationModel` 。
 
 
 
 === 2025年2月3日
 
-现在，以下权限在_read-only (只读)模式下可用于数据库： `iam:SimulatePrincipalPolicy`。
+现在，数据库在只读模式下具有以下权限：  `iam:SimulatePrincipalPolicy` 。

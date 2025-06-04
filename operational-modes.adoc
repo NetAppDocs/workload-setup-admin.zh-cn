@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: operational-modes.html 
-keywords: modes, zero-trust, full-trust, read, basic, automate, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials 
-summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略仔细控制工作负载工厂与云资产之间的访问。您使用的操作模式取决于您为工作负载工厂提供的AWS权限级别。 
+keywords: modes, zero-trust, full-trust, read-only, basic, read/write, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials 
+summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略仔细控制工作负载工厂与云资产之间的访问。 
 ---
 = 了解操作模式和AWS凭据
 :allow-uri-read: 
@@ -62,7 +62,7 @@ summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略
 | 只读 | 只读 | 不需要 
 
 
-| 读/写 | 读写凭据 | 必填 
+| 读/写 | 读/写凭据 | 必填 
 |===
 https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有关链接的更多信息"^]
 
@@ -70,7 +70,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 === 操作模式示例
 
-您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如、您可以为要部署和管理FSx for ONTAP文件系统的操作配置读/写模式、但只能为使用工作负载工厂创建和部署数据库工作负载配置读取模式。
+您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如，您可以为部署和管理 FSx for ONTAP 文件系统的操作配置读/写模式，但仅为使用工作负载工厂创建和部署数据库工作负载配置只读模式。
 
 您可以在一个工作负载工厂帐户的一组凭据中提供这些功能、也可以在每个凭据提供独特的工作负载部署功能时创建多组凭据。
 
@@ -78,7 +78,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 ==== 示例1
 
-使用已授予以下权限的凭据的帐户用户将拥有创建FSx for ONTAP文件系统、部署数据库以及查看帐户中使用的其他类型AWS存储的完全控制权(读/写模式)。
+使用已获得以下权限的凭证的帐户用户将拥有创建 FSx for ONTAP 文件系统、部署数据库和查看帐户中使用的其他类型的 AWS 存储的完全控制权（读/写模式）。
 
 image:screenshot-credentials1.png["屏幕截图显示了一组凭据、这些凭据提供了两种类型的工作负载权限。"]
 
@@ -90,7 +90,7 @@ image:screenshot-credentials1.png["屏幕截图显示了一组凭据、这些凭
 
 在此、用户创建了两组凭据、以根据所选凭据集提供不同的操作功能。通常、每组凭据都会与一个不同的AWS帐户配对。
 
-第一组凭据包括一些权限、可赋予用户完全控制创建FSx for ONTAP文件系统的权限(以及查看帐户中使用的其他类型AWS存储的能力)、但仅在处理VMware工作负载时具有读取权限。
+第一组凭证包括授予用户完全控制创建 FSx for ONTAP 文件系统的权限（以及查看帐户中使用的其他类型的 AWS 存储的能力），但在使用 VMware 工作负载时仅有只读权限。
 
 image:screenshot-credentials-comparison-example-1.png["屏幕截图显示了一组凭据、这些凭据提供了两种类型的工作负载权限。"]
 

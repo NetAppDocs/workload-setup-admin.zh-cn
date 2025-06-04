@@ -1762,6 +1762,14 @@ GenAI IAM策略仅在读/写模式下可用：
       "Resource": "*"
     },
     {
+      "Sid": "S3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -1792,6 +1800,9 @@ GenAI IAM策略仅在读/写模式下可用：
 
 
 | 显示AI引擎标签 | EC2：Describe标记 | 部署 | 读/写 
+
+
+| 列出 S3 存储桶 | S3 ： ListAllMy桶 | 部署 | 读/写 
 
 
 | 在创建AI引擎堆栈之前列出VPC端点 | EC2：CreateVpcEndpoint | 部署 | 读/写 
@@ -2297,6 +2308,12 @@ GenAI IAM策略仅在读/写模式下可用：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年6月3日
+
+现在，在GenAI的_Read/Write_模式中可以使用以下权限： `s3:ListAllMyBuckets`。
 
 
 

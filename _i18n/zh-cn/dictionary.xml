@@ -1152,5 +1152,9 @@
   <block id="e234d079cc2fccaeed8041a81e1e8122" category="list-text">*CloudShell命令行界面*：工作负载工厂包括一个CloudShell命令行界面、用于通过一个基于浏览器的命令行界面跨帐户管理和操作AWS和NetApp环境。从工作负载出厂控制台的顶部栏访问CloudShell。</block>
   <block id="dfbf98e5a4263fb93c5b851bfc384ae3" category="list-text">*REST API*：使用工作负载工厂REST API部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。</block>
   <block id="57f4ce64453b6cd8aa398c4f88d38c2e" category="list-text">*CloudFormation*：使用AWS CloudFormation代码执行您在工作负载出厂控制台中定义的操作、以便在您的AWS帐户中对CloudFormation堆栈中的AWS和第三方资源进行建模、配置和管理。</block>
-  <block id="06c2e2277da374dd2cc7b735a1d1e848" category="list-text">*Terraform BlueXP  工作负载工厂提供程序*：使用Terraform构建和管理在工作负载工厂控制台中生成的基础架构工作流。</block>
+  <block id="beec07f99f03a1aa1948ba788ce7e6c1" category="cell">列出 S3 存储桶</block>
+  <block id="e21c94a36c6dbf24001a64bddce9456f" category="cell">S3 ： ListAllMy桶</block>
+  <block id="c34c5eed5692ab9466e57060b06ae6ae" category="section-title">2025年6月3日</block>
+  <block id="c918d3e0e49fdadeab4e77e3905135bd" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="e21c94a36c6dbf24001a64bddce9456f" prefix=" " category="inline-code"></block>。</block>
+  <block id="af06e2a95bd9706f705a4480e8f40846" category="list-text">*Terraform BlueXP  工作负载工厂提供程序*：使用Terraform构建和管理在工作负载工厂控制台中生成的基础架构工作流。</block>
 </blocks>

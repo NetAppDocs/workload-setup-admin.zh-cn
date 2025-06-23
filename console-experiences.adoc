@@ -23,10 +23,10 @@ summary: 可通过两个基于Web的控制台访问BlueXP  工作负载工厂�
 
 == 在BlueXP  控制台中访问工作负载出厂设置
 
-您可以从BlueXP  访问工作负载工厂。除了使用适用于AWS的BluXP Workload Factory存储和工作负载功能之外、您还可以访问其他BlueXP  平台服务、例如"复制和同步"、"电子钱包"等。
+您可以从BlueXP  访问工作负载工厂。除了使用 BlueXP Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他 BlueXP 平台服务，如复制和同步、数字钱包等。
 
 .步骤
-. 登录到 link:https://console.workloads.netapp.com["工作负载出厂控制台"^]
+. 登录到 link:https://console.workloads.netapp.com["工作负载出厂控制台"^]。
 . 导航到要使用的工作负载、然后选择一个选项以开始使用。
 
 
@@ -37,7 +37,7 @@ summary: 可通过两个基于Web的控制台访问BlueXP  工作负载工厂�
 您可以从Workload Factory控制台访问工作负载工厂。
 
 .步骤
-. 登录到 link:https://console.bluexp.netapp.com["BlueXP控制台"^]
+. 登录到 link:https://console.bluexp.netapp.com["BlueXP控制台"^]。
 . 从左侧导航栏中选择*工作负载*。
 . 选择*主页*可查看所有工作负载、或者选择一个工作负载、例如*存储*或*数据库*。
 . 选择一个选项以开始处理工作负载。

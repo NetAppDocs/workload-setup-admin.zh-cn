@@ -45,6 +45,8 @@ sidebar:
       url: "/log-in.html"
     - title: 管理服务帐户
       url: "/manage-service-accounts.html"
+    - title: 配置通知
+      url: "/configure-notifications.html"
     - title: 使用CodeBox自动执行任务
       entries:
       - title: 了解CodeBox

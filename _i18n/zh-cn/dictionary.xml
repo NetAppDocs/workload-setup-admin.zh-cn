@@ -1159,62 +1159,8 @@
   <block id="c0ae6f0ec7cb1322a1c6b72f77e783f2" category="paragraph">BlueXP 工作负载工厂通知服务支持工作负载工厂向 BlueXP 警报服务或 Amazon SNS 主题发送通知。发送到 BlueXP 警报的通知会显示在 BlueXP 警报面板中。当工作负载工厂向 Amazon SNS 主题发布通知时，该主题的订阅者（例如人员或其他应用程序）会在为该主题配置的终端节点上收到通知（例如电子邮件或短信）。</block>
   <block id="76490568879e4523bb6bd6d8263472a9" category="inline-link">配置 BlueXP 工作负载工厂通知</block>
   <block id="533a43c23a4d81612b2392465e022a51" category="paragraph"><block ref="533a43c23a4d81612b2392465e022a51" category="inline-link-rx"></block></block>
-  <block id="2dda35be60147096ab6dcce42dede6b8" category="summary">您可以配置 BlueXP 工作负载工厂，当某些类型的事件发生时向某个人或其他应用程序发送通知。</block>
-  <block id="72d9710675d7970263ff88acdf0fcb66" category="paragraph">您可以配置 BlueXP 工作负载工厂通知服务，将通知发送到 BlueXP 警报服务或 Amazon SNS 主题。发送到 BlueXP 警报的通知会显示在 BlueXP 警报面板中。当工作负载工厂向 Amazon SNS 主题发布通知时，该主题的订阅者（例如人员或其他应用程序）会在为该主题配置的终端节点上收到通知（例如电子邮件或短信）。</block>
-  <block id="0a7323d1562ccdc63a56a3101b1dfc69" category="section-title">通知类型和消息</block>
-  <block id="5a7513075d19cc4be93d3cf73f88603e" category="paragraph">工作负载工厂针对以下事件发送通知：</block>
-  <block id="a4ecfc70574394990cf17bd83df499f7" category="cell">事件</block>
-  <block id="9e89e978c220a2a733d027866cb12907" category="cell">通知类型</block>
-  <block id="007cc9547ae8884ad597cd92ba505422" category="cell">严重性</block>
-  <block id="68eaabb91b0d1c52be44217a24f27b91" category="cell">工作负载</block>
-  <block id="53a002434dc37d0a5f8e2aac58da6296" category="cell">资源类型</block>
-  <block id="05c77d02041a1213dcefbe713f2f79fc" category="cell">您帐户中的某些数据库实例架构不佳</block>
-  <block id="11091ad57516013f76674cb4ef3a9a6a" category="cell">已针对您账户中的所有 Microsoft SQL Server 实例分析了架构完善的问题。此事件的描述提供了架构完善的实例和未优化的实例的数量。请在工作负载工厂控制台的数据库清单中查看架构完善的状态结果和建议。</block>
-  <block id="64096d5dd63fb80716eda8d7d149213d" category="cell">架构完善</block>
-  <block id="c76e3867213cff8946148c6510af0736" category="cell">建议</block>
-  <block id="ea2ef9b0d095bf991f4973633b485340" category="cell">数据库</block>
-  <block id="49e4c802abd20d6ed77d1f0421411716" category="cell">Microsoft SQL Server 实例</block>
-  <block id="434aae113a8df34dcafb760acae04817" category="cell">Microsoft SQL Server/PostgreSQL 服务器部署成功</block>
-  <block id="9f65a8622771b19d6c80a1fea621d39f" category="cell">Microsoft SQL Server 或 PostgreSQL 主机部署成功。更多信息，请参考作业监控。</block>
-  <block id="505a83f220c02df2f85c3810cd9ceb38" category="cell">成功</block>
-  <block id="a2e86ce39492ca1b92893ce168dc6fbb" category="cell">FSx for ONTAP，数据库主机</block>
-  <block id="1ec0c15b651e4cd44325912e997a204c" category="cell">Microsoft SQL Server/PostgreSQL 服务器部署失败</block>
-  <block id="3a966eb1052bbc81baf1db313011eddf" category="cell">Microsoft SQL Server 或 PostgreSQL 主机部署失败。更多信息，请参考作业监控。</block>
-  <block id="902b0d55fddef6f8d651fe1035b7d4bd" category="cell">错误</block>
-  <block id="237aaa83425818925b08506a76908e10" category="section-title">配置工作负载工厂通知</block>
-  <block id="cd052ec21a26111d70b96d3c1780fed2" category="paragraph">使用 BlueXP 控制台或工作负载工厂控制台配置工作负载工厂通知。如果您使用 BlueXP 控制台，则可以配置工作负载工厂以将通知发送到 BlueXP 警报或 Amazon SNS 主题。您可以从 BlueXP 中的“警报和通知设置”区域配置 BlueXP 警报。</block>
-  <block id="9ccebe6954a81c5c1f9a57ddc658596a" category="list-text">您需要使用 Amazon SNS 控制台或 AWS CLI 配置 Amazon SNS 并创建 Amazon SNS 主题。</block>
-  <block id="b5dff08e1a7f13984de22b0326ba3d57" category="list-text">请注意，工作负载工厂支持“标准”主题类型。此类型的主题不确保通知按照接收顺序发送给订阅者，因此如果您有关键或紧急通知，请考虑使用此功能。</block>
-  <block id="5d146607ad7e1a4c8178f137a935e71b" category="open-title">从 BlueXP 控制台配置通知</block>
   <block id="413b76e8d3566fbbd4af2e2a84ed79cb" category="list-text">登录到 <block ref="391de7a3bac2bc77fa53dffb3f53801a" category="inline-link-macro-rx"></block>。</block>
-  <block id="7330391de12fa6f64dbbe05f2bf2943a" category="list-text">从工作负载工厂菜单栏中，选择配置菜单。</block>
-  <block id="ebb0c20a2883844bf338eec0442bd3d9" category="list-text">在菜单中，选择*Workload Factory 通知设置*。</block>
-  <block id="c1f26547e61b3cf682eb671f8d31e7ea" category="list-text">可选：选择*启用 BlueXP 通知*以配置工作负载工厂向 BlueXP 警报发送通知。</block>
-  <block id="9bc635b321d7a10ffec6283dfaa84aa0" category="list-text">选择*启用 SNS 通知*。</block>
-  <block id="677c7dc689b0afdcb0633b635edd3a87" category="list-text">按照说明从 Amazon SNS 控制台配置 Amazon SNS。</block>
-  <block id="5fda11ac3857aaeb1a1a9e3bb6aedef5" category="paragraph">创建主题后，复制主题 ARN 并将其输入到 *通知设置* 对话框中的 *SNS 主题 ARN* 字段中。</block>
-  <block id="2339afaee28d73e91f81e490b67a4b5c" category="list-text">通过发送测试通知验证配置后，选择*应用*。</block>
-  <block id="a596c719a1239c601cd009ed03cda388" category="paragraph">工作负载工厂配置为向您指定的 Amazon SNS 主题发送通知。</block>
-  <block id="99405553b799dda5850e27264cbad120" category="open-title">从工作负载工厂控制台配置通知</block>
   <block id="2e600fc81eb21acd31aa44d1697dc84f" category="list-text">登录到 <block ref="fe6e1b2479e1125e03c713ad62b5343f" category="inline-link-macro-rx"></block>。</block>
-  <block id="bbb5c9d7fd1535e42e50af70cae99495" category="list-text">从顶部导航栏打开帐户菜单。</block>
-  <block id="5bbc9d3e1cf8f1e46acf248093877f06" category="list-text">在菜单中，选择*通知设置*。</block>
-  <block id="5e5392f4dcdf5502f0937be76da274d0" category="section-title">订阅 Amazon SNS 主题</block>
-  <block id="cbde2df6a7c89370edc449dc5705d30c" category="inline-link">说明</block>
-  <block id="f796ddcb3cbbbd6b219cbc54c800ab86" category="paragraph">配置工作负载工厂向主题发送通知后，请按照<block ref="88c7b6108316e02c36e39863bedc2019" category="inline-link-rx"></block>在 Amazon SNS 文档中订阅该主题，以便您可以接收来自工作负载工厂的通知。</block>
-  <block id="e457faf451b04c78c6b2c6bc25491ad1" category="section-title">筛选通知</block>
-  <block id="3180a00483bf6ffa5db8c6178c4eb67a" category="paragraph">您可以通过对通知应用筛选条件来减少不必要的通知流量，并针对特定用户定向特定类型的通知。您可以使用 Amazon SNS 策略来设置 SNS 通知，并使用 BlueXP 通知设置来设置 BlueXP 通知。</block>
-  <block id="4ccc3070ee3f76f6afb040d5f99b3bdd" category="section-title">筛选 Amazon SNS 通知</block>
-  <block id="103130451f8943db9cb57de31a66dc79" category="paragraph">订阅 Amazon SNS 主题后，默认情况下，您会收到发布到该主题的所有通知。如果您只想接收来自该主题的特定通知，可以使用筛选策略来控制接收哪些通知。</block>
-  <block id="3f6971d458153040675cf8e95795f3b0" category="inline-link">Amazon SNS文档</block>
-  <block id="c7fbd94f814dfe1f2c13e1ea015a39d7" category="paragraph">有关创建过滤策略的更多信息，请参阅<block ref="c589c7fc86bb393dc58d099c6c8ea47e" category="inline-link-rx"></block> 。</block>
-  <block id="aacb2329b4899fc1a4b8f0f2f67b0398" category="inline-link">Amazon SNS 示例筛选策略</block>
-  <block id="0ef8ad02e6dcecafa6e5e696fe553279" category="paragraph">有关过滤策略的示例，请参阅<block ref="7c3f3bfbc0dabec1aca15cb9aeb0e326" category="inline-link-rx"></block> 。</block>
-  <block id="92bb95ca7ce65dc7bedcbf84528f75fd" category="section-title">过滤 BlueXP 通知</block>
-  <block id="ac6e44b462d88f56828f381faa7907ca" category="paragraph">您可以使用 BlueXP 警报和通知设置按严重性级别（例如“严重”、“信息”或“警告”）过滤在 BlueXP 中收到的警报和通知。</block>
-  <block id="eeb8e055593f1709925a03e2ebb13265" category="inline-link">BlueXP文档</block>
-  <block id="7572b4e37ed025014a17bc1ae86c60a9" category="paragraph">有关在 BlueXP 中过滤通知的更多信息，请参阅<block ref="f8c744992c7f60894906e0753601fc52" category="inline-link-rx"></block> 。</block>
   <block id="cec87015738d7f42431131824e107880" category="paragraph">您可以从BlueXP  访问工作负载工厂。除了使用 BlueXP Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他 BlueXP 平台服务，如复制和同步、数字钱包等。</block>
-  <block id="4aa37f4d9a391345e9a54c68333e2503" category="section-title">2025年6月3日</block>
-  <block id="19a5158f1235c29843008925adb7baf8" category="sidebar">配置通知</block>
+  <block id="7454fc4c14df2a987637928e569efe3a" category="section-title">2025年6月29日</block>
 </blocks>

@@ -640,12 +640,8 @@
   <block id="9fd6274c053251e7fdd752215a510290" category="cell">获取文件系统和卷指标</block>
   <block id="f63e0d20057299c9c16bd0c2c9e92a5c" category="cell">CloudWatch：GetMetricData</block>
   <block id="3a902f1e8a6db9861a0a7608e2c5f711" category="cell">CloudWatch：GetMetricStatistics</block>
-  <block id="659cdc74d03020d9c8bbdcda0749ab88" category="section-title">数据库工作负载的权限</block>
-  <block id="2ceb20f97dd8f727dfbba8dbbe9a3496" category="paragraph">可用于数据库工作负载的IAM策略可根据您的操作模式为工作负载工厂提供管理公有云环境中的资源和流程所需的权限。</block>
-  <block id="6f652f163aedad876c63ce0e89417171" category="example-title">数据库工作负载的IAM策略</block>
   <block id="685902496cc1b2431527838eb3dd51f8" category="paragraph">下表显示了数据库工作负载的权限。</block>
   <block id="0647b03c182e6a539e314bf5657eba2e" category="example-title">数据库工作负载的权限表</block>
-  <block id="8fb4617a750c0b3b751013d02219f99b" category="cell">获取FSx for ONTAP、EBS和FSx for Windows File Server的指标统计信息</block>
   <block id="9d0f530f355f04b5462f43ae04528fde" category="cell">列出并设置事件触发器</block>
   <block id="124f2c65b8b708241b7552a865ae2f29" category="cell">SnS：ListTopics</block>
   <block id="b561747f1044749aaeab8082f02c0c2f" category="cell">EC2：Describe KeyPairs</block>
@@ -746,7 +742,6 @@
   <block id="da044dbe1821a39f63f98e823344b062" category="cell">CloudFormation：Describe StackEvents</block>
   <block id="f404fc6d0850472807e4fcd86203a313" category="cell">CloudFormation：Describe堆栈</block>
   <block id="6f25bb2faea408ecb06dc30a96791ac2" category="cell">CloudFormation：验证模板</block>
-  <block id="039c0d5ce3b1eaded6c4634f95b0978c" category="cell">提取计算优化建议的指标</block>
   <block id="6ecc76cab2e7449f332b847599e62d5f" category="cell">提取区域中可用的目录</block>
   <block id="f4e46229f95e1a17f96ebacbac65751b" category="cell">为附加到已配置EC2实例的安全组添加规则</block>
   <block id="1f4dd9a69501cc464524fc5da8bcd1b7" category="cell">创建嵌套堆栈模板以重试和回滚</block>
@@ -1108,7 +1103,6 @@
   <block id="1311c4cbbe5b925c15d25fe5ff7b022b" category="cell">基岩：GetFoundationModel</block>
   <block id="9dd35b54afccc27a1cc96eab777dbc8e" category="cell">在部署和重建操作期间创建堆栈期间、为Amazon基岩日志创建Amazon CloudWatch日志组</block>
   <block id="dac96c84baa92faab0eb342df5283a1b" category="section-title">2025年5月4日</block>
-  <block id="b1351fb22e71d3c2b886e8e0819e632f" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="4f3c534c90392632c7d275f54d5b35a0" prefix=" " category="inline-code"></block>。</block>
   <block id="bf0dcc34b100cf0ff91c26bbd98029f7" category="list-text">自动完成支持：开始键入命令，然后使用*Tab*键查看可用选项</block>
   <block id="822748e99c70e9162ce5432b2e1eff5c" category="section-title">2025年5月4日</block>
   <block id="7a0e532396f167d85a7b425f941d0613" category="list-text">*只读模式*通过帮助用户检测各种资源和工具，从而帮助用户完成相关向导，增强了基本模式的体验。</block>
@@ -1116,7 +1110,6 @@
   <block id="5474924c6e07cdae5b2fb3dcc561d06d" category="cell">在遇到SSM输出中断时、工作负载工厂将切换到SQL实例的Amazon CloudWatch日志</block>
   <block id="5d1d5ff6c3c427c682d491550e8f89b3" category="list-text">存储评估(优化)</block>
   <block id="515b5649d13529809187e8bce4dca692" category="cell">允许工作负载工厂获取当前日志组、并检查是否为工作负载工厂创建的日志组设置了保留期限</block>
-  <block id="19c89da108a378e8d938a37afe67bcab" category="paragraph">现在、以下权限可在_read-only _模式下用于数据库：</block>
   <block id="1636ccb01570c55081666deb02ddfb9c" category="list-text"><block ref="6d952035baa97bd601f4d280f10fcc53" prefix="" category="inline-code"></block></block>
   <block id="c4a094604e7db845f5356b4563efc223" category="list-text"><block ref="99a70cb6d5b807589a0a1aa9bbcfea7d" prefix="" category="inline-code"></block></block>
   <block id="b29cc709bba52572eccdff0248448fed" category="cell">允许工作负载工厂为工作负载工厂创建的日志组设置一个为期一天的保留策略、以避免为SSM命令输出累积不必要的日志流</block>
@@ -1131,7 +1124,6 @@
   <block id="beec07f99f03a1aa1948ba788ce7e6c1" category="cell">列出 S3 存储桶</block>
   <block id="e21c94a36c6dbf24001a64bddce9456f" category="cell">S3 ： ListAllMy桶</block>
   <block id="c34c5eed5692ab9466e57060b06ae6ae" category="section-title">2025年6月3日</block>
-  <block id="c918d3e0e49fdadeab4e77e3905135bd" category="paragraph">现在，在GenAI的_Read/Write_模式中可以使用以下权限：<block ref="e21c94a36c6dbf24001a64bddce9456f" prefix=" " category="inline-code"></block>。</block>
   <block id="af06e2a95bd9706f705a4480e8f40846" category="list-text">*Terraform BlueXP  工作负载工厂提供程序*：使用Terraform构建和管理在工作负载工厂控制台中生成的基础架构工作流。</block>
   <block id="4ead5e435cb4f2c7cf627b1d1e84c333" category="paragraph">工作负载工厂用户界面和文档现在使用“只读”来指代读取权限，使用“读/写”来指代自动化权限。</block>
   <block id="db17079394a3464c0d2748f3f16fbfbf" category="paragraph">工作负载工厂将在_Basic_模式下运行、除非您添加AWS帐户凭据。您可以添加凭据以启用其他操作模式，例如_只读_模式和_读/写_模式。<block ref="3ecbe38d325fe0025957d871a4619a77" category="inline-link-macro-rx"></block>(英文)</block>
@@ -1163,4 +1155,14 @@
   <block id="2e600fc81eb21acd31aa44d1697dc84f" category="list-text">登录到 <block ref="fe6e1b2479e1125e03c713ad62b5343f" category="inline-link-macro-rx"></block>。</block>
   <block id="cec87015738d7f42431131824e107880" category="paragraph">您可以从BlueXP  访问工作负载工厂。除了使用 BlueXP Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他 BlueXP 平台服务，如复制和同步、数字钱包等。</block>
   <block id="7454fc4c14df2a987637928e569efe3a" category="section-title">2025年6月29日</block>
+  <block id="cb30bdb55bb8a7a0530a31a5e6cdd0bb" category="paragraph">现在，数据库在只读模式下具有以下权限： <block ref="f63e0d20057299c9c16bd0c2c9e92a5c" prefix=" " category="inline-code"></block> 。</block>
+  <block id="e429c7230e4b94caf26e6020e5ea6f7a" category="paragraph"><block ref="e429c7230e4b94caf26e6020e5ea6f7a" category="inline-link-rx"></block></block>
+  <block id="4da84f2c396b854d2e6828b8992fe2a6" category="section-title">数据库工作负载的权限</block>
+  <block id="a1de7ac981533bac2ba982c9a691d511" category="paragraph">适用于数据库工作负载的 IAM 策略根据您所处的运行模式，提供工作负载工厂管理公共云环境中的资源和流程所需的权限。</block>
+  <block id="b09fc7726cc5650dddd20718f2586995" category="example-title">数据库工作负载的 IAM 策略</block>
+  <block id="3399757d7ea2a9e2fd7770bc1e6f5aa1" category="cell">获取 FSx for ONTAP、EBS 和 FSx for Windows File Server 的指标统计数据以及计算优化建议</block>
+  <block id="c79482c3221294b91b9c5eeecca327a6" category="cell">从已注册的 SQL 节点收集已保存到 Amazon CloudWatch 的性能指标。数据将在已注册 SQL 实例的管理实例屏幕上生成性能趋势图。</block>
+  <block id="bf8eef80d28e69579638cd56629c94fb" category="paragraph">现在，GenAI 在读/写模式下具有以下权限： <block ref="e21c94a36c6dbf24001a64bddce9456f" prefix=" " category="inline-code"></block> 。</block>
+  <block id="b8be7a72d02de0cfb42fb93375981cdb" category="paragraph">现在，GenAI 在读/写模式下具有以下权限： <block ref="4f3c534c90392632c7d275f54d5b35a0" prefix=" " category="inline-code"></block> 。</block>
+  <block id="bebb3c7ec8a634b68ad1060e27e7dc42" category="paragraph">现在，数据库在只读模式下具有以下权限：</block>
 </blocks>

@@ -1,6 +1,14 @@
-= BlueXP 工作负载工厂通知服务支持
+= 更新数据库的权限
 :allow-uri-read: 
 
+
+
+
+=== 更新数据库的权限
+
+现在，数据库在只读模式下具有以下权限：  `cloudwatch:GetMetricData` 。
+
+https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限引用更改日志"]
 
 
 

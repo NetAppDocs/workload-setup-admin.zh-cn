@@ -364,11 +364,11 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 === 数据库工作负载的权限
 
-可用于数据库工作负载的IAM策略可根据您的操作模式为工作负载工厂提供管理公有云环境中的资源和流程所需的权限。
+适用于数据库工作负载的 IAM 策略根据您所处的运行模式，提供工作负载工厂管理公共云环境中的资源和流程所需的权限。
 
 选择操作模式以查看所需的IAM策略：
 
-.数据库工作负载的IAM策略
+.数据库工作负载的 IAM 策略
 [%collapsible]
 ====
 [role="tabbed-block"]
@@ -385,6 +385,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
       "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "sns:ListTopics",
         "ec2:DescribeInstances",
         "ec2:DescribeVpcs",
@@ -678,7 +679,7 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 | 目的 | 操作 | 使用位置 | 模式 
 
 
-| 获取FSx for ONTAP、EBS和FSx for Windows File Server的指标统计信息 | CloudWatch：GetMetricStatistics  a| 
+| 获取 FSx for ONTAP、EBS 和 FSx for Windows File Server 的指标统计数据以及计算优化建议 | CloudWatch：GetMetricStatistics  a| 
 * 清单
 * 了解节省量
 
@@ -687,6 +688,9 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 * 读/写
 
 
+
+
+| 从已注册的 SQL 节点收集已保存到 Amazon CloudWatch 的性能指标。数据将在已注册 SQL 实例的管理实例屏幕上生成性能趋势图。 | CloudWatch：GetMetricData | 清单 | 只读 
 
 
 | 列出并设置事件触发器 | SnS：ListTopics | 部署  a| 
@@ -1209,9 +1213,6 @@ summary: 要使用BlueXP  工作负载工厂功能和服务、您需要提供�
 
 
 | CloudFormation：验证模板 | 部署 | 读/写 
-
-
-| 提取计算优化建议的指标 | CloudWatch：GetMetricStatistics | 了解节省量 | 读/写 
 
 
 | 提取区域中可用的目录 | DS：可通过子目录进行操作 | 部署 | 读/写 
@@ -2311,17 +2312,23 @@ GenAI IAM 策略仅在读/写模式下可用：
 
 
 
+=== 2025年6月29日
+
+现在，数据库在只读模式下具有以下权限：  `cloudwatch:GetMetricData` 。
+
+
+
 === 2025年6月3日
 
-现在，在GenAI的_Read/Write_模式中可以使用以下权限： `s3:ListAllMyBuckets`。
+现在，GenAI 在读/写模式下具有以下权限：  `s3:ListAllMyBuckets` 。
 
 
 
 === 2025年5月4日
 
-现在，在GenAI的_Read/Write_模式中可以使用以下权限： `qbusiness:ListApplications`。
+现在，GenAI 在读/写模式下具有以下权限：  `qbusiness:ListApplications` 。
 
-现在、以下权限可在_read-only _模式下用于数据库：
+现在，数据库在只读模式下具有以下权限：
 
 * `logs:GetLogEvents`
 * `logs:DescribeLogGroups`

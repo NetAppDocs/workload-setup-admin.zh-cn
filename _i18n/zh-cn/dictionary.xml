@@ -1251,4 +1251,13 @@
   <block id="302ef561e28f7d7cd13d1042cece78e1" category="list-text">选择“保存更改”。</block>
   <block id="179469fcde96eae5af1f559799d08b2a" category="paragraph">有关过滤策略的其他示例，请参阅<block ref="7c3f3bfbc0dabec1aca15cb9aeb0e326" category="inline-link-rx"></block>。</block>
   <block id="b52828f726867aaf1bf7b2a16b29e5e2" category="paragraph">有关创建过滤策略的更多信息，请参阅<block ref="c589c7fc86bb393dc58d099c6c8ea47e" category="inline-link-rx"></block>。</block>
+  <block id="f06afead014f9779fefbb6d2a2224bfd" category="cell">复制关系创建失败</block>
+  <block id="4d99e7fabf8a3228a9ae1e670f61053c" category="cell">SnapMirror复制关系创建失败。欲了解更多信息，请访问 Tracker。</block>
+  <block id="8c340dc334134096f68b880b42a8692c" category="cell">复制</block>
+  <block id="278d01e5af56273bae1bb99a98b370cd" category="cell">批判的</block>
+  <block id="c31576c9f98b33a8fa810835cefa86d2" category="cell">常规存储</block>
+  <block id="36df1b975561708b246ef1801ea416e5" category="cell">适用于ONTAP的 FSx</block>
+  <block id="521987edc4d9059fc32abee2d3f5d6ae" category="cell">FSx for ONTAP创建失败</block>
+  <block id="dd34477f0a88e199c56ea0813db3e18d" category="cell">FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。</block>
+  <block id="dfe4f4248d3875aa3b31ac02e60b0e87" category="cell">FSx for ONTAP文件系统操作</block>
 </blocks>

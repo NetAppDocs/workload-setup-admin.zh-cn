@@ -227,7 +227,6 @@
   <block id="1ab964190acf4217fadb080cfcbe361f" category="paragraph">部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。</block>
   <block id="38bd169945a371832b0b65c9086b1792" category="inline-link">数据库工作负载</block>
   <block id="7c05124c7bff1277e0dd98967825f03a" category="list-text"><block ref="7c05124c7bff1277e0dd98967825f03a" category="inline-link-rx"></block></block>
-  <block id="0b65135cac08d591d73cff9785b28f30" category="paragraph">在AWS上检测现有数据库资产、利用FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。</block>
   <block id="a76e64a0fbf98a083080351e4cb67566" category="inline-link">VMware工作负载</block>
   <block id="e555278247527c688d390729e5f7e123" category="list-text"><block ref="e555278247527c688d390729e5f7e123" category="inline-link-rx"></block></block>
   <block id="bc9eaabfc00230f2aa0ab1f9dfcfb994" category="paragraph">利用智能建议和自动修复简化迁移和操作。部署高效备份和强大的灾难恢复。监控VM并对其进行故障排除。</block>
@@ -305,7 +304,6 @@
   <block id="8d03c4936e76f2455607364517b82e3e" category="paragraph">您可以使用从CodeBox生成的Amazon Web Services命令行界面来部署和管理适用于ONTAP文件系统和其他AWS资源的FSx。</block>
   <block id="b28a0d67dfa6e54814b9650389eea71b" category="list-text">粘贴代码并运行。</block>
   <block id="1d949c7c5600289e10795f178278edd1" category="section-title">2024年7月7日</block>
-  <block id="d0a7edff5cd82c23f3d1c18e0779ccbc" category="doc">接下来可以执行的操作</block>
   <block id="452c8a300642b831148cf770baf1cd2f" category="paragraph">在AWS上检测现有数据库资产、通过迁移到FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
   <block id="6cfad4df5416db8db29bda4f011d3211" category="list-text">灵活、低成本的存储</block>
@@ -443,7 +441,6 @@
   <block id="70d0aaf5f480c6663d11cba807745150" category="paragraph">用户可从基于Web的控制台以云服务的形式访问工作负载工厂。开始之前，您应了解 <block ref="e8fd0c1fcb8ab0b007f06daaaaad1620" category="inline-link-macro-rx"></block> 和 <block ref="232f97f76b2e1af290ebde69715d8d8f" category="inline-link-macro-rx"></block>。</block>
   <block id="5aef544885f83ccc840e539c33cb1025" category="paragraph">转到<block ref="c88df82826d36e57e6bb9062bf07b8b2" category="inline-link-rx"></block>，注册并创建帐户。</block>
   <block id="60606490df41979dfeb5466c4c9f1288" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block>将AWS凭据添加到工作负载工厂</block>
-  <block id="51ff16c71246f19573efec76f8f088e4" category="paragraph">现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用工作负载工厂使用FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。</block>
   <block id="9ec9485bf8174a52fd8f6a62564d8738" category="summary">可从基于Web的控制台访问工作负载工厂。开始使用工作负载工厂时、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。</block>
   <block id="a51339d19908e6fdb3902e2656db64d1" category="doc">注册BlueXP  工作负载工厂</block>
   <block id="b63dadbd087bac2ed3df3e51784c2a44" category="paragraph">可从基于Web的控制台访问BlueXP  工作负载工厂。开始使用工作负载工厂时、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。</block>
@@ -465,9 +462,6 @@
   <block id="2613fa59d7805a53043306264e81ba1a" category="summary">了解工作负载工厂管理功能的新增功能：云提供商凭据、Codebox增强功能等。</block>
   <block id="15653101633b93b4e086ba27efda4eae" category="doc">BlueXP  工作负载出厂管理功能的新增功能</block>
   <block id="ecbeaffbfe15c72e3bf702b0d0bf9694" category="section-title">2024年11月11日</block>
-  <block id="442602a2c8f7770016d621549f7964c6" category="summary">现在、您已登录并设置工作负载工厂、可以创建和管理适用于ONTAP文件系统的FSx、并可使用其他工作负载工厂功能。</block>
-  <block id="a2f53a8457ed9acfd2f72c4ae30c45de" category="doc">接下来、您可以使用BlueXP  工作负载工厂执行哪些操作</block>
-  <block id="d6753fe2bb46e06b1aa2e353e485eca7" category="paragraph">现在、您已登录并设置BlueXP  工作负载工厂、可以开始使用几项工作负载工厂功能、例如、创建适用于ONTAP文件系统的Amazon FSx、在适用于ONTAP文件系统的FSx上部署数据库、以及使用适用于ONTAP文件系统的FSx作为外部数据存储库将虚拟机配置迁移到AWS上的VMware Cloud。</block>
   <block id="008afcec5c1c0f2fb38f3e66b5aa4738" category="summary">BlueXP  工作负载工厂是一个功能强大的生命周期管理平台、旨在帮助您使用适用于NetApp ONTAP文件系统的Amazon FSx优化工作负载。</block>
   <block id="023c9a2badb62edd0fd5c78e596a5be9" category="doc">了解BlueXP  工作负载工厂</block>
   <block id="81b33a2e792e396aa73e06306a69815c" category="paragraph">Amazon FSx for NetApp ONTAP为任务关键型应用程序、数据库、容器、VMware Cloud数据存储库和用户文件提供完全托管的AWS本机NFS、SMB/CCIFS和iSCSI存储卷。您可以通过工作负载工厂和本机AWS管理工具管理FSx for ONTAP。</block>
@@ -1260,4 +1254,10 @@
   <block id="521987edc4d9059fc32abee2d3f5d6ae" category="cell">FSx for ONTAP创建失败</block>
   <block id="dd34477f0a88e199c56ea0813db3e18d" category="cell">FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。</block>
   <block id="dfe4f4248d3875aa3b31ac02e60b0e87" category="cell">FSx for ONTAP文件系统操作</block>
+  <block id="a819fc88b2635577c915933ee456de25" category="paragraph">注册、创建帐户并选择性地添加 AWS 凭证后，您可以开始使用工作负载工厂通过 FSx for ONTAP优化工作负载。</block>
+  <block id="6a636f3ce643c351748a032eeaaa11b0" category="inline-link-macro">使用 FSx for ONTAP优化您的工作负载</block>
+  <block id="9f2ac12605258d5b9c839500e3fc7770" category="paragraph"><block ref="efcfd21ad3a99d834cf77c9ab08b5664" category="inline-link-macro-rx"></block> 。</block>
+  <block id="d579c4b11db5f291683e63ef986a0f5e" category="summary">登录并设置工作负载工厂后，您可以创建和管理 FSx for ONTAP文件系统，并使用其他工作负载工厂功能。</block>
+  <block id="0a5d504d75a20cbec4103187ecd3e699" category="doc">使用工作负载工厂优化工作负载</block>
+  <block id="cc851373181948e2ac9056f188882266" category="paragraph">登录并设置工作负载工厂后，您可以开始使用多种工作负载工厂功能，例如创建Amazon FSx for ONTAP文件系统、在 FSx for ONTAP文件系统上部署数据库以及使用 FSx for ONTAP文件系统作为外部数据存储将虚拟机配置迁移到 VMware Cloud on AWS。</block>
 </blocks>

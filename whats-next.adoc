@@ -2,28 +2,28 @@
 sidebar: sidebar 
 permalink: whats-next.html 
 keywords: what you can do 
-summary: 现在、您已登录并设置工作负载工厂、可以创建和管理适用于ONTAP文件系统的FSx、并可使用其他工作负载工厂功能。 
+summary: 登录并设置工作负载工厂后，您可以创建和管理 FSx for ONTAP文件系统，并使用其他工作负载工厂功能。 
 ---
-= 接下来、您可以使用BlueXP  工作负载工厂执行哪些操作
+= 使用工作负载工厂优化工作负载
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-现在、您已登录并设置BlueXP  工作负载工厂、可以开始使用几项工作负载工厂功能、例如、创建适用于ONTAP文件系统的Amazon FSx、在适用于ONTAP文件系统的FSx上部署数据库、以及使用适用于ONTAP文件系统的FSx作为外部数据存储库将虚拟机配置迁移到AWS上的VMware Cloud。
+登录并设置工作负载工厂后，您可以开始使用多种工作负载工厂功能，例如创建Amazon FSx for ONTAP文件系统、在 FSx for ONTAP文件系统上部署数据库以及使用 FSx for ONTAP文件系统作为外部数据存储将虚拟机配置迁移到 VMware Cloud on AWS。
 
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
 +
 通过使用FSx for ONTAP作为存储基础架构、根据最佳实践配置FSx for ONTAP部署并对其进行模板化、以及访问高级管理功能、评估和分析当前数据资产、以节省潜在成本。
 
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。
-
 * https://docs.netapp.com/us-en/workload-databases/index.html["数据库工作负载"^]
 +
 在AWS上检测现有数据库资产、通过迁移到FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。
+
+* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
++
+部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。
 
 * https://docs.netapp.com/us-en/workload-vmware/index.html["VMware工作负载"^]
 +

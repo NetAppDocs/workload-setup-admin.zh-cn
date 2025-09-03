@@ -36,7 +36,7 @@ sidebar:
       url: "/sign-up-saas.html"
     - title: 添加AWS凭据
       url: "/add-credentials.html"
-    - title: 接下来可以执行的操作
+    - title: 使用工作负载工厂优化工作负载
       url: "/whats-next.html"
   - title: 管理工作负载工厂
     entries:

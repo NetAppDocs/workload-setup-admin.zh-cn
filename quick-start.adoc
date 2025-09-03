@@ -31,23 +31,7 @@ link:add-credentials.html["了解如何向帐户添加凭据"](英文)
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 使用FSx for ONTAP优化工作负载
 [role="quick-margin-para"]
-现在、您已经注册、创建了帐户并添加了AWS凭据(可选)、您可以开始使用工作负载工厂使用FSx for ONTAP优化工作负载。使用以下链接、按照每种类型的工作负载的分步说明进行操作。
+注册、创建帐户并选择性地添加 AWS 凭证后，您可以开始使用工作负载工厂通过 FSx for ONTAP优化工作负载。
 
-[role="quick-margin-list"]
-* https://docs.netapp.com/us-en/workload-fsx-ontap/index.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
-+
-通过使用FSx for ONTAP作为存储基础架构、根据最佳实践配置FSx for ONTAP部署并对其进行模板化、以及访问高级管理功能、评估和分析当前数据资产、以节省潜在成本。
-
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。
-
-* https://docs.netapp.com/us-en/workload-databases/index.html["数据库工作负载"^]
-+
-在AWS上检测现有数据库资产、利用FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。
-
-* https://docs.netapp.com/us-en/workload-vmware/index.html["VMware工作负载"^]
-+
-利用智能建议和自动修复简化迁移和操作。部署高效备份和强大的灾难恢复。监控VM并对其进行故障排除。
-
-
+[role="quick-margin-para"]
+link:whats-next.html["使用 FSx for ONTAP优化您的工作负载"] 。

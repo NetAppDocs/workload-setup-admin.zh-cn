@@ -2,36 +2,36 @@
 sidebar: sidebar 
 permalink: quick-start.html 
 keywords: quick start 
-summary: 通过为工作负载工厂控制台准备网络、注册和创建帐户以及添加凭据以使工作负载工厂可以直接管理AWS资源、开始使用工作负载工厂。 
+summary: 开始使用 Workload Factory，为 Workload Factory 控制台准备网络、注册并创建帐户以及添加凭证，以便 Workload Factory 可以直接管理 AWS 资源。 
 ---
-= BlueXP  工作负载工厂快速入门
+= NetApp Workload Factory 快速入门
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-通过注册并创建帐户、添加凭据以便工作负载工厂可以直接管理AWS资源、然后使用Amazon FSx for NetApp ONTAP优化您的工作负载、开始使用工作负载工厂。
+通过注册并创建账户开始使用NetApp Workload Factory，添加凭证以便 Workload Factory 可以直接管理 AWS 资源，然后使用Amazon FSx for NetApp ONTAP优化您的工作负载。
 
-用户可从基于Web的控制台以云服务的形式访问工作负载工厂。开始之前，您应了解 link:workload-factory-overview.html["工作负载工厂"] 和 link:operational-modes.html["操作模式"]。
+用户可以通过基于 Web 的控制台以云服务的形式访问NetApp Workload Factory。在开始之前，你应该了解link:workload-factory-overview.html["工作负载工厂"]和link:operational-modes.html["操作模式"]。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 注册并创建帐户
 [role="quick-margin-para"]
-转到 https://console.workloads.netapp.com["工作负载出厂控制台"^]，注册并创建帐户。
+前往 https://console.workloads.netapp.com["工作负载工厂控制台"^]，注册并创建帐户。
 
 [role="quick-margin-para"]
 link:sign-up-saas.html["了解如何注册和创建帐户"](英文)
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]将AWS凭据添加到工作负载工厂
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"]将 AWS 凭证添加到 Workload Factory
 [role="quick-margin-para"]
-此步骤为可选步骤。您可以在_Basic_模式下使用工作负载工厂、而无需添加凭据即可访问AWS帐户。以_只读_模式或_读/写_模式将 AWS 凭证添加到工作负载工厂，为您的工作负载工厂帐户提供创建和管理 FSx for ONTAP 文件系统以及部署和管理特定工作负载（例如数据库和 GenAI）所需的权限。
+此步骤为可选步骤。您可以在_基本_模式下使用 Workload Factory，而无需添加凭证来访问您的 AWS 账户。以_只读_模式或_读/写_模式将 AWS 凭证添加到 Workload Factory，可为您的 Workload Factory 帐户提供创建和管理 FSx for ONTAP文件系统以及部署和管理特定工作负载（例如数据库和 GenAI）所需的权限。
 
 [role="quick-margin-para"]
 link:add-credentials.html["了解如何向帐户添加凭据"](英文)
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 使用FSx for ONTAP优化工作负载
 [role="quick-margin-para"]
-注册、创建帐户并选择性地添加 AWS 凭证后，您可以开始使用工作负载工厂通过 FSx for ONTAP优化工作负载。
+注册、创建帐户并选择性添加 AWS 凭证后，您可以开始使用 Workload Factory 通过 FSx for ONTAP优化您的工作负载。
 
 [role="quick-margin-para"]
 link:whats-next.html["使用 FSx for ONTAP优化您的工作负载"] 。

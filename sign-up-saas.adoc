@@ -2,33 +2,33 @@
 sidebar: sidebar 
 permalink: sign-up-saas.html 
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
-summary: 可从基于Web的控制台访问工作负载工厂。开始使用工作负载工厂时、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。 
+summary: 可以通过基于 Web 的控制台访问 Workload Factory。当您开始使用 Workload Factory 时，您的第一步是使用现有的NetApp支持站点凭据进行注册或创建NetApp云登录。 
 ---
-= 注册BlueXP  工作负载工厂
+= 注册NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-可从基于Web的控制台访问BlueXP  工作负载工厂。开始使用工作负载工厂时、第一步是使用现有NetApp支持站点凭据或创建NetApp云登录名进行注册。
+NetApp Workload Factory 可通过基于 Web 的控制台访问。当您开始使用 Workload Factory 时，您的第一步是使用现有的NetApp支持站点凭据进行注册或创建NetApp云登录。
 
 .关于此任务
-您可以使用以下选项之一注册到工作负载工厂：
+您可以使用以下选项之一注册 Workload Factory：
 
 * 您的现有NetApp 支持站点 (NSS)凭据
 * 通过指定您的电子邮件地址和密码来登录NetApp云
 
 
 .步骤
-. 打开Web浏览器并转到 https://console.workloads.netapp.com["工作负载出厂控制台"^]
+. 打开 Web 浏览器并转到 https://console.workloads.netapp.com["工作负载工厂控制台"^]
 . 如果您有NetApp 支持站点 帐户，请直接在*Log In*页面上输入与您的NSS帐户关联的电子邮件地址。
 +
-如果您有NSS帐户、则可以跳过注册页面。工作负载工厂将在此初始登录过程中为您注册。
+如果您有 NSS 帐户，则可以跳过注册页面。  Workload Factory 将在您首次登录时为您注册。
 
 . 如果您没有NSS帐户、但要通过创建NetApp云登录来注册、请选择*注册*。
 +
-image:screenshot-sign-up1.png["\"注册\"页面的屏幕截图、您可以在其中添加用户名和密码以访问工作负载工厂。"]
+image:screenshot-sign-up1.png["注册页面的屏幕截图，您可以在其中添加用户名和密码以访问 Workload Factory。"]
 
 . 在*注册*页面上、输入创建NetApp云登录所需的信息、然后选择*下一步*。
 +
@@ -47,8 +47,8 @@ image:screenshot-sign-up1.png["\"注册\"页面的屏幕截图、您可以在其
 +
 image:screenshot-account-selection.png["使用新帐户登录时显示的\"帐户\"页面的屏幕截图。"]
 
-. 选择*创建*，将显示工作负载出厂主页。
+. 选择*创建*，将显示 Workload Factory 主页。
 
 
 .结果
-现在、您已拥有工作负载出厂登录名和帐户。您被视为帐户管理员、并且可以访问所有工作负载出厂功能。
+您现在拥有 Workload Factory 登录名和帐户。您被视为帐户管理员，可以访问所有 Workload Factory 功能。

@@ -1,23 +1,23 @@
 ---
 sidebar: sidebar 
 permalink: use-cloudshell.html 
-keywords: cloudshell, command line, aws cli, ontap cli, bluexp workload factory, workload factory 
-summary: 您可以从BlueXP  工作负载工厂用户界面中的任意位置使用CloudShell发出AWS或ONTAP命令行界面命令。 
+keywords: cloudshell, command line, aws cli, ontap cli, NetApp Workload Factory, Workload Factory 
+summary: 您可以从NetApp Workload Factory 用户界面中的任何位置使用 CloudShell 发出 AWS 或ONTAP CLI 命令。 
 ---
-= 在BlueXP  工作负载工厂中使用CloudShell
+= 在NetApp Workload Factory 中使用 CloudShell
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-打开CloudShell、可从BlueXP  工作负载工厂用户界面中的任意位置执行AWS或ONTAP命令行界面命令。
+打开 CloudShell 以从NetApp Workload Factory 控制台中的任何位置执行 AWS 或ONTAP CLI 命令。
 
 
 
 == 关于此任务
 
-通过CloudShell、您可以在BlueXP  工作负载工厂用户界面中的类Shell环境中执行AWS命令行界面命令或ONTAP命令行界面命令。它模拟浏览器中的终端会话、提供终端功能并通过工作负载工厂的后端代理消息。它允许您使用在BlueXP  帐户中提供的AWS凭据和ONTAP凭据。
+CloudShell 允许您在 Workload Factory 控制台内类似 shell 的环境中执行 AWS CLI 命令或ONTAP CLI 命令。它在浏览器中模拟终端会话，通过 Workload Factory 的后端提供终端功能和代理消息。它允许您使用您在NetApp帐户中提供的 AWS 凭证和ONTAP凭证。
 
 CloudShell功能包括：
 
@@ -32,53 +32,42 @@ CloudShell功能包括：
 
 
 
-=== CloudShell命令
+== CloudShell命令
 
 在CloudShell图形用户界面中、您可以输入 `help`以查看可用的CloudShell命令。发出命令后 `help`、将显示以下参考信息。
 
-说明:: NetApp CloudShell是BlueXP  工作负载出厂时内置的GUI界面、可用于在类似于Shell的环境中执行AWS命令行界面命令或ONTAP命令行界面命令。它模拟浏览器中的终端会话、提供终端功能并通过工作负载工厂的后端代理消息。您可以使用在BlueXP  帐户中提供的AWS凭据和ONTAP凭据。
-可用命令::
-+
---
+.说明
+NetApp CloudShell 是NetApp Workload Factory 内置的 GUI 界面，可让您在类似 shell 的环境中执行 AWS CLI 命令或ONTAP CLI 命令。它在浏览器中模拟终端会话，通过 Workload Factory 中的后端提供终端功能和代理消息。它使您能够使用您在NetApp帐户中提供的 AWS 凭证和ONTAP凭证。
+
+.可用命令
 * `clear`
 * `help`
 * `[--fsx <fsxId>] <ontap-command> [parameters]`
 * `aws <aws-command> <aws-sub-command> [parameters]`
 
 
---
-环境:: 每个终端会话都在特定环境下运行：凭据、区域以及可选的FSx for ONTAP文件系统。
-+
---
-所有AWS命令都会在提供的上下文中执行。只有在提供的凭据具有指定区域的权限时、AWS命令才会成功。
+.环境
+每个终端会话都在特定环境下运行：凭据、区域以及可选的FSx for ONTAP文件系统。
 
-您可以使用可选指定ONTAP命令 `fsxId`。如果您为提供了 `fsxId`一个单独的ONTAP命令、则此ID将覆盖上下文中的ID。如果终端会话没有FSx for ONTAP文件系统ID上下文、则必须在每个ONTAP命令中提供 `fsxId`。
++ 所有 AWS 命令都在提供的上下文中执行。仅当提供的凭证在指定区域具有权限时，AWS 命令才会成功。
 
-要更新不同的上下文具体信息、请执行以下操作：*要更改凭据："Using cred凭 据FSX"*要更改区域："Using region <regionCode>"*要更改FSx for ONTAP文件系统："Using FSx <credentialId><fileSystemId>"
++ 您可以使用可选的ONTAP命令指定 `fsxId`。如果您提供 `fsxId`使用单独的ONTAP命令，则此 ID 将覆盖上下文中的 ID。如果终端会话没有 FSx for ONTAP文件系统 ID 上下文，则必须提供 `fsxId`每个ONTAP命令。
 
---
-显示项目::
-+
---
++ 要更新不同的上下文细节，请执行以下操作：* 要更改凭据：“使用凭据 <credentialId>”* 要更改区域：“使用区域 <regionCode>”* 要更改 FSx for ONTAP文件系统：“使用 fsx <fileSystemId>”
+
+.显示项目
 * 要显示可用凭据、请执行以下操作："显示凭据"
 * 要显示可用区域："显示区域"
 * 要显示命令历史记录："show histy"
 
 
---
-变量:: 以下是设置和使用变量的示例。如果变量值包含空格、则应将其设置在引号内。
-+
---
-* 要设置变量：<variable>=<value>
-* 要使用变量：<variable>
-* 变量设置示例：$svm1 = svm123
-* 使用变量的示例：--FSx FileSystem-1 volumes" show --vserver $svm1
-* 设置字符串值为$Comment1 ="带有空格的注释"的变量的示例
+.变量
+以下是设置和使用变量的示例。如果变量值包含空格、则应将其设置在引号内。
 
++ * 设置变量：$<variable> = <value> * 使用变量：$<variable> * 设置变量的示例：$svm1 = svm123 * 使用变量的示例：--fsx FileSystem-1 volumes show --vserver $svm1 * 设置具有字符串值的变量的示例 $comment1 = "带有空格的注释"
 
---
-运算符:: 不支持管道、后台执行 `&`和重定向 `>`等Shell运算符 `|`。如果包含这些运算符、则命令执行将失败。
-
+.运算符
+不支持管道、后台执行 `&`和重定向 `>`等Shell运算符 `|`。如果包含这些运算符、则命令执行将失败。
 
 
 
@@ -93,15 +82,15 @@ NOTE: 您可以使用CloudShell执行任何AWS或ONTAP命令行界面命令。�
 
 == 部署CloudShell
 
-您可以从BlueXP  工作负载出厂控制台中的任意位置部署CloudShell。您还可以从FSx for ONTAP文件系统中的存储部署CloudShell。
+您可以从NetApp Workload Factory 控制台中的任何位置部署 CloudShell。您还可以从NetApp控制台部署 CloudShell。
 
 [role="tabbed-block"]
 ====
-.从工作负载出厂控制台部署
+.从 Workload Factory 控制台部署
 --
 .步骤
-. 使用其中一个登录link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^]。
-. 从顶部导航栏打开CloudShellimage:cloudshell-icon.png["云Shell图标的屏幕截图"]。
+. 登录 https://console.workloads.netapp.com["工作负载工厂控制台"^]。
+. 从菜单中选择“*管理*”，然后选择“*CloudShell*”。
 . 在CloudShell窗口中、为CloudShell会话选择凭据和区域、然后选择箭头以继续。
 +
 image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏幕截图。"]
@@ -119,14 +108,15 @@ image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏�
 
 
 --
-.从存储部署
+.从NetApp控制台部署
 --
 .步骤
-. 使用其中一个登录link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^]。
-. 在*存储*中，选择*转至存储清单*。
-. 在*FSx for Cloud*选项卡中，选择文件系统的三点菜单，然后选择*Open ONTAP Shell*。
+. 登录link:https://console.netapp.com["NetApp控制台"^]。
+. 从菜单中选择“*工作负载*”，然后选择“*管理*”。
+. 从管理菜单中，选择 *CloudShell*。
+. 在CloudShell窗口中、为CloudShell会话选择凭据和区域、然后选择箭头以继续。
 +
-此时将在选定文件系统的上下文中打开CloudShell会话。
+image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏幕截图。"]
 
 . 输入 `help`以查看可用的CloudShell命令和说明、或者参阅以下命令行界面参考文档以了解可用命令：
 +
@@ -142,9 +132,9 @@ image:screenshot-deploy-cloudshell-session.png["显示新CloudShell会话的屏�
 
 --
 ====
-通过选择打开的CloudShell会话选项卡的三点菜单、可以完成此屏幕截图中显示的CloudShell任务。以下是每个任务的说明。
+通过选择打开的 CloudShell 会话选项卡的操作菜单，可以完成此屏幕截图中显示的 CloudShell 任务。以下是每个任务的说明。
 
-image:screenshot-cloudshell-tab-menu.png["显示CloudShell选项卡的三点菜单的屏幕截图、其中包含重命名、复制、关闭其他选项卡和全部关闭等选项。"]
+image:screenshot-cloudshell-tab-menu.png["屏幕截图显示了 CloudShell 选项卡操作菜单，其中包含重命名、复制、关闭其他选项卡和全部关闭等选项。"]
 
 
 
@@ -153,7 +143,7 @@ image:screenshot-cloudshell-tab-menu.png["显示CloudShell选项卡的三点菜�
 您可以重命名CloudShell会话选项卡以帮助您识别会话。
 
 .步骤
-. 选择CloudShell会话选项卡的三点菜单。
+. 选择 CloudShell 会话选项卡的操作菜单。
 . 选择 * 重命名 * 。
 . 为会话选项卡输入新名称、然后单击选项卡名称外部以设置新名称。
 
@@ -168,7 +158,7 @@ image:screenshot-cloudshell-tab-menu.png["显示CloudShell选项卡的三点菜�
 您可以复制CloudShell会话选项卡、以创建具有相同名称、凭据和区域的新会话。原始选项卡中的代码不会在复制选项卡中复制。
 
 .步骤
-. 选择CloudShell会话选项卡的三点菜单。
+. 选择 CloudShell 会话选项卡的操作菜单。
 . 选择*复制*。
 
 
@@ -182,7 +172,7 @@ image:screenshot-cloudshell-tab-menu.png["显示CloudShell选项卡的三点菜�
 您可以一次关闭一个CloudShell选项卡、关闭其他未处理的选项卡或一次性关闭所有选项卡。
 
 .步骤
-. 选择CloudShell会话选项卡的三点菜单。
+. 选择 CloudShell 会话选项卡的操作菜单。
 . 选择以下选项之一：
 +
 ** 在CloudShell选项卡窗口中选择"X"、一次关闭一个选项卡。
@@ -205,18 +195,6 @@ image:screenshot-cloudshell-tab-menu.png["显示CloudShell选项卡的三点菜�
 将CloudShell会话选项卡拖放到CloudShell窗口的顶部、底部、左侧或右侧以拆分视图。
 
 image:screenshot-cloudshell-split-view.png["屏幕截图、显示两个CloudShell选项卡水平拆分。选项卡并排显示。"]
-
-
-
-== 重新打开上次CloudShell会话
-
-如果您偶然关闭了CloudShell会话、则可以重新打开它。
-
-.步骤
-选择CloudShell图标image:cloudshell-icon.png["云Shell图标的屏幕截图"]从顶部导航栏中。
-
-.结果
-最新的CloudShell会话已打开。
 
 
 

@@ -2,29 +2,29 @@
 sidebar: sidebar 
 permalink: configure-notifications.html 
 keywords: amazon, sns, notification, topic, notifications, notifications service, alerts 
-summary: 您可以配置 BlueXP 工作负载工厂，当某些类型的事件发生时向某个人或其他应用程序发送通知。 
+summary: 您可以配置NetApp Workload Factory，在发生某些类型的事件时向某个人或其他应用程序发送通知。 
 ---
-= 配置 BlueXP 工作负载工厂通知
+= 配置NetApp Workload Factory 通知
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
 
 
 [role="lead"]
-您可以配置 BlueXP 工作负载工厂通知服务，将通知发送到 BlueXP 警报服务或 Amazon SNS 主题。发送到 BlueXP 警报的通知会显示在 BlueXP 警报面板中。当工作负载工厂向 Amazon SNS 主题发布通知时，该主题的订阅者（例如人员或其他应用程序）会在为该主题配置的终端节点上收到通知（例如电子邮件或短信）。
+您可以配置NetApp Workload Factory 通知服务，以将通知作为NetApp控制台中的警报或 Amazon SNS 主题发送。当您部署控制台代理或链接时，以警报形式发送的通知会出现在NetApp控制台中。当 Workload Factory 向 Amazon SNS 主题发布通知时，该主题的订阅者（例如人员或其他应用程序）会在为该主题配置的端点接收通知（例如电子邮件或短信）。
 
 
 
 == 通知类型和消息
 
-工作负载工厂针对以下事件发送通知：
+Workload Factory 针对以下事件发送通知：
 
 [cols="6*"]
 |===
 | 事件 | 说明 | 通知类型 | 严重性 | 工作负载 | 资源类型 
 
 
-| 您帐户中的某些数据库实例架构不佳 | 已针对您账户中的所有 Microsoft SQL Server 实例分析了架构完善的问题。此事件的描述提供了架构完善的实例和未优化的实例的数量。请在工作负载工厂控制台的数据库清单中查看架构完善的状态结果和建议。 | 架构完善 | 建议 | 数据库 | Microsoft SQL Server 实例 
+| 您帐户中的某些数据库实例架构不佳 | 您的帐户中的所有 Microsoft SQL Server 实例均已针对架构问题进行分析。此事件的描述给出了架构良好的实例和未优化的实例的数量。从工作负载工厂控制台查看数据库清单中精心设计的状态结果和建议。 | 架构完善 | 建议 | 数据库 | Microsoft SQL Server 实例 
 
 
 | Microsoft SQL Server/PostgreSQL 服务器部署成功 | Microsoft SQL Server 或 PostgreSQL 主机部署成功。更多信息，请参考作业监控。 | 部署 | 成功 | 数据库 | FSx for ONTAP，数据库主机 
@@ -37,54 +37,57 @@ summary: 您可以配置 BlueXP 工作负载工厂，当某些类型的事件发
 
 
 | FSx for ONTAP创建失败 | FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。 | FSx for ONTAP文件系统操作 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
+
+
+| 检测到 FSx for ONTAP问题 | 所有 FSx for ONTAP文件系统均已针对架构问题进行了分析。扫描检测到一个或多个问题。有关更多信息，请查看 Workload Factory 控制台中存储仪表板的精心设计的分析。 | 精心设计的分析 | 建议 | 常规存储 | FSx for ONTAP文件系统 
 |===
 
 
 == 配置工作负载工厂通知
 
-使用 BlueXP 控制台或工作负载工厂控制台配置工作负载工厂通知。如果您使用 BlueXP 控制台，则可以配置工作负载工厂以将通知发送到 BlueXP 警报或 Amazon SNS 主题。您可以从 BlueXP 中的“警报和通知设置”区域配置 BlueXP 警报。
+使用NetApp控制台或 Workload Factory 控制台配置 W​​orkload Factory 通知。如果您使用NetApp控制台，则可以配置 Workload Factory 以将通知作为NetApp控制台中的警报或 Amazon SNS 主题发送。您可以从NetApp控制台中的 *通知设置* 配置通知。
 
 .开始之前
 * 您需要使用 Amazon SNS 控制台或 AWS CLI 配置 Amazon SNS 并创建 Amazon SNS 主题。
-* 请注意，工作负载工厂支持“标准”主题类型。此类型的主题不确保通知按照接收顺序发送给订阅者，因此如果您有关键或紧急通知，请考虑使用此功能。
+* 请注意，Workload Factory 支持 *标准* 主题类型。这种类型的主题不能确保通知按照收到的顺序发送给订阅者，因此如果您有关键或紧急通知，请考虑这一点。
 
 
 [role="tabbed-block"]
 ====
-.从 BlueXP 控制台配置通知
+.从NetApp控制台配置通知
 --
 .步骤
-. 登录到 link:https://console.bluexp.netapp.com["BlueXP控制台"^]。
-. 从左侧导航栏中选择*工作负载*。
-. 选择*主页*可查看所有工作负载、或者选择一个工作负载、例如*存储*或*数据库*。
-. 从工作负载工厂菜单栏中，选择配置菜单。
-. 在菜单中，选择*Workload Factory 通知设置*。
-. 可选：选择*启用 BlueXP 通知*以配置工作负载工厂向 BlueXP 警报发送通知。
-. 选择*启用 SNS 通知*。
-. 按照说明从 Amazon SNS 控制台配置 Amazon SNS。
+. 登录link:https://console.netapp.com["NetApp控制台"^]。
+. 从NetApp控制台菜单中，选择 *Workloads*、*Administration*，然后选择 *Notifications setup*。
+. 在通知设置页面上，执行以下操作：
 +
-创建主题后，复制主题 ARN 并将其输入到 *通知设置* 对话框中的 *SNS 主题 ARN* 字段中。
+.. 可选：选择“启用NetApp控制台通知”以配置 Workload Factory 在NetApp控制台中发送通知。
+.. 选择*启用 SNS 通知*。
+.. 按照说明从 Amazon SNS 控制台配置 Amazon SNS。
++
+创建主题后，复制主题 ARN 并将其输入到 *通知设置* 页面上的 *SNS 主题 ARN* 字段中。
+
+
 
 . 通过发送测试通知验证配置后，选择*应用*。
 
 
 .结果
-工作负载工厂配置为向您指定的 Amazon SNS 主题发送通知。
+Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
 
 --
-.从工作负载工厂控制台配置通知
+.从 Workload Factory 控制台配置通知
 --
 .步骤
-. 登录到 link:https://console.workloads.netapp.com["工作负载出厂控制台"^]。
-. 从顶部导航栏打开帐户菜单。
-. 在菜单中，选择*通知设置*。
+. 登录link:https://console.workloads.netapp.com["工作负载工厂控制台"^]。
+. 从 Workload Factory 控制台菜单中，选择 *Workloads*、*Administration*，然后选择 *Notifications setup*。
 . 选择*启用 SNS 通知*。
 . 按照说明从 Amazon SNS 控制台配置 Amazon SNS。
 . 通过发送测试通知验证配置后，选择*应用*。
 
 
 .结果
-工作负载工厂配置为向您指定的 Amazon SNS 主题发送通知。
+Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
 
 --
 ====
@@ -92,13 +95,13 @@ summary: 您可以配置 BlueXP 工作负载工厂，当某些类型的事件发
 
 == 订阅 Amazon SNS 主题
 
-配置工作负载工厂向主题发送通知后，请按照 https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["说明"]在 Amazon SNS 文档中订阅该主题，以便您可以接收来自工作负载工厂的通知。
+配置 Workload Factory 向主题发送通知后，请按照 https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html["说明"]在 Amazon SNS 文档中订阅该主题，以便您可以接收来自 Workload Factory 的通知。
 
 
 
 == 筛选通知
 
-您可以通过对通知应用筛选条件来减少不必要的通知流量，并针对特定用户定向特定类型的通知。您可以使用 Amazon SNS 策略来设置 SNS 通知，并使用 BlueXP 通知设置来设置 BlueXP 通知。
+您可以通过对通知应用过滤器来减少不必要的通知流量，并为特定用户提供特定的通知类型。您可以使用 Amazon SNS 策略来发送 SNS 通知，并使用NetApp控制台中的通知设置来执行此操作。
 
 
 
@@ -180,8 +183,8 @@ summary: 您可以配置 BlueXP 工作负载工厂，当某些类型的事件发
 
 
 
-=== 过滤 BlueXP 通知
+=== NetApp控制台中的过滤通知
 
-您可以使用 BlueXP 警报和通知设置按严重性级别（例如“严重”、“信息”或“警告”）过滤在 BlueXP 中收到的警报和通知。
+您可以使用NetApp控制台通知设置按严重性级别（例如“严重”、“信息”或“警告”）过滤控制台中收到的通知。
 
-有关在 BlueXP 中过滤通知的更多信息，请参阅 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#filter-notifications["BlueXP文档"^] 。
+有关在控制台中过滤通知的更多信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications["NetApp控制台文档"^]。

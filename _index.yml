@@ -1,16 +1,16 @@
 ---
 indexpage:
-  title: BlueXP  工作负载出厂设置和管理文档
-  summary: 开始使用BlueXP  Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
-    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码联合技术实现跨平台自动化、以及在工作负载出厂时管理工作负载。
-  keywords: workload factory, fsx, account, credentials, users, permissions, log in,
+  title: NetApp Workload Factory 设置和管理文档
+  summary: 开始使用NetApp Workload Factory，以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后，您可以为您的工作负载创建、优化和管理
+    FSx for ONTAP文件系统，探索使用 FSx for ONTAP节省成本，使用内置的基础设施即代码副驾驶实现跨平台自动化，并在工作负载工厂中管理您的工作负载。
+  keywords: Workload Factory, fsx, account, credentials, users, permissions, log in,
     calculator, codebox
-  lead: 开始使用BlueXP  Workload Factory、以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后、您可以为工作负载创建、优化和管理FSx
-    for ONTAP文件系统、利用FSx for ONTAP探索成本节省、使用内置的基础架构即代码联合技术实现跨平台自动化、以及在工作负载出厂时管理工作负载。
+  lead: 开始使用NetApp Workload Factory，以便在使用Amazon FSx for NetApp ONTAP时充分利用您的工作负载。设置完成后，您可以为您的工作负载创建、优化和管理
+    FSx for ONTAP文件系统，探索使用 FSx for ONTAP节省成本，使用内置的基础设施即代码副驾驶实现跨平台自动化，并在工作负载工厂中管理您的工作负载。
   tiles:
   - title: 开始使用
     links:
-    - title: 了解BlueXP  工作负载工厂
+    - title: 了解NetApp Workload Factory
       url: workload-factory-overview.html
     - title: 注册
       url: sign-up-saas.html
@@ -30,9 +30,9 @@ indexpage:
       url: use-codebox.html
   - title: 博客和社区
     links:
+    - title: NetApp控制台
+      url: https://www.netapp.com/console
+    - title: NetApp数据服务
+      url: https://www.netapp.com/data-services/
     - title: NetApp 社区
-      url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
-    - title: BlueXP博客
-      url: https://bluexp.netapp.com/blog
-    - title: 云网络研讨会
-      url: https://bluexp.netapp.com/events
+      url: https://community.netapp.com/

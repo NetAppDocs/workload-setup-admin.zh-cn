@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: console-experiences.html 
-keywords: console, consoles, access, saas, workload factory, bluexp, bluexp workload factory 
-summary: 可通过两个基于Web的控制台访问BlueXP  工作负载工厂。 
+keywords: console, consoles, access, saas, Workload Factory, bluexp, NetApp Workload Factory, NetApp Console 
+summary: NetApp Workload Factory 可通过两个基于 Web 的控制台访问。 
 ---
 = 控制台体验
 :allow-uri-read: 
@@ -11,34 +11,29 @@ summary: 可通过两个基于Web的控制台访问BlueXP  工作负载工厂�
 
 
 [role="lead"]
-可通过两个基于Web的控制台访问BlueXP  工作负载工厂。了解如何使用BlueXP  Workload Factory控制台和BlueXP  控制台访问BlueXP  工作负载工厂。
+NetApp Workload Factory 可通过两个基于 Web 的控制台访问。了解如何使用 Workload Factory 控制台和NetApp控制台访问 Workload Factory。
 
-您可以使用两个控制台访问BlueXP  工作负载工厂。
-
-* * BlueXP  console*：提供混合体验，您可以在同一位置管理工作环境和工作负载。
-* *工作负载工厂控制台*：提供专门的工作负载工厂体验、重点关注在Amazon FSx for NetApp ONTAP上运行的工作负载。
+* * NetApp控制台*：提供混合体验，您可以在同一位置管理 FSx for ONTAP文件系统和在Amazon FSx for NetApp ONTAP上运行的工作负载。
+* *Workload Factory 控制台*：提供专用的 Workload Factory 体验，专注于在Amazon FSx for NetApp ONTAP上运行的工作负载。
 
 
 
 
-== 在BlueXP  控制台中访问工作负载出厂设置
+== 在NetApp控制台中访问工作负载工厂
 
-您可以从BlueXP  访问工作负载工厂。除了使用 BlueXP Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他 BlueXP 平台服务，如复制和同步、数字钱包等。
+您可以从NetApp控制台访问 Workload Factory。除了使用 Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他数据服务，如NetApp Copy and Sync、 NetApp Digital Wallet 等。
 
 .步骤
-. 登录到 link:https://console.bluexp.netapp.com["BlueXP控制台"^]。
-. 从左侧导航栏中选择*工作负载*。
-. 选择*主页*可查看所有工作负载、或者选择一个工作负载、例如*存储*或*数据库*。
-. 选择一个选项以开始处理工作负载。
+. 登录link:https://console.netapp.com["NetApp控制台"^]。
+. 从NetApp控制台菜单中，选择 *Workloads*，然后选择 *Overview*。
 
 
 
 
-== 在工作负载工厂控制台中访问工作负载工厂
+== 在 Workload Factory 控制台中访问 Workload Factory
 
-您可以从Workload Factory控制台访问工作负载工厂。
+您可以从 Workload Factory 控制台访问 Workload Factory。
 
 .步骤
-. 登录到 link:https://console.workloads.netapp.com["工作负载出厂控制台"^]。
-. 导航到要使用的工作负载、然后选择一个选项以开始使用。
+. 登录link:https://console.workloads.netapp.com["工作负载工厂控制台"^]。
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: operational-modes.html 
 keywords: modes, zero-trust, full-trust, read-only, basic, read/write, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials 
-summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略仔细控制工作负载工厂与云资产之间的访问。 
+summary: NetApp Workload Factory 提供三种操作模式，使您能够根据您的 IT 策略仔细控制 Workload Factory 和云资产之间的访问。 
 ---
 = 了解操作模式和AWS凭据
 :allow-uri-read: 
@@ -11,20 +11,20 @@ summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略
 
 
 [role="lead"]
-工作负载工厂提供三种操作模式、使您能够根据IT策略仔细控制工作负载工厂与云资产之间的访问。您使用的操作模式取决于您为工作负载工厂提供的AWS权限级别。
+NetApp Workload Factory 提供三种操作模式，使您能够根据您的 IT 策略仔细控制 Workload Factory 和云资产之间的访问。您使用的操作模式取决于您向 Workload Factory 提供的 AWS 权限级别。
 
 
 
 == 操作模式
 
-操作模式可根据您分配的信任级别对工作负载工厂提供的功能和功能进行逻辑组织。操作模式的主要目标是明确传达工作负载工厂可以在您的AWS帐户中执行或不能执行的任务。
+操作模式提供了工作负载工厂提供的功能和能力的逻辑组织，与您分配的信任级别相关。操作模式的主要目标是清楚地传达 Workload Factory 在您的 AWS 账户中可以或不能执行哪些任务。
 
-基本模式:: 表示零信任关系、其中不会向工作负载工厂分配AWS权限。它旨在早期探索工作负载工厂、并使用各种向导来创建所需的基础架构即代码(Infrastructure as Code、IAC)。您可以通过手动输入AWS凭据来复制代码并在AWS中使用它。
-只读模式:: 通过添加只读权限、使IAC模板填充您的特定变量(例如VPC、安全组等)、增强基本模式体验。这样、您就可以直接从AWS帐户执行IAC、而无需为工作负载工厂提供任何修改权限。
-读/写模式:: 表示完全信任关系、以便为工作负载工厂分配完全权限。这样、工作负载工厂便可代表您在AWS中执行和自动执行操作、并可获得分配的凭据、这些凭据具有执行所需的权限。
+基本模式:: 表示零信任关系，其中没有为 Workload Factory 分配任何 AWS 权限。它旨在用于工作负载工厂的早期探索和使用各种向导来创建所需的基础设施即代码 (IaC)。您可以复制代码并通过手动输入 AWS 凭证在 AWS 中使用它。
+只读模式:: 通过添加只读权限来增强基本模式的体验，以便 IaC 模板填充您的特定变量（例如，VPC、安全组等）。这使您能够直接从您的 AWS 账户执行 IaC，而无需向 Workload Factory 提供任何修改权限。
+读/写模式:: 表示完全信任关系，以便 Workload Factory 获得完全权限。这允许 Workload Factory 代表您在 AWS 中执行和自动执行操作，并提供具有执行所需权限的分配凭证。
 
 
-详细了解 link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["BlueXP  工作负载出厂时的权限"]。
+详细了解link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["NetApp Workload Factory 的权限"] 。
 
 
 
@@ -34,7 +34,7 @@ summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略
 
 [cols="12h,22,22,22,22"]
 |===
-| 模式 | 从工作负载工厂实现自动化 | 使用IAC在AWS中实现自动化 | AWS资源发现和自动完成 | 进度监控 
+| 模式 | 工作负载工厂的自动化 | 使用IAC在AWS中实现自动化 | AWS资源发现和自动完成 | 进度监控 
 
 
 | 基本 | 否 | 至少完成IAC模板 | 否 | 否 
@@ -49,7 +49,7 @@ summary: 工作负载工厂提供三种操作模式、使您能够根据IT策略
 
 === 操作模式要求
 
-您无需在工作负载出厂时设置任何选择器、即可确定要使用的模式。模式取决于您分配给工作负载工厂帐户的AWS凭据和权限。
+您无需在 Workload Factory 中设置选择器来识别您计划使用哪种模式。该模式根据您分配给 Workload Factory 帐户的 AWS 凭证和权限确定。
 
 [cols="16h,35,35"]
 |===
@@ -70,9 +70,9 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 === 操作模式示例
 
-您可以设置凭据、以便为一个工作负载组件提供一种模式、而为另一个组件提供另一种模式。例如，您可以为部署和管理 FSx for ONTAP 文件系统的操作配置读/写模式，但仅为使用工作负载工厂创建和部署数据库工作负载配置只读模式。
+您可以设置凭据来为一个工作负载组件提供一种模式，为另一个工作负载组件提供另一种模式。例如，您可以为部署和管理 FSx for ONTAP文件系统的操作配置读/写模式，但仅为使用 Workload Factory 创建和部署数据库工作负载配置只读模式。
 
-您可以在一个工作负载工厂帐户的一组凭据中提供这些功能、也可以在每个凭据提供独特的工作负载部署功能时创建多组凭据。
+您可以在 Workload Factory 帐户中的一组凭证中提供这些功能，也可以创建多组凭证，每个凭证提供独特的工作负载部署功能。
 
 
 
@@ -82,7 +82,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["了解有�
 
 image:screenshot-credentials1.png["屏幕截图显示了一组凭据、这些凭据提供了两种类型的工作负载权限。"]
 
-但是、他们在工作负载出厂时没有用于创建和部署VMware工作负载(基本模式)的自动化控制。如果他们要创建VMware工作负载、则需要从代码框中复制代码、手动登录到其AWS帐户、然后手动填充生成的代码中缺少的条目、才能使用此功能。
+但是，他们没有从 Workload Factory 创建和部署 VMware 工作负载（基本模式）的自动化控制。如果他们想要创建 VMware 工作负载，他们需要从 Codebox 复制代码，手动登录他们的 AWS 帐户，并手动填充生成的代码中缺少的条目以使用此功能。
 
 
 
@@ -115,10 +115,10 @@ image:screenshot-credentials-comparison-example-2.png["屏幕截图显示了一�
 
 === 一个或多个AWS凭据
 
-在使用第一个工作负载出厂功能时、您需要使用这些工作负载功能所需的权限创建凭据。您需要将凭据添加到工作负载工厂、但需要访问AWS管理控制台才能创建IAM角色和策略。在工作负载工厂中使用任何功能时、您的帐户中都可以提供这些凭据。
+当您使用第一个工作负载工厂功能（或多个功能）时，您需要使用这些工作负载功能所需的权限来创建凭据。您将把凭证添加到 Workload Factory，但您需要访问 AWS 管理控制台来创建 IAM 角色和策略。当使用 Workload Factory 中的任何功能时，这些凭证将在您的帐户中可用。
 
 您的初始AWS凭据集可以包含一项功能或多项功能的IAM策略。这完全取决于您的业务需求。
 
-向工作负载工厂添加多组AWS凭据可提供使用其他功能所需的额外权限、例如FSx for ONTAP文件系统、在FSx for ONTAP上部署数据库、迁移VMware工作负载等。
+向 Workload Factory 添加多组 AWS 凭证可提供使用其他功能所需的额外权限，例如 FSx for ONTAP文件系统、在 FSx for ONTAP上部署数据库、迁移 VMware 工作负载等。
 
-link:add-credentials.html["了解如何将AWS凭据添加到工作负载工厂"](英文)
+link:add-credentials.html["了解如何将 AWS 凭证添加到 Workload Factory"] 。

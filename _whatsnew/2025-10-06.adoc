@@ -1,0 +1,15 @@
+= BlueXP workload factory现为NetApp工作负载工厂
+:allow-uri-read: 
+
+
+
+
+=== BlueXP workload factory现为NetApp工作负载工厂
+
+BlueXP已重命名并重新设计，以更好地反映其在管理数据基础设施中的作用。因此， BlueXP workload factory已重命名为NetApp工作负载工厂。
+
+
+
+=== Ask Me 与 MCP 集成
+
+Workload Factory 的 AI 助手 Ask Me 与模型上下文协议 (MCP) 集成。使用 MCP，Ask Me 可以安全地与外部环境交互并查询 API 工具，以提供适合您特定存储环境的响应。

@@ -22,7 +22,7 @@ sidebar:
     entries:
     - title: 了解基础知识
       entries:
-      - title: 了解BlueXP  工作负载工厂
+      - title: 了解NetApp Workload Factory
         url: "/workload-factory-overview.html"
       - title: 操作模式
         url: "/operational-modes.html"
@@ -32,15 +32,15 @@ sidebar:
         url: "/permissions-reference.html"
     - title: 快速入门
       url: "/quick-start.html"
-    - title: 注册工作负载工厂
+    - title: 注册 Workload Factory
       url: "/sign-up-saas.html"
     - title: 添加AWS凭据
       url: "/add-credentials.html"
-    - title: 使用工作负载工厂优化工作负载
+    - title: 使用 Workload Factory 优化工作负载
       url: "/whats-next.html"
   - title: 管理工作负载工厂
     entries:
-    - title: 登录到工作负载工厂
+    - title: 登录工作负载工厂
       url: "/log-in.html"
     - title: 管理服务帐户
       url: "/manage-service-accounts.html"
@@ -65,5 +65,5 @@ sidebar:
   - title: 法律声明
     url: "/legal-notices.html"
 product-family:
-  name: BlueXP workload factory
+  name: NetApp Workload Factory
   repo: workload-family

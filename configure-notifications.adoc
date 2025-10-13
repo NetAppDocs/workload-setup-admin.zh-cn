@@ -39,6 +39,12 @@ Workload Factory 针对以下事件发送通知：
 | FSx for ONTAP创建失败 | FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。 | FSx for ONTAP文件系统操作 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
 
 
+| 自动增加 SSD 容量或 inode 成功 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统成功增加了 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 成功 | 常规存储 | FSx for ONTAP文件 
+
+
+| 自动增加 SSD 容量或 inode 失败 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统未能增加 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
+
+
 | 检测到 FSx for ONTAP问题 | 所有 FSx for ONTAP文件系统均已针对架构问题进行了分析。扫描检测到一个或多个问题。有关更多信息，请查看 Workload Factory 控制台中存储仪表板的精心设计的分析。 | 精心设计的分析 | 建议 | 常规存储 | FSx for ONTAP文件系统 
 |===
 

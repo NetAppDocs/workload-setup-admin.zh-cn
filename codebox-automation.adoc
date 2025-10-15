@@ -34,6 +34,7 @@ CodeBox提供了两项关键IAC功能：
 * 工作负载工厂 REST API
 * AWS命令行界面
 * AWS CloudFormation
+* 地形
 
 
 

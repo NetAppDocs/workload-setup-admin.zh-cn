@@ -1315,206 +1315,208 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 | 读/写 
 
 
-.2+| 获取FSx for ONTAP详细信息 | fsx:描述文件系统别名  a| 
-部署
-| 读/写 
+| 获取FSx for ONTAP详细信息 | fsx:描述文件系统别名 | 部署 | 读/写 
 
 
-| 调整FSx for ONTAP文件系统的大小以修复文件系统余量 | FSx：UpdateFilesystem | 优化 
+| 调整FSx for ONTAP文件系统的大小以修复文件系统余量 | FSx：UpdateFilesystem | 优化 | 读/写 
 
 
-| 读/写 | 调整卷大小以修复日志和TempDB驱动器大小 | FSx：UpdateVolume | 优化 
+| 调整卷大小以修复日志和TempDB驱动器大小 | FSx：UpdateVolume | 优化 | 读/写 
 
 
-| 读/写 .3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 
+.3+| 获取KMS密钥详细信息并用于FSx以进行ONTAP加密 | 公里：CreateGrant | 部署 | 读/写 
 
 
-| 读/写 | kms:描述自定义密钥存储 | 部署 
+| kms:描述自定义密钥存储 | 部署 | 读/写 
 
 
-| 读/写 | Kms：GenerateDataKey | 部署 
+| Kms：GenerateDataKey | 部署 | 读/写 
 
 
-| 读/写 .8+| 为在EC2实例上运行的验证和配置脚本创建CloudWatch日志 | 日志：CreateLogGroup | 部署 
+.8+| 为在EC2实例上运行的验证和配置脚本创建CloudWatch日志 | 日志：CreateLogGroup | 部署 | 读/写 
 
 
-| 读/写 | 日志：CreateLogStream | 部署 
+| 日志：CreateLogStream | 部署 | 读/写 
 
 
-| 读/写 | 日志：特性日志流  a| 
+| 日志：特性日志流  a| 
 * 部署
 * 评估
 
+| 读/写 
 
 
-
-| 读/写 | 日志：获取日志组字段 | 部署 
-
-
-| 读/写 | 日志：获取日志记录 | 部署 
+| 日志：获取日志组字段 | 部署 | 读/写 
 
 
-| 读/写 | 日志：ListLogDelivery | 部署 
+| 日志：获取日志记录 | 部署 | 读/写 
 
 
-| 读/写 | 日志：PutLogEvents  a| 
+| 日志：ListLogDelivery | 部署 | 读/写 
+
+
+| 日志：PutLogEvents  a| 
 * 部署
 * 管理操作
 
+| 读/写 
 
 
+| 日志:TagResource | 部署 | 读/写 
 
-| 读/写 | 日志:TagResource | 部署 
 
-
-| 读/写 | 遇到 SSM 输出截断时，Workload Factory 会切换到 SQL 实例的 Amazon CloudWatch 日志 | 日志：GetLogEvents  a| 
+| 遇到 SSM 输出截断时，Workload Factory 会切换到 SQL 实例的 Amazon CloudWatch 日志 | 日志：GetLogEvents  a| 
 * 存储评估(优化)
 * 清单
-
-
-
 
  a| 
 * 只读
 * 读/写
+
+
+
 
 | 允许 Workload Factory 获取当前日志组并检查 Workload Factory 创建的日志组是否设置了保留 | 日志：可通过"LogBeLogGroup"进行操作  a| 
 * 存储评估(优化)
 * 清单
 
+| 只读 
 
 
-
-| 只读 | 允许 Workload Factory 为其创建的日志组设置一天的保留策略，以避免 SSM 命令输出的日志流不必要地积累 | 日志：PutRettionPolicy  a| 
+| 允许 Workload Factory 为其创建的日志组设置一天的保留策略，以避免 SSM 命令输出的日志流不必要地积累 | 日志：PutRettionPolicy  a| 
 * 存储评估(优化)
 * 清单
-
-
-
 
  a| 
 * 只读
 * 读/写
 
-| 在用户帐户中为为SQL、域和FSx for ONTAP提供的凭据创建机密 | serviceequotas：ListServiceQuotas | 部署 
 
 
-| 读/写 .2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 
+
+| 在用户帐户中为为SQL、域和FSx for ONTAP提供的凭据创建机密 | serviceequotas：ListServiceQuotas | 部署 | 读/写 
 
 
-| 读/写 | SNS：发布 | 部署 
+.2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 | 读/写 
 
 
-| 读/写 .11+| 在已配置的SQL实例上运行发现脚本以及提取FSx for ONTAP支持的AWS区域的最新列表所需的SSM权限。 | SSM：PutCompletianceItems | 部署 
+| SNS：发布 | 部署 | 读/写 
 
 
-| 读/写 | SSM：PutConfigurePackageResult | 部署 
+.11+| 在已配置的SQL实例上运行发现脚本以及提取FSx for ONTAP支持的AWS区域的最新列表所需的SSM权限。 | SSM：PutCompletianceItems | 部署 | 读/写 
 
 
-| 读/写 | SSM：PutInventory | 部署 
+| SSM：PutConfigurePackageResult | 部署 | 读/写 
 
 
-| 读/写 | SSM：SendCommand  a| 
+| SSM：PutInventory | 部署 | 读/写 
+
+
+| SSM：SendCommand  a| 
 * 部署
 * 清单
 * 管理操作
 
+| 读/写 
 
 
-
-| 读/写 | SSM：UpdateAssociationStatus | 部署 
-
-
-| 读/写 | SSM：UpdateInstanceAssociationStatus | 部署 
+| SSM：UpdateAssociationStatus | 部署 | 读/写 
 
 
-| 读/写 | SSM：UpdateInstanceInformation | 部署 
+| SSM：UpdateInstanceAssociationStatus | 部署 | 读/写 
 
 
-| 读/写 | ssmmessages：创建控制通道 | 部署 
+| SSM：UpdateInstanceInformation | 部署 | 读/写 
 
 
-| 读/写 | ssmmessages：创建数据通道 | 部署 
+| ssmmessages：创建控制通道 | 部署 | 读/写 
 
 
-| 读/写 | ssmmessages：打开控制通道 | 部署 
+| ssmmessages：创建数据通道 | 部署 | 读/写 
 
 
-| 读/写 | ssmmessages：开放数据通道 | 部署 
+| ssmmessages：打开控制通道 | 部署 | 读/写 
 
 
-| 读/写 .4+| 保存FSx for ONTAP、Active Directory和SQL用户的凭据(仅用于SQL用户身份验证) | SSM：Get参 比器^1^  a| 
+| ssmmessages：开放数据通道 | 部署 | 读/写 
+
+
+.4+| 保存FSx for ONTAP、Active Directory和SQL用户的凭据(仅用于SQL用户身份验证) | SSM：Get参 比器^1^  a| 
 * 部署
 * 管理操作
 * 清单
 
+| 读/写 
 
 
-
-| 读/写 | SSM：GetParameters ^1^  a| 
+| SSM：GetParameters ^1^  a| 
 * 部署
 * 清单
 
+| 读/写 
 
 
-
-| 读/写 | SSM：Put参 比器^1^  a| 
+| SSM：Put参 比器^1^  a| 
 * 部署
 * 管理操作
 
+| 读/写 
 
 
-
-| 读/写 | SSM：删除参数^1^  a| 
+| SSM：删除参数^1^  a| 
 * 部署
 * 管理操作
 
+| 读/写 
 
 
-
-| 读/写 | 成功或失败时向CloudFormation堆栈发送信号。 | CloudFormation：SignalResource ^1^ | 部署 
-
-
-| 读/写 | 将模板创建的EC2角色添加到EC2的实例配置文件中、以允许EC2上的脚本访问部署所需的资源。 | IAM：AddRoleToInstanceProfile | 部署 
+| 成功或失败时向CloudFormation堆栈发送信号。 | CloudFormation：SignalResource ^1^ | 部署 | 读/写 
 
 
-| 读/写 | 为EC2创建实例配置文件并附加已创建的EC2角色。 | IAM：CreateInstanceProfile | 部署 
+| 将模板创建的EC2角色添加到EC2的实例配置文件中、以允许EC2上的脚本访问部署所需的资源。 | IAM：AddRoleToInstanceProfile | 部署 | 读/写 
 
 
-| 读/写 | 使用下面列出的权限通过模板创建EC2角色 | IAM：CreateRole | 部署 
+| 为EC2创建实例配置文件并附加已创建的EC2角色。 | IAM：CreateInstanceProfile | 部署 | 读/写 
 
 
-| 读/写 | 创建链接到EC2服务的角色 | IAM：CreateServiceLinkedIn Role ^2^ | 部署 
+| 使用下面列出的权限通过模板创建EC2角色 | IAM：CreateRole | 部署 | 读/写 
 
 
-| 读/写 | 删除在部署期间专为验证节点创建的实例配置文件 | IAM：DeleteInstanceProfile | 部署 
+| 创建链接到EC2服务的角色 | IAM：CreateServiceLinkedIn Role ^2^ | 部署 | 读/写 
 
 
-| 读/写 .5+| 获取角色和策略详细信息、以确定权限方面的任何差距并进行部署验证 | IAM：GetPolicy | 部署 
+| 删除在部署期间专为验证节点创建的实例配置文件 | IAM：DeleteInstanceProfile | 部署 | 读/写 
 
 
-| 读/写 | IAM：GetPolicyVersion | 部署 
+.5+| 获取角色和策略详细信息、以确定权限方面的任何差距并进行部署验证 | IAM：GetPolicy | 部署 | 读/写 
 
 
-| 读/写 | IAM：GetRole | 部署 
+| IAM：GetPolicyVersion | 部署 | 读/写 
 
 
-| 读/写 | IAM：GetRolePolicy | 部署 
+| IAM：GetRole | 部署 | 读/写 
 
 
-| 读/写 | IAM：GetUser | 部署 
+| IAM：GetRolePolicy | 部署 | 读/写 
 
 
-| 读/写 | 将创建的角色传递到EC2实例 | IAM：PassRole ^3^ | 部署 
+| IAM：GetUser | 部署 | 读/写 
 
 
-| 读/写 | 将具有所需权限的策略添加到已创建的EC2角色 | IAM：PutRolePolicy | 部署 
+| 将创建的角色传递到EC2实例 | IAM：PassRole ^3^ | 部署 | 读/写 
 
 
-| 读/写 | 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 
+| 将具有所需权限的策略添加到已创建的EC2角色 | IAM：PutRolePolicy | 部署 | 读/写 
 
 
-| 读/写 | 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 
+| 从配置的EC2实例配置文件中断开角色 | IAM：RemoveRoleFromInstanceProfile | 部署 | 读/写 
+
+
+| 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署  a| 
+* 只读
+* 读/写
+
+
 |===
 . 权限仅限于从“资源管理模块”开始的资源。
 . "IAM：CreateServiceLinkedIn Role"受"iam：AVsServiceName"限制：ec2.amazonaws.com"*

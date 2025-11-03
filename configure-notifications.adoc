@@ -46,6 +46,12 @@ Workload Factory 针对以下事件发送通知：
 
 
 | 检测到 FSx for ONTAP问题 | 所有 FSx for ONTAP文件系统均已针对架构问题进行了分析。扫描检测到一个或多个问题。有关更多信息，请查看 Workload Factory 控制台中存储仪表板的精心设计的分析。 | 精心设计的分析 | 建议 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| FSx for ONTAP的自动容量管理事件 | FSx for ONTAP文件系统的 SSD 性能层级已达到警告阈值容量/百分比总和。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| FSx for ONTAP的自动 inode 管理事件 | ONTAP卷的 FSx inode 计数达到警告阈值计数/百分比总数。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
 |===
 
 

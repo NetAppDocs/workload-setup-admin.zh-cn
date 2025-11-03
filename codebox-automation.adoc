@@ -11,7 +11,7 @@ summary: 'Codebox 是一个基础设施即代码 (IaC) 副驾驶，可帮助开�
 
 
 [role="lead"]
-Codebox 是一个基础设施即代码 (IaC) 副驾驶，可帮助开发人员和 DevOps 生成执行NetApp Workload Factory 支持的任何操作所需的代码。  Codebox 与 Workload Factory 操作模式（_basic_、_read-only_ 和 _read/write_）保持一致，它为执行准备设置了清晰的路径，并提供了自动化目录以供将来快速重用。
+Codebox 是一个基础设施即代码 (IaC) 辅助工具，可帮助开发人员和 DevOps 生成执行NetApp Workload Factory支持的任何操作所需的代码。  Codebox 与 Workload Factory 的权限策略保持一致，并为执行准备工作设定了清晰的路径，同时还提供了一个自动化目录，以便将来快速重用。
 
 
 
@@ -23,7 +23,7 @@ CodeBox提供了两项关键IAC功能：
 * _CodeBox自动化目录_显示所有已保存的IAC作业、便于您轻松参考这些作业以供将来使用。自动化目录作业会另存为模板、并显示在应用于这些作业的资源的上下文中。
 
 
-此外，在设置 Workload Factory 凭证时，Codebox 会动态显示创建 IAM 策略所需的 AWS 权限。为您计划使用的每个 Workload Factory 功能（数据库、AI、FSx for ONTAP等）提供权限，并且根据策略用户是否获得_只读_权限或完全_读/写_权限进行定制。您只需从 Codebox 复制权限，然后将其粘贴到 AWS 管理控制台中，以便 Workload Factory 拥有正确的权限来管理您的工作负载。
+此外，在设置 Workload Factory 凭证时，Codebox 会动态显示创建 IAM 策略所需的 AWS 权限。每个 Workload Factory 功能（数据库、AI、FSx for ONTAP等）都提供了相应的权限，并且这些权限是可以自定义的。您只需从 Codebox 复制权限，然后将其粘贴到 AWS 管理控制台中，以便 Workload Factory 拥有管理您的工作负载的正确权限。
 
 
 

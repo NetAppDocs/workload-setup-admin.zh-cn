@@ -24,8 +24,6 @@ sidebar:
       entries:
       - title: 了解NetApp Workload Factory
         url: "/workload-factory-overview.html"
-      - title: 操作模式
-        url: "/operational-modes.html"
       - title: 控制台体验
         url: "/console-experiences.html"
       - title: 权限

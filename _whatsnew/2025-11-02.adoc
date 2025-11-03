@@ -1,0 +1,27 @@
+= 权限更新
+:allow-uri-read: 
+
+
+
+
+=== 权限更新
+
+在此版本中，我们对存储、数据库和 VMware 工作负载的权限策略进行了重大更新，以增强安全性和用户控制。您可以更精细地自定义权限设置，根据需要添加或取消权限。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["Workload Factory 的权限参考"]
+
+
+
+=== 存储的新通知
+
+NetApp Workload Factory通知服务包含存储自动 inode 管理的通知。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["NetApp Workload Factory 通知"]
+
+
+
+=== 自动容量和 inode 管理的阈值警告
+
+可以为存储设置自动容量和 inode 管理，并设置警告阈值，该阈值会触发 Workload Factory 通知服务的通知。要使用此功能，必须先启用工作负载工厂通知服务。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["配置NetApp Workload Factory的通知"]

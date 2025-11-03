@@ -14,14 +14,10 @@ indexpage:
       url: workload-factory-overview.html
     - title: 注册
       url: sign-up-saas.html
-  - title: 操作模式和凭据
-    links:
-    - title: 了解操作模式
-      url: operational-modes.html
     - title: 添加AWS凭据
       url: add-credentials.html
-    - title: 删除凭据
-      url: manage-credentials.html
+    - title: 工作负载工厂的权限
+      url: permissions-reference.html
   - title: 使用CodeBox实现自动化
     links:
     - title: 了解CodeBox

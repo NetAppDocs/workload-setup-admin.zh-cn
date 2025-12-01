@@ -15,6 +15,24 @@ summary: 了解 Workload Factory 管理功能的新功能：云提供商凭证�
 
 
 
+== 2025年11月27日
+
+
+
+=== 存储权限更新
+
+FSx for ONTAP EMS 事件分析器使用 _operations and remediation_ 权限策略中的以下 Amazon Bedrock 权限来获取存储工作负载的事件数据。
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
+
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限引用更改日志"]
+
+
+
 == 2025年10月6日
 
 

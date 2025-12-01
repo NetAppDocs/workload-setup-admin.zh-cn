@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: console-experiences.html 
-keywords: console, consoles, access, saas, Workload Factory, bluexp, NetApp Workload Factory, NetApp Console 
+keywords: console, consoles, access, saas, Workload Factory, NetApp Workload Factory, NetApp Console 
 summary: NetApp Workload Factory 可通过两个基于 Web 的控制台访问。 
 ---
 = 控制台体验
@@ -21,7 +21,7 @@ NetApp Workload Factory 可通过两个基于 Web 的控制台访问。了解如
 
 == 在NetApp控制台中访问工作负载工厂
 
-您可以从NetApp控制台访问 Workload Factory。除了使用 Workload Factory 实现 AWS 存储和工作负载功能之外，您还可以访问其他数据服务，如NetApp Copy and Sync、 NetApp Digital Wallet 等。
+您可以从NetApp Console访问 Workload Factory。除了使用 Workload Factory 来获取 AWS 存储和工作负载功能外，您还可以访问其他数据服务，例如NetApp Copy and Sync等。
 
 .步骤
 . 登录link:https://console.netapp.com["NetApp控制台"^]。

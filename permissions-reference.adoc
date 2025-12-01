@@ -111,6 +111,7 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
         "fsx:TagResource",
         "fsx:UntagResource",
         "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
         "bedrock:GetInferenceProfile"
       ],
@@ -286,13 +287,16 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 | 列出FSx for ONTAP资源的标记 | FSx：ListTagsForResource | 清单 | 视图、规划和分析 
 
 
-.2+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 文件系统的创建和删除 
+.3+| 管理FSx for ONTAP文件系统的安全组传出和传入 | EC2：RevokeSecurityGroupIngress | 管理操作 | 文件系统的创建和删除 
+
+
+| ec2：撤销安全组出口 | 管理操作 | 文件系统的创建和删除 
 
 
 | EC2：DeleteSecurityGroup | 管理操作 | 文件系统的创建和删除 
 
 
-.17+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolume | 管理操作 | 运营和补救 
+.18+| 创建、查看和管理FSx for ONTAP文件系统资源 | FSx：CreateVolume | 管理操作 | 运营和补救 
 
 
 | FSx：TagResource | 管理操作 | 运营和补救 
@@ -343,6 +347,9 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 | fsx：从备份创建卷 | 管理操作 | 运营和补救 
 
 
+| fsx：删除备份 | 管理操作 | 运营和补救 
+
+
 .2+| 获取文件系统和卷指标 | CloudWatch：GetMetricData | 管理操作 | 视图、规划和分析 
 
 
@@ -350,6 +357,24 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 
 
 | 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 全部 
+
+
+.4+| 获取ONTAP EMS 事件的 FSx | Bedrock：ListInferenceProfile | FSx 用于ONTAP EMS 分析 | 运营和补救 
+
+
+| 基岩：获取推理配置文件 | FSx 用于ONTAP EMS 分析 | 运营和补救 
+
+
+| 基岩：调用模型及其响应流 | FSx 用于ONTAP EMS 分析 | 运营和补救 
+
+
+| 基岩：InvokeModel | FSx 用于ONTAP EMS 分析 | 运营和补救 
+
+
+.2+| 从 AWS Cost Explorer 获取 FSx for ONTAP文件系统的成本和使用情况数据。 | ce:获取成本和使用情况 | 成本和使用情况分析 | 视图、规划和分析 
+
+
+| ce:GetTags | 成本和使用情况分析 | 视图、规划和分析 
 |===
 ====
 
@@ -1984,6 +2009,18 @@ VMware 工作负载有以下权限策略可供选择：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025年11月27日
+
+以下权限已添加到存储工作负载：
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
+
 
 
 

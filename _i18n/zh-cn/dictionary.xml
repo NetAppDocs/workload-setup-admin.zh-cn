@@ -1257,4 +1257,10 @@
   <block id="491e45ff3f847be901c7d8962829a3f8" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block></block>
   <block id="6fe4c05a9bf5207dceacd4fcc6fc1064" category="doc">存储权限更新</block>
   <block id="7d3f4d33aca7af4519cb87a63113caf9" category="paragraph">FSx for ONTAP EMS 事件分析器使用 _operations and remediation_ 权限策略中的以下 Amazon Bedrock 权限来获取存储工作负载的事件数据。</block>
+  <block id="499a631b37689fc0831d508e7df713ac" category="paragraph">您还可以邀请其他人加入您的 Workload Factory 帐户，以便他们可以访问和使用 Workload Factory。</block>
+  <block id="74c47b5a5003eaa998a2ddfd60579fcd" category="section-title">邀请其他人加入 Workload Factory 帐户</block>
+  <block id="cfe62ca3b745b1e1ba1704c2d481b1a0" category="paragraph">作为帐户管理员，您可以邀请其他人加入您的 Workload Factory 帐户，以便他们可以访问和使用 Workload Factory。账户管理只能通过NetApp Console进行。</block>
+  <block id="4271c82b5b3d2551c37fdf5569e1bdf4" category="inline-link-macro">了解如何添加成员（用户帐户）</block>
+  <block id="c128860bea2b6fa591ace59f9f82d9e2" category="paragraph">请参阅NetApp Console文档。 <block ref="d39c43ee8c7f0d03870545e14a548b70" category="inline-link-macro-rx"></block>到您的 Workload Factory 帐户。</block>
+  <block id="51a52248cd0718b8835bd272badd5424" category="paragraph">受邀用户将收到一封电子邮件，其中包含加入您的 Workload Factory 帐户的说明。</block>
 </blocks>

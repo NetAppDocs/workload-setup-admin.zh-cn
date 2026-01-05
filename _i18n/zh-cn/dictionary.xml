@@ -1263,4 +1263,7 @@
   <block id="4271c82b5b3d2551c37fdf5569e1bdf4" category="inline-link-macro">了解如何添加成员（用户帐户）</block>
   <block id="c128860bea2b6fa591ace59f9f82d9e2" category="paragraph">请参阅NetApp Console文档。 <block ref="d39c43ee8c7f0d03870545e14a548b70" category="inline-link-macro-rx"></block>到您的 Workload Factory 帐户。</block>
   <block id="51a52248cd0718b8835bd272badd5424" category="paragraph">受邀用户将收到一封电子邮件，其中包含加入您的 Workload Factory 帐户的说明。</block>
+  <block id="5e3b7f958129022f75fe2931c55615b2" category="doc">问我关于人工智能助手首页集成的问题</block>
+  <block id="65bcc541760e8f25e0281edbfdfbf7f3" category="paragraph">Workload Factory 控制台主页嵌入了 Ask me AI 助手，使您可以询问有关您自己的存储环境的问题，直接从您的环境中获取个性化见解，并参考以前的对话。您可以与“问我”进行交互，以了解您的工作负载、解决问题并了解更多关于工作负载工厂的信息——所有这些都无需离开控制台。</block>
+  <block id="334f5b13a66630c66877aaf36ce24673" category="section-title">2026年1月4日</block>
 </blocks>

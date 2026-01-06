@@ -29,8 +29,8 @@ summary: 登录并设置NetApp Workload Factory 后，您可以创建和管理 F
 +
 利用智能建议和自动修复简化迁移和操作。部署高效备份和强大的灾难恢复。监控VM并对其进行故障排除。
 
-* https://docs.netapp.com/us-en/workload-builders/index.html["构建器工作负载"^]
+* https://docs.netapp.com/us-en/workload-eda/index.html["EDA工作负载"^]
 +
-通过与版本控制系统和 CI/CD 流程实现即时克隆集成，简化软件版本的使用和访问，从而节省时间和资源。
+通过自动化存储参数管理，优化跨多个文件系统的 FSx for ONTAP ，以提高性能并降低运营成本。
 
 

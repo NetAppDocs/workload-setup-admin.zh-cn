@@ -1231,9 +1231,6 @@
   <block id="fd7910c842c61985f2e90af78f1b304f" category="paragraph">Workload Factory 提供灵活的权限策略，使您能够仔细控制对云环境的访问，并根据您的 IT 策略为 Workload Factory 分配递增的信任。</block>
   <block id="1b512d78c8df2f0c24a19da35f804ca3" category="inline-link-macro">了解更多关于工作负载工厂权限策略的信息</block>
   <block id="c51a57db8914c4d0002701f58f6f3d36" category="sidebar">工作负载工厂的权限</block>
-  <block id="67cc1fa9f1a93753f08cfa64d81c9661" category="inline-link">构建器工作负载</block>
-  <block id="fadf0a6a0fc7dcefddc336cf580be28f" category="list-text"><block ref="fadf0a6a0fc7dcefddc336cf580be28f" category="inline-link-rx"></block></block>
-  <block id="4dbca6300d097acc1ed4450a1e0d70d7" category="paragraph">通过与版本控制系统和 CI/CD 流程实现即时克隆集成，简化软件版本的使用和访问，从而节省时间和资源。</block>
   <block id="97364a76409afb35bcf8e78ca91dd72d" category="paragraph">您可以从NetApp Console访问 Workload Factory。除了使用 Workload Factory 来获取 AWS 存储和工作负载功能外，您还可以访问其他数据服务，例如NetApp Copy and Sync等。</block>
   <block id="01984b12c408bdab681895b084bd6c06" category="cell">ec2：撤销安全组出口</block>
   <block id="c8f3ab0d5795ea54c17a7c0f85e22fbd" category="cell">fsx：删除备份</block>
@@ -1266,4 +1263,7 @@
   <block id="5e3b7f958129022f75fe2931c55615b2" category="doc">问我关于人工智能助手首页集成的问题</block>
   <block id="65bcc541760e8f25e0281edbfdfbf7f3" category="paragraph">Workload Factory 控制台主页嵌入了 Ask me AI 助手，使您可以询问有关您自己的存储环境的问题，直接从您的环境中获取个性化见解，并参考以前的对话。您可以与“问我”进行交互，以了解您的工作负载、解决问题并了解更多关于工作负载工厂的信息——所有这些都无需离开控制台。</block>
   <block id="334f5b13a66630c66877aaf36ce24673" category="section-title">2026年1月4日</block>
+  <block id="2bc4b4a88d694b207aacb90573eb4b7f" category="inline-link">EDA工作负载</block>
+  <block id="f5051781c2f560348461adb9d928d406" category="list-text"><block ref="f5051781c2f560348461adb9d928d406" category="inline-link-rx"></block></block>
+  <block id="ce9f0edfab2350bf4aa1961cdca492ac" category="paragraph">通过自动化存储参数管理，优化跨多个文件系统的 FSx for ONTAP ，以提高性能并降低运营成本。</block>
 </blocks>

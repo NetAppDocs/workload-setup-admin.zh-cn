@@ -1120,7 +1120,6 @@
   <block id="1e2cf39904eebcbddae0fe72e0186b8b" category="paragraph">您不需要链接即可开始使用 Workload Factory，但在某些情况下，您需要创建链接来解锁所有 Workload Factory 功能和工作负载能力。</block>
   <block id="528a4ef2f9c8bc3b67d3efa2374a45d4" category="paragraph">Codebox 是一个基础设施即代码 (IaC) 副驾驶，可帮助开发人员和 DevOps 工程师生成执行 Workload Factory 支持的任何操作所需的代码。代码格式包括 Workload Factory REST API、AWS CLI 和 AWS CloudFormation。</block>
   <block id="7feb10c40d9ece4ba2534f19d82a64da" category="paragraph">Codebox 与 Workload Factory 操作模式（_basic_、_read-only_ 和 _read/write_）保持一致，并为执行准备设置了清晰的路径以及自动化目录，以便将来快速重用。</block>
-  <block id="ef4d1c07f18f4d56e44fa520425903f8" category="paragraph">Workload Factory 提供节省计算器，以便您可以将 FSx for ONTAP文件系统上的存储环境或数据库工作负载的成本与弹性块存储 (EBS)、弹性文件系统 (EFS) 和 FSx for Windows File Server 的成本进行比较。根据您的存储要求，您可能会发现 FSx for ONTAP文件系统是最具成本效益的选择。</block>
   <block id="4bbb8d481021011f9afb73ca196bfecd" category="section-title">使用NetApp Workload Factory 的工具</block>
   <block id="227f846d45d01d0f9fb62a784d506d51" category="paragraph">您可以将NetApp Workload Factory 与以下工具一起使用：</block>
   <block id="36445dd6e44838348239a5d874596e0d" category="list-text">*Workload Factory 控制台*：Workload Factory 控制台提供您的应用程序和项目的可视化、整体视图。</block>
@@ -1266,4 +1265,7 @@
   <block id="f5051781c2f560348461adb9d928d406" category="list-text"><block ref="f5051781c2f560348461adb9d928d406" category="inline-link-rx"></block></block>
   <block id="ce9f0edfab2350bf4aa1961cdca492ac" category="paragraph">通过自动化存储参数管理，优化跨多个文件系统的 FSx for ONTAP ，以提高性能并降低运营成本。</block>
   <block id="27dd4ab95b0517b4bda67fc48ed886e9" category="cell">为ONTAP EMS 事件的 FSx 提供基于人工智能的洞察</block>
+  <block id="2ae1b7a674baff982eb8eb9dc66927ee" category="paragraph">Workload Factory 提供节省计算器，以便您可以将存储环境、数据库或 VMware 工作负载在 FSx for ONTAP文件系统上的成本与其他 Amazon 服务进行比较。根据您的存储需求，您可能会发现 FSx for ONTAP文件系统是最具成本效益的选择。</block>
+  <block id="90c1b5a7280b55877e1905122cd1721a" category="inline-link-macro">了解如何为您的 VMware 工作负载节省成本</block>
+  <block id="c3529158a61861198ed03e3bb9e49b49" category="list-text"><block ref="c3529158a61861198ed03e3bb9e49b49" category="inline-link-macro-rx"></block></block>
 </blocks>

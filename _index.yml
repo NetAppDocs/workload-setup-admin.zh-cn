@@ -11,19 +11,35 @@ indexpage:
   - title: 开始使用
     links:
     - title: 了解NetApp Workload Factory
-      url: workload-factory-overview.html
+      url: "/workload-factory-overview.html"
     - title: 注册
       url: sign-up-saas.html
+  - title: 凭证和权限
+    links:
     - title: 添加AWS凭据
-      url: add-credentials.html
+      url: "/add-credentials.html"
     - title: 工作负载工厂的权限
-      url: permissions-reference.html
+      url: "/permissions-reference.html"
   - title: 使用CodeBox实现自动化
     links:
     - title: 了解CodeBox
-      url: codebox-automation.html
+      url: "/codebox-automation.html"
     - title: 使用CodeBox实现自动化
-      url: use-codebox.html
+      url: "/use-codebox.html"
+  - title: 架构良好的工作负载
+    links:
+    - title: 构建和运行架构良好的工作负载
+      url: "/well-architected-workloads.html"
+    - title: 为ONTAP文件系统实现架构良好的 FSx
+      url: https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html
+    - title: 实现架构良好的数据库工作负载
+      url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
+  - title: 分析工作负载
+    links:
+    - title: 分析数据库工作负载的错误日志
+      url: https://docs.netapp.com/us-en/workload-databases/analyze-error-logs.html
+    - title: 查看和分析存储工作负载的EMS事件
+      url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
   - title: 博客和社区
     links:
     - title: NetApp控制台

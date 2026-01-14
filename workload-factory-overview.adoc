@@ -13,7 +13,7 @@ summary: NetApp Workload Factory 是一个强大的生命周期管理平台，�
 [role="lead"]
 NetApp Workload Factory 是一个强大的生命周期管理平台，旨在帮助您使用Amazon FSx for NetApp ONTAP文件系统优化工作负载。可以使用 Workload Factory 和 FSx for ONTAP简化的工作负载包括数据库、VMware 迁移到 VMware Cloud on AWS、AI 聊天机器人等。
 
-工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。
+工作负载是指资源、代码、服务或应用程序的组合，旨在服务于业务目标。这可以是任何内容，从面向客户的应用程序到后端流程。工作负载可能涉及单个 AWS 账户中的部分资源，也可能跨越多个账户。
 
 Amazon FSx for NetApp ONTAP为关键任务应用程序、数据库、容器、VMware Cloud 数据存储和用户文件提供完全托管的 AWS 原生 NFS、SMB/CIFS 和 iSCSI 存储卷。您可以通过 Workload Factory 和使用原生 AWS 管理工具来管理 FSx for ONTAP 。
 
@@ -42,7 +42,7 @@ Workload Factory 使您能够管理云存储并使用 Amazon Web Services 中的
 
 == 安全性
 
-NetApp Workload Factory 的安全性是NetApp的首要任务。 Workload Factory 中的所有工作负载都在Amazon FSx for NetApp ONTAP上运行。除了所有link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["AWS 安全功能"^]， NetApp Workload Factory 已获得link:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058["SOC2 类型 1 合规性"^]。
+NetApp Workload Factory的安全性是NetApp的首要任务。Workload Factory 中的所有工作负载均运行在Amazon FSx for NetApp ONTAP之上。除此之外，还有所有 link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html["AWS 安全功能"^]NetApp Workload Factory已收到 link:https://trust.netapp.com/["SOC2 Type 1 合规性、SOC2 Type 2 合规性和 HIPAA 合规性"^]。
 
 Amazon FSx for NetApp ONTAP for NetApp Workload Factory 是一款link:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/["用于部署企业应用程序的 AWS 解决方案"^]它是在充分考虑了架构良好的最佳实践的基础上创建的。
 
@@ -146,6 +146,14 @@ Workload Factory 提供节省计算器，以便您可以将存储环境、数据
 * *CloudFormation*：使用 AWS CloudFormation 代码执行您在 Workload Factory 控制台中定义的操作，以从您的 AWS 账户中的 CloudFormation 堆栈对 AWS 和第三方资源进行建模、配置和管理。
 * *Terraform NetApp Workload Factory 提供商*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础架构工作流。
 
+
+
+
+=== 架构良好的工作负载
+
+Workload Factory 可帮助您维护和运行符合 AWS 良好架构框架的可靠、安全、高效且经济的存储和数据库配置。Workload Factory 每天扫描 FSx 中的ONTAP文件系统、SQL Server 和 Oracle 数据库部署情况，以提供有关潜在错误配置的见解，并建议手动或自动操作来修复问题。
+
+link:well-architected-workloads.html["了解更多关于架构良好的工作负载的信息"]
 
 
 

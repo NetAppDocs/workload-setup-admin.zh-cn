@@ -287,7 +287,6 @@
   <block id="691e71734464aaf43017f5b033e54559" category="section-title">2024 年 8 月 4 日</block>
   <block id="efa42d5c66cb9948f402ee559611e12d" category="section-title">Terraform支持</block>
   <block id="1571710cf3c95e6290fc41ea04917d42" category="paragraph">Amazon FSx支持Terraform来部署NetApp ONTAP文件系统和创建Storage VM。现在、设置和管理指南提供了有关如何使用CodeBox中的Terraform的说明。</block>
-  <block id="462c14d3e045d4b0b69cee0781df3207" category="paragraph">工作负载包括资源、代码以及服务或应用程序的组合、旨在实现业务目标。这可能是从面向客户的应用程序到后端流程的任何内容。工作负载可能涉及单个AWS帐户中的一部分资源、也可能跨越多个帐户。</block>
   <block id="fb44c12e7a424c0619764b1060434a74" category="section-title">节省计算器</block>
   <block id="2fd1745cefcdce50d6467d96e693f6b7" category="doc">RSS订阅</block>
   <block id="80f4b5aa553e3a44455088c83954a088" category="section-title">支持每个工作负载使用一个权限策略</block>
@@ -845,7 +844,6 @@
   <block id="19a5158f1235c29843008925adb7baf8" category="sidebar">配置通知</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="section-title">安全性</block>
   <block id="de7642ec23585171e85481d37460d1b2" category="inline-link-macro">AWS 安全功能</block>
-  <block id="6ff7732866355a577fee1c91a01a3561" category="inline-link-macro">SOC2 类型 1 合规性</block>
   <block id="5bc45c9bf327952786de480d68cc107d" category="inline-link-macro">用于部署企业应用程序的 AWS 解决方案</block>
   <block id="29281e8d047885f5a1eb2289174ea81b" category="paragraph">当您订阅 Amazon SNS 主题时，默认情况下您会收到发布到该主题的所有通知。如果您只想接收来自主题的特定通知，则可以使用过滤策略来控制接收哪些通知。过滤策略使 Amazon SNS 仅向订阅者发送符合过滤策略的通知。</block>
   <block id="3cf5ea90b43a94f968c221cb35825fc3" category="paragraph">您可以按照以下条件筛选 Amazon SNS 通知：</block>
@@ -1104,7 +1102,6 @@
   <block id="e89477f461ecef2d895595553cc0cfbf" category="list-text">问我人工智能助手</block>
   <block id="c0eadc4e4502d909eddd3b5b2d48b232" category="list-text">向 AI 助手询问有关管理和操作 FSx for ONTAP文件系统的问题。使用模型上下文协议 (MCP)，Ask Me 可以安全地与外部环境交互并查询 API 工具，以提供适合您特定存储环境的响应。</block>
   <block id="f23d73684a524dc65f1c2ab55054ed6c" category="paragraph">Workload Factory 使您能够管理云存储并使用 Amazon Web Services 中的工作负载功能。</block>
-  <block id="59357af7cb9129e8c2be60c63512c221" category="paragraph">NetApp Workload Factory 的安全性是NetApp的首要任务。 Workload Factory 中的所有工作负载都在Amazon FSx for NetApp ONTAP上运行。除了所有<block ref="ccc35ad3502dffbee7f06fd01d3728f9" category="inline-link-macro-rx"></block>， NetApp Workload Factory 已获得<block ref="87b5f9f30f065d1ad679fca208226814" category="inline-link-macro-rx"></block>。</block>
   <block id="cc3487971ff751f7d4df80cbca84205b" category="paragraph">Amazon FSx for NetApp ONTAP for NetApp Workload Factory 是一款<block ref="eada645bedd6ca3d760173ba22baf6b0" category="inline-link-macro-rx"></block>它是在充分考虑了架构良好的最佳实践的基础上创建的。</block>
   <block id="6396fbe69c05e9a323cf53a0fbf0983d" category="paragraph">Workload Factory 可以免费使用。您向 Amazon Web Services (AWS) 支付的费用取决于您计划部署的存储和工作负载服务。这包括Amazon FSx for NetApp ONTAP 、AWS 基础设施上的 VMware Cloud、AWS 服务等的成本。</block>
   <block id="d866a7eda949420ef136789c93a23ee9" category="section-title">工作负载工厂的工作原理</block>
@@ -1268,4 +1265,155 @@
   <block id="2ae1b7a674baff982eb8eb9dc66927ee" category="paragraph">Workload Factory 提供节省计算器，以便您可以将存储环境、数据库或 VMware 工作负载在 FSx for ONTAP文件系统上的成本与其他 Amazon 服务进行比较。根据您的存储需求，您可能会发现 FSx for ONTAP文件系统是最具成本效益的选择。</block>
   <block id="90c1b5a7280b55877e1905122cd1721a" category="inline-link-macro">了解如何为您的 VMware 工作负载节省成本</block>
   <block id="c3529158a61861198ed03e3bb9e49b49" category="list-text"><block ref="c3529158a61861198ed03e3bb9e49b49" category="inline-link-macro-rx"></block></block>
+  <block id="e9bb0779cc5e75ede07691420cf53f10" category="summary">Workload Factory 会扫描工作负载配置的可靠性、安全性、卓越运营、成本优化和性能效率，并提供见解和建议，帮助您实现卓越运营。</block>
+  <block id="32b4eab38fa52d3797017237d916e169" category="doc">构建和运行架构良好的工作负载</block>
+  <block id="9f90d642d2308ca0bef76516f43da4bf" category="paragraph">Workload Factory 是NetApp为Amazon FSx for NetApp ONTAP开发的管理套件，可帮助您维护和运行符合 AWS 良好架构框架的可靠、安全、高效且经济的存储和数据库配置。Workload Factory 提供每日存储和数据库工作负载分析、建议和自动修复，以促进健康的工作负载运行。通过自动化这一过程，工作负载工厂最大限度地减少了人为错误，并确保了工作负载管理的一致性。</block>
+  <block id="9ffdb95250e26c7a6b468126ac7c75b0" category="section-title">工作原理</block>
+  <block id="60eb4467b2b42285650cbb902455822e" category="paragraph">Workload Factory 每天分析Amazon FSx for NetApp ONTAP文件系统、Microsoft SQL Server 和 Oracle 数据库部署情况。每日分析提供架构完善的状态、见解和建议，并提供自动修复配置问题的选项，使您的部署符合最佳实践并高效运行。</block>
+  <block id="678b83ba882b41e4bae10f8e48f4a766" category="paragraph">每日分析完成后，部署的配置会在“架构完善”仪表板中显示为“已优化”或“未优化”。您将看到总优化得分、按类别划分的配置问题以及配置问题和建议列表。您可以查看针对配置问题的建议。有些问题可以由工作负载工厂自动修复，而另一些问题则需要人工干预。在这种情况下，工作负载工厂会提供详细的说明来帮助您实施建议的更改。</block>
+  <block id="c41905bc26fe3f0d3782c7fadfcf4fc7" category="paragraph">由于存储和数据库工作负载的要求各不相同，您可以忽略不适用于您环境的特定配置的分析。这有助于避免不必要的警报和不准确的优化结果。当某个特定配置分析被驳回时，该配置将不计入总优化得分。</block>
+  <block id="ee25e0b6cd574166f206b4c5b7f02df3" category="section-title">为什么这很重要</block>
+  <block id="152bff6d061f84223d0046a15effa86b" category="paragraph">Workload Factory 简化了手动将最佳实践应用于大型存储或数据库环境的困难任务；它通过 Workload Factory 控制台对次优配置进行分析和修复，从而简化了此过程。Workload Factory 控制台中应用的修复程序消除了人为错误的风险，并确保了存储和数据库管理的统一性。通过利用自动化，您可以保证每次都能正确应用配置，并随着时间的推移保持这种状态，从而在整个存储基础架构中维持高性能和高可靠性。</block>
+  <block id="a3bc2a6a859d792c531df9c9c525bcdb" category="section-title">开始使用 Workload Factory 来检测和纠正错误配置</block>
+  <block id="3b3d9b16b20a1d2dfd8b90ec4a5c674f" category="paragraph">要开始使用 Workload Factory，请注册并创建帐户，添加凭证，并建立连接，以便 Workload Factory 可以直接管理 AWS 资源，然后使用Amazon FSx for NetApp ONTAP优化您的工作负载。</block>
+  <block id="529694d7ce17e2ca817cab9ae2f1451e" category="paragraph"><block ref="529694d7ce17e2ca817cab9ae2f1451e" category="inline-link-macro-rx"></block></block>
+  <block id="c6ee17dfa8bb85cfb470ccbc889f031c" category="section-title">存储工作负载的最佳实践和建议</block>
+  <block id="9dc9d1de2ed3e815404014374c515208" category="paragraph">Workload Factory 深入剖析了ONTAP存储管理配置的最佳实践。具体来说，工作负载工厂中的存储工作负载会分析存储配置是否符合 AWS 良好架构框架的支柱，并为次优配置提供建议和补救措施。通过存储中精心设计的状态仪表板，您可以找到有助于实施精心设计的最佳实践的见解，从而为您的 FSx for ONTAP文件系统提供最佳性能和可靠性。</block>
+  <block id="ffd9fc00ab43b8283346c6266e00d684" category="paragraph">精心设计的分析将配置按以下框架支柱进行分类：_可靠性_、_安全性_、_卓越运营_、_成本优化_和_性能效率_。</block>
+  <block id="820b8f74ad843d1574106ec4cadfc07e" category="section-title">可靠性</block>
+  <block id="32293fdcb7dff0798e6d06da4b108ce6" category="paragraph">可靠性确保工作负载即使在出现中断的情况下也能正确、持续地执行其预期功能。</block>
+  <block id="554b13f76fb8ac95ab406262d15a2fa1" category="list-text">*安排 FSx 用于ONTAP备份*</block>
+  <block id="af34c811ecdb16220adf8c0a67e5adbe" category="paragraph">FSx for ONTAP：备份卷有助于满足数据保留和合规性要求。使用 FSx for ONTAP备份，为您的数据实施集中管理、自动化的备份和保留策略。</block>
+  <block id="277088f7a0bc1d2b0023dc08b1d30e37" category="list-text">*安排本地快照*</block>
+  <block id="ce36269ae95cd0ab7422d78bb843b720" category="paragraph">安排本地快照以实现高效备份和快速恢复。快照是卷的即时、特定时间点的图像。</block>
+  <block id="b34347ddf6e48f7eb5aee09d6f7b92a6" category="list-text">跨区域复制</block>
+  <block id="651789a3dcb2609efc180fcbd22d738b" category="paragraph">跨区域复制可确保您的数据复制到另一个 AWS 区域，从而提高数据的持久性和可用性。Workload Factory 建议配置跨区域复制，以满足灾难恢复和合规性要求。</block>
+  <block id="1efec9308ce64129e1db77dd8baa679c" category="list-text">*设置数据复制*</block>
+  <block id="793435fc062d4d74518687597c405959" category="paragraph">为了提高数据可靠性，可以将数据复制到同一区域或其他区域的 FSx for ONTAP文件系统。设置数据复制以支持跨文件系统的迁移、灾难恢复和长期保留。</block>
+  <block id="4776b32ae8a508cea6dc14786e7b1d3f" category="list-text">*提高固态硬盘容量阈值*</block>
+  <block id="e48d5f7bfc0f630823696ef4d2f1861d" category="paragraph">SSD存储层的容量利用率不应持续超过80%。这可能会影响对容量池存储层的数据读取和写入，并影响文件系统的吞吐量。容量不足可能导致数据卷变为只读，尝试写入新数据的服务可能会失败。</block>
+  <block id="52dcb980883fc7c1570f6f9c4c6e4f47" category="list-text">*核对标签以确保数据可靠性*</block>
+  <block id="6b684c41f8808f2d21748ed56ee909d7" category="paragraph">源卷的快照策略标签和复制策略标签必须匹配，以确保数据可靠性。</block>
+  <block id="ec75a1c7b766068775fc7894ddaf83e4" category="list-text">*提高文件容量阈值*</block>
+  <block id="0d73092e450f3018847f6e8ff85e28c0" category="paragraph">应提高文件容量阈值，以避免达到卷容量限制。文件容量（inodes）不足，无法向卷中写入更多数据。Workload Factory 建议持续将可用文件容量的利用率保持在 80% 以下。需要有足够的可用文件容量才能在该卷中创建新文件。</block>
+  <block id="7d7265a6929882bb433fc74e8bee871a" category="paragraph">安全重点在于通过风险评估和缓解策略来保护数据、系统和资产。</block>
+  <block id="6b164cf17f1cd008f12b094341cb3264" category="list-text">*启用ARP/AI*</block>
+  <block id="25f8ff1f36f295f75abe4713d79799cf" category="paragraph">NetApp自主勒索软件防护与人工智能 (ARP/AI) 可增强网络弹性，并确保对卷进行主动保护，抵御不断演变的勒索软件威胁。Workload Factory 建议为所有卷启用 ARP/AI。</block>
+  <block id="1218a704bef91508c259c867ba832d76" category="list-text">*未经授权访问卷*</block>
+  <block id="0f47a13bb4c0929efc89421b05c0e209" category="paragraph">使用 iSCSI 提供应用程序数据的卷不应允许并行访问 NAS。Workload Factory 建议，通过 iSCSI 协议访问的卷应限制为仅支持其他协议。</block>
+  <block id="17d2a91a4f3c01de4c2f05b2242e49d3" category="section-title">卓越运营</block>
+  <block id="aae272278ce139a51849ab88adc7d597" category="paragraph">卓越运营的重点在于提供最优的架构和业务价值。</block>
+  <block id="2e8c868875c81824742ded82e0ff9518" category="list-text">*启用自动容量管理*</block>
+  <block id="c2af0d35add26707ebd7d7030d750beb" category="paragraph">应启用自动容量管理，定期确保 SSD 层不超过阈值。</block>
+  <block id="32438b829cdc61174e9727896ad00733" category="list-text">*产能利用率阈值*</block>
+  <block id="938de8c74e8e4f67c370d24df8ab0411" category="paragraph">Workload Factory 建议容量利用率不要持续超过 80%。这可能会影响应用程序的数据读取和写入。容量增加可以手动进行，也可以使用容量自动增长功能自动进行。</block>
+  <block id="900f4b8178b38a2b7075005f38bd4a08" category="list-text">*产能利用率接近饱和*</block>
+  <block id="1771306e58ae20ceab27a04d0b17adcd" category="paragraph">当卷接近满负荷时，Workload Factory 建议采取措施增加卷容量，以避免潜在的应用程序中断。</block>
+  <block id="dea8be5f351d7ba412ea10951c1fe16c" category="list-text">*缓存关系写入模式*</block>
+  <block id="a58ce95d0ee8f9d592643a6f31d60878" category="paragraph">为了获得最佳性能，Workload Factory 会推荐最适合您工作负载的缓存关系写入模式。对于读取密集型工作负载和小文件，写回模式可提供更好的性能；而对于写入密集型工作负载和大文件，写回模式可提供更好的性能。</block>
+  <block id="a39ae09f8be4327fc176cfeb76a0e366" category="section-title">成本优化</block>
+  <block id="99cf25f36b236182c66bfca4aa2c66cc" category="paragraph">成本优化旨在以最小的成本创造业务价值。</block>
+  <block id="ff879d0ae47ba423426718c1437f43bc" category="list-text">*通过对冷数据进行分层来优化总体拥有成本*</block>
+  <block id="3fa1db8a8be8ef91cca2bf931c2698f3" category="paragraph">应启用冷数据分层，以降低 SSD 存储层的使用率。建议对每个卷应用分层策略。FSx for ONTAP会持续扫描数据，检测冷数据并将其移动到容量存储池层，而不会造成任何中断。</block>
+  <block id="7cee9f2699d966625a5743c41334d168" category="list-text">*提高存储效率*</block>
+  <block id="4ac28dca7ab7f0f38a67c27c947662d5" category="paragraph">应启用存储效率提升功能（压缩、整理和去重），以优化存储利用率并降低 SSD 层成本。</block>
+  <block id="fed8dca8f704b8520ccccb85704d4336" category="list-text">*不必要的快照和备份删除*</block>
+  <block id="0c3c1c3be816da545548a0d1ddb8eab2" category="paragraph">为降低成本，应删除不再需要的快照和备份。</block>
+  <block id="1828f0f67d6613341efbc43d822fd8dc" category="section-title">数据库工作负载的最佳实践和建议</block>
+  <block id="1ed3d8c93156794cc432b123457d635f" category="paragraph">Workload Factory 提供了一套运行架构良好的数据库工作负载的最佳实践和建议。精心设计的分析评估了 Microsoft SQL Server 和 Oracle 数据库的配置和设置，包括存储大小、存储布局、存储配置、计算、应用程序（SQL Server）和弹性。</block>
+  <block id="894445e8ea6df545bfbc4247797a2162" category="section-title">存储尺寸</block>
+  <block id="5418270ffed466b82b925869518520c0" category="list-text">*存储层*</block>
+  <block id="980f2b5cfc57d5b828fdc03fb48b0f83" category="paragraph">为了获得最佳存储性能，请在主 SSD 层上为ONTAP卷配置 FSx。使用容量池层可能会导致性能下降和延迟升高。</block>
+  <block id="50a35154861297e0463ad6610197fd71" category="list-text">文件系统余量</block>
+  <block id="a10a412f9caed4ecf076cca6f86cb10d" category="paragraph">为了优化存储性能，文件系统容量应为已配置卷总大小的 1.35 倍。</block>
+  <block id="8c8e78556bb98abf38a24ed03f6dea07" category="paragraph">文件系统剩余空间百分比如下：</block>
+  <block id="d131cee6e951b8ef8aae640422adc7b4" category="list-text">准备不足：&lt; 35%</block>
+  <block id="a4f98ed8f549899ff7bdae93a70c058f" category="list-text">优化范围：35-100%</block>
+  <block id="b19cbc3488f18abb8a96f4fa3aad65fc" category="list-text">资源过度配置：&gt; 100%</block>
+  <block id="e52ac523a924c00b4c5ccd742f0d98f3" category="list-text">*日志驱动器大小*</block>
+  <block id="2b8f731c7d364a576204d430f0100367" category="paragraph">确保 SQL Server 日志驱动器的大小准确，并定期进行监控，以防止因日志驱动器已满而导致的事务回滚、数据库不可用、数据损坏和性能下降等问题。</block>
+  <block id="970f93910a17f29e3e26236cfabbc6d2" category="paragraph">日志驱动器容量百分比如下：</block>
+  <block id="c0e089308165afd3e0d1fb0b051023c4" category="list-text">准备不足：&lt; 20%</block>
+  <block id="f5491831523573e7a5818c1338bc4b88" category="list-text">优化后：20-30%</block>
+  <block id="12ec21a0f24807900988e40f718a19e1" category="list-text">超额配置：&gt; 30%</block>
+  <block id="300311b18477e304f1d9e66ce254c8fd" category="list-text">*TempDB 驱动器大小*</block>
+  <block id="9dfd40ea7be8a60a0044599c85d43913" category="paragraph">确保 SQL Server TempDB 的大小准确，并定期进行监控，以优化性能并保持整体稳定性。正确配置 TempDB 可以防止性能问题和系统不稳定。空间不足或竞争激烈会导致查询速度变慢、应用程序超时和系统崩溃。</block>
+  <block id="dbaf4a3b8c991f3b5a574967d81bd31c" category="paragraph">TempDB 驱动器大小百分比如下：</block>
+  <block id="338a1b3efc5ed9ede9251ea7522f9768" category="list-text">准备不足：&lt; 10%</block>
+  <block id="4a7bb04bbe354596b5e4e71552eac3a5" category="list-text">优化后：10-20%</block>
+  <block id="e4bceb5f8d98ed0feed104f2d1f99eeb" category="list-text">超额配置：&gt; 20%</block>
+  <block id="196cc0216fd769aaf46f47da965f30f0" category="section-title">存储布局</block>
+  <block id="d8c5a700d63af4f6cb137eb741f48898" category="list-text">*数据文件（.mdf）放置位置*</block>
+  <block id="407d6614acc148e0eecf7146b435fad9" category="paragraph">将数据和日志文件分离到不同的驱动器上，可以同时进行 I/O 活动、独立备份计划，并提高恢复功能，从而提高性能。对于较小的数据库，我们建议将数据和日志 LUN 路径分离到不同的卷中。当存在多个大型数据库（&gt; 500 GiB）时，需要进行这种分离。</block>
+  <block id="22129f60f15a319851eb066d5b9e73d1" category="list-text">*日志文件（.ldf）放置位置*</block>
+  <block id="5b9b356226fe0fdbf3042c364d45373b" category="list-text">*TempDB 放置*</block>
+  <block id="c5d0775e1399ac44434cf0776c11771a" category="paragraph">通过将 TempDB 放置在其自身的专用驱动器上，隔离 TempDB 的 I/O，避免与其他数据库发生 I/O 争用。此优化可提高 SQL Server 的整体性能和稳定性。否则可能会导致严重的 I/O 瓶颈、查询性能下降以及潜在的系统不稳定。</block>
+  <block id="6e8775bd755a8835ce86806d669677ea" category="section-title">存储配置</block>
+  <block id="6fff5b0f8a5584251f9c517e970984b4" category="list-text">ONTAP配置*</block>
+  <block id="1a434befae3f49ae09347ded52032f6f" category="cell">实体</block>
+  <block id="51ac4bf63a0c6a9cefa7ba69b4154ef1" category="cell">设置</block>
+  <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="paragraph">卷</block>
+  <block id="6b8e4df83ce0d2861fa30424ab3604d5" category="list-text">精简配置（-space-guarantee = none）</block>
+  <block id="d6e304975073ac043a7e7d6daba15520" category="list-text">自动调整大小</block>
+  <block id="3204353d2f7350083c0a5c28924ace38" category="list-text">自动调整大小模式 = 增长</block>
+  <block id="7971a4b0abc2b9ae74cc5195faa61b2e" category="list-text">部分准备金率 = 0%</block>
+  <block id="80fc91c23423ed00de6c501ea13a6c74" category="list-text">快照副本预留量 = 0%</block>
+  <block id="bfd0ba0068b81944482dc1bfbf945ac5" category="list-text">快照自动删除（按卷/最早的快照优先）</block>
+  <block id="ed1548b793e09ad5593d49fa73bcfa7a" category="list-text">空间管理优先尝试 = volume_grow</block>
+  <block id="d1b4a4df24be90a6bb2ff55104e753b9" category="paragraph">为了优化存储效率和成本效益，请为 FSx for ONTAP卷配置精简配置、自动调整大小和空间管理选项。如果没有精简配置，存储空间会被预先分配，导致过度配置，从而造成使用效率低下和成本增加；静态分配会导致为未使用的容量付费，增加支出；缺乏动态分配会阻碍可扩展性和灵活性，影响性能；如果没有空间回收，删除的数据会占用空间，降低效率。</block>
+  <block id="acd64f8fed33a7b60eb1161b15a8b7cd" category="list-text">分层策略 = 仅快照</block>
+  <block id="5bf1f37a6e4c9cac9b1b07c9d134e902" category="list-text">分级最低制冷天数 = 7</block>
+  <block id="71a7128c715acf96d61f1cd8d786c74f" category="paragraph">为了获得最佳的数据库性能和成本效益，Workload Factory 建议仅将快照移动到容量层。该策略可在保证高性能的同时降低成本。尤其建议对超过 7 天的快照进行分层。</block>
+  <block id="b26e74ed6e2892c7e2bb95e414d460c6" category="paragraph">LUN</block>
+  <block id="c1959a3aec57d9698b009c3acc71116e" category="paragraph">操作系统类型 = windows_2008</block>
+  <block id="ae770170ef6591797acad356c43a8d7a" category="paragraph">ONTAP LUN OS 类型值应与操作系统分区方案相匹配，以实现 I/O 对齐。配置不当可能导致性能欠佳。</block>
+  <block id="fb7c414053dcc0cf0e717ee2669fcb4b" category="paragraph">已启用空间预订</block>
+  <block id="e250dd22789da7ca04b77518717fb26b" category="paragraph">启用空间预留后， ONTAP会在卷中预留足够的空间，以避免因磁盘空间不足而导致对这些 LUN 的写入失败。</block>
+  <block id="ae4901100928c44257237cecf03a10d9" category="paragraph">空间分配已启用</block>
+  <block id="4f928ef391d44750172130e68397dbda" category="paragraph">此选项可确保 FSx for ONTAP在卷已满且无法接受写入时通知 EC2 主机。此设置还允许 FSx for ONTAP在 EC2 主机上的 SQL Server 删除数据时自动回收空间。如果禁用此功能，可能会出现写入失败，并且空间利用率可能不高。</block>
+  <block id="93500df48c26b96ea97ca06b1759644f" category="list-text">Windows存储配置</block>
+  <block id="636bb240434852f12cce984d68a43b6a" category="paragraph">Microsoft 多路径 I/O (MPIO)</block>
+  <block id="c0ddafaef190fe389a1cdc8fb5d62c72" category="list-text">状态 = 已启用</block>
+  <block id="0fa6af19bdea795e9580313ea4cc3b2d" category="list-text">策略 = 轮询</block>
+  <block id="2b6db0933c6fb81f78bb99312b9531fd" category="list-text">疗程次数 = 5</block>
+  <block id="accfcb146473c3c5fad0b38c182542f0" category="paragraph">为了确保在 EC2 上使用 FSx for ONTAP中配置的底层 LUN 的 Microsoft SQL Server 数据库的最佳正常运行时间和数据访问一致性，Workload Factory 建议启用和配置多路径 I/O (MPIO)。MPIO 为ONTAP提供多条 FSx 访问路径，从而增强了系统的弹性和性能。这种最佳实践通过即使某个组件发生故障也能保持数据访问，从而防止潜在的数据丢失或停机。</block>
+  <block id="2cea162b682d428af2966968c1544afe" category="paragraph">分配单位大小</block>
+  <block id="4bef14121507c122cc877c2bf3cf9c8d" category="paragraph">NTFS 分配单元大小 = 64K</block>
+  <block id="7721cd44234239c5d1f89da7f5ba702e" category="paragraph">将 NTFS 分配单元大小设置为 64K，以更好地利用磁盘空间、减少碎片并提高文件读/写性能。配置不当可能会导致磁盘使用效率低下和性能下降。</block>
+  <block id="a623a8d0366bf079411aa30be45b2d10" category="section-title">计算</block>
+  <block id="552508d9abd0206f8a2258a4e950c0ce" category="list-text">*计算资源调整*</block>
+  <block id="5eb4e9d6e596897720c239e0a1cfe755" category="paragraph">为确保您的 SQL Server EC2 实例达到最佳性能和成本效益，我们建议您根据工作负载需求调整实例大小。如果您的当前实例配置不足，升级将提升 CPU、内存和 I/O 容量。如果资源配置过高，降级配置既能保持性能，又能降低成本。</block>
+  <block id="f4aa5339a6267f9aa498876d3f99817d" category="list-text">操作系统补丁</block>
+  <block id="257fc28b5d669adaeb61d34339d8ad8a" category="paragraph">尽可能应用最新补丁以确保安全性和稳定性。应用最新补丁有助于保护 SQL Server 数据库免受漏洞攻击，并显著提高系统整体可靠性。</block>
+  <block id="f7ea56e7a1a3d21f93afb8868a46597f" category="list-text">网络适配器设置</block>
+  <block id="873cf5ed756029d2b03d4f8f5a63f42d" category="paragraph">准确配置接收端缩放 (RSS) 对于 Microsoft SQL Server 实例的最佳网络性能至关重要。RSS 将网络处理分布到多个处理器上，防止出现瓶颈，提高系统性能。Workload Factory 建议采用以下 RSS 设置：</block>
+  <block id="230d0de8eb9cc0af29b6f65dbec3f416" category="list-text">禁用 TCP 卸载功能：确保所有 TCP 卸载功能均已禁用。</block>
+  <block id="b93ca5665d3b8a0ee8810658e0ed7d16" category="list-text">接收队列数量：如果 vCPU 数量大于 8，则设置为 8。如果 vCPU 数量 ≤ 8，则设置为 vCPU 的数量。</block>
+  <block id="ad3bc285b8875e27bb37cf988c83e91a" category="list-text">RSS配置文件：设置为NUMAStatic。</block>
+  <block id="141da671911df3ed7edc77ccfdf82e6f" category="list-text">基本处理器编号：设置为 2。</block>
+  <block id="00b979b0e1e12ffa9b6210f429e8645e" category="paragraph">按照这些设置操作，将提高 Microsoft SQL Server 实例的性能和可靠性。我们建议您在对生产环境进行更改之前，先测试推荐的设置，以确定性能改进情况。</block>
+  <block id="213ae318e1d77a9d7c891744d5e088ad" category="section-title">应用程序（SQL Server）</block>
+  <block id="ee998db55a5373c890946748cb8dafeb" category="list-text">*执照*</block>
+  <block id="8047eae9dfeb73342abc9f061f614516" category="paragraph">SQL Server 许可证评估和建议是在主机级别提供的。</block>
+  <block id="47b3409519c82ccb6ca067b7954c5d4b" category="paragraph">未优化：当 Workload Factory 检测到您的数据库基础架构未使用您付费购买的任何商业软件许可功能时，该许可证将被视为“未优化”。未优化的许可证可能会导致不必要的成本。</block>
+  <block id="0eebdaaceabb973f0fb9fa8442b52d8f" category="paragraph">优化：当数据库的商业软件许可证满足您的性能要求时，该许可证就被认为是“优化”的。</block>
+  <block id="a8642bb1e88dfe2e58d1d4d34aed2d28" category="list-text">*微软 SQL Server 补丁*</block>
+  <block id="4eddb0eeecb1e4ae314e258e08e465e3" category="list-text">*MAXDOP*</block>
+  <block id="6be0a3266d69978e2350a5623a35e617" category="paragraph">设置最大并行度 (MAXDOP) 以平衡并行处理，从而优化查询性能。精确的 MAXDOP 配置可提高性能和效率。在大多数使用场景下，将 MAXDOP 设置为 4、8 或 16 通常可以获得最佳效果。我们建议您测试您的工作负载，并监控任何与并行性相关的等待类型，例如 CXPACKET。</block>
+  <block id="66c44ae5bb6095407eca5355b0b9e5f9" category="paragraph">备份 Microsoft SQL Server 卷对于满足数据保留和合规性要求至关重要。使用 FSx for ONTAP备份，为您的 SQL Server 数据实施集中管理、自动化的备份和保留策略。</block>
+  <block id="8fed534b92837766d0beda280a6179f0" category="inline-link-macro">为ONTAP文件系统实现架构良好的 FSx</block>
+  <block id="b90e7338ef0cc6f12d0e55b76172a446" category="list-text"><block ref="b90e7338ef0cc6f12d0e55b76172a446" category="inline-link-macro-rx"></block></block>
+  <block id="4da0b519f402cca2d38847e59fb3b885" category="inline-link-macro">实现架构良好的数据库工作负载</block>
+  <block id="813bbef54984e0f92c8a1fe77f77d9a8" category="list-text"><block ref="813bbef54984e0f92c8a1fe77f77d9a8" category="inline-link-macro-rx"></block></block>
+  <block id="7f39dee910ffdf569a9923a9db84ffab" category="paragraph">工作负载是指资源、代码、服务或应用程序的组合，旨在服务于业务目标。这可以是任何内容，从面向客户的应用程序到后端流程。工作负载可能涉及单个 AWS 账户中的部分资源，也可能跨越多个账户。</block>
+  <block id="7d077036b7365e47511d664ec7d5ffb6" category="inline-link-macro">SOC2 Type 1 合规性、SOC2 Type 2 合规性和 HIPAA 合规性</block>
+  <block id="eb7ebe7af5ec92f47ad0ae86054e6ec8" category="paragraph">NetApp Workload Factory的安全性是NetApp的首要任务。Workload Factory 中的所有工作负载均运行在Amazon FSx for NetApp ONTAP之上。除此之外，还有所有 <block ref="ccc35ad3502dffbee7f06fd01d3728f9" category="inline-link-macro-rx"></block>NetApp Workload Factory已收到 <block ref="0134e971074a8d8e006ed0d1df73287a" category="inline-link-macro-rx"></block>。</block>
+  <block id="3a2373d3120e6c0cd1b1153dfa8e8a01" category="section-title">架构良好的工作负载</block>
+  <block id="3710d77fd6ba0a217b088ccf0a5a1286" category="paragraph">Workload Factory 可帮助您维护和运行符合 AWS 良好架构框架的可靠、安全、高效且经济的存储和数据库配置。Workload Factory 每天扫描 FSx 中的ONTAP文件系统、SQL Server 和 Oracle 数据库部署情况，以提供有关潜在错误配置的见解，并建议手动或自动操作来修复问题。</block>
+  <block id="2628830b99f47f27a98c1f7762a77a74" category="inline-link-macro">了解更多关于架构良好的工作负载的信息</block>
+  <block id="9db706e219135a8d2d250234e44d99ce" category="paragraph"><block ref="9db706e219135a8d2d250234e44d99ce" category="inline-link-macro-rx"></block></block>
+  <block id="ee87d4c496da752f756c502bf6d73599" category="sidebar">凭证和权限</block>
+  <block id="f6943387bdd47daa5821d74a29309dfb" category="sidebar">分析工作负载</block>
+  <block id="12157536dba66bdf2384f415d35853f6" category="sidebar">分析数据库工作负载的错误日志</block>
+  <block id="d7d8ecd04b2f9d5a4c90cc532c81ad55" category="sidebar">查看和分析存储工作负载的EMS事件</block>
 </blocks>

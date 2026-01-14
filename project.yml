@@ -42,6 +42,8 @@ sidebar:
       url: "/log-in.html"
     - title: 管理服务帐户
       url: "/manage-service-accounts.html"
+    - title: 构建和运行架构良好的工作负载
+      url: "/well-architected-workloads.html"
     - title: 配置通知
       url: "/configure-notifications.html"
     - title: 使用CodeBox自动执行任务

@@ -15,6 +15,51 @@ summary: 了解 Workload Factory 管理功能的新功能：云提供商凭证�
 
 
 
+== 2026 年 2 月 1 日
+
+
+
+=== 精心设计的更新
+
+NetApp Workload Factory 包括针对 Elastic VMware Service (EVS) 工作负载的精心设计的评估，并添加了针对存储和数据库工作负载的新配置。
+
+* *VMware 工作负载* NetApp Workload Factory 为运行架构良好的 Amazon Elastic VMware Service (EVS) 工作负载提供了最佳实践和建议。
++
+link:https://docs.netapp.com/us-en/workload-vmware/view-evs-well-architected.html["实施精心设计的 EVS 配置"^]
+
+* *Storage workloads* 在 Storage workload 中的精心架构功能中添加了几种新配置，以便您更深入地了解存储性能和成本。
++
+** Storage VM 逻辑报告
+** 优化缓存卷大小
+** 孤立的块设备
++
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html["为存储工作负载实施精心设计的文件系统配置"^]
+
+
+
+* *数据库工作负载* Workload Factory for Databases 包括新的 Oracle 存储配置，用于启用和设置 Direct NFS (dNFS)，以提高 I/O 性能并降低主机和存储系统的负载。
++
+** dNFS 启用
+** dNFS 一致的 IP 解析
+** dNFS 配置文件
+** dNFS `nosharecache`
++
+link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html["实现架构良好的数据库工作负载"^]
+
+
+
+
+
+
+
+=== Storage 的新权限
+
+已将新权限添加到 Storage 工作负载，以增强对 S3 访问点的管理。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log["权限引用更改日志"]
+
+
+
 == 2026年1月4日
 
 

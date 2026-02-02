@@ -73,9 +73,6 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
         "elasticfilesystem:DescribeFileSystems",
         "ce:GetCostAndUsage",
         "ce:GetTags",
-        "ce:GetCostAndUsageWithResources",
-        "ce:GetCostForecast",
-        "ce:GetUsageForecast"
       ],
       "Resource": "*"
     },
@@ -110,10 +107,32 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
         "fsx:DeleteBackup",
         "fsx:TagResource",
         "fsx:UntagResource",
+        "fsx:CreateAndAttachS3AccessPoint",
+        "fsx:DetachAndDeleteS3AccessPoint",
+        "s3:CreateAccessPoint",
+        "s3:DeleteAccessPoint",
+        "s3:GetObjectTagging",
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
-        "bedrock:GetInferenceProfile"
+        "bedrock:GetInferenceProfile",
+        "s3tables:CreateTableBucket",
+        "s3tables:ListTables",
+        "s3tables:GetTable",
+        "s3tables:GetTableMetadataLocation",
+        "s3tables:CreateTable",
+        "s3tables:GetNamespace",
+        "s3tables:PutTableData",
+        "s3tables:CreateNamespace",
+        "s3tables:GetTableData",
+        "s3tables:ListNamespaces",
+        "s3tables:ListTableBuckets",
+        "s3tables:GetTableBucket",
+        "s3tables:UpdateTableMetadataLocation",
+        "s3tables:ListTagsForResource",
+        "s3tables:TagResource",
+        "s3:GetObjectTagging",
+        "s3:ListBucket"
       ],
       "Resource": "*"
     },
@@ -375,6 +394,60 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 
 
 | ce:GetTags | 成本和使用情况分析 | 视图、规划和分析 
+
+
+| 创建 S3 接入点并将其附加到 FSx for ONTAP 文件系统 | fsx:CreateAndAttachS3AccessPoint | S3 接入点管理 | 运营和补救 
+
+
+| 从 FSx for ONTAP 文件系统中分离 S3 接入点并将其删除 | fsx:DetachAndDeleteS3AccessPoint | S3 接入点管理 | 运营和补救 
+
+
+| 创建 S3 访问点以简化存储桶访问管理 | s3：CreateAccessPoint | S3 接入点管理 | 运营和补救 
+
+
+| 删除 S3 接入点 | s3：DeleteAccessPoint | S3 接入点管理 | 运营和补救 
+
+
+| 向 S3 接入点添加标记 | s3:TagResource | S3 接入点管理 | 运营和补救 
+
+
+| 列出和查看 S3 接入点上的标签 | s3：ListTagsForResource | S3 接入点管理 | 运营和补救 
+
+
+| 从 S3 接入点删除标记 | s3：UntagResource | S3 接入点管理 | 运营和补救 
+
+
+| 发现 S3 接入点存储桶中的对象 | s3:ListBucket | S3 存储桶操作 | 运营和补救 
+
+
+| 列出、创建和描述 S3 表存储桶 | s3tables:ListTableBuckets s3tables:CreateTableBucket s3tables:GetTableBucket | S3 表存储桶管理 | 运营和补救 
+
+
+| 列出、创建和检索 S3 表 | s3tables:ListTables s3tables:CreateTable s3tables:GetTable | S3 表操作 | 运营和补救 
+
+
+| 读取表元数据位置 | s3tables：GetTableMetadataLocation | S3 表元数据操作 | 运营和补救 
+
+
+| 更新表元数据位置 | s3tables：UpdateTableMetadataLocation | S3 表元数据操作 | 运营和补救 
+
+
+| 列出、创建和检索表命名空间 | s3tables:ListNamespaces s3tables:CreateNamespace s3tables:GetNamespace | S3 命名空间操作 | 运营和补救 
+
+
+| 读取表数据（select、scan） | s3tables：GetTableData | S3 表数据操作 | 运营和补救 
+
+
+| 写入表数据（插入） | s3tables：PutTableData | S3 表数据操作 | 运营和补救 
+
+
+| 在库存表上列出标签（获取 FSx for ONTAP、存储 VM、卷 ID） | s3tables：ListTagsForResource | S3 表标签操作 | 运营和补救 
+
+
+| 标记 Workload Factory 查找的清单表 | s3tables：TagResource | S3 表标签操作 | 运营和补救 
+
+
+| 通过接入点检索对象标记 | s3:GetObjectTagging | S3 对象操作 | 运营和补救 
 |===
 ====
 
@@ -851,7 +924,7 @@ summary: 要使用NetApp Workload Factory 功能和服务，您需要提供权�
 | 使用基于SSM的查询获取FSx for ONTAP支持的区域的更新列表 | SSM：GetPathetersByPath | 部署 | 视图、规划和分析 
 
 
-| 在部署后发送管理操作命令后轮询SSM响应 | SSM：GetCommandInvation  a| 
+| 在发送部署后用于管理操作的命令后轮询 SSM 响应 | SSM：GetCommandInvation  a| 
 * 管理操作
 * 清单
 * 了解节省量
@@ -2009,6 +2082,46 @@ VMware 工作负载有以下权限策略可供选择：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+=== 2025 年 2 月 1 日
+
+以下权限已添加到存储工作负载：
+
+* `s3:TagResource`
+* `s3:ListTagsForResource`
+* `s3:UntagResource`
+* `s3tables:CreateTableBucket`
+* `s3tables:ListTables`
+* `s3tables:GetTable`
+* `s3tables:GetTableMetadataLocation`
+* `s3tables:CreateTable`
+* `s3tables:GetNamespace`
+* `s3tables:PutTableData`
+* `s3tables:CreateNamespace`
+* `s3tables:GetTableData`
+* `s3tables:ListNamespaces`
+* `s3tables:ListTableBuckets`
+* `s3tables:GetTableBucket`
+* `s3tables:UpdateTableMetadataLocation`
+* `s3tables:ListTagsForResource`
+* `s3tables:TagResource`
+* `s3:GetObjectTagging`
+* `s3:ListBucket`
+
+
+
+
+=== 2025 年 12 月 4 日
+
+以下权限已添加到存储工作负载：
+
+* `fsx:CreateAndAttachS3AccessPoint`
+* `fsx:DetachAndDeleteS3AccessPoint`
+* `s3:CreateAccessPoint`
+* `s3:DeleteAccessPoint`
+
 
 
 

@@ -1501,7 +1501,6 @@
   <block id="a49bf929860657a29ec7b321ff7a63ba" category="list-text">*Storage VM 逻辑报告*</block>
   <block id="7edda8ec9be79d47927f4aa7e27bd776" category="paragraph">Workload Factory 建议将存储虚拟机的默认报告设置设置为逻辑，以便更好地了解卷级别的存储使用情况。</block>
   <block id="394c926099d3d2cf7e0d7477f17faf38" category="paragraph">成本优化可帮助您在保持低成本的同时为业务创造最大价值。</block>
-  <block id="6d281baa5967f3e1be000f071dda6d92" category="list-text">*孤立的块设备*</block>
   <block id="934ae55c0ac8033312b0dd4fc00ad677" category="paragraph">在块设备未使用七天后，Workload Factory 建议归档块设备数据或删除未使用的块设备以降低成本。</block>
   <block id="08e31d66d631ac235f15db15294a1bed" category="paragraph">为获得最佳存储性能，请在主 SSD 层上创建 FSx for ONTAP 卷。使用容量池层可能会降低性能并增加延迟。</block>
   <block id="c882de88255b448709010276c1779e90" category="paragraph">要优化存储性能，请将文件系统容量设置为卷总大小的 1.35 倍。</block>
@@ -1518,4 +1517,5 @@
   <block id="9bcd13fbdffcddd84a7b637f7ec4e9b8" category="list-text">*集群节点管理*</block>
   <block id="240380a5970626d74754b96038898f5e" category="paragraph">确保您的 EVS 集群节点配置了适当的 EC2 停止和终止保护。EVS ESXi 节点应仅使用 vCenter 或其他 VMware 级管理工具进行管理。如果没有适当的 EC2 级保护，节点可能会意外停止或从 EC2 控制台终止，从而可能导致虚拟机数据不可用或数据丢失。</block>
   <block id="d1fabbd85b7cc34641739e525d26f652" category="section-title">2026 年 2 月 1 日</block>
+  <block id="c359614024935abd3712075452782fa3" category="list-text">*非活动块设备*</block>
 </blocks>

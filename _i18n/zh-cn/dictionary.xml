@@ -1521,4 +1521,10 @@
   <block id="a245d89706ebe16fde36591a5e609a33" category="list-text">或者，您可以通过执行客户端凭据交换来获取 Auth0 管理 API 的访问令牌。有关生成刷新令牌的信息，请参阅 <block ref="3b56da8d0a374b6655d8f6eed0786ff9" category="inline-link-macro-rx"></block>。</block>
   <block id="c24f8da0f82882bea0b6a996bf370a07" category="paragraph">curl 示例展示了如何获取客户端 ID 和密钥，并使用 API 生成有时间限制的访问令牌。令牌提供对 NetApp Workload Factory API 的几个小时的访问权限。</block>
   <block id="63c9444676abbb5883eb0d8ae98bc87a" category="paragraph">将输出发布到 \https://netapp-cloud-account.auth0.com/oauth/token 以获取访问令牌。</block>
+  <block id="129560e32411be4dc94c9cfeada8ea67" category="doc">Workload Factory 中提供了新的 Ask Me 书签</block>
+  <block id="4ea89e975474ebd5bba8d32ced2e95cc" category="paragraph">我们在 Workload Factory 控制台的每个屏幕上都添加了一个新的 Ask Me 书签。这项改进使您在需要帮助时可以更轻松、更快地访问 Ask Me。Ask Me 是我们的人工智能助手，使您可以询问有关您自己的工作负载环境的问题，直接从您的环境中获取个性化见解，并参考以前的对话。</block>
+  <block id="38dc719ee518af5f799c19331bfd5f19" category="paragraph">您可以通过单击新书签从任何页面打开 Ask Me。它在不中断您当前工作的情况下在侧面板中启动 Ask me，并提供与您当前工作相关的快速解释和建议。</block>
+  <block id="80dcbdee31e7f18a301f863f8b73dc64" category="inline-link-macro">详细了解 Ask Me</block>
+  <block id="ca844fa02d938fb3d0329bf797d0a633" category="paragraph"><block ref="ca844fa02d938fb3d0329bf797d0a633" category="inline-link-macro-rx"></block></block>
+  <block id="4aa1f4ce7ff97e69b143fbe399631234" category="section-title">2026 年 3 月 1 日</block>
 </blocks>

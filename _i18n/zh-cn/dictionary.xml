@@ -995,7 +995,6 @@
   <block id="29ff7127ee20a064050f18e60ebefb52" category="inline-image-macro">显示NetApp Workload Factory 用户界面帐户菜单选项的屏幕截图。其中一个选项是服务帐户。</block>
   <block id="a9e0a4cc2ab34b88741d440069a23306" category="paragraph"><block ref="a9e0a4cc2ab34b88741d440069a23306" category="inline-image-macro-rx" type="image"></block></block>
   <block id="49f5ed0a90981c28c41567afa9022439" category="paragraph">客户端密钥仅可见一次，并且不会被 Workload Factory 存储在任何地方。复制或下载秘密并安全存储。</block>
-  <block id="cde2339a39bfe4d657d43be10594e1d0" category="list-text">或者，您可以通过执行客户端凭证交换来获取 Auth0 管理 API 的访问令牌。 curl 示例展示了如何获取客户端 ID 和密钥并使用 API 生成有时间限制的访问令牌。该令牌可提供数小时的NetApp Workload Factory API 访问权限。</block>
   <block id="6088e1e1d002a4c07aec5cec2ca41900" category="list-text">在*服务帐户*页面上，选择操作菜单，然后选择*删除*。</block>
   <block id="9e4d021b600a18ca2bdc19e316e61a90" category="paragraph">当您使用第一个工作负载工厂功能（或多个功能）时，您需要使用这些工作负载功能所需的权限来创建凭据。您将把凭证添加到 Workload Factory，但您需要访问 AWS 管理控制台来创建 IAM 角色和策略。当使用 Workload Factory 中的任何功能时，这些凭证将在您的帐户中可用。</block>
   <block id="b6cd757220290782ab371e620582ddcd" category="paragraph">向 Workload Factory 添加多组 AWS 凭证可提供使用其他功能所需的额外权限，例如 FSx for ONTAP文件系统、在 FSx for ONTAP上部署数据库、迁移 VMware 工作负载等。</block>
@@ -1518,4 +1517,8 @@
   <block id="240380a5970626d74754b96038898f5e" category="paragraph">确保您的 EVS 集群节点配置了适当的 EC2 停止和终止保护。EVS ESXi 节点应仅使用 vCenter 或其他 VMware 级管理工具进行管理。如果没有适当的 EC2 级保护，节点可能会意外停止或从 EC2 控制台终止，从而可能导致虚拟机数据不可用或数据丢失。</block>
   <block id="d1fabbd85b7cc34641739e525d26f652" category="section-title">2026 年 2 月 1 日</block>
   <block id="c359614024935abd3712075452782fa3" category="list-text">*非活动块设备*</block>
+  <block id="7be2086f13a4f10a02431f16800fa81d" category="inline-link-macro">NetApp Console API 文档</block>
+  <block id="a245d89706ebe16fde36591a5e609a33" category="list-text">或者，您可以通过执行客户端凭据交换来获取 Auth0 管理 API 的访问令牌。有关生成刷新令牌的信息，请参阅 <block ref="3b56da8d0a374b6655d8f6eed0786ff9" category="inline-link-macro-rx"></block>。</block>
+  <block id="c24f8da0f82882bea0b6a996bf370a07" category="paragraph">curl 示例展示了如何获取客户端 ID 和密钥，并使用 API 生成有时间限制的访问令牌。令牌提供对 NetApp Workload Factory API 的几个小时的访问权限。</block>
+  <block id="63c9444676abbb5883eb0d8ae98bc87a" category="paragraph">将输出发布到 \https://netapp-cloud-account.auth0.com/oauth/token 以获取访问令牌。</block>
 </blocks>

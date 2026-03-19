@@ -28,12 +28,12 @@ indexpage:
       url: "/use-codebox.html"
   - title: 架构良好的工作负载
     links:
-    - title: 构建和运行架构良好的工作负载
-      url: "/well-architected-workloads.html"
     - title: 为ONTAP文件系统实现架构良好的 FSx
       url: https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html
     - title: 实现架构良好的数据库工作负载
       url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
+    - title: 实施精心设计的弹性 VMware Service 配置
+      url: https://docs.netapp.com/us-en/workload-vmware/view-evs-well-architected.html
   - title: 分析工作负载
     links:
     - title: 分析数据库工作负载的错误日志

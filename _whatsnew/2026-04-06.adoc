@@ -1,0 +1,11 @@
+= 存储的新通知
+:allow-uri-read: 
+
+
+
+
+=== 存储的新通知
+
+NetApp Workload Factory 通知服务包括用于存储的 NetApp Autonomous Ransomware Protection with AI (ARP/AI) 通知。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["NetApp Workload Factory 通知"]

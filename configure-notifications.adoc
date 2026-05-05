@@ -58,6 +58,9 @@ Workload Factory 针对以下事件发送通知：
 
 
 | 检测到延迟阈值违规 | FSx for ONTAP 集群中的一个或多个卷超过了延迟阈值。 | 性能监控 | 警告 | EDA | FSx for ONTAP文件系统 
+
+
+| 每月成本报告 | 您的帐户的每月成本汇总，显示支出趋势、异常变化以及 FSx for ONTAP 文件系统的最佳节省机会。 | 成本报告 | 建议 | 常规存储 | FSx for ONTAP文件系统 
 |===
 
 

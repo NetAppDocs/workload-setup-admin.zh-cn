@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: configure-notifications.html 
-keywords: amazon, sns, notification, topic, notifications, notifications service, alerts 
+keywords: amazon, sns, notification, topic, notifications, notifications service, alerts, email, email notifications, console notifications, filter, filtering 
 summary: 您可以配置NetApp Workload Factory，在发生某些类型的事件时向某个人或其他应用程序发送通知。 
 ---
 = 配置NetApp Workload Factory 通知
@@ -11,7 +11,7 @@ summary: 您可以配置NetApp Workload Factory，在发生某些类型的事件
 
 
 [role="lead"]
-您可以配置NetApp Workload Factory 通知服务，以将通知作为NetApp控制台中的警报或 Amazon SNS 主题发送。当您部署控制台代理或链接时，以警报形式发送的通知会出现在NetApp控制台中。当 Workload Factory 向 Amazon SNS 主题发布通知时，该主题的订阅者（例如人员或其他应用程序）会在为该主题配置的端点接收通知（例如电子邮件或短信）。
+您可以将 NetApp Workload Factory 通知服务配置为在 NetApp Console 中将通知作为警报发送，发送到与帐户关联的任何电子邮件地址，或发送到 Amazon SNS 主题。当您部署了 Console 代理或链接时，作为警报发送的通知将显示在 NetApp Console 中。当 Workload Factory 向 Amazon SNS 主题发布通知时，主题的订阅者（如人员或其他应用程序）会在为主题配置的端点（如电子邮件或短信）收到通知。
 
 
 
@@ -55,14 +55,41 @@ Workload Factory 针对以下事件发送通知：
 
 
 | 在 FSx for ONTAP 文件系统中检测到可疑卷活动 | NetApp 使用 AI 的自主勒索软件保护 (ARP/AI) 检测到可疑的卷活动。 | 勒索软件防护 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 检测到延迟阈值违规 | FSx for ONTAP 集群中的一个或多个卷超过了延迟阈值。 | 性能监控 | 警告 | EDA | FSx for ONTAP文件系统 
 |===
 
 
 == 配置工作负载工厂通知
 
-使用NetApp控制台或 Workload Factory 控制台配置 W​​orkload Factory 通知。如果您使用NetApp控制台，则可以配置 Workload Factory 以将通知作为NetApp控制台中的警报或 Amazon SNS 主题发送。您可以从NetApp控制台中的 *通知设置* 配置通知。
+您可以使用 NetApp Console 或 Workload Factory 控制台配置 Workload Factory 通知。
+
+接收通知的选项包括：
+
+
+
+=== NetApp控制台
+
+* *通知*：配置 Workload Factory 以发送通知，这些通知会显示在 NetApp Console 中的铃铛图标下。
+* *电子邮件*：在 NetApp Console 中启用电子邮件通知，以接收发送到与帐户关联的任何电子邮件地址的通知，而无需 Amazon SNS 配置。
+* *Amazon SNS*：配置 Workload Factory 以向 Amazon SNS 主题发送通知。
+
+
+
+
+=== 工作负载工厂控制台
+
+* *Email*：在 Workload Factory 控制台中启用电子邮件通知，以接收发送到与帐户关联的任何电子邮件地址的通知，而无需 Amazon SNS 配置。
+* *Amazon SNS*：配置 Workload Factory 以使用 Workload Factory 控制台向 Amazon SNS 主题发送通知。
+
+
+
+IMPORTANT: 在 NetApp Console 中配置通知时，它将获得通知传递的所有权，并且 Workload Factory 控制台通知选项将被禁用并以只读模式显示。工具提示说明通知是从 NetApp Console 管理的。然后，您只能从 NetApp Console 管理通知。
 
 .开始之前
+以下前提条件仅适用于配置 Amazon SNS 通知时：
+
 * 您需要使用 Amazon SNS 控制台或 AWS CLI 配置 Amazon SNS 并创建 Amazon SNS 主题。
 * 请注意，Workload Factory 支持 *标准* 主题类型。这种类型的主题不能确保通知按照收到的顺序发送给订阅者，因此如果您有关键或紧急通知，请考虑这一点。
 
@@ -74,11 +101,11 @@ Workload Factory 针对以下事件发送通知：
 .步骤
 . 登录link:https://console.netapp.com["NetApp控制台"^]。
 . 从NetApp控制台菜单中，选择 *Workloads*、*Administration*，然后选择 *Notifications setup*。
-. 在通知设置页面上，执行以下操作：
+. 在通知设置页面上，启用以下一种或多种通知类型：
 +
-.. 可选：选择“启用NetApp控制台通知”以配置 Workload Factory 在NetApp控制台中发送通知。
-.. 选择*启用 SNS 通知*。
-.. 按照说明从 Amazon SNS 控制台配置 Amazon SNS。
+.. *NetApp Console 通知*：选择*启用 NetApp Console 通知*以配置 Workload Factory 在 NetApp Console 中发送通知。
+.. *电子邮件通知*：选择 *启用电子邮件通知* 以配置 Workload Factory 将通知发送到与帐户关联的任何电子邮件地址。
+.. *Amazon SNS 通知*：选择*启用 SNS 通知*，然后按照说明从 Amazon SNS 控制台配置 Amazon SNS。
 +
 创建主题后，复制主题 ARN 并将其输入到 *通知设置* 页面上的 *SNS 主题 ARN* 字段中。
 
@@ -87,22 +114,22 @@ Workload Factory 针对以下事件发送通知：
 . 通过发送测试通知验证配置后，选择*应用*。
 
 
-.结果
-Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
-
 --
 .从 Workload Factory 控制台配置通知
 --
 .步骤
 . 登录link:https://console.workloads.netapp.com["工作负载工厂控制台"^]。
 . 从 Workload Factory 控制台菜单中，选择 *Workloads*、*Administration*，然后选择 *Notifications setup*。
-. 选择*启用 SNS 通知*。
-. 按照说明从 Amazon SNS 控制台配置 Amazon SNS。
-. 通过发送测试通知验证配置后，选择*应用*。
+. 启用以下一个或多个通知类型：
++
+** *电子邮件通知*：选择 *启用电子邮件通知*。与帐户关联的任何电子邮件地址都将以只读模式显示。
+** *Amazon SNS 通知*：选择*启用 SNS 通知*，然后按照说明从 Amazon SNS 控制台配置 Amazon SNS。
++
+通过发送测试通知验证配置后，选择*应用*。
 
 
-.结果
-Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
+
+
 
 --
 ====
@@ -116,7 +143,7 @@ Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
 
 == 筛选通知
 
-您可以通过对通知应用过滤器来减少不必要的通知流量，并为特定用户提供特定的通知类型。您可以使用 Amazon SNS 策略来发送 SNS 通知，并使用NetApp控制台中的通知设置来执行此操作。
+您可以通过对通知应用过滤器来减少不必要的通知流量，并为特定用户定位特定的通知类型。您可以使用针对 SNS 通知的 Amazon SNS 策略以及 NetApp Console 中的通知设置来执行此操作。
 
 
 
@@ -198,8 +225,8 @@ Workload Factory 已配置为向您指定的 Amazon SNS 主题发送通知。
 
 
 
-=== NetApp控制台中的过滤通知
+=== 在 NetApp Console 中过滤通知
 
-您可以使用NetApp控制台通知设置按严重性级别（例如“严重”、“信息”或“警告”）过滤控制台中收到的通知。
+您可以使用 NetApp Console 通知设置按严重性级别（如 Critical、Info 或 Warning）过滤您在 Console 中收到的通知。
 
 有关在控制台中过滤通知的更多信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications["NetApp控制台文档"^]。

@@ -1,0 +1,21 @@
+= Workload Factory 的电子邮件通知
+:allow-uri-read: 
+
+
+
+
+=== Workload Factory 的电子邮件通知
+
+现在，您可以通过电子邮件接收 Workload Factory 通知，而无需配置 Amazon SNS 主题。启用电子邮件通知，以将通知发送到与帐户关联的任何电子邮件地址。
+
+您可以从 Workload Factory 控制台或 NetApp Console 配置电子邮件通知。NetApp Console 还提供配置出现在铃铛图标下的 NetApp Console 通知的选项。
+
+如果在 NetApp Console 中配置通知，NetApp Console 将拥有通知传递的所有权。Workload Factory 控制台中的通知设置变为只读，以防止重复通知。
+
+
+
+=== EDA 延迟新通知
+
+NetApp Workload Factory 通知服务包括 EDA 延迟通知，当 EDA 操作的延迟超过特定阈值时通知您。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["配置工作负载工厂通知"]

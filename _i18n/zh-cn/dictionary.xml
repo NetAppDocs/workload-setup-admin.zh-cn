@@ -1436,4 +1436,13 @@
   <block id="d097d681103ac768d9ca87aa43096db9" category="list-text">（可选）将帐户设为 AWS GovCloud （美国）帐户。此帐户类型仅使用 AWS GovCloud （美国）端点和区域进行设置和操作。凭据和机密保留在 GovCloud 中。此选项是永久性的。</block>
   <block id="5aa69fed46341f59b5dc6e550c082135" category="list-text">（可选）提供该帐户的职务说明。</block>
   <block id="92ee6e4d72d15689a675017ce0db2fa1" category="section-title">2026 年 5 月 31 日</block>
+  <block id="b8646f09ea34b75c077cfea12f75617b" category="inline-link-macro">权限参考</block>
+  <block id="cd96cf7ebfb9b4a10268be38c383fa2e" category="paragraph">详细了解 <block ref="a5f4ae61e232cd6bd835f3c22c2ae14c" category="inline-link-macro-rx"></block> 中每个工作负载功能所需的权限。</block>
+  <block id="d19d35e43d16db0ea1d21d81cb1ac01d" category="admonition">如果您有 GovCloud 帐户，则不需要 Storage 的 **View, planning, and analysis** 策略中的 Cost Explorer 权限<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block>或<block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。从代码框中复制脚本后，请删除这些权限，并删除上一行中的尾随逗号。</block>
+  <block id="cd9aa9a92963bccf53a18059deb4f182" category="admonition">AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限：<block ref="bba6542a0e46014b21a818003b1e41d2" prefix=" " category="inline-code"></block> 和<block ref="f74e5982a82afd7d2755b24355dd08c6" prefix=" " category="inline-code"></block>。如果您将其包含在内，该策略仍然有效。</block>
+  <block id="044dbc650d6316ed90f739b69dfff7ee" category="section-title">地区支持</block>
+  <block id="468469fded9ecf5cf0e132a6daa62d32" category="paragraph">以下 AWS 区域不受支持：</block>
+  <block id="cc6dcf46ebcb08f1caa420526cc0ab18" category="list-text">中国地区</block>
+  <block id="ecd96786b112acf6970d6aaf3be575ca" category="list-text">机密云</block>
+  <block id="151ef168e17772f7a361db78a0c86552" category="list-text">绝密云</block>
 </blocks>

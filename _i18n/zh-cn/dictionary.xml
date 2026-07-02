@@ -1445,4 +1445,9 @@
   <block id="cc6dcf46ebcb08f1caa420526cc0ab18" category="list-text">中国地区</block>
   <block id="ecd96786b112acf6970d6aaf3be575ca" category="list-text">机密云</block>
   <block id="151ef168e17772f7a361db78a0c86552" category="list-text">绝密云</block>
+  <block id="8da62e886bf5ff90668bb08c14869261" category="cell">检索 AWS CloudTrail 跟踪的当前事件选择器配置</block>
+  <block id="4bf0cdb2cb071e24db7e3df9a32e2491" category="cell">cloudtrail:GetEventSelectors</block>
+  <block id="dec4de109ea4eb3e3c42771a86f5377a" category="cell">S3 访问点日志操作</block>
+  <block id="dc0903fb248bd39e420d250bdf42edee" category="cell">通过启用或禁用 FSx for ONTAP S3 接入点与 CloudTrail 跟踪之间的关联来配置或更新 AWS CloudTrail 事件选择器</block>
+  <block id="89aa68fffda7d587077f8069ae60e59f" category="cell">cloudtrail：PutEventSelectors</block>
 </blocks>

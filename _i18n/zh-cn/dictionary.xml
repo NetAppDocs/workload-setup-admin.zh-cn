@@ -302,7 +302,6 @@
   <block id="5975f7e9036c78e6217b16f295f0ca75" category="inline-link-macro">BlueXP控制台</block>
   <block id="717f9c6475fbb39a24ab9942c1a903c0" category="inline-link-macro">了解如何从BlueXP  控制台访问工作负载工厂</block>
   <block id="dcafe9cce796ce855e87b270f0a5af59" category="inline-link-macro">控制台体验</block>
-  <block id="e1e54933838bb7ba662301d01c937d2d" category="list-text">使用其中一个登录<block ref="68ceec76279c6913cdee16884c2d813a" category="inline-link-macro-rx"></block>。</block>
   <block id="c938676b28ab6dd4d5cc28ebdf8c49b9" category="doc">控制台体验</block>
   <block id="ecbeaffbfe15c72e3bf702b0d0bf9694" category="section-title">2024年11月11日</block>
   <block id="7b2ab109a7f028a1314cfd59fab7b820" category="list-text">节省成本的计算器</block>
@@ -1598,4 +1597,5 @@
   <block id="1e2b52bc0d9b39d605af8ef1990be5ab" category="paragraph">Workload Factory 帐户中的所有用户都可以查看和删除自定义仪表板。管理共享仪表板时，请与您的团队协调。</block>
   <block id="e2a43aebbf3f114c3e1dfc54b469c13e" category="section-title">其他帮助</block>
   <block id="a56bacdffec3c1404856b40a1b27f955" category="paragraph">如果您仍然遇到有关自定义控制面板的问题，请参见 <block ref="c470f3409940cee13ddda9c09bf54b60" category="inline-link-macro-rx"></block> 了解有关联系 NetApp 支持的信息。</block>
+  <block id="708d52dc7d2f1cb4787bfd74e41bfab5" category="list-text">使用其中一个 <block ref="730226d90433792895dc2ec640283d2d" category="inline-link-macro-rx"></block> 登录。</block>
 </blocks>

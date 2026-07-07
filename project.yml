@@ -46,6 +46,16 @@ sidebar:
       url: "/well-architected-workloads.html"
     - title: 配置通知
       url: "/configure-notifications.html"
+    - title: 自定义信息板
+      entries:
+      - title: 了解自定义控制面板
+        url: "/learn-custom-dashboards.html"
+      - title: 创建自定义仪表板
+        url: "/create-custom-dashboard.html"
+      - title: 管理自定义仪表板
+        url: "/manage-custom-dashboards.html"
+      - title: 对自定义信息板进行故障排除
+        url: "/troubleshoot-custom-dashboards.html"
     - title: 使用CodeBox自动执行任务
       entries:
       - title: 了解CodeBox

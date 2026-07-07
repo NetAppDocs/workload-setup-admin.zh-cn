@@ -40,6 +40,14 @@ indexpage:
       url: https://docs.netapp.com/us-en/workload-databases/analyze-error-logs.html
     - title: 查看和分析存储工作负载的EMS事件
       url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
+  - title: 自定义信息板
+    links:
+    - title: 了解自定义控制面板
+      url: "/learn-custom-dashboards.html"
+    - title: 创建自定义仪表板
+      url: "/create-custom-dashboard.html"
+    - title: 管理自定义仪表板
+      url: "/manage-custom-dashboards.html"
   - title: 博客和社区
     links:
     - title: NetApp控制台

@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: manage-custom-dashboards.html 
+keywords: manage dashboards, edit dashboard, delete dashboard, refresh dashboard, dashboard catalog 
+summary: 访问仪表板目录，在 Workload Factory 中查看、编辑、刷新和删除自定义仪表板。 
+---
+= 管理自定义仪表板
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+从控制面板目录管理您的自定义控制面板。您可以在此查看详细信息、刷新数据、编辑控制面板设置或删除不再需要的控制面板。
+
+.关于此任务
+您的 Workload Factory 帐户中的所有用户都可以访问所有自定义仪表板。每个控制面板都会显示基本信息，例如创建者的姓名、创建日期以及当前是否有人正在对其进行编辑。
+
+自定义仪表板为只读。它们无法更改您的存储或工作负载设置。您可以编辑仪表板本身，但不能编辑其监视的资源。
+
+.开始之前
+您的 Workload Factory 帐户中必须至少有一个自定义仪表板。
+
+
+
+== 访问仪表板目录
+
+.步骤
+. 使用其中一个登录link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^]。
+. 从菜单中，选择 *Workloads Overview*，然后选择 *Custom dashboards*。
++
+仪表板目录显示 Workload Factory 帐户中的所有自定义仪表板。
+
+. 查看控制面板列表。
+
+
+
+
+== 刷新仪表板数据
+
+打开仪表板时会加载仪表板数据。您可以刷新它以查看最新信息。
+
+控制面板从您的工作负载重新加载数据。上次更新时间更改为显示数据刷新的时间。
+
+
+
+== 编辑信息板
+
+您可以编辑仪表板以更改其显示的内容，包括指标和图表。
+
+.步骤
+. 在*自定义仪表板*页面中，找到要编辑的仪表板。
+. 在控制面板的*操作*菜单中，选择*编辑控制面板*。
++
+如果其他用户正在编辑控制面板，您会看到一条消息，例如"Currently being edited by [user name]."等待他们完成或与他们协调。
+
+. 在AI对话框中，描述要进行的更改。
++
+此过程类似于创建新控制面板。您可以更改控制面板跟踪的工作负载、指标或时间范围。
+
+. 查看更改并选择**保存**。
+
+
+.结果
+操作面板会根据您的更改进行更新。最后修改日期也会更新。
+
+
+
+== 删除仪表板
+
+删除不再需要的控制面板。此操作为永久操作，无法撤消。
+
+.步骤
+. 在*自定义仪表板*页面中，找到要删除的仪表板。
+. 从该仪表板的*操作*下拉菜单中，选择*删除*。
+. 确认删除。
+
+
+.结果
+仪表板已从您的 Workload Factory 帐户中永久删除，所有用户都将失去对其的访问权限。
+
+
+
+== 相关信息
+
+* link:create-custom-dashboard.html["创建其他自定义仪表板"]
+* link:troubleshoot-custom-dashboards.html["对自定义信息板进行故障排除"]
+

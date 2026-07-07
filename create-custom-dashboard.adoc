@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: create-custom-dashboard.html 
+keywords: create dashboard, custom dashboard, AI dashboard, dashboard creation, personalized dashboard 
+summary: 使用人工智能引导的提示创建自定义仪表板，以监控对您的工作负载和运营优先事项最重要的内容。 
+---
+= 创建自定义仪表板
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+通过用简单的语言描述要监控的内容来创建自定义仪表板。AI 将引导您完成设置，以便仪表板与您的工作负载和优先级相匹配。
+
+.关于此任务
+自定义仪表板使用 AI 引导的对话框来了解要可视化的内容。您用自然语言描述您的监控需求，系统会询问澄清问题，以确保仪表板满足您的要求。
+
+创建后，您可以刷新控制面板以查看更新的数据。
+
+请记住，自定义仪表板按设计为只读，无法更改存储或工作负载配置。
+
+.开始之前
+* 您需要访问控制面板上要监视的资源的权限。
+* 在创建仪表板以监控工作负载之前，请先在 Workload Factory 中设置工作负载。
+
+
+
+
+== 创建仪表板
+
+.步骤
+. 使用其中一个登录link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^]。
+. 选择菜单 image:workloads-menu-icon.png["汉堡菜单图标用于导航到存储、EDA、AI、数据库、VMware 和管理等工作负载。"] ，然后选择 *Workloads Overview* > *Custom dashboards*。
++
+如果这是您的第一个控制面板，您将看到一个空白屏幕，其中包含帮助您开始操作的示例提示。您可以选择 *Copy prompt* 将示例提示复制到 AI 对话框文本框中。
+
+. 选择*创建新控制面板*。
+. 在AI对话框中，描述要监控的内容。
++
+用通俗易懂的语言描述。AI 将询问几个问题，以更好地了解您的需求。
+
+. 选择 image:arrow.png["菜单图标用于开始生成仪表板。，宽度= 18"]。
+. 回答 AI 的澄清问题。
++
+人工智能可能会要求您从几个选项中进行选择，以更好地了解您的需求。回答每个问题并选择*继续*，或选择*跳过*以跳过可选问题。
+
+. 回答完所有问题后，选择*继续*以创建控制面板。
+
+
+.结果
+您的自定义控制面板现已在控制面板目录中。您的 Workload Factory 帐户中的所有用户都可以访问和查看它。
+
+.下一步
+创建后，您可以：
+
+* 刷新仪表板数据以查看最新信息
+* 编辑控制面板以更改其显示内容
+* 删除不再需要的仪表板
+* 查看控制面板详细信息，包括创建者和上次更新时间
+
+
+
+
+== 相关信息
+
+* link:manage-custom-dashboards.html["管理自定义控制面板"]
+* link:troubleshoot-custom-dashboards.html["对自定义信息板进行故障排除"]
+

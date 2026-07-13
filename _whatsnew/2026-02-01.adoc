@@ -4,6 +4,7 @@
 
 
 
+[[well-architected-updates]]
 === 精心设计的更新
 
 NetApp Workload Factory 包括针对 Elastic VMware Service (EVS) 工作负载的精心设计的评估，并添加了针对存储和数据库工作负载的新配置。
@@ -37,6 +38,7 @@ link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.ht
 
 
 
+[[new-permissions-for-storage]]
 === Storage 的新权限
 
 已将新权限添加到 Storage 工作负载，以增强对 S3 访问点的管理。

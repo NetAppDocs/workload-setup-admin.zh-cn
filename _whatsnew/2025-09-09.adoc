@@ -4,6 +4,7 @@
 
 
 
+[[new-notification-for-storage]]
 === 存储的新通知
 
 BlueXP workload factory通知服务包括存储自动容量管理通知。

@@ -4,6 +4,7 @@
 
 
 
+[[new-notification-for-fsx-for-ontap-file-systems]]
 === FSx for ONTAP 文件系统的新通知
 
 NetApp Workload Factory 通知服务包括复制延迟通知。
@@ -12,6 +13,7 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.
 
 
 
+[[support-for-aws-govcloud-us-accounts]]
 === 支持 AWS GovCloud (US) 账户
 
 现在，您可以在 Workload Factory 中创建 AWS GovCloud (US) 账户。此账户类型仅使用 AWS US GovCloud 端点和区域进行设置和操作。凭据和机密保留在 GovCloud 中。支持 GovCloud (US) 区域。

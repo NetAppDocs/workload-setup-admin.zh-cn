@@ -4,12 +4,14 @@
 
 
 
+[[cloudshell-autocomplete-support]]
 === CloudShell自动完成支持
 
 使用BlueXP  Workload Factory CloudShell时、您可以开始键入命令、然后按Tab键查看可用选项。如果存在多种可能、命令行界面将显示建议列表。此功能可最大限度地减少错误并加快命令执行速度、从而提高工作效率。
 
 
 
+[[updated-permissions-terminology]]
 === 更新了权限术语
 
 工作负载工厂用户界面和文档现在使用“只读”来指代读取权限，使用“读/写”来指代自动化权限。

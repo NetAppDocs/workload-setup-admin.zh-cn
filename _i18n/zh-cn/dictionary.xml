@@ -174,9 +174,6 @@
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">适用于 NetApp ONTAP 的 Amazon FSX</block>
   <block id="4d8d6f286ec4089532b442b9e29bdd84" category="list-text"><block ref="4d8d6f286ec4089532b442b9e29bdd84" category="inline-link-rx"></block></block>
   <block id="ad5615f8474eab297b35d0cbf8020dfc" category="paragraph">通过使用FSx for ONTAP作为存储基础架构、根据最佳实践配置FSx for ONTAP部署并对其进行模板化、以及访问高级管理功能、评估和分析当前数据资产、以节省潜在成本。</block>
-  <block id="cccae24691c5ff7191f1ffebe4352285" category="inline-link">GenAI</block>
-  <block id="88575fa076e31705fdc0a050f3c46540" category="list-text"><block ref="88575fa076e31705fdc0a050f3c46540" category="inline-link-rx"></block></block>
-  <block id="1ab964190acf4217fadb080cfcbe361f" category="paragraph">部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。</block>
   <block id="38bd169945a371832b0b65c9086b1792" category="inline-link">数据库工作负载</block>
   <block id="7c05124c7bff1277e0dd98967825f03a" category="list-text"><block ref="7c05124c7bff1277e0dd98967825f03a" category="inline-link-rx"></block></block>
   <block id="a76e64a0fbf98a083080351e4cb67566" category="inline-link">VMware工作负载</block>
@@ -549,53 +546,13 @@
   <block id="291798398943ff81aecb072ccb31136f" category="list-text">权限仅限于从“资源管理模块”开始的资源。</block>
   <block id="8871e7455cbf17c8190fb2c27de4cb92" category="list-text">"IAM：CreateServiceLinkedIn Role"受"iam：AVsServiceName"限制：ec2.amazonaws.com"*</block>
   <block id="a7170e00216d426ffa1b5c8b1ad8faf2" category="list-text">"IAM：PassRole"受"iam：PassedToService"限制：ec2.amazonaws.com"*</block>
-  <block id="be5d4fafcc5fc8ef08ec4bd4f076e815" category="section-title">GenAI工作负载的权限</block>
-  <block id="fc52d9d99561c2b721d43bdd4d36b615" category="example-title">适用于GenAI工作负载的IAM策略</block>
-  <block id="2d8cf1aba2af04b1b4fd9bd3d7d6905f" category="paragraph">下表提供了有关GenAI工作负载的权限的详细信息。</block>
-  <block id="64f5bb9f44fff01f3adc6fad9e6240f7" category="example-title">GenAI工作负载的权限表</block>
-  <block id="2da64493d99b5866c2a1571539ca109c" category="cell">在部署和重建操作期间创建AI引擎CloudFormation堆栈</block>
-  <block id="97abe2026f8952be2f4f064f2d5ed867" category="cell">创建AI引擎CloudFormation堆栈</block>
-  <block id="d8ebc3cad3265793548294b79abf1ac6" category="cell">列出AI引擎部署向导的区域</block>
-  <block id="6f82cd163096069b261bdc23e2bfec17" category="cell">显示AI引擎标签</block>
-  <block id="684a1bfe5fbc91f18d96de978a7df58a" category="cell">EC2：Describe标记</block>
-  <block id="35fed029b904597b41d06fba8d15299d" category="cell">在创建AI引擎堆栈之前列出VPC端点</block>
   <block id="d26a873905a02242e94cfda68db0c843" category="cell">EC2：CreateVpcEndpoint</block>
-  <block id="4f6009e4cc9f9d0249a22b9e3c5ab9f0" category="cell">在部署和重建操作期间创建AI引擎堆栈期间创建AI引擎安全组</block>
-  <block id="c44890ed155f5fc1b7589d1d6c12785a" category="cell">标记在部署和重建操作期间创建AI引擎堆栈所创建的资源</block>
-  <block id="071c42384a4bff95d3acc47d90766c9b" category="cell">在AI引擎部署向导期间列出vPC</block>
-  <block id="7ba2aa86177ae5f0d7e3b4e5766bad67" category="cell">在AI引擎部署和重建期间获取路由表</block>
-  <block id="7245f0c5139bb046010a68b69a264eca" category="cell">在AI引擎部署向导期间列出密钥对</block>
-  <block id="b28eb58d1a1db0c0afa78fe12cf5fb01" category="cell">在创建AI引擎堆栈期间列出安全组(以在专用端点上查找安全组)</block>
-  <block id="cadead4b7ef1e118402cbe1b8d9567ab" category="cell">获取VPC端点以确定是否应在AI引擎部署期间创建任何端点</block>
-  <block id="f8022dadecc2f9ce9937bc1108cb6290" category="cell">列出实例以了解AI引擎状态</block>
-  <block id="231cf4c70d866b616c21baddaeed0696" category="cell">故障排除</block>
-  <block id="66225a6c05fbef258e73728898744db8" category="cell">在部署和重建操作期间创建AI引擎堆栈期间列出映像</block>
-  <block id="effc62a026ed8a4a114329bdc528d625" category="cell">在部署和重建操作期间创建CloudFormation堆栈期间运行AI引擎</block>
-  <block id="8db0f3adf91a39cebe582faf96db2426" category="cell">在部署和重建操作期间创建堆栈期间、附加安全组并修改AI引擎的规则</block>
-  <block id="00fe52afa6e3b9a0d389f529a2b88242" category="cell">Bedrock：Invoke的 使用ResponseStream的数据</block>
-  <block id="d3514773d1692fd740afde54cdaaa7b0" category="cell">开始聊天/嵌入基础模型请求</block>
   <block id="93804e96d3f417a0088c564647dd28e9" category="cell">基岩：InvokeModel</block>
-  <block id="65294ced72c6aa8f05b632194559e081" category="cell">显示一个区域中可用的基础模型</block>
-  <block id="66613086b6208ec265a60220a21ff40a" category="cell">Bound：ListFoundation们</block>
-  <block id="8a71d22cd00a39460a071b070099b8d6" category="cell">验证对基础模型的访问权限</block>
   <block id="c812f1cb829c6d16da192b12e04d78ff" category="cell">Bound：GetFoundation论 可用性</block>
-  <block id="302112cb321a929a6d9830e917817acb" category="cell">SSM：GetParameters</block>
-  <block id="37cc48b6baed18a8130ec18d97544390" category="cell">从发送到AI引擎的命令中获取SSM响应</block>
-  <block id="97128676550f404369a4900a6b92a6a7" category="cell">检查与AI发动机的SSM连接</block>
-  <block id="98c5cc885360f80a84c57ec1044622dc" category="cell">在部署和重建操作期间创建堆栈期间创建AI引擎实例配置文件</block>
-  <block id="7f862a4b8fc22b0af5dda5c9ababa346" category="cell">IAM：TagRole</block>
-  <block id="f6ae0a8a1321975a6474722dcafe1322" category="cell">IAM：PassRole</block>
-  <block id="11d11aa8dbaf1d4106e7ae01b6868bba" category="cell">创建知识库</block>
-  <block id="50ed17d5232c875f8ad42bc76592a63c" category="cell">将此信息文档移至新实例</block>
   <block id="a25a265c7f4f2cde7c7a15838d3f1021" category="cell">FSx：UnTagResource</block>
-  <block id="9f4a3990e86e58c629dd4042743dc489" category="cell">在重建期间管理AI引擎上的信息存储</block>
   <block id="2df687d3aa85502af55f4a9cf17b5b8d" category="cell">FSx：TagResource</block>
-  <block id="58cce26ec46dea767f28067a2aadecbf" category="cell">以安全的方式保存SSM密钥(ECR令牌、CIFS凭据、租户服务帐户密钥)</block>
-  <block id="6cdfe2c5f0e0f28290eadae29ccbb913" category="cell">SSM：Get参 比器</block>
-  <block id="5df0bb9577b967295f5ff5c94274a01c" category="cell">SSM：Put\n参比器</block>
   <block id="99a70cb6d5b807589a0a1aa9bbcfea7d" category="cell">日志：可通过"LogBeLogGroup"进行操作</block>
   <block id="9c72603737d6e2074ae7fab048b5d3d1" category="cell">日志：PutRettionPolicy</block>
-  <block id="b9f69a856f0b78c0908e042e6d0fda54" category="cell">日志：特性日志流</block>
   <block id="6d952035baa97bd601f4d280f10fcc53" category="cell">日志：GetLogEvents</block>
   <block id="3332885fc7b64062d9405bcdf57a9334" category="section-title">VMware工作负载的权限</block>
   <block id="1d33843eea5e12818124076de04b4a65" category="example-title">VMware工作负载的IAM策略</block>
@@ -706,7 +663,6 @@
   <block id="bf2cca138f5e3f74f2e6b73d8e8b2452" category="paragraph">可从获取RSS订阅<block ref="a65cf6b405017af965199f55f7b4fce1" category="inline-link-macro-rx"></block>。使用RSS源是一种简单的使用方法、可以了解BlueXP  工作负载工厂中的变化。</block>
   <block id="1a88151efda7b7ae7945b1161fe70fdc" category="paragraph"><block ref="1a88151efda7b7ae7945b1161fe70fdc" category="inline-link-macro-rx"></block></block>
   <block id="cf1f4a083afa7ccb1141e827deb4cdc2" category="paragraph">现在，您可以从使用工作负载工厂<block ref="4623dd80d89c29fbf0d2b04387a56c33" category="inline-link-macro-rx"></block>。BlueXP  控制台体验可提供与工作负载出厂控制台相同的功能。</block>
-  <block id="dec23cffbd0de1b8096bc26072eb0b7d" category="cell">获取用于在部署和重建操作期间部署AI引擎的最新Amazon Linux映像</block>
   <block id="6928ceecf566ab44f308d64b3806a0bc" category="section-title">2025年3月2日</block>
   <block id="813011e2103649bb71f124adedcc10ea" category="sidebar">博客和社区</block>
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp 社区</block>
@@ -716,21 +672,6 @@
   <block id="04c38dfa84592feebab3e30dfe4a019a" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将添加<block ref="23bd3e826a13b6d94db9e07f105dfed2" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="c3c7c9c146408a0ee564eedba4821f52" category="list-text">可选：选择*启用自动权限检查*以检查您是否具有完成工作负载操作所需的AWS帐户权限。启用此复选框会将权限添加<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>到权限策略中。此权限的目的仅是确认权限。您可以在添加凭据后删除此权限、但我们建议保留此权限、以防止为部分成功的操作创建资源、并避免手动清理任何所需的资源。</block>
   <block id="2a358d687197b0311c68b4c8a7e35e1c" category="cell">模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较</block>
-  <block id="8c5e268f15aeebda6b5b234b3f7c7174" category="cell">从AI引擎堆栈将加密事件发布到WLAMAI后端</block>
-  <block id="9b1384398d4de5545bd0dad2106d6b0d" category="cell">将事件和自定义资源从AI引擎堆栈发布到WLAMAI后端</block>
-  <block id="359cacd98d9742aded751741e70dce82" category="cell">在AI引擎部署向导上列出子网</block>
-  <block id="f0f0a4abc20f5a5e438ac1da53b231af" category="cell">向其中一个基础模型发起聊天请求</block>
-  <block id="ffd1e194cd59f12c42768a9effd5aa2f" category="cell">验证是否需要在部署和重建操作期间创建Amazon CloudWatch日志组</block>
-  <block id="2887c4c92d65effaf012b7ca2f914958" category="cell">在AI引擎向导期间获取支持FSx和Amazon Brock的区域</block>
-  <block id="aaaceeee6185dfed5c284df5970707f3" category="cell">在"创建数据库"向导期间列出FSx for ONTAP文件系统</block>
-  <block id="a2e54834745704983c3bbc9eb41ed0a1" category="cell">在"创建集群"向导期间列出适用于ONTAP文件系统卷的FSx</block>
-  <block id="2fac110cec869b1380662052556e21b4" category="cell">在重建操作期间管理有关AI引擎的知识库</block>
-  <block id="22262aaf9e90060dfd5872961f2d20b9" category="cell">在"创建信息库"向导期间列出FSx for ONTAP文件系统Storage Virtual Machine</block>
-  <block id="e4276513c887d1d78315c446314f306e" category="cell">在部署和重建操作期间、将AI引擎日志发送到Amazon CloudWatch日志组</block>
-  <block id="a89bcda1bd913f5d2c92bb3afd10848c" category="cell">将AI引擎日志发送到Amazon CloudWatch日志组</block>
-  <block id="1ae2d90929ed009fb7cb0c3215e704ed" category="cell">从Amazon CloudWatch获取SSM响应(响应时间过长)</block>
-  <block id="58401e538d76248fba41eb3d4b00ff5b" category="cell">从Amazon CloudWatch获取SSM响应</block>
-  <block id="9f48be20e687484bbb74c66926ff62af" category="cell">列出模型的参考轮廓</block>
   <block id="9aa5a97dfe3f7608d8ee28e7db3c4e2c" category="cell">Bedrock：ListInferenceProfile</block>
   <block id="db54384248c75c5896f34bcb0879b66c" category="section-title">2025年3月30日</block>
   <block id="68ef824f4316a8546891ab93ee11d77f" category="section-title">GenAI工作负载权限更新</block>
@@ -768,21 +709,12 @@
   <block id="74d516ef8dfa098bb4cd92313c403475" category="doc">CloudShell自动完成支持</block>
   <block id="df96b6f4ceabb5c4dbc915475fd821fe" category="paragraph">使用BlueXP  Workload Factory CloudShell时、您可以开始键入命令、然后按Tab键查看可用选项。如果存在多种可能、命令行界面将显示建议列表。此功能可最大限度地减少错误并加快命令执行速度、从而提高工作效率。</block>
   <block id="514f1fc0ac0ff6e4200d3637146367f1" category="section-title">更新了权限术语</block>
-  <block id="db3317ceb65be02e43db6f277e0ad94e" category="cell">读/写</block>
-  <block id="123ce9aa4e0770ecb435c005fa9b436c" category="cell">列出Amazon Q Business应用程序</block>
-  <block id="4f3c534c90392632c7d275f54d5b35a0" category="cell">qBusiness：ListApplications</block>
-  <block id="ff49b9449e169eb2a6d647cdd5416940" category="cell">在部署和重建操作期间创建AI实例堆栈期间、创建并更新AI实例和专用端点安全组</block>
-  <block id="fb2b74ed81679192134e9c2c07019b42" category="cell">获取有关基础模型的信息</block>
-  <block id="1311c4cbbe5b925c15d25fe5ff7b022b" category="cell">基岩：GetFoundationModel</block>
-  <block id="9dd35b54afccc27a1cc96eab777dbc8e" category="cell">在部署和重建操作期间创建堆栈期间、为Amazon基岩日志创建Amazon CloudWatch日志组</block>
   <block id="dac96c84baa92faab0eb342df5283a1b" category="section-title">2025年5月4日</block>
   <block id="bf0dcc34b100cf0ff91c26bbd98029f7" category="list-text">自动完成支持：开始键入命令，然后使用*Tab*键查看可用选项</block>
   <block id="822748e99c70e9162ce5432b2e1eff5c" category="section-title">2025年5月4日</block>
   <block id="5d1d5ff6c3c427c682d491550e8f89b3" category="list-text">存储评估(优化)</block>
   <block id="1636ccb01570c55081666deb02ddfb9c" category="list-text"><block ref="6d952035baa97bd601f4d280f10fcc53" prefix="" category="inline-code"></block></block>
   <block id="c4a094604e7db845f5356b4563efc223" category="list-text"><block ref="99a70cb6d5b807589a0a1aa9bbcfea7d" prefix="" category="inline-code"></block></block>
-  <block id="beec07f99f03a1aa1948ba788ce7e6c1" category="cell">列出 S3 存储桶</block>
-  <block id="e21c94a36c6dbf24001a64bddce9456f" category="cell">S3 ： ListAllMy桶</block>
   <block id="c34c5eed5692ab9466e57060b06ae6ae" category="section-title">2025年6月3日</block>
   <block id="4ead5e435cb4f2c7cf627b1d1e84c333" category="paragraph">工作负载工厂用户界面和文档现在使用“只读”来指代读取权限，使用“读/写”来指代自动化权限。</block>
   <block id="3d040f48a98c22a0f4789c2496c06383" category="paragraph">现在，数据库在读/写模式下具有以下权限： <block ref="9c72603737d6e2074ae7fab048b5d3d1" prefix=" " category="inline-code"></block> 。</block>
@@ -996,7 +928,6 @@
   <block id="17815da2601655e53a5a946ca4e0eedd" category="cell">ssmmessages：创建数据通道</block>
   <block id="2c9dbd0f531b26987ee04e63abe52bea" category="cell">ssmmessages：打开控制通道</block>
   <block id="2e2fcc3da644ea24aae8e587a62c0490" category="cell">ssmmessages：开放数据通道</block>
-  <block id="f2a75afa5110fc06c2a6ef3f1e0c324c" category="paragraph">VMware 工作负载的 IAM 策略根据您所处的运行模式，提供 Workload Factory for VMware 管理公共云环境中的资源和流程所需的权限。</block>
   <block id="992efefab3dd15099f5eff3f904d8df4" category="section-title">2025年10月5日</block>
   <block id="655af276f5fd16503f094c10143b02d9" category="paragraph">以下权限已从 GenAI 中删除，现在由 GenAI 引擎处理：</block>
   <block id="1084543e1d03924aed54511730a18768" category="list-text"><block ref="e8a46aee8aa47b78b90b155b227afbc9" prefix="" category="inline-code"></block></block>
@@ -1146,7 +1077,6 @@
   <block id="0eaadb4fcb48a0a0ed7bc9868be9fbaa" category="cell">警告</block>
   <block id="cc1f56cb5cd6bdb7f1796048269b0097" category="cell">FSx for ONTAP的自动 inode 管理事件</block>
   <block id="e4ddc61f041a4a950895b04a98fff07b" category="cell">ONTAP卷的 FSx inode 计数达到警告阈值计数/百分比总数。</block>
-  <block id="4614f0f919f6357dc680afd47d32ad2b" category="paragraph">当您提供权限时，Workload Factory 会将策略附加到实例，该策略具有管理该 AWS 账户中资源和进程的权限。这使得 Workload Factory 能够执行各种操作，从发现您的存储环境到部署 AWS 资源，例如存储管理中的文件系统或 GenAI 工作负载的知识库。</block>
   <block id="09fbd7ce5485b032855da27056744715" category="paragraph">每个工作负载都使用权限在工作负载工厂中执行特定任务。权限被打包成一系列权限策略。滚动到您使用的工作负载，了解权限策略、权限策略的可复制 JSON 以及列出所有权限、其用途、使用位置以及支持它们的权限策略的表格。</block>
   <block id="3c0158ae150bbe2d52d55d8a4897e28a" category="paragraph">存储可用的 IAM 策略为 Workload Factory 提供了管理公有云环境中的资源和进程所需的权限。</block>
   <block id="d542facb88a1cb92fe741c179c25d51a" category="paragraph">存储功能提供以下权限策略供您选择：</block>
@@ -1180,8 +1110,6 @@
   <block id="e6770209133e1a365baaabf29682707a" category="cell">获取可用于错误日志分析的基础模型</block>
   <block id="9b5a66520940453b03f844cb38d72d2f" category="cell">错误日志分析</block>
   <block id="2b09ddddcb00f772b0397ca4fa2471b0" category="cell">列出 Amazon Bedrock 中可用于错误日志分析的接口配置文件</block>
-  <block id="120558563578966d6e3e3204fb944fe8" category="paragraph">GenAI IAM 策略仅支持读/写权限：</block>
-  <block id="cced0416108aa0eed2d9fc1a929f501e" category="list-text">*读/写*：使用分配的凭证代表您在 AWS 中执行和自动执行操作，这些凭证具有执行所需的已验证权限。</block>
   <block id="6d1d444e31ba2e1e32454781c718d8bd" category="paragraph">VMware 工作负载有以下权限策略可供选择：</block>
   <block id="808b4a9b1106ed0f5257e607f992d39d" category="list-text">*查看、规划和分析*：查看 EVS 虚拟化环境的清单，获取系统架构完善的分析，并探索节省成本的方法。</block>
   <block id="db73d2d162f2b29ff8535b7ce22cf484" category="list-text">*数据存储部署和连接*：将推荐的 VM 布局部署到 Amazon EVS、Amazon EC2 或 VMware Cloud on AWS vSphere 集群，并使用定制的Amazon FSx for NetApp ONTAP文件系统作为外部数据存储。</block>
@@ -1200,7 +1128,6 @@
   <block id="78a1fd3770ad9cba75be7a432485a77e" category="section-title">2025年11月2日</block>
   <block id="8759d474306b7075634b38abde2a85cb" category="paragraph">存储、数据库工作负载和 VMware 工作负载中的“只读”和“读/写”权限策略已被替换，以便在分配权限时提供更精细的粒度和更大的灵活性。</block>
   <block id="3adf0593d3d2d43754514ef0d597458d" category="paragraph">NetApp Workload Factory可通过基于 Web 的控制台以云服务的形式供用户访问。在开始之前，你应该了解……<block ref="fc500664a3cbaaa3aa46a84367805795" category="inline-link-macro-rx"></block> 。</block>
-  <block id="de8efeea4e5e2680a5800f121d271ee6" category="paragraph">此步骤为可选步骤。您无需添加凭证即可使用 Workload Factory 访问您的 AWS 账户。将 AWS 凭证添加到 Workload Factory，即可使您的 Workload Factory 帐户拥有创建和管理 FSx for ONTAP文件系统以及部署和管理特定工作负载（例如数据库和 GenAI）所需的权限。</block>
   <block id="bf7bed6002efd423b3f090dfda4fb38c" category="paragraph">Codebox 与 Workload Factory 权限策略保持一致，根据 Workload Factory 账户中为每个用户提供的 AWS 权限，在代码中填充相应的数据。该代码可以像模板一样使用，您可以在运行代码之前填写缺失的信息（例如，凭据）或自定义某些数据。</block>
   <block id="fd7910c842c61985f2e90af78f1b304f" category="paragraph">Workload Factory 提供灵活的权限策略，使您能够仔细控制对云环境的访问，并根据您的 IT 策略为 Workload Factory 分配递增的信任。</block>
   <block id="1b512d78c8df2f0c24a19da35f804ca3" category="inline-link-macro">了解更多关于工作负载工厂权限策略的信息</block>
@@ -1584,4 +1511,6 @@
   <block id="dc3bd384dcb2bc2324eb0b2de08dda55" category="list-text">**检查权限：** 确保您的 Workload Factory 帐户具有对仪表板使用的工作负载和资源的读取权限。查看 <block ref="7630a8b182c80d5ddb5d9ce1be672fef" category="inline-link-macro-rx"></block> 中的权限要求。</block>
   <block id="cc661418365d138458bf55f936b73a47" category="section-title">从 Workload Factory 中删除 GenAI 工作负载</block>
   <block id="ef18329e66f7a0f5b022b9a400dd74ed" category="paragraph">GenAI 工作负载已从 Workload Factory 控制台中删除。</block>
+  <block id="7548d07d123f53ef8a847c6be983f3e5" category="paragraph">当您提供权限时，Workload Factory 会将具有权限的策略附加到实例，以管理该 AWS 帐户内的资源和流程。这允许 Workload Factory 执行各种操作，从发现存储环境到在存储管理中部署 AWS 资源（如文件系统）。</block>
+  <block id="b0e0fd1b2977dcfd6e5719ca7a3a6e37" category="paragraph">此步骤为可选步骤。您可以使用 Workload Factory 而无需添加凭据来访问您的 AWS 账户。向 Workload Factory 添加 AWS 凭据将为您的 Workload Factory 账户提供创建和管理 FSx for ONTAP 文件系统以及部署和管理数据库等特定工作负载所需的权限。</block>
 </blocks>

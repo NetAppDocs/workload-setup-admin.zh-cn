@@ -21,10 +21,6 @@ summary: 登录并设置NetApp Workload Factory 后，您可以创建和管理 F
 +
 在AWS上检测现有数据库资产、通过迁移到FSx for ONTAP评估潜在的成本节省、利用内置的最佳优化实践端到端部署数据库、以及自动执行CI/CD管道精简克隆。
 
-* https://docs.netapp.com/us-en/workload-genai/index.html["GenAI"^]
-+
-部署和管理"再构建一代"(RAG)基础架构、以提高AI应用程序的准确性和独特性。创建有关FSx for ONTAP的RAG知识库、其中包含内置的数据安全性和合规性。
-
 * https://docs.netapp.com/us-en/workload-vmware/index.html["VMware工作负载"^]
 +
 利用智能建议和自动修复简化迁移和操作。部署高效备份和强大的灾难恢复。监控VM并对其进行故障排除。

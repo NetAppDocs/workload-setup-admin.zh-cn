@@ -14,3 +14,10 @@
 自定义仪表板为只读，因此无法更改您的存储或工作负载设置。Workload Factory 帐户中的任何人都可以查看和管理这些仪表板，使团队能够轻松分享见解并保持一致。
 
 link:learn-custom-dashboards.html["详细了解自定义控制面板"]
+
+
+
+[[genai-workload-removal-from-workload-factory]]
+=== 从 Workload Factory 中删除 GenAI 工作负载
+
+GenAI 工作负载已从 Workload Factory 控制台中删除。

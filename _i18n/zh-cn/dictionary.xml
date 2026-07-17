@@ -254,8 +254,6 @@
   <block id="41d28e7b29f45d4f63653993af041bc7" category="paragraph">如果您的组织需要额外的帐户或用户管理、请通过产品内聊天联系我们。</block>
   <block id="e73298b79ea9408111cb3612bf336a0e" category="section-title">连接链路</block>
   <block id="e20e09752eeb59f7fee2ca964db1c848" category="paragraph">当前、链路会利用AWS Lamb流程。</block>
-  <block id="e3bdd5798efebca8061760f610d98bcc" category="inline-link">了解有关链接的更多信息</block>
-  <block id="cee76762b1db025f50dc7b50c80548de" category="paragraph"><block ref="cee76762b1db025f50dc7b50c80548de" category="inline-link-rx"></block></block>
   <block id="bd282943a337f4287ca0d70f9a836261" category="section-title">CodeBox自动化</block>
   <block id="7c408fda146892c9e1c039f91fee3cd3" category="paragraph">CodeBox窗格显示由特定作业流操作生成的IAC、并通过图形向导或对话聊天界面进行匹配。虽然CodeBox支持颜色编码和搜索、以便于导航和分析、但它不允许编辑。您只能复制或保存到自动化目录。</block>
   <block id="ec6b8f7cd0c5cd9853d947bc13f72f4b" category="inline-link-macro">了解有关CodeBox的更多信息</block>
@@ -1499,7 +1497,6 @@
   <block id="708d52dc7d2f1cb4787bfd74e41bfab5" category="list-text">使用其中一个 <block ref="730226d90433792895dc2ec640283d2d" category="inline-link-macro-rx"></block> 登录。</block>
   <block id="97911b3c54a4e826b34c1f79026316c5" category="section-title">AWS 凭据和权限</block>
   <block id="d65de0ffa05b31f0beebf22d3e28dbde" category="section-title">链接到 FSx for ONTAP</block>
-  <block id="575660b25d9cb74a47a89172d359da91" category="paragraph">Workload Factory 需要一个 Link 才能连接到 FSx for ONTAP 文件系统。Link 在 Workload Factory 与一个或多个 FSx for ONTAP 文件系统之间创建信任关系和连接。这使您能够直接通过 ONTAP REST API 调用来监控和管理某些文件系统功能，而这些功能无法通过 Amazon FSx for ONTAP API 获得。</block>
   <block id="68cd2ca9724f378c0a2815415eeecfbd" category="inline-link">了解如何创建链接</block>
   <block id="11a7b8f6e5b40124f50c5d30e3fedda3" category="paragraph"><block ref="35d312ad6c576252ccfa87842dc6e767" category="inline-link-rx"></block>。</block>
   <block id="90b29202abc7a1c38c887ae166296c46" category="summary">访问仪表板目录，在 Workload Factory 中查看、刷新和删除自定义仪表板。</block>
@@ -1514,4 +1511,7 @@
   <block id="00436cf3153058a6cc1bda7834e2df46" category="paragraph">为了构建仪表板，Workload Factory 使用只读 AWS 凭据。这些凭据仅允许对以下服务执行读取操作，例如<block ref="24ca8966cf3ca7c9dc7c9de631b31ff0" prefix=" " category="inline-code"></block>和<block ref="0054238c3be20aab765346f029c558a4" prefix=" " category="inline-code"></block>：EC2、FSx、CloudWatch、资源组标记 API、备份、CloudWatch 日志、KMS 和 EFS。</block>
   <block id="660503a3fa3804fff2a7f84301e40d4a" category="summary">修复自定义仪表板的常见问题，包括设置失败、数据加载问题和访问问题。</block>
   <block id="e3c8b96b5757e581b1d0e7900d690797" category="paragraph">**原因：** 您的 Workload Factory 帐户中的其他用户可能已将其删除。</block>
+  <block id="ee01e7a77a5b8f6475723b4e66eca889" category="paragraph">Workload Factory 需要链接才能连接到 FSx for ONTAP 文件系统。链接在 Workload Factory 与一个或多个 FSx for ONTAP 文件系统之间创建信任关系和连接。这使您能够直接通过 ONTAP REST API 调用来监控和管理某些文件系统功能，而这些功能无法通过 Amazon FSx for ONTAP API 获得。</block>
+  <block id="6015cd2e9e5bc5b037ad456163cc26cb" category="inline-link">详细了解链接</block>
+  <block id="cea96a6659ee3b63722518018a5e6659" category="paragraph"><block ref="cea96a6659ee3b63722518018a5e6659" category="inline-link-rx"></block></block>
 </blocks>

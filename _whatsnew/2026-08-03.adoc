@@ -13,7 +13,12 @@
 
 操作和修正权限允许您对资源进行更改、分析错误日志、对资源进行全面的架构完善分析并修复配置问题。
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["权限参考"] === 自定义仪表板
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["权限参考"]
+
+
+
+[[custom-dashboards]]
+=== 自定义信息板
 
 
 

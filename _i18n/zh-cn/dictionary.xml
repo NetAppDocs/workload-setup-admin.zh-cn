@@ -1515,7 +1515,6 @@
   <block id="e9e3af45119a834b75ee5ce8ad5fc96d" category="paragraph">已更新数据库的权限，以改善功能访问并在不必要时限制 SSM 访问。</block>
   <block id="6f70bfe68d48e1ab770cfb69bea59dfd" category="paragraph">查看、规划和分析权限仅限于 AWS SSM 文档。使用这些权限，您可以查看主机、实例和数据库。您还可以对资源运行基本的按需架构完善分析。</block>
   <block id="e9ad7ba5991717b52c215bd25e788b28" category="paragraph">操作和修正权限允许您对资源进行更改、分析错误日志、对资源进行全面的架构完善分析并修复配置问题。</block>
-  <block id="0c92fa03ad5e533f4ef42de9a2ae598f" category="paragraph"><block ref="167e20b67f84068555b3081057c696b8" category="inline-link-macro-rx"></block> === 自定义仪表板</block>
   <block id="d5eb0f9120b28b557f3e367589adf4bb" category="section-title">自定义信息板的通知</block>
   <block id="fb5e135dfdab99cdebbb946a22093655" category="paragraph">Workload Factory现在会在您的自定义仪表板准备就绪或创建失败时通知您。</block>
   <block id="7a99102fbba6a5729480bc61967c8423" category="paragraph">创建自定义控制面板后，您将收到一条通知，其中包含查看该控制面板的直接链接。如果创建失败，您将收到一条通知，其中包含自定义控制面板清单的链接，以便重试。</block>
@@ -1641,4 +1640,5 @@
   <block id="1cdbc8bcb26cc8d5e894a97b9e7f269f" category="section-title">2026年7月5日</block>
   <block id="8fb2a31345fc5c5e72c947d436b5077b" category="admonition">账号管理员可以开启或关闭 AI 功能。如果管理员将其关闭，则 Ask Me AI 助手将不可用。<block ref="56d2e09cbb0a828478db20ff2d11774d" category="inline-link-macro-rx"></block>。</block>
   <block id="959c1faca1dbb57f8dac1b5058bf9c58" category="paragraph"><block ref="959c1faca1dbb57f8dac1b5058bf9c58" category="inline-link-macro-rx"></block></block>
+  <block id="167e20b67f84068555b3081057c696b8" category="paragraph"><block ref="167e20b67f84068555b3081057c696b8" category="inline-link-macro-rx"></block></block>
 </blocks>

@@ -46,6 +46,8 @@ sidebar:
       url: "/well-architected-workloads.html"
     - title: 配置通知
       url: "/configure-notifications.html"
+    - title: 管理 AI 功能
+      url: "/manage-genai-features.html"
     - title: 自定义信息板
       entries:
       - title: 了解自定义控制面板

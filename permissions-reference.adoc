@@ -488,8 +488,8 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 
 数据库提供以下权限策略供您选择：
 
-* *查看、规划和分析*：查看数据库资源清单，了解资源的运行状况，审查数据库配置的良好架构分析，探索节省成本的方法，获取错误日志分析，并探索节省成本的方法。
-* *操作和修复*：对数据库资源执行操作任务，并修复数据库配置和底层 FSx for ONTAP文件系统存储的问题。
+* *查看、规划和分析*：查看数据库资源清单，了解资源的运行状况，并查看数据库配置的良好架构分析。
+* *操作和修复*：为您的数据库资源执行操作任务、获取错误日志分析、探索节省空间的方法，并修复数据库配置和底层 FSx for ONTAP 文件系统存储的问题。
 * *数据库主机创建*：根据最佳实践部署数据库主机和底层 FSx for ONTAP文件系统存储。
 
 
@@ -505,79 +505,82 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 [source, json]
 ----
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "CommonGroup",
-            "Effect": "Allow",
-            "Action": [
-                "cloudwatch:GetMetricStatistics",
-                "cloudwatch:GetMetricData",
-                "sns:ListTopics",
-                "ec2:DescribeInstances",
-                "ec2:DescribeVpcs",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeImages",
-                "ec2:DescribeRegions",
-                "ec2:DescribeRouteTables",
-                "ec2:DescribeKeyPairs",
-                "ec2:DescribeNetworkInterfaces",
-                "ec2:DescribeInstanceTypes",
-                "ec2:DescribeVpcEndpoints",
-                "ec2:DescribeInstanceTypeOfferings",
-                "ec2:DescribeSnapshots",
-                "ec2:DescribeVolumes",
-                "ec2:DescribeAddresses",
-                "kms:ListAliases",
-                "kms:ListKeys",
-                "kms:DescribeKey",
-                "cloudformation:ListStacks",
-                "cloudformation:DescribeAccountLimits",
-                "ds:DescribeDirectories",
-                "fsx:DescribeVolumes",
-                "fsx:DescribeBackups",
-                "fsx:DescribeStorageVirtualMachines",
-                "fsx:DescribeFileSystems",
-                "servicequotas:ListServiceQuotas",
-                "ssm:GetParametersByPath",
-                "ssm:GetCommandInvocation",
-                "ssm:SendCommand",
-                "ssm:GetConnectionStatus",
-                "ssm:DescribePatchBaselines",
-                "ssm:DescribeInstancePatchStates",
-                "ssm:ListCommands",
-                "ssm:DescribeInstanceInformation",
-                "fsx:ListTagsForResource",
-                "logs:DescribeLogGroups",
-                "bedrock:GetFoundationModelAvailability",
-                "bedrock:ListInferenceProfiles"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Sid": "SSMParameterStore",
-            "Effect": "Allow",
-            "Action": [
-                "ssm:GetParameter",
-                "ssm:GetParameters",
-                "ssm:PutParameter",
-                "ssm:DeleteParameters"
-            ],
-            "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
-        },
-        {
-            "Sid": "SSMResponseCloudWatch",
-            "Effect": "Allow",
-            "Action": [
-                "logs:GetLogEvents",
-                "logs:PutRetentionPolicy"
-            ],
-            "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "sns:ListTopics",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeAddresses",
+        "kms:ListAliases",
+        "kms:ListKeys",
+        "kms:DescribeKey",
+        "cloudformation:ListStacks",
+        "cloudformation:DescribeAccountLimits",
+        "ds:DescribeDirectories",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeBackups",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeFileSystems",
+        "servicequotas:ListServiceQuotas",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:DescribeInstancePatches",
+        "ssm:DescribePatchBaselines",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:DescribeAvailablePatches",
+        "ssm:ListCommands",
+        "ssm:GetInventory",
+        "ssm:ListInventoryEntries",
+        "ssm:DescribeInstanceInformation",
+        "fsx:ListTagsForResource",
+        "logs:DescribeLogGroups"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowSpecificSSMDocuments",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ssm:*::document/AWSFleetManager-GetWindowsRegistryContent",
+        "arn:aws:ssm:*::document/AWSFleetManager-GetFileSystemContent"
+      ]
+    },
+    {
+      "Sid": "AllowAllEC2InstancesForSendCommand",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ----
 --
@@ -588,6 +591,49 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 {
   "Version": "2012-10-17",
   "Statement": [
+    {
+      "Sid": "ExtendedCommonGroup",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:ListInferenceProfiles"
+      ],
+      "Resource": [
+        "*"
+      ]
+    },
+    {
+      "Sid": "AllowPSSSMDocuments",
+      "Effect": "Allow",
+      "Action": "ssm:SendCommand",
+      "Resource": [
+        "arn:aws:ssm:*::document/AWS-RunPowerShellScript",
+        "arn:aws:ssm:*::document/AWS-RunShellScript",
+        "arn:aws:ssm:*::document/AWS-RunPatchBaseline"
+      ]
+    },
+    {
+      "Sid": "SSMParameterStore",
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParameter",
+        "ssm:GetParameters",
+        "ssm:PutParameter",
+        "ssm:DeleteParameters"
+      ],
+      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Sid": "SSMResponseCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
+    },
     {
       "Sid": "FSxRemediation",
       "Effect": "Allow",
@@ -827,10 +873,10 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 清单
 * 了解节省量
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
-| 从已注册的 SQL 节点收集已保存到 Amazon CloudWatch 的性能指标。数据将在已注册 SQL 实例的管理实例屏幕上生成性能趋势图。 | CloudWatch：GetMetricData | 清单 | 视图、规划和分析 
+| 从已注册的 SQL 节点收集已保存到 Amazon CloudWatch 的性能指标。数据将在已注册 SQL 实例的管理实例屏幕上生成性能趋势图。 | CloudWatch：GetMetricData | 清单 | 运营和补救 
 
 
 .4+| 获取EC2实例的详细信息 | EC2：Describe实例  a| 
@@ -979,7 +1025,7 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 了解节省量
 * 优化
 
-| 视图、规划和分析 
+| 查看、规划和分析；运营和修复 
 
 
 | 获取部署后实例的SSM连接状态 | SSM：GetConnectionStatus  a| 
@@ -994,6 +1040,18 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 
 
 | 获取可用于操作系统修补程序评估的修补程序基线列表 | SSM：对修补程序基准线进行了详述 | 优化 | 视图、规划和分析 
+
+
+| 获取 Windows EC2 实例上的修补清单详细信息，用于评估和修正工作流程 | ssm:DescribeInstancePatches | 优化 | 视图、规划和分析 
+
+
+| 获取可用于操作系统补丁评估的补丁列表 | ssm:DescribeAvailablePatches | 优化 | 视图、规划和分析 
+
+
+| 检索从托管 SQL 节点收集的库存元数据 | ssm:GetInventory | 清单 | 视图、规划和分析 
+
+
+| 列出从托管 SQL 节点收集的库存条目 | ssm:ListInventoryEntries | 清单 | 视图、规划和分析 
 
 
 | 获取Windows EC2实例上的修补状态、以进行操作系统修补程序评估 | SSM：说明InstancePatchStates | 优化 | 视图、规划和分析 
@@ -1049,7 +1107,7 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 管理操作
 * 清单
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 | SSM：GetParameters ^1^  a| 
@@ -1057,21 +1115,21 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 管理操作
 * 清单
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 | SSM：Put参 比器^1^  a| 
 * 部署
 * 管理操作
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 | SSM：删除参数^1^  a| 
 * 部署
 * 管理操作
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 .9+| 将网络资源与SQL节点和验证节点相关联、并向SQL节点添加其他辅助IP | EC2：AllocateAddress ^1^ | 部署 | 创建数据库主机 
@@ -1294,7 +1352,7 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 存储评估(优化)
 * 清单
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 | 允许 Workload Factory 获取当前日志组并检查 Workload Factory 创建的日志组是否设置了保留 | 日志：可通过"LogBeLogGroup"进行操作  a| 
@@ -1308,7 +1366,7 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 * 存储评估(优化)
 * 清单
 
-| 视图、规划和分析 
+| 运营和补救 
 
 
 .2+| 列出客户SNS主题、并发布到符合以下条件的系统日志和客户SNS (如果已选择) | SnS：ListTopics | 部署 | 视图、规划和分析 
@@ -1392,10 +1450,10 @@ NOTE: AWS GovCloud 不支持 AWS Cost Explorer，因此您不需要这些权限�
 | 模拟工作负载操作以验证可用权限并与所需的AWS帐户权限进行比较 | IAM：SimulatePrincipalPolicy | 部署 | 全部 
 
 
-| 获取可用于错误日志分析的基础模型 | Bound：GetFoundation论 可用性 | 错误日志分析 | 视图、规划和分析 
+| 获取可用于错误日志分析的基础模型 | Bound：GetFoundation论 可用性 | 错误日志分析 | 运营和补救 
 
 
-| 列出 Amazon Bedrock 中可用于错误日志分析的接口配置文件 | Bedrock：ListInferenceProfile | 错误日志分析 | 视图、规划和分析 
+| 列出 Amazon Bedrock 中可用于错误日志分析的接口配置文件 | Bedrock：ListInferenceProfile | 错误日志分析 | 运营和补救 
 |===
 . 权限仅限于从“资源管理模块”开始的资源。
 . "IAM：CreateServiceLinkedIn Role"受"iam：AVsServiceName"限制：ec2.amazonaws.com"*
@@ -1651,6 +1709,17 @@ VMware 工作负载有以下权限策略可供选择：
 == 更改日志
 
 添加和删除权限后、我们将在以下各节中记录这些权限。
+
+
+
+[[3-august-2026]]
+=== 2026年8月3日
+
+已更新数据库的权限，以改善功能访问并在不必要时限制 SSM 访问。
+
+查看、规划和分析权限仅限于 AWS SSM 文档。使用这些权限，您可以查看主机、实例和数据库。您还可以对资源运行基本的按需架构完善分析。
+
+通过操作和补救权限，您可以获得全面的架构良好的评估，根据架构良好的分析应用建议的操作，对资源进行更改并分析错误日志。
 
 
 

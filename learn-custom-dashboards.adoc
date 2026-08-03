@@ -18,6 +18,9 @@ summary: 根据您的工作负载和优先级创建个性化的 AI 驱动仪表�
 Workload Factory 帐户中的每个人都可以查看所有自定义仪表板。此共享设置可帮助团队在整个组织中进行协作并查看相同的运营信息。
 
 
+NOTE: 如果您的账号管理员已关闭AI功能，您将看到一条消息，无法创建控制面板。请联系您的管理员或 link:manage-genai-features.html["了解人工智能管理"]。
+
+
 
 [[why-use-custom-dashboards]]
 == 为何使用自定义控制面板
@@ -43,6 +46,21 @@ Workload Factory 用户管理许多工作负载、环境和优先级，但标准
 * 按地区、工作负载或其他类别查看
 * 需要跟踪和显示的规则或要求
 
+
+
+
+[[view-and-share-dashboards]]
+== 查看和共享仪表板
+
+默认情况下，新控制面板是私密的，因此只有您才能看到它们。您可以随时将控制面板设为公开，以便与团队成员分享。
+
+* *私人仪表板*：只有您可以查看这些仪表板。将其用于个人监控、测试或正在进行的工作。
+* *公共仪表板*：您的 Workload Factory 帐户中的每个人都可以查看这些仪表板。使用它们共享监控视图，并使您的团队在工作负载、优先事项和业务目标方面保持一致。
+
+
+每个控制面板卡都会显示控制面板是私有还是公开，因此您可以快速查看哪些控制面板是共享的。
+
+link:manage-custom-dashboards.html#change-dashboard-visibility["了解如何更改控制面板可见性"]。
 
 
 
@@ -83,7 +101,7 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html["了解如何�
 
 以下限制当前适用于自定义仪表板：
 
-* 您不能在 Workload Factory 帐户之外共享仪表板
+* 不能在 Workload Factory 帐户之外共享仪表板。所有仪表板共享仅限于同一 Workload Factory 帐户中的用户。
 
 
 

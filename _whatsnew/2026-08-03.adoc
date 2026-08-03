@@ -1,0 +1,63 @@
+= 已更新数据库的 IAM 权限策略
+:allow-uri-read: 
+
+
+
+
+[[updated-iam-permission-policies-for-databases]]
+=== 已更新数据库的 IAM 权限策略
+
+已更新数据库的权限，以改善功能访问并在不必要时限制 SSM 访问。
+
+查看、规划和分析权限仅限于 AWS SSM 文档。使用这些权限，您可以查看主机、实例和数据库。您还可以对资源运行基本的按需架构完善分析。
+
+操作和修正权限允许您对资源进行更改、分析错误日志、对资源进行全面的架构完善分析并修复配置问题。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html["权限参考"] === 自定义仪表板
+
+
+
+==== 自定义信息板的通知
+
+Workload Factory现在会在您的自定义仪表板准备就绪或创建失败时通知您。
+
+创建自定义控制面板后，您将收到一条通知，其中包含查看该控制面板的直接链接。如果创建失败，您将收到一条通知，其中包含自定义控制面板清单的链接，以便重试。
+
+这有助于您了解控制面板何时准备就绪，并轻松查看或重新创建控制面板。
+
+link:create-custom-dashboard.html["了解如何创建自定义控制面板"]
+
+link:configure-notifications.html["了解如何配置通知"]
+
+
+
+==== 私人和公共自定义控制面板
+
+自定义仪表板现在包含共享设置。您可以将控制面板设为私有或与您的团队共享。
+
+默认情况下，新控制面板是私密的，只有您可以看到。您可以随时将控制面板设为公开，以便与 Workload Factory 帐户中的所有人共享。
+
+每个控制面板卡都会显示"私人"或"公共"标签，因此您可以快速查看哪些控制面板是共享的。
+
+link:learn-custom-dashboards.html#dashboard-visibility-and-sharing["了解控制面板的可见性和共享性"]
+
+link:manage-custom-dashboards.html#change-dashboard-visibility["了解如何共享控制面板"]
+
+
+
+[[ai-features-administration]]
+=== AI 功能管理
+
+您可以通过 Workload Factory 管理中的以下设置来控制整个组织对 AI 功能的访问。
+
+* 使用 NetApp 托管的 Bedrock（推荐且默认启用，设有每月信用额度限制）
+* 关闭所有 AI 功能
+
+
+通过新的管理页面，您可以在一个地方管理这些设置。
+
+AI功能包括Ask Me、自定义仪表板、规则生成器以及EMS、数据库日志和卷延迟的分析器。
+
+如果关闭 AI 功能，用户将看到"AI 不可用"的消息。
+
+link:manage-genai-features.html["了解如何管理 AI 功能"]

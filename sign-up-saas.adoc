@@ -53,6 +53,10 @@ image:screenshot-account-selection-govcloud.png["使用新帐户登录时显示�
 +
 .. 输入账户的名称。
 .. （可选）将帐户设为 AWS GovCloud （美国）帐户。此帐户类型仅使用 AWS GovCloud （美国）端点和区域进行设置和操作。凭据和机密保留在 GovCloud 中。此选项是永久性的。
++
+
+NOTE: Workload Factory 的 AI 功能使用在公共 AWS 区域托管的 AWS Bedrock 服务。如果您的安全策略不允许连接到公共区域服务，您可以在"管理"设置中关闭 AI 功能。link:manage-genai-features.html["了解如何管理 AI 功能"].
+
 .. （可选）提供该帐户的职务说明。
 
 

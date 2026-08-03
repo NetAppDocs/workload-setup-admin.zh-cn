@@ -34,6 +34,9 @@ AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天�
 
 
 
+NOTE: 账号管理员可以开启或关闭 AI 功能。如果管理员将其关闭，则 Ask Me AI 助手将不可用。link:manage-genai-features.html["了解如何管理 AI 功能"]。
+
+
 
 [[supported-cloud-providers]]
 == 支持的云提供商
@@ -116,7 +119,7 @@ Workload Factory 链接在 Workload Factory 与一个或多个 FSx for ONTAP文�
 
 当前、链路会利用AWS Lamb流程。
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["详细了解链接"^]
+link:https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html["详细了解链接"^]
 
 
 

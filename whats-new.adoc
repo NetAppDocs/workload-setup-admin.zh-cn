@@ -46,9 +46,9 @@ Workload Factory现在会在您的自定义仪表板准备就绪或创建失败�
 
 这有助于您了解控制面板何时准备就绪，并轻松查看或重新创建控制面板。
 
-link:create-custom-dashboard.html["了解如何创建自定义控制面板"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["了解如何创建自定义控制面板"]
 
-link:configure-notifications.html["了解如何配置通知"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["了解如何配置通知"]
 
 
 
@@ -60,9 +60,9 @@ link:configure-notifications.html["了解如何配置通知"]
 
 每个控制面板卡都会显示"私人"或"公共"标签，因此您可以快速查看哪些控制面板是共享的。
 
-link:learn-custom-dashboards.html#dashboard-visibility-and-sharing["了解控制面板的可见性和共享性"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-custom-dashboards.html#view-and-share-dashboards["了解控制面板的可见性和共享性"]
 
-link:manage-custom-dashboards.html#change-dashboard-visibility["了解如何共享控制面板"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html#change-dashboard-visibility["了解如何共享控制面板"]
 
 
 
@@ -81,7 +81,7 @@ AI功能包括Ask Me、自定义仪表板、规则生成器以及EMS、数据库
 
 如果关闭 AI 功能，用户将看到"AI 不可用"的消息。
 
-link:manage-genai-features.html["了解如何管理 AI 功能"]
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["了解如何管理 AI 功能"]
 
 
 

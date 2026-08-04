@@ -15,10 +15,6 @@ Workload Factory 每天分析在 Amazon FSx for NetApp ONTAP 文件系统部署�
 
 您还可以用简单的语言创建自定义规则，以根据组织的标准和 NetApp 最佳实践验证您的环境。通过试运行测试规则，然后安排它们在您的环境中运行。link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["详细了解自定义规则"^].
 
-您还可以用简单的语言创建自定义规则，以根据组织的标准和 NetApp 最佳实践验证您的环境。通过试运行测试规则，然后安排它们在您的环境中运行。
-
-link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["详细了解自定义规则"^]。
-
 
 
 [[why-it-matters]]

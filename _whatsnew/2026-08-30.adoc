@@ -1,0 +1,10 @@
+= 凭据和链接的新入门体验
+:allow-uri-read: 
+
+
+
+
+[[new-onboarding-experience-for-credentials-and-links]]
+=== 凭据和链接的新入门体验
+
+Workload Factory 改进了凭据和链接的入门体验，使入门更加简便。创建账号并登录后，在任何工作负载图块（例如 *Storage*）中选择 *Get started*，下一页将逐步引导您完成设置过程。

@@ -1677,4 +1677,7 @@
   <block id="ddfa0843a8d65e78d4c6e602bca78098" category="summary">使用 NetApp Workload Factory for Storage 中的 Tracker 跟踪 FSx for ONTAP、凭据和链接操作，并监控作业进度。</block>
   <block id="367e536ee2f4e237a6e344129f6d1033" category="doc">在 NetApp Workload Factory 中使用 Tracker 监控操作</block>
   <block id="00ae0cd12340f0b4bbba6b466e757a65" category="sidebar">监控操作</block>
+  <block id="8d8c52a0c2cdf249c1bf6acdbd825469" category="doc">凭据和链接的新入门体验</block>
+  <block id="4f9abf683fceb68d04e55eccea1aef30" category="paragraph">Workload Factory 改进了凭据和链接的入门体验，使入门更加简便。创建账号并登录后，在任何工作负载图块（例如 *Storage*）中选择 *Get started*，下一页将逐步引导您完成设置过程。</block>
+  <block id="1641126472d40ab162e3acf05ac611ba" category="section-title">2026年8月30日</block>
 </blocks>

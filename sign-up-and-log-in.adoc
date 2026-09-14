@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: sign-up-saas.html 
+permalink: sign-up-and-log-in.html 
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login 
 summary: 可以通过基于 Web 的控制台访问 Workload Factory。当您开始使用 Workload Factory 时，您的第一步是使用现有的NetApp支持站点凭据进行注册或创建NetApp云登录。 
 ---
-= 注册NetApp Workload Factory
+= 注册并登录到 NetApp Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/
@@ -77,3 +77,43 @@ NOTE: Workload Factory 的 AI 功能使用在公共 AWS 区域托管的 AWS Bedr
 
 .结果
 受邀用户将收到一封电子邮件，其中包含加入您的 Workload Factory 帐户的说明。
+
+
+
+[[log-in-to-netapp-workload-factory]]
+== 登录NetApp Workload Factory
+
+注册NetApp Workload Factory 后，您可以随时从基于 Web 的控制台登录，开始管理您的工作负载和 FSx for ONTAP文件系统。
+
+您可以使用以下选项之一登录 Workload Factory 基于 Web 的控制台：
+
+* 您的现有NetApp 支持站点 (NSS)凭据
+* 使用您的电子邮件地址和密码登录NetApp云
+
+
+.步骤
+. 打开 Web 浏览器并转到 https://console.workloads.netapp.com["工作负载工厂控制台"^]。
+. 在*登录*页面上、输入与您的登录关联的电子邮件地址。
+. 根据与您的登录关联的身份验证方法、系统将提示您输入凭据：
++
+** NetApp云凭据：输入密码
+** 联合用户：输入您的联合身份凭据
+** NetApp 支持站点 帐户：输入您的NetApp 支持站点 凭据
+
+
+. 选择*登录*。
++
+如果您以前成功登录，您将看到 Workload Factory 主页，并且您将使用默认帐户。
+
++
+如果这是您首次登录，您将被引导至*Account*页面。
+
++
+** 如果您是单个帐户的成员，请选择*继续*。
+** 如果您是多个帐户的成员，请选择该帐户并选择*CONTINUE*。
+
+
+
+
+.结果
+您现在已登录并可以开始使用 Workload Factory 来管理 FSx for ONTAP文件系统和您的工作负载。

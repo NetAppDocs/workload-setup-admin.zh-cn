@@ -15,65 +15,6 @@ summary: 您可以配置NetApp Workload Factory，在发生某些类型的事件
 
 
 
-[[notification-types-and-messages]]
-== 通知类型和消息
-
-Workload Factory 针对以下事件发送通知：
-
-[cols="6*"]
-|===
-| 事件 | 说明 | 通知类型 | 严重性 | 工作负载 | 资源类型 
-
-
-| 您帐户中的某些数据库实例架构不佳 | 您的帐户中的所有 Microsoft SQL Server 实例均已针对架构问题进行分析。此事件的描述给出了架构良好的实例和未优化的实例的数量。从工作负载工厂控制台查看数据库清单中精心设计的状态结果和建议。 | 架构完善 | 建议 | 数据库 | Microsoft SQL Server 实例 
-
-
-| Microsoft SQL Server/PostgreSQL 服务器部署成功 | Microsoft SQL Server 或 PostgreSQL 主机部署成功。更多信息，请参考作业监控。 | 部署 | 成功 | 数据库 | FSx for ONTAP，数据库主机 
-
-
-| Microsoft SQL Server/PostgreSQL 服务器部署失败 | Microsoft SQL Server 或 PostgreSQL 主机部署失败。更多信息，请参考作业监控。 | 部署 | 错误 | 数据库 | FSx for ONTAP，数据库主机 
-
-
-| 复制关系创建失败 | SnapMirror复制关系创建失败。欲了解更多信息，请访问 Tracker。 | 复制 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
-
-
-| FSx for ONTAP创建失败 | FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。 | FSx for ONTAP文件系统操作 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
-
-
-| 自动增加 SSD 容量或 inode 成功 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统成功增加了 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 成功 | 常规存储 | FSx for ONTAP文件 
-
-
-| 自动增加 SSD 容量或 inode 失败 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统未能增加 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| 检测到 FSx for ONTAP问题 | 所有 FSx for ONTAP文件系统均已针对架构问题进行了分析。扫描检测到一个或多个问题。有关更多信息，请查看 Workload Factory 控制台中存储仪表板的精心设计的分析。 | 精心设计的分析 | 建议 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| FSx for ONTAP的自动容量管理事件 | FSx for ONTAP文件系统的 SSD 性能层级已达到警告阈值容量/百分比总和。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| FSx for ONTAP的自动 inode 管理事件 | ONTAP卷的 FSx inode 计数达到警告阈值计数/百分比总数。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| 在 FSx for ONTAP 文件系统中检测到可疑卷活动 | NetApp 使用 AI 的自主勒索软件保护 (ARP/AI) 检测到可疑的卷活动。 | 勒索软件防护 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| 检测到延迟阈值违规 | FSx for ONTAP 集群中的一个或多个卷超过了延迟阈值。 | 性能监控 | 警告 | EDA | FSx for ONTAP文件系统 
-
-
-| 每月成本报告 | 您的帐户的每月成本汇总，显示支出趋势、异常变化以及 FSx for ONTAP 文件系统的最佳节省机会。 | 成本报告 | 建议 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| 复制延迟 | 复制花费的时间比预期的要长。 | 复制 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
-
-
-| 自定义仪表板创建成功 | 您的自定义仪表板已成功创建并可供查看。 | 自定义仪表板 | 成功 | 常规存储 | 工作负载工厂帐户 
-
-
-| 自定义仪表板创建失败 | Workload Factory 无法创建您的自定义仪表板。请尝试重新创建仪表板。 | 自定义仪表板 | 错误 | 常规存储 | 工作负载工厂帐户 
-|===
-
-
 [[configure-workload-factory-notifications]]
 == 配置工作负载工厂通知
 
@@ -251,3 +192,63 @@ IMPORTANT: 在 NetApp Console 中配置通知时，它将获得通知传递的�
 您可以使用 NetApp Console 通知设置按严重性级别（如 Critical、Info 或 Warning）过滤您在 Console 中收到的通知。
 
 有关在控制台中过滤通知的更多信息，请参阅 https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications["NetApp控制台文档"^]。
+
+
+
+[[notification-types-and-messages]]
+== 通知类型和消息
+
+Workload Factory 针对以下事件发送通知：
+
+[cols="6*"]
+|===
+| 事件 | 说明 | 通知类型 | 严重性 | 工作负载 | 资源类型 
+
+
+| 您帐户中的某些数据库实例架构不佳 | 您的帐户中的所有 Microsoft SQL Server 实例均已针对架构问题进行分析。此事件的描述给出了架构良好的实例和未优化的实例的数量。从工作负载工厂控制台查看数据库清单中精心设计的状态结果和建议。 | 架构完善 | 建议 | 数据库 | Microsoft SQL Server 实例 
+
+
+| Microsoft SQL Server/PostgreSQL 服务器部署成功 | Microsoft SQL Server 或 PostgreSQL 主机部署成功。更多信息，请参考作业监控。 | 部署 | 成功 | 数据库 | FSx for ONTAP，数据库主机 
+
+
+| Microsoft SQL Server/PostgreSQL 服务器部署失败 | Microsoft SQL Server 或 PostgreSQL 主机部署失败。更多信息，请参考作业监控。 | 部署 | 错误 | 数据库 | FSx for ONTAP，数据库主机 
+
+
+| 复制关系创建失败 | SnapMirror复制关系创建失败。欲了解更多信息，请访问 Tracker。 | 复制 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
+
+
+| FSx for ONTAP创建失败 | FSx for ONTAP文件系统创建过程失败。欲了解更多信息，请访问 Tracker。 | FSx for ONTAP文件系统操作 | 批判的 | 常规存储 | 适用于ONTAP的 FSx 
+
+
+| 自动增加 SSD 容量或 inode 成功 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统成功增加了 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 成功 | 常规存储 | FSx for ONTAP文件 
+
+
+| 自动增加 SSD 容量或 inode 失败 | 在最近的自动容量管理更新期间，FSx for ONTAP文件系统未能增加 SSD 容量或卷 inode。欲了解更多信息，请访问 Tracker。 | 容量管理 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 检测到 FSx for ONTAP问题 | 所有 FSx for ONTAP文件系统均已针对架构问题进行了分析。扫描检测到一个或多个问题。有关更多信息，请查看 Workload Factory 控制台中存储仪表板的精心设计的分析。 | 精心设计的分析 | 建议 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| FSx for ONTAP的自动容量管理事件 | FSx for ONTAP文件系统的 SSD 性能层级已达到警告阈值容量/百分比总和。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| FSx for ONTAP的自动 inode 管理事件 | ONTAP卷的 FSx inode 计数达到警告阈值计数/百分比总数。 | 容量管理 | 警告 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 在 FSx for ONTAP 文件系统中检测到可疑卷活动 | NetApp 使用 AI 的自主勒索软件保护 (ARP/AI) 检测到可疑的卷活动。 | 勒索软件防护 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 检测到延迟阈值违规 | FSx for ONTAP 集群中的一个或多个卷超过了延迟阈值。 | 性能监控 | 警告 | EDA | FSx for ONTAP文件系统 
+
+
+| 每月成本报告 | 您的帐户的每月成本汇总，显示支出趋势、异常变化以及 FSx for ONTAP 文件系统的最佳节省机会。 | 成本报告 | 建议 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 复制延迟 | 复制花费的时间比预期的要长。 | 复制 | 批判的 | 常规存储 | FSx for ONTAP文件系统 
+
+
+| 自定义仪表板创建成功 | 您的自定义仪表板已成功创建并可供查看。 | 自定义仪表板 | 成功 | 常规存储 | 工作负载工厂帐户 
+
+
+| 自定义仪表板创建失败 | Workload Factory 无法创建您的自定义仪表板。请尝试重新创建仪表板。 | 自定义仪表板 | 错误 | 常规存储 | 工作负载工厂帐户 
+|===

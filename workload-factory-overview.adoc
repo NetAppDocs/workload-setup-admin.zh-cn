@@ -25,9 +25,10 @@ Amazon FSx for NetApp ONTAP为关键任务应用程序、数据库、容器、VM
 Workload Factory平台提供以下主要功能。
 
 灵活、低成本的存储:: 在云中发现、部署和管理Amazon FSx for NetApp ONTAP文件系统。FSx for ONTAP将ONTAP的全部功能引入原生AWS托管服务、提供一致的混合云体验。
+Lambda链路连接:: 使用 Lambda 链接连接在 Workload Factory 帐户与一个或多个 FSx for ONTAP 文件系统之间创建信任关系和连接。链接让您可以直接通过 ONTAP REST API 调用来监控和管理某些文件系统功能，而这些功能无法通过 Amazon FSx for ONTAP API 获得。
 将内部vSphere环境迁移到基于AWS的VMware Cloud:: 通过VMware Cloud on AWS迁移顾问、您可以分析内部vSphere环境中的当前虚拟机配置、生成将建议的虚拟机布局部署到VMware Cloud on AWS的计划、并将适用于NetApp ONTAP文件系统的自定义Amazon FSx用作外部数据存储库。
 数据库生命周期管理:: 利用Amazon FSx for NetApp ONTAP发现数据库工作负载并分析节省的成本；在将SQL Server数据库迁移到FSx for ONTAP存储时利用存储和应用程序的优势；部署SQL Server、数据库和数据库克隆以实施供应商最佳实践；使用基础架构即代码联合试点来自动执行操作；持续监控和优化SQL Server资产以提高性能、可用性、保护能力和成本效益。
-AI聊天机器人开发:: 利用FSx for ONTAP文件系统存储组织的聊天机器人源和AI引擎数据库。这样、您就可以将组织的非结构化数据嵌入到企业聊天机器人应用程序中。
+EDA存储操作:: 通过优化性能、与 IaC 集成以自动化存储参数并确保操作健康，简化 NetApp Workload Factory 中的电子设计自动化 (EDA) 存储操作。
 节省成本的计算器:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
 服务帐户以促进自动化:: 使用服务帐户安全可靠地自动化NetApp Workload Factory 操作。服务帐户提供可靠、持久的自动化，不受任何用户管理限制，并且由于它们仅提供 API 访问，因此更加安全。
 问我人工智能助手:: 向 AI 助手询问有关管理和操作 FSx for ONTAP文件系统的问题。使用模型上下文协议 (MCP)，Ask Me 可以安全地与外部环境交互并查询 API 工具，以提供适合您特定存储环境的响应。

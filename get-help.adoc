@@ -4,7 +4,7 @@ permalink: get-help.html
 keywords: help, ticket, open support case, support, netapp support, technical support, call support, phone number, open ticket, web ticket, open an issue 
 summary: 'NetApp通过多种方式为 Workload Factory 提供支持。全天候提供广泛的免费自助支持选项，例如知识库 (KB) 文章和社区论坛。您的支持注册包含通过网络工单获取的远程技术支持。' 
 ---
-= 获取帮助
+= 获取有关 NetApp Workload Factory 的帮助
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

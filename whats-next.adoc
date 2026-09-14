@@ -4,7 +4,7 @@ permalink: whats-next.html
 keywords: what you can do 
 summary: 登录并设置NetApp Workload Factory 后，您可以创建和管理 FSx for ONTAP文件系统，并使用其他 Workload Factory 功能。 
 ---
-= 使用NetApp Workload Factory 优化工作负载
+= NetApp Workload Factory 中的工作负载功能
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

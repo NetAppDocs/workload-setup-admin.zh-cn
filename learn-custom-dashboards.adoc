@@ -4,7 +4,7 @@ permalink: learn-custom-dashboards.html
 keywords: custom dashboards, dashboards, personalized dashboards, AI dashboards, operational visibility, workload monitoring 
 summary: 根据您的工作负载和优先级创建个性化的 AI 驱动仪表板，以增强运营可见性，而不受预定义视图的限制。 
 ---
-= 了解自定义控制面板
+= 了解 NetApp Workload Factory 中的自定义仪表板
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

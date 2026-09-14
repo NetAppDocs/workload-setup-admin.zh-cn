@@ -1,0 +1,317 @@
+---
+sidebar: sidebar 
+permalink: create-link.html 
+keywords: connect, connection, link, lambda link, associate link, create link, authenticate link 
+summary: 您可以创建和管理链接，以提供 NetApp Workload Factory 帐户与一个或多个 FSx for ONTAP 文件系统之间的信任关系和连接。 
+---
+= 使用 Lambda 链接连接到 FSx for ONTAP 文件系统
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+要执行高级 ONTAP 管理操作，请设置您的 Workload Factory 帐户与一个或多个 FSx for ONTAP 文件系统之间的连接。这包括关联新的和现有的 Lambda 链接，并对链接进行身份验证。通过链接关联，您可以直接从 FSx for ONTAP 文件系统监控和管理某些无法通过 Amazon FSx for ONTAP API 使用的功能。
+
+link:links-overview.html["详细了解链接"]。
+
+.关于此任务
+链接使用 AWS Lambda 执行代码以响应事件并自动管理该代码所需的计算资源。您创建的链接是您 NetApp 帐户的一部分，它们与 AWS 帐户相关联。
+
+您可以在定义 FSx for ONTAP 文件系统时在帐户中创建链接。您可以使用该文件系统的链接，也可以将其用于其他 FSx for ONTAP 文件系统。您也可以稍后为文件系统关联链接。
+
+链接需要身份验证。您可以使用 Workload Factory 凭据服务中存储的凭据或 AWS Secrets Manager 中存储的凭据对链接进行身份验证。每个链接只支持一种身份验证方法。例如，如果选择使用 AWS Secrets Manager 进行链接身份验证，则以后无法更改身份验证方法。
+
+
+NOTE: 使用 Console 代理时不支持 AWS Secrets Manager。
+
+
+
+[[associate-a-new-link]]
+== 关联新链接
+
+关联新链接包括创建和关联链接。
+
+您有两个选项可以在此工作流程中创建链接——自动或手动。如果您有 AWS GovCloud 帐户，则必须手动创建新链接。
+
+* 自动：通过 Workload Factory 创建具有自动注册功能的链接。自动创建的链接需要 Workload Factory 自动化的令牌，并且 CloudFormation 代码是短暂的。它最多只能使用六个小时。
+* 手动：使用 Codebox 中的 CloudFormation 或 Terraform 通过手动注册创建链接。代码将持续存在，让您有更多时间完成此操作。这在与 Security 和 DevOps 等不同团队合作时非常有用，这些团队可能需要首先授予完成链接创建所需的权限。
+
+
+.开始之前
+* 您应考虑将使用哪个链接创建选项。
+* 您需要在 Workload Factory 中至少拥有一个 FSx for ONTAP 文件系统。要发现 FSx for ONTAP 文件系统，您必须拥有一个 AWS 账户，该账户具有 FSx for ONTAP 实例的权限，以及link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html#overview["在 Workload Factory 中添加凭据"^]对存储管理具有 _view、planning 和 analysis_ 权限。
+* 必须在与 FSx for ONTAP 文件系统关联的安全组中开放以下端口，以实现链路连接。
++
+** 对于 NetApp Workload Factory 控制台：端口 443 (HTTPS)
+** 对于 CloudShell 和 FSx for ONTAP 应急管理系统 (EMS) 事件分析：端口 22 (SSH)
+
+
+* 链接必须能够连接到以下端点：\https://api.workloads.netapp.com。基于 Web 的控制台与此端点联系，以与 Workload Factory API 进行交互，从而管理和操作 FSx for ONTAP 工作负载。
+* 使用 CloudFormation 堆栈添加链接时，您的 AWS 帐户中必须具有以下权限：
++
+[%collapsible]
+====
+[source, json]
+----
+[
+  "cloudformation:GetTemplateSummary",
+  "cloudformation:CreateStack",
+  "cloudformation:DescribeStacks",
+  "cloudformation:ListStacks",
+  "cloudformation:DescribeStackEvents",
+  "cloudformation:ListStackResources",
+  "ec2:DescribeSubnets",
+  "ec2:DescribeSecurityGroups",
+  "ec2:DescribeVpcs",
+  "iam:ListRoles",
+  "iam:GetRolePolicy",
+  "iam:GetRole",
+  "iam:DeleteRolePolicy",
+  "iam:CreateRole",
+  "iam:DetachRolePolicy",
+  "iam:PutRolePolicy",
+  "iam:DeleteRole",
+  "iam:AttachRolePolicy",
+  "lambda:InvokeFunction",
+  "lambda:GetFunction",
+  "lambda:CreateFunction",
+  "lambda:DeleteFunction",
+  "iam:PassRole",
+  "lambda:TagResource",
+  "ecr:BatchGetImage",
+  "ecr:GetDownloadUrlForLayer",
+  "lambda:AddPermission",
+  "lambda:RemovePermission",
+  "cloudformation:DeleteStack",
+  "kms:CreateGrant",
+  "kms:GenerateDataKey"
+]
+----
+====
+
+
+[role="tabbed-block"]
+====
+.自动创建
+--
+使用 CloudFormation 在 Workload Factory 中自动创建和注册链接。
+
+
+NOTE: AWS GovCloud 帐户不支持自动创建链接。
+
+.步骤
+. 使用其中一个 link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^] 登录。
+. 选择菜单 image:workloads-menu-icon.png["汉堡菜单图标用于导航到存储、EDA、AI、数据库、VMware 和管理等工作负载。"] ，然后选择*Administration*。
+. 在"Administration"菜单中，选择"Links"。
+. 在"链接"页面上，选择*创建并关联*。
+. 在关联链接对话框中，选择要与链接关联的文件系统，然后选择*继续*。
+. 选择*创建新链接*，然后选择*继续*。
+. 在创建链接页面上，选择*自动创建*，然后提供以下内容：
++
+.. *Link name*：输入要用于此链接的名称。该名称在您的帐户中必须是唯一的。
+.. *AWS Secrets Manager*：可选。允许 Workload Factory 从 AWS Secrets Manager 获取 FSx for ONTAP 访问凭据。
++
+链接部署堆栈会自动将以下默认密钥管理器 ARN 正则表达式添加到 Lambda 权限策略： `arn:aws:secretsmanager:<link_deployment_region>:<link_deployment_account_id>:secret:FSxSecret*`。
+
++
+您可以按照默认权限创建密钥，也可以为链接策略分配自定义权限。
+
++
+*将 VPC 专用端点配置到 AWS Secrets Manager* 默认处于禁用状态。选择此选项会使用 VPC 专用端点存储密钥，而不是将其存储在本地。
+
+.. *链接权限*：为链接权限选择以下选项之一：
++
+*** *Automatic*：选择此选项，以便 AWS CloudFormation 代码自动创建 Lambda 权限策略和执行角色。
+*** *用户提供的执行角色*：选择此选项可将指定的 Lambda 执行角色及其附加策略分配给 Lambda 链接。Lambda 权限策略需要以下权限。仅当您启用了 AWS Secrets Manager 时，才需要  `secretsmanager:GetSecretValue` 权限。
++
+[source, json]
+----
+"ec2:CreateNetworkInterface",
+"ec2:DescribeNetworkInterfaces",
+"ec2:DeleteNetworkInterface",
+"ec2:AssignPrivateIpAddresses",
+"ec2:UnassignPrivateIpAddresses",
+----
++
+在文本框中输入 Lambda 执行角色 ARN。
+
+
+
+.. *标签*：（可选）添加要与此链接关联的任何标签，以便更轻松地对资源进行分类。例如，您可以添加一个标识此链接由 FSx for ONTAP 文件系统使用的标签。
++
+Workload Factory 基于 FSx for ONTAP 文件系统自动检索 AWS 帐户、位置和安全组。
+
+
+
+. 选择 *Create*。
++
+此时将显示"重定向到 CloudFormation"对话框，说明如何从 AWS CloudFormation 服务创建链接。
+
+. 选择*继续*以打开 AWS Management Console，然后登录到此 FSx for ONTAP 文件系统的 AWS 帐户。
+. 在Quick create堆栈页面的"Capabilities"下、选择*我确认AWS CloudFormation可能会创建IAM资源*。
++
+启动时，CloudFormation 模板会向 Lambda 授予三项权限。Workload Factory 在使用链接时会使用这些权限。
+
++
+[source, json]
+----
+"lambda:InvokeFunction",
+"lambda:GetFunction",
+"lambda:UpdateFunctionCode"
+----
+. 选择 *Create stack*，然后选择 *Continue*。
++
+您可以在"事件"页面上监控链接创建状态。这应该不超过五分钟。
+
+. 返回 Workload Factory 界面，您将看到该链接已与 FSx for ONTAP 文件系统关联。
+
+
+--
+.手动创建
+--
+您可以使用 Codebox 中的两个基础架构即代码 (IaC) 工具创建链接：CloudFormation 或 Terraform。使用此选项，您可以从 AWS CloudFormation 中提取链接的 ARN，并在此处进行报告。Workload Factory 会为您手动注册链接。
+
+.步骤
+. 使用其中一个 link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^] 登录。
+. 选择菜单 image:workloads-menu-icon.png["汉堡菜单图标用于导航到存储、EDA、AI、数据库、VMware 和管理等工作负载。"] ，然后选择*Administration*。
+. 在"Administration"菜单中，选择"Links"。
+. 在"链接"页面上，选择*创建并关联*。
+. 在关联链接对话框中，选择要与链接关联的文件系统，然后选择*继续*。
+. 选择*创建新链接*，然后选择*继续*。
+. 在"创建链接"页面上，选择"手动创建"，然后从"代码框"中选择 CloudFormation 或 Terraform。
+. 在详细信息和凭据下，提供以下内容：
++
+.. *Link name*：输入要用于此链接的名称。该名称在您的帐户中必须是唯一的。
+.. *AWS Secrets Manager*：始终为 GovCloud 账户启用。其他账户可选。允许 Workload Factory 从 AWS Secrets Manager 获取 FSx for ONTAP 访问凭据。
++
+您可以按照默认权限创建密钥，也可以为链接策略分配自定义权限。
+
++
+*将 VPC 专用端点配置到 AWS Secrets Manager* 默认处于禁用状态。选择此选项会使用 VPC 专用端点存储密钥，而不是将其存储在本地。
+
+.. *链接权限*：为链接权限选择以下选项之一：
++
+*** *Automatic*：选择此选项，以便 AWS CloudFormation 代码自动创建 Lambda 权限策略和执行角色。
+*** *用户提供的*：选择此选项可将指定的 Lambda 执行角色及其附加策略分配给 Lambda 链接。Lambda 权限策略需要以下权限。 `secretsmanager:GetSecretValue` 权限仅在使用 AWS Secrets Manager 时才需要。
++
+[source, json]
+----
+"ec2:CreateNetworkInterface",
+"ec2:DescribeNetworkInterfaces",
+"ec2:DeleteNetworkInterface",
+"ec2:AssignPrivateIpAddresses",
+"ec2:UnassignPrivateIpAddresses"
+----
++
+在文本框中输入 Lambda 执行角色 ARN。
+
+
+
+.. *标签*：（可选）添加要与此链接关联的任何标签，以便更轻松地对资源进行分类。例如，您可以添加一个标识此链接由 FSx for ONTAP 文件系统使用的标签。
+.. *链接注册*：选择 CloudFormation 或 Terraform 以获取有关如何注册链接的说明，并按照说明进行操作。
++
+启动时，CloudFormation 模板会向 Lambda 授予三项权限。Workload Factory 在使用链接时会使用这些权限。
+
++
+[source, json]
+----
+"lambda:InvokeFunction",
+"lambda:GetFunction",
+"lambda:UpdateFunctionCode"
+----
++
+... 成功创建堆栈后，将 Lambda ARN 粘贴到 Workload Factory 控制台的文本框中。Workload Factory 基于 FSx for ONTAP 文件系统自动检索 AWS 帐户、位置和安全组。
+... 选择 *Create*。
++
+您可以在"事件"页面上监控链接创建状态。这应该不超过五分钟。
+
+
+
+
+
+
+
+--
+====
+.结果
+Workload Factory 将链接与 FSx for ONTAP 文件系统关联。您可以执行高级 ONTAP 操作。
+
+
+
+[[associate-an-existing-link-with-an-fsx-for-ontap-file-system]]
+== 将现有链接与适用于 ONTAP 的 FSx 文件系统关联
+
+创建链接后，将其与一个或多个 FSx for ONTAP 文件系统关联。
+
+.步骤
+. 使用其中一个 link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html["控制台体验"^] 登录。
+. 选择菜单 image:workloads-menu-icon.png["汉堡菜单图标用于导航到存储、EDA、AI、数据库、VMware 和管理等工作负载。"] ，然后选择*存储*。
+. 在存储菜单中，选择 *FSx for ONTAP*。
+. 从 *FSx for ONTAP* 中，选择要关联链接的文件系统的操作菜单，然后选择 *Associate link*。
+. 在关联链接页面中，选择*关联现有链接*，选择该链接，然后选择*继续*。
+. 选择身份验证模式。
++
+** NetApp Workload Factory：输入两次密码。
+** AWS Secrets Manager：输入密钥 ARN。
++
+验证密钥 ARN 是否包含以下键值对，但 _filesystemID_ 是可选的。
+
++
+*** filesystemID = FSx_filesystem_id （可选）
+*** user = FSx_user
+*** password = user_password
++
+
+NOTE: 使用 AWS Secrets Manager 进行身份验证需要用户，要么是您提供的 _FSx_user_，要么是在 FSx for ONTAP 文件系统上创建的其他用户。如果您未提供用户，则默认用户为 `fsxadmin`。
+
+
+
+
+
+. 选择 * 应用 * 。
+
+
+.结果
+链接与 FSx for ONTAP 文件系统关联。您可以执行高级 ONTAP 操作。
+
+.相关信息
+link:links-overview.html#when-a-link-is-required["详细了解链接"]。
+
+
+
+[[troubleshoot-issues-with-aws-secrets-manager-link-authentication]]
+== 对 AWS Secrets Manager 链接身份验证问题进行故障排除
+
+问题描述:: 该链接缺乏检索密钥的权限。
++
+--
+*解决方案*：在链接激活后添加权限。登录到 AWS 控制台，找到 Lambda 链接，并编辑附加的权限策略。
+
+--
+问题描述:: 未找到密钥。
++
+--
+*Resolution*：提供正确的密钥 ARN。
+
+--
+问题描述:: 密钥的格式不正确。
++
+--
+*Resolution*：转到 AWS Secrets Manager 并编辑格式。
+
+密钥应包含以下键值对：
+
+* filesystemID = FSx_filesystem_id
+* username = FSx_user
+* password = user_password
+
+
+--
+问题描述:: 密码不包含用于文件系统身份验证的有效 ONTAP 凭据。
++
+--
+*解决方案* ：提供可在 AWS Secrets Manager 中对 FSx for ONTAP 文件系统进行身份验证的凭据。
+
+--
+

@@ -4,7 +4,7 @@ permalink: troubleshoot-custom-dashboards.html
 keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading 
 summary: 修复自定义仪表板的常见问题，包括设置失败、数据加载问题和访问问题。 
 ---
-= 对自定义信息板进行故障排除
+= 在 NetApp Workload Factory 中对自定义仪表板进行故障排除
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

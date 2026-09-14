@@ -4,7 +4,7 @@ permalink: codebox-automation.html
 keywords: codebox, automation 
 summary: 'Codebox 是一个基础设施即代码 (IaC) 副驾驶，可帮助开发人员和 DevOps 生成执行NetApp Workload Factory 支持的任何操作所需的代码。' 
 ---
-= 了解CODEBox自动化
+= 了解 NetApp Workload Factory 中的 Codebox 自动化
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

@@ -4,7 +4,7 @@ permalink: manage-custom-dashboards.html
 keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
 summary: 访问仪表板目录，在 Workload Factory 中查看、刷新和删除自定义仪表板。 
 ---
-= 管理自定义仪表板
+= 在 NetApp Workload Factory 中管理自定义仪表板
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

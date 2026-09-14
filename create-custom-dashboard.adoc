@@ -4,7 +4,7 @@ permalink: create-custom-dashboard.html
 keywords: create dashboard, custom dashboard, AI dashboard, dashboard creation, personalized dashboard 
 summary: 使用人工智能引导的提示创建自定义仪表板，以监控对您的工作负载和运营优先事项最重要的内容。 
 ---
-= 创建自定义仪表板
+= 在 NetApp Workload Factory 中创建自定义仪表板
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

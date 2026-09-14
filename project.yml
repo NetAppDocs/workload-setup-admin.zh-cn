@@ -30,7 +30,7 @@ sidebar:
         url: "/permissions-reference.html"
     - title: 快速入门
       url: "/quick-start.html"
-    - title: 注册 Workload Factory
+    - title: 注册并登录到 Workload Factory
       url: "/sign-up-saas.html"
     - title: 添加AWS凭据
       url: "/add-credentials.html"
@@ -38,8 +38,14 @@ sidebar:
       url: "/whats-next.html"
   - title: 管理工作负载工厂
     entries:
-    - title: 登录工作负载工厂
-      url: "/log-in.html"
+    - title: 链接
+      entries:
+      - title: 了解链接
+        url: "/links-overview.html"
+      - title: 通过链接连接到文件系统
+        url: "/create-link.html"
+      - title: 管理链接
+        url: "/manage-links.html"
     - title: 管理服务帐户
       url: "/manage-service-accounts.html"
     - title: 构建和运行架构良好的工作负载

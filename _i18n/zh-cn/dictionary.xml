@@ -1705,8 +1705,6 @@
   <block id="6cdde78d80d6fbbd8f3706a9bcac599e" category="list-text">克隆创建和管理，用于即时、就地数据克隆</block>
   <block id="7cacd07dfdd5c4feadcbf23d19f9972d" category="list-text">直接从 ONTAP 显示其他指标，例如 ONTAP 版本</block>
   <block id="f22e542eda471e2702ed07136761fd6c" category="list-text">显示Storage VM和集群LIF详细信息，包括角色、端点、节点、IP地址和状态</block>
-  <block id="30f1ae8a88bc842cdf5e493350ae7eb1" category="inline-link-macro">将链接连接到 FSx for ONTAP 文件系统</block>
-  <block id="f86bb6aab3a49998f4db8fa07a49d81a" category="paragraph">了解如何 <block ref="e658cbfbd30fb261626bc7c82308a713" category="inline-link-macro-rx"></block>。</block>
   <block id="86030a79fe9a63670fc44ac2aa712502" category="doc">了解 NetApp Workload Factory 中的 Codebox 自动化</block>
   <block id="e730dacf98fdefc31c79fa8f3de18e2b" category="doc">NetApp Workload Factory 的控制台体验</block>
   <block id="78a68b00b0b76cc261abe8e56546683d" category="doc">在 NetApp Workload Factory 中创建自定义仪表板</block>
@@ -1853,4 +1851,7 @@
   <block id="78f8c00f462b0fbe742eab283e3fdf7a" category="sidebar">了解链接</block>
   <block id="c108a5680d95b024bcb3f456683c719c" category="sidebar">通过链接连接到文件系统</block>
   <block id="fa1a08e2a749c9f330c9a8e60cac9cc3" category="sidebar">管理链接</block>
+  <block id="bf7102668593cd82fd27a66594640387" category="inline-link-macro">将链接连接到 FSx for ONTAP 文件系统</block>
+  <block id="f54caf9bcfff2cb7aa30ba073518e7db" category="list-text"><block ref="f54caf9bcfff2cb7aa30ba073518e7db" category="inline-link-macro-rx"></block></block>
+  <block id="364f26fd39f55f2137b4749b01da3565" category="list-text"><block ref="364f26fd39f55f2137b4749b01da3565" category="inline-link-macro-rx"></block></block>
 </blocks>

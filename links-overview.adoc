@@ -76,4 +76,11 @@ Workload Factory 需要一个链接来显示一些信息和执行一些任务。
 * 显示Storage VM和集群LIF详细信息，包括角色、端点、节点、IP地址和状态
 
 
-了解如何 link:create-link.html["将链接连接到 FSx for ONTAP 文件系统"]。
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html["将链接连接到 FSx for ONTAP 文件系统"]
+* link:https://docs.netapp.com/us-en/workload-setup-admin/manage-links.html["管理链接"]
+

@@ -1022,7 +1022,6 @@
   <block id="65c95ed5c9f895be6dfa81e8583c86af" category="list-text">*CloudShell CLI*：Workload Factory 包含一个 CloudShell CLI，可通过基于浏览器的单个 CLI 跨账户管理和操作 AWS 和NetApp环境。从 Workload Factory 控制台顶部栏访问 CloudShell。</block>
   <block id="34904d30d825a389b588efb76a1ceb16" category="list-text">*REST API*：使用 Workload Factory REST API 部署和管理您的 FSx for ONTAP文件系统和其他 AWS 资源。</block>
   <block id="3995165ba76339d9d4d08edf5a17c07c" category="list-text">*CloudFormation*：使用 AWS CloudFormation 代码执行您在 Workload Factory 控制台中定义的操作，以从您的 AWS 账户中的 CloudFormation 堆栈对 AWS 和第三方资源进行建模、配置和管理。</block>
-  <block id="a1b1209dad1b58c4e66fd68ee5bc0148" category="list-text">*Terraform NetApp Workload Factory 提供商*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础架构工作流。</block>
   <block id="cfcd02bc3ad349605f667b1db0164fe0" category="paragraph">Workload Factory 使您能够针对特定工作负载优化、自动化和操作 FSx for ONTAP文件系统。每个工作负载都公开一个相关的 REST API。总的来说，这些工作负载和 API 构成了一个灵活且可扩展的开发平台，您可以使用它来管理 FSx for ONTAP文件系统。</block>
   <block id="49dac47ef61c863ab22404394b6c84e7" category="paragraph">使用 Workload Factory REST API 有几个好处：</block>
   <block id="b5b61948785c8f81b44871382cf798d9" category="list-text">Workload Factory 身份验证基于 OAuth2 标准。  NetApp依赖于 Auth0 服务实现。</block>
@@ -1364,7 +1363,6 @@
   <block id="4ebed31793305164cd5e1b71336c2244" category="paragraph">只需用简单的语言描述您想要跟踪的内容，AI 将根据您的请求创建一个仪表板。例如，您可以跨区域跟踪灾难恢复状态、容量和成本、存储保护合规性以及其他运营指标。</block>
   <block id="f2c8c03b6d33f0a06783ce6241b381a6" category="paragraph">自定义仪表板为只读，因此无法更改您的存储或工作负载设置。Workload Factory 帐户中的任何人都可以查看和管理这些仪表板，使团队能够轻松分享见解并保持一致。</block>
   <block id="7f7fdf6329959f984b3ff303ae5ac37f" category="inline-link-macro">详细了解自定义控制面板</block>
-  <block id="b95d6b8ad9f73321f9cc2385811deedb" category="paragraph"><block ref="b95d6b8ad9f73321f9cc2385811deedb" category="inline-link-macro-rx"></block></block>
   <block id="b8aad264abc6ada71a68a9b5a701a58b" category="summary">使用人工智能引导的提示创建自定义仪表板，以监控对您的工作负载和运营优先事项最重要的内容。</block>
   <block id="dfc2a77d9b383cd28cba1a1e99f9a378" category="doc">创建自定义仪表板</block>
   <block id="43d2bb31c641fd8b871b835572bc7441" category="paragraph">通过用简单的语言描述要监控的内容来创建自定义仪表板。AI 将引导您完成设置，以便仪表板与您的工作负载和优先级相匹配。</block>
@@ -1854,4 +1852,6 @@
   <block id="bf7102668593cd82fd27a66594640387" category="inline-link-macro">将链接连接到 FSx for ONTAP 文件系统</block>
   <block id="f54caf9bcfff2cb7aa30ba073518e7db" category="list-text"><block ref="f54caf9bcfff2cb7aa30ba073518e7db" category="inline-link-macro-rx"></block></block>
   <block id="364f26fd39f55f2137b4749b01da3565" category="list-text"><block ref="364f26fd39f55f2137b4749b01da3565" category="inline-link-macro-rx"></block></block>
+  <block id="dd6c12ecaee3143ccc7a7d85e16032ff" category="paragraph"><block ref="dd6c12ecaee3143ccc7a7d85e16032ff" category="inline-link-macro-rx"></block></block>
+  <block id="06e2f75907573850abfa673fd6e8572a" category="list-text">*NetApp Terraform 提供程序*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础设施工作流。</block>
 </blocks>

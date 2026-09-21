@@ -169,7 +169,7 @@ link:well-architected-workloads.html["了解更多关于架构良好的工作负
 * *CloudShell CLI*：Workload Factory 包含一个 CloudShell CLI，可通过基于浏览器的单个 CLI 跨账户管理和操作 AWS 和NetApp环境。从 Workload Factory 控制台顶部栏访问 CloudShell。
 * *REST API*：使用 Workload Factory REST API 部署和管理您的 FSx for ONTAP文件系统和其他 AWS 资源。
 * *CloudFormation*：使用 AWS CloudFormation 代码执行您在 Workload Factory 控制台中定义的操作，以从您的 AWS 账户中的 CloudFormation 堆栈对 AWS 和第三方资源进行建模、配置和管理。
-* *Terraform NetApp Workload Factory 提供商*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础架构工作流。
+* *NetApp Terraform 提供程序*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础设施工作流。
 
 
 

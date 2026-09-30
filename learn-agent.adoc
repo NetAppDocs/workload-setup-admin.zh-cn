@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: learn-agent.html 
+keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agents settings 
+summary: 了解 Workload Factory 的 AI 代理如何分析您的环境、识别风险和提高性能的方法，并在获得您的批准后为您采取行动。 
+---
+= 了解 NetApp Workload Factory 中的 AI 代理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，它还可以使用您设置的凭据和权限执行操作。
+
+
+NOTE: 如果您的账号管理员已关闭 AI 功能，您将看到一条消息，并且无法使用代理。请联系管理员或 link:manage-genai-features.html["了解人工智能管理"]。
+
+
+
+[[before-you-begin]]
+== 开始之前
+
+确保您的 Workload Factory 帐户具有 AWS 凭据以及代理访问所需资源的 IAM 权限。如果启用读写模式，则这些权限还必须允许支持的更改。
+
+link:add-credentials.html["了解如何添加 AWS 凭据和设置 IAM 权限"^]。
+
+
+
+[[data-usage-and-privacy]]
+== 数据使用和隐私
+
+您的数据不用于训练 AI 模型。代理使用您的凭据通过标准 AWS API 安全地访问 AWS 资源，并根据您的实际环境做出响应。所有代理活动均遵循 NetApp 隐私政策和 AWS 安全控制。
+
+
+
+[[why-use-ai-agents]]
+== 为什么要使用AI代理
+
+AI代理可帮助您在Workload Factory中更高效地工作：
+
+* 根据您的环境获取答案和建议。
+* 识别风险和优化机会。
+* 在一个工作流中排查问题并采取已批准的操作。
+* 运行预定的检查，并在聊天历史记录中接收更新。
+* 跨 FSx for ONTAP 和本地 ONTAP 环境工作。
+
+
+
+
+[[access-the-ai-agents]]
+== 访问 AI 代理
+
+从 Ask Me 主页:: 在"询问我"登录页面上，选择 *Explore Agents*。AI 代理侧面板随即打开，并显示一条欢迎消息，介绍代理的功能。
+从座席重定向链接:: 使用 **Ask Me** 或其他功能时，您可能会看到将您重定向到座席以获得更高级帮助的链接。
+
+
+
+
+[[how-ai-agents-work]]
+== AI 代理的工作原理
+
+
+
+[[how-agents-access-your-environment]]
+=== 代理如何访问您的环境
+
+只有当资源包含在当前 Workload Factory 范围内并受 link:manage-agent-settings.html["代理设置"] 中选择的凭据支持时，代理才能访问这些资源。代理只能在两种控制均适用的情况下运行。它们可以访问的资源还取决于分配给其 AWS 凭据的权限。默认情况下将选择所有凭据，但您可以将其减少到已配置凭据的子集。
+
+您当前的范围包括：
+
+* *AWS accounts*：代理可以访问哪些 AWS 账户。
+* *Credentials*：代理可以使用的凭据。
+* *区域*：代理可以访问哪些 AWS 区域。
+
+
+Workload Factory 中的筛选器设置当前页面的范围，例如查看的 AWS 账户和区域。代理设置控制允许代理在该范围内使用的凭据。对资源的访问还取决于分配给这些凭据的 IAM 权限。
+
+
+NOTE: 在 *Agents settings* 中选择凭据不会授予其他 AWS 权限。确保凭据具有代理访问您希望其分析或管理的资源所需的 IAM 权限。
+
+
+
+[[read-only-mode-default]]
+=== 只读模式（默认）
+
+默认情况下，代理以只读模式运行。在此模式下，它们可以：
+
+* 回答有关您环境的问题。
+* 分析您的 FSx for ONTAP 文件系统、数据库和工作负载。
+* 识别风险、错误配置和优化机会。
+* 提供改进性能、可用性、保护和成本效益的建议。
+* 对问题进行故障排除并提出补救措施。
+
+
+它们无法在只读模式下更改资源。如果您请求需要写入权限的操作，代理将解释该限制并链接到代理设置。
+
+
+
+[[read-write-mode-opt-in]]
+=== 读写模式（选择加入）
+
+您可以在 link:manage-agent-settings.html["代理设置"] 中启用读写功能。在此模式下，代理将解释每个受支持的操作，并在进行任何更改之前需要获得您的批准。
+
+此审批流程适用于所有代理体验，包括 Slack 集成和 NetApp Console。
+
+
+
+[[what-users-see-when-ai-agents-have-no-data-or-activity]]
+== 当 AI 代理没有数据或活动时，用户会看到什么
+
+如果客服代表没有凭据，他们仍然可以提供一般性指导。但是，他们无法查看您的资源或提供特定于您的环境的见解。

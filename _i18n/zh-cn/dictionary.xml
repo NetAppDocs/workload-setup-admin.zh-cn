@@ -997,7 +997,6 @@
   <block id="a0f53b5544ae2841af96b6a2c93a0849" category="paragraph">Workload Factory平台提供以下主要功能。</block>
   <block id="5999715bf3ed9ba4ec9a80b7687fe818" category="list-text">使用服务帐户安全可靠地自动化NetApp Workload Factory 操作。服务帐户提供可靠、持久的自动化，不受任何用户管理限制，并且由于它们仅提供 API 访问，因此更加安全。</block>
   <block id="e89477f461ecef2d895595553cc0cfbf" category="list-text">问我人工智能助手</block>
-  <block id="c0eadc4e4502d909eddd3b5b2d48b232" category="list-text">向 AI 助手询问有关管理和操作 FSx for ONTAP文件系统的问题。使用模型上下文协议 (MCP)，Ask Me 可以安全地与外部环境交互并查询 API 工具，以提供适合您特定存储环境的响应。</block>
   <block id="f23d73684a524dc65f1c2ab55054ed6c" category="paragraph">Workload Factory 使您能够管理云存储并使用 Amazon Web Services 中的工作负载功能。</block>
   <block id="cc3487971ff751f7d4df80cbca84205b" category="paragraph">Amazon FSx for NetApp ONTAP for NetApp Workload Factory 是一款<block ref="eada645bedd6ca3d760173ba22baf6b0" category="inline-link-macro-rx"></block>它是在充分考虑了架构良好的最佳实践的基础上创建的。</block>
   <block id="6396fbe69c05e9a323cf53a0fbf0983d" category="paragraph">Workload Factory 可以免费使用。您向 Amazon Web Services (AWS) 支付的费用取决于您计划部署的存储和工作负载服务。这包括Amazon FSx for NetApp ONTAP 、AWS 基础设施上的 VMware Cloud、AWS 服务等的成本。</block>
@@ -1304,7 +1303,6 @@
   <block id="cce7bd3a3721067273866ec7f3ec7b7c" category="list-text">*通知*：配置 Workload Factory 以发送通知，这些通知会显示在 NetApp Console 中的铃铛图标下。</block>
   <block id="a58c54927d168d58046b4ad29f5254fa" category="list-text">*电子邮件*：在 NetApp Console 中启用电子邮件通知，以接收发送到与帐户关联的任何电子邮件地址的通知，而无需 Amazon SNS 配置。</block>
   <block id="d7b2e59eb21ae19aa7b493f93fbcb35f" category="list-text">*Amazon SNS*：配置 Workload Factory 以向 Amazon SNS 主题发送通知。</block>
-  <block id="e174fa0e05fb5c229301ef978773782d" category="list-text">*Email*：在 Workload Factory 控制台中启用电子邮件通知，以接收发送到与帐户关联的任何电子邮件地址的通知，而无需 Amazon SNS 配置。</block>
   <block id="7184b61f2058f394c7d6b104dc166242" category="list-text">*Amazon SNS*：配置 Workload Factory 以使用 Workload Factory 控制台向 Amazon SNS 主题发送通知。</block>
   <block id="150b7425bee731f53d950cb07997d3a9" category="admonition">在 NetApp Console 中配置通知时，它将获得通知传递的所有权，并且 Workload Factory 控制台通知选项将被禁用并以只读模式显示。工具提示说明通知是从 NetApp Console 管理的。然后，您只能从 NetApp Console 管理通知。</block>
   <block id="719c05c1c99e00fa5e0edb33bb8190f6" category="paragraph">以下前提条件仅适用于配置 Amazon SNS 通知时：</block>
@@ -1312,8 +1310,6 @@
   <block id="3cffbdfd446e6b3ca39fc52d1b2a87ab" category="list-text">*NetApp Console 通知*：选择*启用 NetApp Console 通知*以配置 Workload Factory 在 NetApp Console 中发送通知。</block>
   <block id="4941b94ab67ffcf8b95fddca7b5ce770" category="list-text">*电子邮件通知*：选择 *启用电子邮件通知* 以配置 Workload Factory 将通知发送到与帐户关联的任何电子邮件地址。</block>
   <block id="0d7adbc19c316fab18fa015b723496bd" category="list-text">*Amazon SNS 通知*：选择*启用 SNS 通知*，然后按照说明从 Amazon SNS 控制台配置 Amazon SNS。</block>
-  <block id="458f208085c8b6ec69e163ddf2378427" category="list-text">启用以下一个或多个通知类型：</block>
-  <block id="622901cf56fa55473d2f9550e6422faf" category="list-text">*电子邮件通知*：选择 *启用电子邮件通知*。与帐户关联的任何电子邮件地址都将以只读模式显示。</block>
   <block id="3bf17ee9de6360f01456d2fe35c8ff4c" category="paragraph">您可以通过对通知应用过滤器来减少不必要的通知流量，并为特定用户定位特定的通知类型。您可以使用针对 SNS 通知的 Amazon SNS 策略以及 NetApp Console 中的通知设置来执行此操作。</block>
   <block id="8749fce6a42b5cc208c97e090bbdf52e" category="section-title">在 NetApp Console 中过滤通知</block>
   <block id="067205dc8475e129dc9d47a407ae631d" category="paragraph">您可以使用 NetApp Console 通知设置按严重性级别（如 Critical、Info 或 Warning）过滤您在 Console 中收到的通知。</block>
@@ -1553,7 +1549,6 @@
   <block id="ebd4b28f0632a0dc47fff6d0e28857b1" category="doc">管理 AI 功能</block>
   <block id="13bb649429b18adc1dadc0ed391c5bc2" category="paragraph">控制对 Workload Factory 中 AI 功能的访问。您可以关闭 AI 功能或使用由 NetApp 管理的 AWS Bedrock。</block>
   <block id="00e95115c994386ef85f1864db952bca" category="section-title">关于 AI 功能</block>
-  <block id="5a41793d075495dfb423bb395a189adf" category="paragraph">Workload Factory 包括几个人工智能支持的功能，可增强您的体验，例如 Ask Me、自定义仪表板以及 EMS、数据库日志和延迟的分析器。</block>
   <block id="46918c8c585299e7a785eed266de3f97" category="paragraph">作为 Workload Factory 管理员，您可以在 AI 设置页面上控制这些功能如何使用 AI。</block>
   <block id="50f33d14f129e4548c1c270fd6725a78" category="section-title">配置选项</block>
   <block id="5787d906b76d8323ff398ce17924ceda" category="paragraph">从这些设置选项中进行选择：</block>
@@ -1563,7 +1558,6 @@
   <block id="9a0258efc499c889c5f1af73bbaf4364" category="list-text">每月使用消费金在整个组织中共享</block>
   <block id="2c8b8060f9331f918beb8261403785ec" category="list-text">无需额外的 AWS 设置</block>
   <block id="1ee78c04d8b078adcb0fca6be60af5a2" category="list-text">GenAI 功能已关闭</block>
-  <block id="8828805c938d7fc1a48fbf3585c37b14" category="list-text">关闭所有 AI 功能。用户不能再使用 Ask Me、分析器、自定义仪表板、规则生成器或其他 AI 驱动的工具。</block>
   <block id="396640080b08108896efb48796063406" category="list-text">我们建议账号管理员设置 AI 功能。</block>
   <block id="6b7af6c72f84f0f7380106617c11be78" category="section-title">配置 AI 功能</block>
   <block id="3f0879fc8845a02f07ea71a0a584847e" category="list-text">从菜单中，选择*Administration*，然后选择*AI settings*。</block>
@@ -1617,7 +1611,6 @@
   <block id="255efce8fcb0ce70d6ca799d3f7fcce4" category="admonition">如果您的账号管理员已关闭 AI 功能，则无法使用 AI 生成的错误响应。<block ref="56d2e09cbb0a828478db20ff2d11774d" category="inline-link-macro-rx"></block>。</block>
   <block id="91d90ea5487ed9ed44e834f42f272ccb" category="section-title">2026年8月3日</block>
   <block id="1cdbc8bcb26cc8d5e894a97b9e7f269f" category="section-title">2026年7月5日</block>
-  <block id="8fb2a31345fc5c5e72c947d436b5077b" category="admonition">账号管理员可以开启或关闭 AI 功能。如果管理员将其关闭，则 Ask Me AI 助手将不可用。<block ref="56d2e09cbb0a828478db20ff2d11774d" category="inline-link-macro-rx"></block>。</block>
   <block id="959c1faca1dbb57f8dac1b5058bf9c58" category="paragraph"><block ref="959c1faca1dbb57f8dac1b5058bf9c58" category="inline-link-macro-rx"></block></block>
   <block id="167e20b67f84068555b3081057c696b8" category="paragraph"><block ref="167e20b67f84068555b3081057c696b8" category="inline-link-macro-rx"></block></block>
   <block id="0e23d2a91e2fd1a7eb141ceb8cd9ddcf" category="paragraph"><block ref="0e23d2a91e2fd1a7eb141ceb8cd9ddcf" category="inline-link-macro-rx"></block></block>
@@ -1854,4 +1847,135 @@
   <block id="364f26fd39f55f2137b4749b01da3565" category="list-text"><block ref="364f26fd39f55f2137b4749b01da3565" category="inline-link-macro-rx"></block></block>
   <block id="dd6c12ecaee3143ccc7a7d85e16032ff" category="paragraph"><block ref="dd6c12ecaee3143ccc7a7d85e16032ff" category="inline-link-macro-rx"></block></block>
   <block id="06e2f75907573850abfa673fd6e8572a" category="list-text">*NetApp Terraform 提供程序*：使用 Terraform 构建和管理在 Workload Factory 控制台中生成的基础设施工作流。</block>
+  <block id="f1b1a4bfd4b138d7b7f910daf038bf87" category="doc">Workload Factory 的 AI 代理</block>
+  <block id="4f92226af9b21739ad4453bb92ea1a12" category="paragraph">Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，还可以使用您设置的凭据和权限执行操作。AI 代理分析您的环境，帮助您发现风险、改善工作负载，并对 Workload Factory 和 Slack 中的问题进行故障排除。</block>
+  <block id="d2887c33a251e8530157941bab73941d" category="paragraph">在 Ask Me 的新 *Explore Agents* 部分中访问 AI 代理。默认情况下，代理以只读模式运行，并提供建议和分析。</block>
+  <block id="13b9f07ec133fa8d4a2ca6cc3fdd50fd" category="paragraph">使用 *Agents settings* 控制代理的工作方式。您可以：</block>
+  <block id="51ac931b574bb48f344c39da84a32911" category="list-text">选择只读或读写模式</block>
+  <block id="2eef1803f198e56db81b4062ea8cddf4" category="list-text">选择代理可以使用的凭据</block>
+  <block id="46a4cbdaf48bb2fb183d7572e3a8f6b7" category="list-text">添加自定义说明</block>
+  <block id="cbf940f0da0f9c2f02c84f568e2df3e3" category="list-text">调整回复的详细程度</block>
+  <block id="72c9ca3fa9790aabd5a7a741dfe036e9" category="paragraph">这些额外的控件为您提供更多的可见性和监督。在读写模式下，代理必须先获得您的批准，然后才能对 AWS、ONTAP 或受支持的 API 进行更改。您还可以选择在回复中查看多少详细信息，包括有关代理推理的信息，以及在 Slack 中查看其工具活动的信息。</block>
+  <block id="8b4711746b3adfa755ed575da3759c69" category="paragraph">代理还支持多账号环境和更轻松的设置。单个代理可以使用多个凭据跨多个 AWS 账户安全地工作。</block>
+  <block id="ff2cb9e669640d8f287be7fc339c4d78" category="inline-link-macro">了解 AI 代理</block>
+  <block id="fd0b6331664a65cf7a31ea72bbff0ad8" category="paragraph"><block ref="fd0b6331664a65cf7a31ea72bbff0ad8" category="inline-link-macro-rx"></block></block>
+  <block id="718a428bd3b2faadb3c143efe186c19c" category="inline-link-macro">管理代理设置</block>
+  <block id="f96519dcd31d8fc6ae26fb065d41298c" category="paragraph"><block ref="f96519dcd31d8fc6ae26fb065d41298c" category="inline-link-macro-rx"></block></block>
+  <block id="3cfde347b20875f3299e4bc85cde4012" category="section-title">Ask Me 中的计划任务</block>
+  <block id="ed6bda88b37dd9ee0232de291a362174" category="paragraph">您可以在"询问我"聊天中定制提示，以创建计划任务。使用计划任务要求"询问我"根据您定义的计划运行定期检查并在聊天中发送更新。</block>
+  <block id="ff51f1512e81cb44e19946405c4c3751" category="paragraph">示例提示：</block>
+  <block id="9c51276de03bc7f0cc89565810a9583c" category="list-text">每小时检查所有 FSx for NetApp ONTAP 文件系统的运行状况和生命周期状态，以尽早发现问题。</block>
+  <block id="7c232a692347d9efae9eafb444b454ef" category="list-text">每小时列出所有可访问的 AWS FSx 文件系统，以保持最新清单。</block>
+  <block id="21acc05c94ffdfe8d543fc22e8162a92" category="paragraph"><block ref="21acc05c94ffdfe8d543fc22e8162a92" category="inline-link-macro-rx"></block></block>
+  <block id="fcc3c37c09c2649e94509997e3e32ace" category="section-title">Ask Me 中的 ONTAP 支持</block>
+  <block id="5887518ab4bafe0e2cd30ee6d85ca830" category="paragraph">Ask Me 现在支持 FSx for ONTAP 和本地 ONTAP 系统。使用相同的聊天体验，获取整个 ONTAP 基础设施的答案和见解。</block>
+  <block id="61ac51994f4e558eb3be753f892d08aa" category="section-title">通知更新</block>
+  <block id="02796e8ea898eccf4fc1ec43b8c9a990" category="paragraph">NetApp Console 通知现在默认处于启用状态。NetApp Console 用户将自动接收 Workload Factory 通知，无需额外配置。</block>
+  <block id="21342e11f90d32dc68b1110fcbb8adc2" category="inline-link-macro">Workload Factory 通知</block>
+  <block id="a70bc5a52e36d1d7057060329e076649" category="paragraph"><block ref="a70bc5a52e36d1d7057060329e076649" category="inline-link-macro-rx"></block></block>
+  <block id="5c944601b7f8744b2a84a9a8ea43d363" category="section-title">链接创建通知电子邮件</block>
+  <block id="19206cde68f30f89cddf386749d22382" category="paragraph">Workload Factory 现在提醒您在成功添加凭据后完成链接关联。虽然凭据支持资源发现，但高级 ONTAP 功能需要与发现的文件系统进行链接关联。您将每周一收到一次电子邮件通知。完成链接关联后，通知将停止。</block>
+  <block id="9ea7b6eb4bee9afd3cbcdda4cee6e9ca" category="section-title">Lambda link版本通知和升级指南</block>
+  <block id="44268d176d67be14130038589d76e779" category="paragraph">Workload Factory 现在会在 Lambda 链接未使用最新可用映像时向您发出警报。如果链接不支持自动升级，则通知会显示何时有新版本可用。</block>
+  <block id="36be3d9219f21557e17dda1fb159e09d" category="paragraph">您可以从链接页面查看升级说明。该说明介绍了如何手动更新 Lambda 链接映像，以及如何在可用时启用自动升级。及时更新链接可让您访问最新功能、修复已知问题并应用最新的安全更新。</block>
+  <block id="14bda382780d759b676db8bd277841a9" category="paragraph">当较新的链接版本可用于不支持自动升级的链接时，您还将在 FSx for ONTAP 仪表板中收到警报。</block>
+  <block id="0354b0d97d0b0a9757874cd60afce03c" category="list-text">*电子邮件通知*：要接收电子邮件通知，请在 <block ref="ee6417f6e84445088f5a293850cbcb2f" category="inline-link-macro-rx"></block> 通知设置中配置通知收件人和严重性首选项。</block>
+  <block id="2c8d2ace24ab724b2b9846dfbd1113fb" category="summary">了解 Workload Factory 的 AI 代理如何分析您的环境、识别风险和提高性能的方法，并在获得您的批准后为您采取行动。</block>
+  <block id="a4988f1624f7fc0b4eaabf35a45c6593" category="doc">了解 NetApp Workload Factory 中的 AI 代理</block>
+  <block id="44930f32325dbab8392ff7743e877c7e" category="paragraph">Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，它还可以使用您设置的凭据和权限执行操作。</block>
+  <block id="9b96c88a6583aa0e9a0e03809f482d9e" category="admonition">如果您的账号管理员已关闭 AI 功能，您将看到一条消息，并且无法使用代理。请联系管理员或 <block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>。</block>
+  <block id="29e96b144158fa2cf3ed37b1696584a9" category="paragraph">确保您的 Workload Factory 帐户具有 AWS 凭据以及代理访问所需资源的 IAM 权限。如果启用读写模式，则这些权限还必须允许支持的更改。</block>
+  <block id="3b8e3eff2b9d5a25eecc8e879fab9225" category="section-title">数据使用和隐私</block>
+  <block id="823764ac349552585c033c832c9a9119" category="paragraph">您的数据不用于训练 AI 模型。代理使用您的凭据通过标准 AWS API 安全地访问 AWS 资源，并根据您的实际环境做出响应。所有代理活动均遵循 NetApp 隐私政策和 AWS 安全控制。</block>
+  <block id="a9ad35f78cf699132ce97296208021d6" category="section-title">为什么要使用AI代理</block>
+  <block id="0dcc2bd50249549545f604062e32c8d1" category="paragraph">AI代理可帮助您在Workload Factory中更高效地工作：</block>
+  <block id="08b88087b00df48c7dcec290d2085d9d" category="list-text">根据您的环境获取答案和建议。</block>
+  <block id="f41dc5b513f7a5678f949fafbb672e71" category="list-text">识别风险和优化机会。</block>
+  <block id="45747fdf81b9f650b9ab26706866db24" category="list-text">在一个工作流中排查问题并采取已批准的操作。</block>
+  <block id="6fd44b1c4edd80ad7b595f1fcb4c7483" category="list-text">运行预定的检查，并在聊天历史记录中接收更新。</block>
+  <block id="e974804a88a47e4bcdb4ff1c718951bc" category="list-text">跨 FSx for ONTAP 和本地 ONTAP 环境工作。</block>
+  <block id="4eeb2bca1dddd7a796d908c266d60075" category="section-title">访问 AI 代理</block>
+  <block id="e6478bab5c49062e219e1290c4442eed" category="list-text">从 Ask Me 主页</block>
+  <block id="b3c72178808d9fa6e9c876b76d5d1928" category="list-text">在"询问我"登录页面上，选择 *Explore Agents*。AI 代理侧面板随即打开，并显示一条欢迎消息，介绍代理的功能。</block>
+  <block id="99b503a5e4373b0bc3054a025797d268" category="list-text">从座席重定向链接</block>
+  <block id="54fd5f6787cd568e4b9880863150bb93" category="list-text">使用 **Ask Me** 或其他功能时，您可能会看到将您重定向到座席以获得更高级帮助的链接。</block>
+  <block id="98ff5af4adf0662fa0278d6e7332c116" category="section-title">AI 代理的工作原理</block>
+  <block id="31fe269c620fcf2562efe2871e4398f8" category="section-title">代理如何访问您的环境</block>
+  <block id="d6356702d2caa14ca196fe664fc1853e" category="inline-link-macro">代理设置</block>
+  <block id="dfee9e31025ca5f152cf22d64bfe765f" category="paragraph">只有当资源包含在当前 Workload Factory 范围内并受 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中选择的凭据支持时，代理才能访问这些资源。代理只能在两种控制均适用的情况下运行。它们可以访问的资源还取决于分配给其 AWS 凭据的权限。默认情况下将选择所有凭据，但您可以将其减少到已配置凭据的子集。</block>
+  <block id="f19cfe1072c3d3c974b0cdafbcdde1ef" category="paragraph">您当前的范围包括：</block>
+  <block id="676cd33769e7c44db0294ca1bdc4a818" category="list-text">*AWS accounts*：代理可以访问哪些 AWS 账户。</block>
+  <block id="8f7fd41f1486852019ec1e81297e4749" category="list-text">*Credentials*：代理可以使用的凭据。</block>
+  <block id="db9be091d62e76416638fd7987fac0d3" category="list-text">*区域*：代理可以访问哪些 AWS 区域。</block>
+  <block id="9ea7586a1a950d81f272e8403a8f6cbe" category="paragraph">Workload Factory 中的筛选器设置当前页面的范围，例如查看的 AWS 账户和区域。代理设置控制允许代理在该范围内使用的凭据。对资源的访问还取决于分配给这些凭据的 IAM 权限。</block>
+  <block id="28dec2f4988032196e5673d255d3c391" category="admonition">在 *Agents settings* 中选择凭据不会授予其他 AWS 权限。确保凭据具有代理访问您希望其分析或管理的资源所需的 IAM 权限。</block>
+  <block id="54a2d462b3304eb93c5cfe391a9e67bf" category="section-title">只读模式（默认）</block>
+  <block id="dd8585af3d55da47f5760a15f3d8be48" category="paragraph">默认情况下，代理以只读模式运行。在此模式下，它们可以：</block>
+  <block id="1b539d90e247bf7cc195a2d8096208d6" category="list-text">回答有关您环境的问题。</block>
+  <block id="0f896edbba7d346551c186acd1309a44" category="list-text">分析您的 FSx for ONTAP 文件系统、数据库和工作负载。</block>
+  <block id="6705aab6526bc219af2bdc50b636aa94" category="list-text">识别风险、错误配置和优化机会。</block>
+  <block id="e863933d9a2c33d982a9403853ef5c8f" category="list-text">提供改进性能、可用性、保护和成本效益的建议。</block>
+  <block id="0da32bbd416014e9a050dd9753a5f97c" category="list-text">对问题进行故障排除并提出补救措施。</block>
+  <block id="5c5d131e2fde1dde32d484bb16b397d5" category="paragraph">它们无法在只读模式下更改资源。如果您请求需要写入权限的操作，代理将解释该限制并链接到代理设置。</block>
+  <block id="c43e0775dbe854488f7416962d78486c" category="section-title">读写模式（选择加入）</block>
+  <block id="8403b77cf5ff251eac80eb3fa63780ad" category="paragraph">您可以在 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中启用读写功能。在此模式下，代理将解释每个受支持的操作，并在进行任何更改之前需要获得您的批准。</block>
+  <block id="601c01875f07f976aec59310ce582da5" category="paragraph">此审批流程适用于所有代理体验，包括 Slack 集成和 NetApp Console。</block>
+  <block id="dbe095e1cf28fb37bfc9bc65e6db07ec" category="section-title">当 AI 代理没有数据或活动时，用户会看到什么</block>
+  <block id="02a1c40d157b16f6b4bb75e05fed5d20" category="paragraph">如果客服代表没有凭据，他们仍然可以提供一般性指导。但是，他们无法查看您的资源或提供特定于您的环境的见解。</block>
+  <block id="40b5b336cde586af18464c8514adcf84" category="summary">设置 AI 代理设置，例如操作模式、访问权限、自定义说明和响应详细信息级别，以控制代理在 Workload Factory 环境中的工作方式。</block>
+  <block id="c97e3b8fd990844d5f1d9fbc0c4a1a58" category="doc">在 NetApp Workload Factory 中管理 AI 代理设置</block>
+  <block id="027abdce98c3533464664728631b1841" category="paragraph">设置 AI 代理在 Workload Factory 环境中的工作方式。您可以选择代理的运作方式、决定其可以使用的凭据、添加自定义提示以及调整响应详细程度。</block>
+  <block id="9de8087bd8bdadfe4e3bb629bc47ce3b" category="list-text">我们建议账号管理员设置代理设置。</block>
+  <block id="127bc47c2c22a1c1b4353c48f309430d" category="list-text">在启用读写模式之前，请务必了解允许代理为您执行操作的安全风险。</block>
+  <block id="caa093b0b5c5edc3c1513d77992a765a" category="admonition">如果您的账号管理员已关闭 AI 功能，则 AI 代理将无法使用。<block ref="56d2e09cbb0a828478db20ff2d11774d" category="inline-link-macro-rx"></block>。</block>
+  <block id="a7f61a64f2ed965b18a4239b5377a37f" category="section-title">访问代理设置</block>
+  <block id="aa9106dd7dbce448bc6eb071ef2c9112" category="list-text">使用以下方法之一访问 Agents 设置：</block>
+  <block id="d92f9415529b85cb7482af295b940c55" category="list-text">从菜单中，依次选择 *Administration*、*Settings*，然后选择 *Agents*。</block>
+  <block id="4eff4baef0601b15c7b18727d2be80c1" category="list-text">在客服代表聊天体验中，选择*客服代表设置*的链接。</block>
+  <block id="cc565804a9c219fe2f3854136c730f29" category="section-title">设置代理操作模式</block>
+  <block id="44d28331c753ec749031ccccf1d70880" category="paragraph">选择代理是以只读模式运行还是以读写模式运行。</block>
+  <block id="c1754028c55cdf3e2e13a700bdd9f2ab" category="paragraph">代理的操作模式决定了代理可以执行的操作：</block>
+  <block id="a84826751ef0f28a9bca5de4cfd244cb" category="list-text">代理可以查看和分析您的数据，但不能更改您的资源。他们可以回答问题、识别风险、提供建议并帮助解决问题。</block>
+  <block id="7e6277284f05e2d4cf99020f4156281c" category="list-text">读写模式</block>
+  <block id="08805adb79ed6abfef5a9b183fdd826a" category="list-text">代理可以使用您选择的凭据为您执行操作。在执行任何操作之前，他们会向您显示摘要并等待您的批准。未经您的批准，他们不会采取任何操作。</block>
+  <block id="6092eef047a776cf1ae032fce2fe1ff0" category="list-text">在*代理设置*页面上，转到*代理模式*部分。</block>
+  <block id="ae1c7cee2bb050e0f57e3431296b4490" category="list-text">选择操作模式。</block>
+  <block id="9be8b23c1b30a5412be369acebac3129" category="section-title">选择代理访问的凭据</block>
+  <block id="bed4ed0551e8d0bd53e2940df4d0dd60" category="paragraph">选择代理可用于访问您的云环境的 AWS 凭据。默认情况下将选择所有凭据，但您可以将其减少到已配置凭据的一个子集。</block>
+  <block id="ad7a6d84190cb018bcb20040ba7aa840" category="paragraph">您可以选择配置的任何凭据、一个凭据、部分凭据或所有凭据。如果未选择凭据，则代理可以回答一般问题，但不能分析环境中的资源。</block>
+  <block id="04320da953584028ea1a9fef64f0a0ac" category="list-text">在*代理设置*页面上，转到*凭据*部分。</block>
+  <block id="a685a78df1473e416ec4f5dd1d5e55ca" category="list-text">从*凭据名称*下拉列表中，选择代理可以使用的凭据。</block>
+  <block id="4df13cb466a3becbc8b94f5c683e4d88" category="paragraph">如果未配置凭据，您将看到为 Workload Factory 帐户添加凭据的选项。</block>
+  <block id="f2ab6dda5dcaf24c6ffbc9828ce53e7e" category="section-title">Slack 集成</block>
+  <block id="a83e309e3bc8e3235a652fcff10e1a49" category="paragraph">您可以将代理连接到 Slack，并直接在 Slack 工作区中与其交互。</block>
+  <block id="47d254476d408dfbd41fb01b874a3e59" category="paragraph">有关设置 Slack 集成的信息，请访问 Slack 集成文档或联系您的 NetApp 代表，了解有关代理的信息。</block>
+  <block id="66e18fcdb18961698dac90fe1128ccaf" category="section-title">添加自定义提示</block>
+  <block id="944ca360f82b24c3e6cdba37ae9655ff" category="paragraph">添加自定义准则、偏好或规则，供代理在响应请求时遵循。</block>
+  <block id="2499325dea2f4195ca3a4812ba2de0a4" category="paragraph">自定义提示有助于指导客服代表如何响应，以便他们遵守贵组织的政策、语言和工作流程。它适用于每个客服代表的互动。</block>
+  <block id="1d0aa8e6f1b6bf319e12bda616651aff" category="paragraph">默认情况下，自定义提示字段为空。您可以随时添加、修改或删除自定义提示。</block>
+  <block id="e72865f9318e142476270f1893312be0" category="list-text">在*代理设置*页面上，转到*自定义提示*部分。</block>
+  <block id="7e9ec3a59392a9dc66594a6c8668926e" category="list-text">在文本字段中，输入代理的自定义准则。</block>
+  <block id="f1caaeb9dcd13d22145262ee4d9928c4" category="paragraph">例如，您可以定义代理应遵循的命名规则、首选响应格式或公司策略。</block>
+  <block id="f28546d1f8eb515bb452998faef01dd0" category="paragraph">代理在响应您的请求时，将使用您的自定义提示及其内置功能。</block>
+  <block id="2f618527204802cdc7e0635d88da47f9" category="paragraph">要更改或删除自定义提示，请返回此页面，编辑文本框，然后选择 *Apply*。</block>
+  <block id="87856c473606410336b82bb7e93ec084" category="section-title">配置详细度选项</block>
+  <block id="52b5a4685cfb3e3d513b7d409b3f610c" category="paragraph">选择智能体共享其推理和工具使用情况详细程度的方式。</block>
+  <block id="fc1633b3da679875551048103029e4c3" category="paragraph">通过详细程度选项，您可以查看有关代理如何获得响应以及他们使用哪些工具收集信息的更多信息：</block>
+  <block id="f1a4ff7ec8fc7f3d10af7f489e6dcfbd" category="list-text">详细推理</block>
+  <block id="23d5becf46b121e67317963fda10fb1d" category="list-text">启用后，代理将解释其如何得出答案并做出决策。这有助于您了解其为何推荐某些操作或得出特定结论。</block>
+  <block id="c4b6900e9ca5e303fc19fb9394ea3c86" category="list-text">详细工具说明</block>
+  <block id="806c4a6030ee5638bad868ac296edc46" category="list-text">启用后，代理将显示其用于收集数据和执行分析的工具和 API。这有助于您了解它们如何与您的环境交互。</block>
+  <block id="ba309604a791da2fbf6b620fc085c387" category="paragraph">默认情况下，这两个选项都处于关闭状态，以保持回复的简洁性。当您需要提高透明度或对代理行为进行故障排除时，请将其打开。</block>
+  <block id="cd9b6d5e3d6f46f09890d134dcd76b6f" category="list-text">在*代理设置*页面上，转到*详细级别*部分。</block>
+  <block id="5af9190832e86a39b32955d77e972b2e" category="list-text">选择要启用的详细选项。</block>
+  <block id="17f306dd010c4f9182635b5f5e336fa1" category="paragraph">Workload Factory 包含多项 AI 支持的功能，可增强您的使用体验，例如 Ask Me、AI 代理、自定义仪表板、Rule builder 以及适用于 EMS、数据库日志和延迟的分析器。</block>
+  <block id="cbdbc1bacc2d0ff55d93219e225f857a" category="list-text">关闭所有 AI 功能。用户将无法再使用 Ask Me、AI Agent、分析器、自定义仪表板、规则生成器或其他 AI 驱动的工具。</block>
+  <block id="301497b54979bb49bba5249c4f44b4ad" category="section-title">2026年9月27日</block>
+  <block id="346e26a9cf03697a4cc5fa74d552d528" category="list-text">向 AI 助手询问有关管理和运行 FSx for ONTAP 及本地 ONTAP 文件系统的问题。Ask Me 安全地连接到您的环境，并使用 API 根据您的存储设置提供答案。</block>
+  <block id="c04236280596e42d063458cddb934506" category="list-text">AI 代理</block>
+  <block id="3189c2a21a0d40fdf4391d22fec8b33c" category="inline-link-macro">了解 AI 代理</block>
+  <block id="b91ab34707ef60b3cb9e7b43383594ea" category="list-text">Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，它还可以使用您设置的凭据和权限执行操作。AI 代理帮助 Ask Me 使用您的关联账户为您提供见解。打开 Ask Me 中的"Explore Agents"部分，获取快速答案、识别风险和机会、排查问题并接收建议。默认情况下，代理只能查看信息。在读写模式下，只有在您批准后，代理才能跨 AWS、ONTAP 和受支持的 API 执行操作。您还可以使用多个 AWS 账户的凭据、添加自定义提示，并选择在回复中包含的详细信息量，包括 Slack 中的推理和工具活动。<block ref="4688d09efacd50ccc7831795bcbb59e1" category="inline-link-macro-rx"></block>。</block>
+  <block id="4b448c1a229bebc97e97cee06ea0fced" category="admonition">账号管理员可以开启或关闭 AI 功能。如果管理员将其关闭，则 Ask Me AI 助手和 AI 代理将不可用。<block ref="56d2e09cbb0a828478db20ff2d11774d" category="inline-link-macro-rx"></block>。</block>
+  <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">管理 AI 代理设置</block>
+  <block id="737f86fc6a3bb3563670dac4c0b49585" category="sidebar">Workload Factory AIOps</block>
 </blocks>

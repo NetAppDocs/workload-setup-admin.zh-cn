@@ -15,6 +15,87 @@ summary: 了解 Workload Factory 管理功能（如云提供商凭据、Codebox 
 
 
 
+[[27-september-2026]]
+== 2026年9月27日
+
+
+
+[[ai-agents-for-workload-factory]]
+=== Workload Factory 的 AI 代理
+
+Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，还可以使用您设置的凭据和权限执行操作。AI 代理分析您的环境，帮助您发现风险、改善工作负载，并对 Workload Factory 和 Slack 中的问题进行故障排除。
+
+在 Ask Me 的新 *Explore Agents* 部分中访问 AI 代理。默认情况下，代理以只读模式运行，并提供建议和分析。
+
+使用 *Agents settings* 控制代理的工作方式。您可以：
+
+* 选择只读或读写模式
+* 选择代理可以使用的凭据
+* 添加自定义说明
+* 调整回复的详细程度
+
+
+这些额外的控件为您提供更多的可见性和监督。在读写模式下，代理必须先获得您的批准，然后才能对 AWS、ONTAP 或受支持的 API 进行更改。您还可以选择在回复中查看多少详细信息，包括有关代理推理的信息，以及在 Slack 中查看其工具活动的信息。
+
+代理还支持多账号环境和更轻松的设置。单个代理可以使用多个凭据跨多个 AWS 账户安全地工作。
+
+link:learn-agent.html["了解 AI 代理"]
+
+link:manage-agent-settings.html["管理代理设置"]
+
+
+
+[[scheduled-tasks-in-ask-me]]
+=== Ask Me 中的计划任务
+
+您可以在"询问我"聊天中定制提示，以创建计划任务。使用计划任务要求"询问我"根据您定义的计划运行定期检查并在聊天中发送更新。
+
+示例提示：
+
+* 每小时检查所有 FSx for NetApp ONTAP 文件系统的运行状况和生命周期状态，以尽早发现问题。
+* 每小时列出所有可访问的 AWS FSx 文件系统，以保持最新清单。
+
+
+link:workload-factory-overview.html#features["详细了解 Ask Me"]
+
+
+
+[[ontap-support-in-ask-me]]
+=== Ask Me 中的 ONTAP 支持
+
+Ask Me 现在支持 FSx for ONTAP 和本地 ONTAP 系统。使用相同的聊天体验，获取整个 ONTAP 基础设施的答案和见解。
+
+link:workload-factory-overview.html#features["详细了解 Ask Me"]
+
+
+
+[[notifications-update]]
+=== 通知更新
+
+NetApp Console 通知现在默认处于启用状态。NetApp Console 用户将自动接收 Workload Factory 通知，无需额外配置。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html["Workload Factory 通知"]
+
+
+
+[[link-creation-notification-email]]
+=== 链接创建通知电子邮件
+
+Workload Factory 现在提醒您在成功添加凭据后完成链接关联。虽然凭据支持资源发现，但高级 ONTAP 功能需要与发现的文件系统进行链接关联。您将每周一收到一次电子邮件通知。完成链接关联后，通知将停止。
+
+
+
+[[lambda-link-version-notifications-and-upgrade-guidance]]
+=== Lambda link版本通知和升级指南
+
+Workload Factory 现在会在 Lambda 链接未使用最新可用映像时向您发出警报。如果链接不支持自动升级，则通知会显示何时有新版本可用。
+
+您可以从链接页面查看升级说明。该说明介绍了如何手动更新 Lambda 链接映像，以及如何在可用时启用自动升级。及时更新链接可让您访问最新功能、修复已知问题并应用最新的安全更新。
+
+当较新的链接版本可用于不支持自动升级的链接时，您还将在 FSx for ONTAP 仪表板中收到警报。
+
+
+
 [[30-august-2026]]
 == 2026年8月30日
 

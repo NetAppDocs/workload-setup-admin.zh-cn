@@ -43,7 +43,7 @@ AI代理可帮助您在Workload Factory中更高效地工作：
 * 识别风险和优化机会。
 * 在一个工作流中排查问题并采取已批准的操作。
 * 运行预定的检查，并在聊天历史记录中接收更新。
-* 跨 FSx for ONTAP 和本地 ONTAP 环境工作。
+* 跨 FSx for ONTAP 和 Google Cloud NetApp Volumes 环境工作。
 
 
 

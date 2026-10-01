@@ -31,7 +31,7 @@ Lambda链路连接:: 使用 Lambda 链接连接在 Workload Factory 帐户与一
 EDA存储操作:: 通过优化性能、与 IaC 集成以自动化存储参数并确保操作健康，简化 NetApp Workload Factory 中的电子设计自动化 (EDA) 存储操作。
 节省成本的计算器:: 分析您当前使用Amazon Elecic Block Store (EBS)或Elecic File System (EFS)存储或Amazon FSx for Windows File Server的部署、了解通过迁移到Amazon FSx for NetApp ONTAP可以节省多少资金。您还可以使用计算器为您计划的未来部署执行"假设"方案。
 服务帐户以促进自动化:: 使用服务帐户安全可靠地自动化NetApp Workload Factory 操作。服务帐户提供可靠、持久的自动化，不受任何用户管理限制，并且由于它们仅提供 API 访问，因此更加安全。
-问我人工智能助手:: 向 AI 助手询问有关管理和运行 FSx for ONTAP 及本地 ONTAP 文件系统的问题。Ask Me 安全地连接到您的环境，并使用 API 根据您的存储设置提供答案。
+问我人工智能助手:: 向 AI 助手询问有关管理和运行 FSx for ONTAP 和 Google Cloud NetApp Volumes 的问题。Ask Me 安全地连接到您的环境，并使用 API 根据您的存储设置提供答案。
 +
 --
 示例提示：

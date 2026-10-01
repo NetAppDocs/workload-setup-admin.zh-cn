@@ -1858,15 +1858,12 @@
   <block id="72c9ca3fa9790aabd5a7a741dfe036e9" category="paragraph">这些额外的控件为您提供更多的可见性和监督。在读写模式下，代理必须先获得您的批准，然后才能对 AWS、ONTAP 或受支持的 API 进行更改。您还可以选择在回复中查看多少详细信息，包括有关代理推理的信息，以及在 Slack 中查看其工具活动的信息。</block>
   <block id="8b4711746b3adfa755ed575da3759c69" category="paragraph">代理还支持多账号环境和更轻松的设置。单个代理可以使用多个凭据跨多个 AWS 账户安全地工作。</block>
   <block id="ff2cb9e669640d8f287be7fc339c4d78" category="inline-link-macro">了解 AI 代理</block>
-  <block id="fd0b6331664a65cf7a31ea72bbff0ad8" category="paragraph"><block ref="fd0b6331664a65cf7a31ea72bbff0ad8" category="inline-link-macro-rx"></block></block>
   <block id="718a428bd3b2faadb3c143efe186c19c" category="inline-link-macro">管理代理设置</block>
-  <block id="f96519dcd31d8fc6ae26fb065d41298c" category="paragraph"><block ref="f96519dcd31d8fc6ae26fb065d41298c" category="inline-link-macro-rx"></block></block>
   <block id="3cfde347b20875f3299e4bc85cde4012" category="section-title">Ask Me 中的计划任务</block>
   <block id="ed6bda88b37dd9ee0232de291a362174" category="paragraph">您可以在"询问我"聊天中定制提示，以创建计划任务。使用计划任务要求"询问我"根据您定义的计划运行定期检查并在聊天中发送更新。</block>
   <block id="ff51f1512e81cb44e19946405c4c3751" category="paragraph">示例提示：</block>
   <block id="9c51276de03bc7f0cc89565810a9583c" category="list-text">每小时检查所有 FSx for NetApp ONTAP 文件系统的运行状况和生命周期状态，以尽早发现问题。</block>
   <block id="7c232a692347d9efae9eafb444b454ef" category="list-text">每小时列出所有可访问的 AWS FSx 文件系统，以保持最新清单。</block>
-  <block id="21acc05c94ffdfe8d543fc22e8162a92" category="paragraph"><block ref="21acc05c94ffdfe8d543fc22e8162a92" category="inline-link-macro-rx"></block></block>
   <block id="fcc3c37c09c2649e94509997e3e32ace" category="section-title">Ask Me 中的 ONTAP 支持</block>
   <block id="5887518ab4bafe0e2cd30ee6d85ca830" category="paragraph">Ask Me 现在支持 FSx for ONTAP 和本地 ONTAP 系统。使用相同的聊天体验，获取整个 ONTAP 基础设施的答案和见解。</block>
   <block id="61ac51994f4e558eb3be753f892d08aa" category="section-title">通知更新</block>
@@ -1879,7 +1876,6 @@
   <block id="44268d176d67be14130038589d76e779" category="paragraph">Workload Factory 现在会在 Lambda 链接未使用最新可用映像时向您发出警报。如果链接不支持自动升级，则通知会显示何时有新版本可用。</block>
   <block id="36be3d9219f21557e17dda1fb159e09d" category="paragraph">您可以从链接页面查看升级说明。该说明介绍了如何手动更新 Lambda 链接映像，以及如何在可用时启用自动升级。及时更新链接可让您访问最新功能、修复已知问题并应用最新的安全更新。</block>
   <block id="14bda382780d759b676db8bd277841a9" category="paragraph">当较新的链接版本可用于不支持自动升级的链接时，您还将在 FSx for ONTAP 仪表板中收到警报。</block>
-  <block id="0354b0d97d0b0a9757874cd60afce03c" category="list-text">*电子邮件通知*：要接收电子邮件通知，请在 <block ref="ee6417f6e84445088f5a293850cbcb2f" category="inline-link-macro-rx"></block> 通知设置中配置通知收件人和严重性首选项。</block>
   <block id="2c8d2ace24ab724b2b9846dfbd1113fb" category="summary">了解 Workload Factory 的 AI 代理如何分析您的环境、识别风险和提高性能的方法，并在获得您的批准后为您采取行动。</block>
   <block id="a4988f1624f7fc0b4eaabf35a45c6593" category="doc">了解 NetApp Workload Factory 中的 AI 代理</block>
   <block id="44930f32325dbab8392ff7743e877c7e" category="paragraph">Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，它还可以使用您设置的凭据和权限执行操作。</block>
@@ -1978,4 +1974,7 @@
   <block id="64f2f595f7dd037774e1dbd99cb2ab7b" category="sidebar">管理 AI 代理设置</block>
   <block id="737f86fc6a3bb3563670dac4c0b49585" category="sidebar">Workload Factory AIOps</block>
   <block id="74bc5d714652a3ae18c64ee93e4ba085" category="section-title">2026年9月30日</block>
+  <block id="92ef509d26c2f4b8f1eafc483dafc514" category="paragraph"><block ref="92ef509d26c2f4b8f1eafc483dafc514" category="inline-link-macro-rx"></block></block>
+  <block id="ff60e6cb69fa35fc765fb6716dc86a1d" category="paragraph"><block ref="ff60e6cb69fa35fc765fb6716dc86a1d" category="inline-link-macro-rx"></block></block>
+  <block id="5ff6cb415ca5edb6088a3bb92aadbf41" category="list-text">*电子邮件通知*：要接收电子邮件通知，请在 <block ref="7532dfde8c533672ea63a5b546224a97" category="inline-link-macro-rx"></block> 通知设置中配置通知收件人和严重性首选项。</block>
 </blocks>

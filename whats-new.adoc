@@ -15,6 +15,36 @@ summary: 了解 Workload Factory 管理功能（如云提供商凭据、Codebox 
 
 
 
+[[04-october-2026]]
+== 2026年10月4日
+
+
+
+[[custom-dashboard-updates]]
+=== 自定义仪表板更新
+
+自定义仪表板现在使管理您的工作变得更加轻松。
+
+您可以直接在目录中编辑仪表板，包括指标、图表和时间范围。
+
+当您编辑仪表板时，Workload Factory 会使用您之前的提示和消息重新打开聊天。然后，您可以更新仪表板、保存更改或还原以前的版本。
+
+只有仪表板创建者可以编辑仪表板。在您编辑时，其他用户在您保存之前无法看到您的更改。
+
+控制面板目录现在包含更多筛选器，可帮助您根据类别和状态快速查找控制面板。
+
+如果您的管理员禁用 AI 功能或已达到每月信用额度，则会禁用仪表板创建和编辑。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-custom-dashboards.html["了解自定义控制面板"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["创建自定义仪表板"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html["管理自定义仪表板"]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/troubleshoot-custom-dashboards.html["对自定义信息板进行故障排除"]
+
+
+
 [[30-september-2026]]
 == 2026年9月30日
 

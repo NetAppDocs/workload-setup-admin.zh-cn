@@ -1992,4 +1992,12 @@
   <block id="f66306510aaf399aef8bdf649739a15e" category="list-text">查看更改并选择**保存**。</block>
   <block id="89806ea6a9ed9b0bb6cb322f912aff65" category="paragraph">操作面板会根据您的更改进行更新。最后修改日期也会更新。</block>
   <block id="6cd19393862a5a23e39bb63b43a86baa" category="section-title">2026年10月4日</block>
+  <block id="74ee9feffcb1603b7eeb47c099c0e5a5" category="section-title">删除仪表板</block>
+  <block id="e54360b7371199d6607f76cd1ae6ad17" category="paragraph">删除不再需要的控制面板。此操作为永久操作，无法撤消。</block>
+  <block id="3325f3a5c13a73bb87ed2dabebb0b6a3" category="list-text">在*自定义仪表板*页面中，找到要删除的仪表板。</block>
+  <block id="0ce6306187e44bdf505a14f5d0676bb6" category="list-text">从该仪表板的*操作*下拉菜单中，选择*删除*。</block>
+  <block id="b26a5fa549c938ffb56d20623c3f69c0" category="list-text">确认删除。</block>
+  <block id="22e8351c82677bcc78bd23d6fb170bc8" category="paragraph">仪表板已从您的 Workload Factory 帐户中永久删除，所有用户都将失去对其的访问权限。</block>
+  <block id="9537d9160ef701530bdd875698475957" category="inline-link-macro">创建其他自定义仪表板</block>
+  <block id="1258b44f1520a3cf10d648fb08dbf72e" category="list-text"><block ref="1258b44f1520a3cf10d648fb08dbf72e" category="inline-link-macro-rx"></block></block>
 </blocks>

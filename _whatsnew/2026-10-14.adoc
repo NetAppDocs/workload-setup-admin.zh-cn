@@ -1,0 +1,16 @@
+= 将自己的 Amazon Bedrock 实例用于 AI 工具
+:allow-uri-read: 
+
+
+
+
+[[use-your-own-amazon-bedrock-instance-for-ai-tools]]
+=== 将自己的 Amazon Bedrock 实例用于 AI 工具
+
+Workload Factory 现在在 AI 设置页面上包含另一个选项，允许客户使用自己的 Amazon Bedrock 实例。
+
+此选项在用于 AI 工具的客户管理的 Bedrock 下可用，并受所有 Workload Factory AI 服务的支持。
+
+连接后，Workload Factory 会通知您连接是否成功。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html["了解如何管理 AI 功能"]

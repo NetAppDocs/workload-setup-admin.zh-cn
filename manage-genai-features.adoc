@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: manage-genai-features.html 
 keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration 
-summary: 控制对 Workload Factory 中基于 Bedrock 的 AI 功能的访问。您可以关闭 AI 功能或使用 NetApp 托管的 AWS Bedrock。 
+summary: 控制对 Workload Factory 中基于 Bedrock 的 AI 功能的访问。您可以关闭 AI 功能，或使用 NetApp 管理的或客户管理的 Bedrock。 
 ---
 = 在 NetApp Workload Factory 中管理 AI 功能
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 控制对 Workload Factory 中基于 Bedrock 的 AI 功能的访问。�
 
 
 [role="lead"]
-控制对 Workload Factory 中 AI 功能的访问。您可以关闭 AI 功能或使用由 NetApp 管理的 AWS Bedrock。
+控制对 Workload Factory 中 AI 功能的访问。您可以关闭 AI 功能或使用由 NetApp 或您的组织管理的 AWS Bedrock。
 
 
 
@@ -41,6 +41,13 @@ NetApp 托管的 Bedrock（推荐）:: 使用由 NetApp 托管的 AWS Bedrock �
 
 
 --
+客户管理的 Bedrock:: 使用您自己的 AWS Bedrock 配置。
++
+--
+* 为了获得最佳效果，NetApp 建议您在 Amazon Bedrock 配置中使用 Anthropic Claude Sonnet 4.5 或 4.6
+
+
+--
 GenAI 功能已关闭:: 关闭所有 AI 功能。用户将无法再使用 Ask Me、AI Agent、分析器、自定义仪表板、规则生成器或其他 AI 驱动的工具。
 
 
@@ -50,7 +57,11 @@ GenAI 功能已关闭:: 关闭所有 AI 功能。用户将无法再使用 Ask Me
 == 开始之前
 
 * 我们建议账号管理员设置 AI 功能。
+* 如果您使用客户管理的 Bedrock，请为链接到 Workload Factory IAM 角色的凭据更新 AWS 策略。
 
+
+
+NOTE: 为链接到 Workload Factory IAM 角色的凭据向 AWS 策略添加所需的权限。
 
 
 
@@ -59,14 +70,24 @@ GenAI 功能已关闭:: 关闭所有 AI 功能。用户将无法再使用 Ask Me
 
 .步骤
 . 使用其中一个 link:console-experiences.html["控制台体验"^] 登录。
-. 从菜单中，选择*Administration*，然后选择*AI settings*。
-. 在 *AI settings* 页面上，选择您的首选配置：
+. 从菜单中，选择*管理* > *设置* > *AI 工具*。
+. 在 *AI 工具* 页面上，选择您的首选配置：
 +
 ** *NetApp 托管的 Bedrock（推荐）*：使用 NetApp 托管的 AWS Bedrock。
-** *Gen AI features off*：关闭所有 AI 功能。
+** *客户管理的 Bedrock*：
++
+... 选择与 Workload Factory IAM 角色关联的 AWS 凭据和区域
+... 请提供要使用的推理配置文件
+... 选择*验证配置*。
++
+Workload Factory 显示指示连接成功或失败的通知
 
 
-. 选择*保存偏好设置*。
+
+** *GenAI 功能关闭*：关闭所有 AI 功能。
+
+
+. 选择“保存更改”。
 
 
 .结果
@@ -79,7 +100,7 @@ GenAI 功能已关闭:: 关闭所有 AI 功能。用户将无法再使用 Ask Me
 [[budget-controls-and-credit-limits]]
 == 预算控制和信用额度
 
-NetApp 在使用默认的 NetApp 托管配置时，管理 AI 功能的预算控制。
+NetApp 仅在您使用默认的、由 NetApp 管理的配置时，才会管理 AI 功能的预算控制。
 
 
 

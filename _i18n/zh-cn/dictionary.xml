@@ -2015,4 +2015,136 @@
   <block id="43d91f7086bfc8e0d64b9a83a049c1f0" category="list-text">*GenAI 功能关闭*：关闭所有 AI 功能。</block>
   <block id="94278b8c4b4aa1c1469e62f89ce7d460" category="paragraph">NetApp 仅在您使用默认的、由 NetApp 管理的配置时，才会管理 AI 功能的预算控制。</block>
   <block id="f535eb1278ad100b4d323539a7942781" category="section-title">2026年10月14日</block>
+  <block id="5c96f38e8ddd965eedac92fccb0406d6" category="summary">查找有关 Workload Factory 帐户、凭据、权限、Links、Codebox、CloudShell、通知、服务帐户和 AI 功能的常见问题的答案。</block>
+  <block id="bb69e5c8c4d9081a6c3dfe55dc726524" category="doc">NetApp Workload Factory 设置和管理常见问题</block>
+  <block id="f950727feff5f1769b7d7af91922a0f9" category="paragraph">在设置和管理 NetApp Workload Factory 时，您可能会对有关帐户、凭据、链接和自动化工具的概念、术语、行为和限制有一些常见问题。</block>
+  <block id="23b095a5eea142c77de804eae6209462" category="section-title">概述和费用</block>
+  <block id="32f5c0391006519eaa03cee551ec6875" category="paragraph-title">什么是 Workload Factory，它的成本是多少？</block>
+  <block id="912e01655518cbc1c1be8a6ea0aadc92" category="paragraph">Workload Factory 是一个生命周期管理平台，用于优化工作负载，例如数据库、VMware 迁移和 EDA 项目，这些工作负载在 FSx for ONTAP 文件系统上运行。Workload Factory 本身可免费使用。您需要为您部署的服务向 AWS 支付费用，例如 FSx for ONTAP 文件系统、VMware Cloud on AWS 基础架构和其他 AWS 服务。</block>
+  <block id="19954ae9949550c5366a9fb2b48def27" category="inline-link-macro">了解 Workload Factory</block>
+  <block id="ee9a3530446679dedb35cad1dcdb9fe0" category="paragraph"><block ref="cddfdefb47c6983833a61d77758f87e0" category="inline-link-macro-rx"></block>。</block>
+  <block id="338f1705f33b0cdfe7e16315cf40e8d3" category="paragraph-title">Workload Factory 在哪些 AWS 区域可用？</block>
+  <block id="3d25cbaafa4ec720cdfe0e35ecd89dd1" category="paragraph">Workload Factory 适用于支持 FSx for ONTAP 的所有商业地区，但不适用于中国地区、Secret Cloud 或 Top Secret Cloud。</block>
+  <block id="e8acea9d2975fc016aee210885b72d98" category="inline-link">查看受支持的 AWS 区域。</block>
+  <block id="be1671881573595e29793610f1ee7eda" category="paragraph"><block ref="be1671881573595e29793610f1ee7eda" category="inline-link-rx"></block></block>
+  <block id="e3f574f6b44ef958b7ee3f4f967ed0db" category="section-title">帐户和登录</block>
+  <block id="2c69ebc7efdab931e37737ce7d1edb8e" category="paragraph-title">Workload Factory 控制台和 NetApp Console 之间有什么区别？</block>
+  <block id="ad3c2a70338ce6a1fa589d27864fb397" category="paragraph">两者都是基于 Web 的控制台，可让您访问 Workload Factory。NetApp 控制台提供混合体验，您可以在一个位置与其他数据服务一起管理 FSx for ONTAP 文件系统和工作负载。Workload Factory 控制台是一种专用体验，专注于在 FSx for ONTAP 上运行的工作负载。</block>
+  <block id="ce34bd2db7c3086ff6198f7f642ef3a7" category="inline-link-macro">决定使用哪个控制台</block>
+  <block id="c882ac2212113be087c32e2b9fba4e0a" category="paragraph"><block ref="a7f0e2a68d3be40f7a4f2c8420d5ada8" category="inline-link-macro-rx"></block>。</block>
+  <block id="d0d91f92d8d3bad1d27fa785d6ffd0c7" category="paragraph-title">如何注册？创建首个账号后会发生什么？</block>
+  <block id="0b86b2f50e90b2b1b30c658bf1c58378" category="paragraph">使用您的 NetApp 支持站点（NSS）凭据注册，或者创建一个 NetApp 云登录。对于云登录，您必须先验证您的电子邮件地址，然后才能登录。首次登录时，您将创建一个帐户，用于组织您的资源、工作负载和凭据，并且您将成为拥有所有 Workload Factory 功能访问权限的帐户管理员。如果您已经使用 NetApp Console，则您已经属于某个帐户，因为 Workload Factory 使用 NetApp 帐户。</block>
+  <block id="6f63a12bf8b1e666c30303fbc446e01c" category="inline-link-macro">注册并登录</block>
+  <block id="5581eb1c9ce1c758909c480891150732" category="paragraph"><block ref="0bd00c1e397d60cbac07e758373e6780" category="inline-link-macro-rx"></block>。</block>
+  <block id="043b9c06d5df04d3cd1aff1375064de8" category="paragraph-title">我是否应该将我的账户设为 AWS GovCloud（美国）账户，以后可以更改吗？</block>
+  <block id="ca6fc2b403a34a9967371f5736b160f6" category="paragraph">如果您需要一个仅使用 GovCloud（美国）端点和区域，且凭据和机密保留在 GovCloud 中的帐户，请选择 GovCloud（美国）选项。此选择是永久性的。GovCloud 帐户必须手动添加凭据并创建链接。</block>
+  <block id="1ca13d77ff86c5ab04de8af1ddacef98" category="paragraph-title">如何邀请其他用户加入我的 Workload Factory 帐户？</block>
+  <block id="ff995d7c7b169d4f3580ae0062d97855" category="paragraph">您只能从 NetApp Console 管理您的帐户。帐户管理员在其中添加成员，受邀用户会收到一封包含加入说明的电子邮件。</block>
+  <block id="0c67656249880d8a691fb3f85e84b02b" category="inline-link-macro">邀请其他用户加入您的账号</block>
+  <block id="6bedcd1e98a7cb706b65ddc700e9ac83" category="paragraph"><block ref="660f3f34f2402812a847b4a7ad2b4282" category="inline-link-macro-rx"></block>。</block>
+  <block id="9f6f2cfce9364cbc4be4de761186d8fa" category="paragraph-title">我必须添加 AWS 凭据才能使用 Workload Factory 吗？</block>
+  <block id="f356d5d95ca3ef63eb6c784f24646255" category="paragraph">开始使用时，添加凭据是可选的，因此您无需访问 AWS 帐户即可使用 Workload Factory。但是，要创建和管理 FSx for ONTAP 文件系统以及部署和管理数据库等工作负载，Workload Factory 需要凭据。</block>
+  <block id="c58b2c09e0a689ec7cb207b07931d29c" category="inline-link-macro">开始使用 Workload Factory</block>
+  <block id="a1894b160393d48bc20854a559903ffd" category="list-text"><block ref="455b856be4150b432f4a8d27e5e6247c" category="inline-link-macro-rx"></block>。</block>
+  <block id="0f391d5482822722d86585c248878517" category="inline-link-macro">添加凭据</block>
+  <block id="75a9590fe9e740e11d72688a66594aea" category="list-text"><block ref="0f79923a0a7d8f133d529f2d4d8e8313" category="inline-link-macro-rx"></block>。</block>
+  <block id="d1074f841b1910fb3dd1e73b94848862" category="paragraph-title">Workload Factory 凭据如何工作？</block>
+  <block id="553cb35a64ee83012fae36f084072737" category="paragraph">凭据使用 AWS 承担角色流。每组凭据由一个或多个 IAM 策略（基于您选择的工作负载功能和权限级别）以及 Workload Factory 承担的 IAM 角色组成。您可以稍后随时添加更多功能。</block>
+  <block id="e2043fc0fc87e3527d1cb2daff889843" category="paragraph-title">我应该手动添加凭据还是使用 CloudFormation？</block>
+  <block id="cd3d5c9c9439c66116dcdf02f2df0cd9" category="paragraph">使用手动方法，您可以在 AWS 管理控制台中创建 IAM 策略和 IAM 角色，并从 Codebox 复制策略 JSON。使用自动方法，您可以选择各项功能，然后由一个 CloudFormation 堆栈为您创建 IAM 策略和 IAM 角色。必须手动添加 GovCloud（美国）凭据，因为该区域不支持 CloudFormation。</block>
+  <block id="85e9c9a5265f48771d069b9de4165fc9" category="paragraph-title">我可以选择哪些权限级别，以及如何决定授予哪些权限？</block>
+  <block id="7215b66aaee2355bbceb8b6cb84da558" category="paragraph">权限策略按工作负载捆绑。对于存储，选项包括*查看、规划和分析*、*操作和修正*以及*文件系统创建和删除*。数据库工作负载提供*查看、规划和分析*、*操作和修正*以及*数据库主机创建*。这些策略允许您根据您的 IT 策略分配增量信任。仅选择您现在计划使用的功能。</block>
+  <block id="0375e3beb43b9b0671a3f5f6a382d302" category="paragraph"><block ref="a5f4ae61e232cd6bd835f3c22c2ae14c" category="inline-link-macro-rx"></block>。</block>
+  <block id="2fdc0efee72b50bec493780dd334af09" category="paragraph-title">自动权限检查的作用是什么，我应该保持启用状态吗？</block>
+  <block id="b684d11c168119451fb4ada7456e484a" category="paragraph">选择 *启用自动权限检查* 会将<block ref="19f5de89e4c667692a153296018e225f" prefix=" " category="inline-code"></block>添加到您的权限策略中，以便 Workload Factory 可以在完成操作之前确认您拥有所需的 AWS 权限。您可以在添加凭据后将其删除，但建议将其保留。它可以防止为部分成功的操作创建资源，并使您免于手动清理资源。</block>
+  <block id="94c60ef91088a118ef39f60aa7fae9ef" category="inline-link-macro">添加凭据时启用自动权限检查</block>
+  <block id="c94f66a6aacd55d44dbe07f68217a658" category="paragraph"><block ref="a086a991a5636e3ff5774a8b52002716" category="inline-link-macro-rx"></block>。</block>
+  <block id="408478f333ba4adf8a6741905b09b4df" category="paragraph-title">我可以删除不再需要的凭据吗？</block>
+  <block id="64a90c3851f3f1cb0aca67bf39a21ad2" category="paragraph">仅当凭据未与 FSx for ONTAP 文件系统关联时，才能将其删除。在 Workload Factory 控制台中使用 *Remove*，或在 NetApp Console 中使用 *Delete*。</block>
+  <block id="b15e07a7df5e09707977c0a896ad26fe" category="paragraph"><block ref="f0a4e3774b804678f958b0292c8623ce" category="inline-link-macro-rx"></block>。</block>
+  <block id="eba8b66a14faee9e3f58006335953a16" category="paragraph-title">什么是 Link？我需要 Link 吗？</block>
+  <block id="1fbc94236aaec8d893ecb77efb67f6c2" category="paragraph">链接可在 Workload Factory 帐户与一个或多个 FSx for ONTAP 文件系统之间创建信任关系和连接。链接使用 AWS Lambda，因此您可以通过 ONTAP REST API 调用来监控和管理 Amazon FSx for ONTAP API 未提供的功能。您不需要链接即可开始，但您需要一个链接才能解锁所有 Workload Factory 功能。</block>
+  <block id="e3bdd5798efebca8061760f610d98bcc" category="inline-link-macro">详细了解链接</block>
+  <block id="f2ff2accaa0d32643b485a257cc7a829" category="paragraph"><block ref="738b7c8b940ec404f64ce7ead3134e15" category="inline-link-macro-rx"></block>。</block>
+  <block id="24ce54f7e27e19d428aa7373ab4a3824" category="paragraph-title">哪些功能需要 Link？</block>
+  <block id="5f00ec6d78dc5bc517614d21782c0c65" category="paragraph">需要链接的功能包括：</block>
+  <block id="f43e90f1a0200c15b8ab04d1c207396d" category="list-text">FSx for ONTAP 的良好架构状态</block>
+  <block id="6e4200a24c0421bd61ff57f3da951c43" category="list-text">ONTAP EMS 事件监控</block>
+  <block id="dc264fb544927d2ba648d8061a2faa62" category="list-text">使用人工智能的自主勒索软件防护（ARP/AI）</block>
+  <block id="9fb99278306d62789956b1f8c177c6bf" category="list-text">卷和存储 VM 复制</block>
+  <block id="3bf958b1ca8c9c76899fd725e5942fcc" category="list-text">SMB/CIFS 共享和 NFS 导出策略</block>
+  <block id="3d629c783a04eec919f74d8ad077b63f" category="list-text">iSCSI 卷管理</block>
+  <block id="623fb58af5512173351f2a5e63dd6d85" category="list-text">Snapshot 策略</block>
+  <block id="3355e3eb6995f0a0b268423f240561f5" category="list-text">卷自动增长和 inode 管理</block>
+  <block id="d6ec4cd526d78ebae44406986ab79f3a" category="list-text">克隆创建</block>
+  <block id="1644ce96a2ca12d6bd3386254b80e0af" category="list-text">额外的 ONTAP 指标和 LIF 详细信息</block>
+  <block id="fbe1243570f19334607543acd18477d6" category="paragraph">如果您尝试执行需要链接但未关联任何链接的操作，Workload Factory 会提示您。请参阅 <block ref="738b7c8b940ec404f64ce7ead3134e15" category="inline-link-macro-rx"></block>。</block>
+  <block id="9066c5c9513f553652187232ec102825" category="paragraph-title">链接会增加费用吗？</block>
+  <block id="456d60d0db585e34a35b8e9033a63ea6" category="paragraph">是的。每个 Lambda 事务都会产生 AWS 费用。由于 Lambda 充当代理，因此当它向文件系统上的 ONTAP REST API 发送请求时，以及将响应发送回 Workload Factory 时，都会向您收费。</block>
+  <block id="092363b04df18df669306a741297c2d8" category="paragraph-title">一个文件系统可以与多个 Link 关联吗？</block>
+  <block id="c0fbc43ec1ab31f47c2df7656a9aa2b6" category="paragraph">一个链接可以与许多 FSx for ONTAP 文件系统相关联。每个文件系统只能与同一 NetApp 帐户中的一个链接相关联。如果您有多个 NetApp 帐户，一个文件系统可以与不同帐户下的其他链接相关联。请参阅 <block ref="738b7c8b940ec404f64ce7ead3134e15" category="inline-link-macro-rx"></block>。</block>
+  <block id="5fcf424c27204fdf878f6f197e994ca0" category="paragraph-title">我应该自动还是手动创建链接？</block>
+  <block id="3d8f3e336aacbdf65bd43d2cfabc2c48" category="paragraph">自动创建会通过 Workload Factory 注册链接，但它使用令牌进行 Workload Factory 自动化，其 CloudFormation 代码最多只能使用六个小时。手动创建使用 Codebox 中的 CloudFormation 或 Terraform，并且代码会持久保留。当安全和 DevOps 等团队必须首先授予权限时，这非常有用。GovCloud 帐户必须手动创建链接。</block>
+  <block id="7ef90d553e38dcfd304938393758baed" category="inline-link-macro">创建链接</block>
+  <block id="d8f9537db4574b91544accbd2718fd06" category="paragraph"><block ref="a56a3c0f6a749042068493603ef95458" category="inline-link-macro-rx"></block>。</block>
+  <block id="71ae834a11f259c16be1a318fe8436ac" category="paragraph-title">在创建链接之前，我需要准备什么？</block>
+  <block id="cce5d37ced795f97c02f29b6ccb2b8b4" category="paragraph">您需要在文件系统的安全组中打开所需的端口，Link 能够访问<block ref="0eda8bbe61d2248f5418aba76b8dc5b1" prefix=" " category="inline-code"></block>，以及拥有足够的 AWS 权限来创建 CloudFormation 堆栈。</block>
+  <block id="72a1b9397b6a6770b94d15ce3e16b589" category="inline-link-macro">了解创建链接的完整先决条件列表</block>
+  <block id="8ef12365834d6f199d2fd8fda5d3edb5" category="paragraph"><block ref="c9607514c488186e7aa59a13026ce840" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd5acb99e7d43cdad763ea7b4d3c9b63" category="paragraph-title">我可以更改链接的身份验证方式，或在创建链接后编辑链接吗？</block>
+  <block id="528cecae3f971d2093d023329db1ff99" category="paragraph">不可以。链接仅支持一种身份验证方法，即 Workload Factory 凭据或 AWS Secrets Manager，您以后无法对其进行更改。</block>
+  <block id="51f23abba019533e7ff802c0a7ef63e0" category="paragraph">您无法在界面中编辑链接。若要进行更改，请创建一个新链接并将其与文件系统关联。不建议在 AWS 中更改 Lambda 网络配置，因为这可能会导致连接问题。</block>
+  <block id="fa1f13d8bac5122c696726da3f440b15" category="inline-link-macro">管理链接</block>
+  <block id="44880da21f8528b1c2776b5fbb87710a" category="paragraph"><block ref="53f06462b355db21f64745f044ee0054" category="inline-link-macro-rx"></block>。</block>
+  <block id="584888d15c06a09202308c5db59085de" category="paragraph-title">删除链接后会发生什么？</block>
+  <block id="4d7672ccc74535cb09b7cdc1e219ca3e" category="paragraph">使用该 Link 的文件系统和其他资源将无法再使用依赖于它的功能。该 Link 仅从 Workload Factory 中删除，而不会从 AWS 中删除，因此您还必须删除 AWS 帐户中的 Lambda 函数。</block>
+  <block id="39263ef2d19136a391aeb38edf623427" category="inline-link-macro">删除链接</block>
+  <block id="856099bda4fb1e424f2783ff3fbc006c" category="paragraph"><block ref="7413585c7b5483afff02be069e87dd75" category="inline-link-macro-rx"></block>。</block>
+  <block id="69422fa9974ce721ad7d3adf5c32a70d" category="section-title">Codebox</block>
+  <block id="fd6b95fcd1975497f13ef53e73d7271c" category="paragraph-title">什么是 Codebox，它会生成哪些代码格式？</block>
+  <block id="29fb0906eb912baf77e5325170bc3e01" category="paragraph">Codebox 是一个基础架构即代码辅助工具，可生成代码以运行 Workload Factory 支持的任何操作。它支持 Workload Factory REST API、AWS CLI、AWS CloudFormation 和 Terraform。Codebox Viewer 显示从向导条目生成的代码，Automation Catalog 将保存的作业存储为可重用的模板。</block>
+  <block id="7221d615997ca03d4480df5a43dae047" category="paragraph"><block ref="491e45ff3f847be901c7d8962829a3f8" category="inline-link-macro-rx"></block>。</block>
+  <block id="ecb008e1ab11506177eba4f40d5d5485" category="paragraph-title">我可以在 Codebox 中编辑代码吗？生成的代码会过期吗？</block>
+  <block id="1a46bf9bb32020f67356f0c3b6f21fa2" category="paragraph">Codebox Viewer 是只读的。您只能复制代码，将其保存到自动化目录，或下载某些格式的代码。您可以编辑下载的代码，使其适应其他 AWS 帐户。出于安全原因，CloudFormation YAML 代码在七天后过期。</block>
+  <block id="8fc4200d28b16e08ebcdfeea9f0349a3" category="inline-link-macro">使用 Codebox</block>
+  <block id="8229597c8893708aa6b111e802670e9f" category="paragraph"><block ref="299ea637f0bded4146bd17afb742c836" category="inline-link-macro-rx"></block>。</block>
+  <block id="b87ec765279353603ec520827c30549b" category="section-title">CloudShell</block>
+  <block id="48f31182563f165a5f8be82c482b7990" category="paragraph-title">我在 CloudShell 中可以做什么，它有哪些局限性？</block>
+  <block id="5a4eff8bcb0541cc1cde40b75201e4ca" category="paragraph">CloudShell 使用您提供的 AWS 和 ONTAP 凭据，在基于浏览器的 shell 中运行 AWS CLI 和 ONTAP CLI 命令，并通过 Workload Factory 后端进行代理。它至少需要一个 AWS 凭据。不支持管道<block ref="b99834bc19bbad24580b3adfa04fb947" prefix=" " category="inline-code"></block>、后台<block ref="c2249209343ab488c055da76368f04a0" prefix=" " category="inline-code"></block>和重定向<block ref="58ba3bb1a1772a74392e5e86bd2be4b7" prefix=" " category="inline-code"></block>等 Shell 运算符，包含这些运算符的命令将会失败。仅当所选凭据在所选区域中具有权限时，AWS 命令才会成功。</block>
+  <block id="07596887f90602f81b0d3f5d2642cba5" category="paragraph"><block ref="ce157eff8eb07cb826fcd190976ae624" category="inline-link-macro-rx"></block>。</block>
+  <block id="a274f4d4670213a9045ce258c6c56b80" category="section-title">通知</block>
+  <block id="797b8b6f7f92a2ebe426df56d16ee250" category="paragraph-title">Workload Factory 可以在哪里发送通知，由谁控制？</block>
+  <block id="b7f2f037f7add75f516daa8b97545ed4" category="paragraph">Workload Factory 可以将通知作为 NetApp Console 警报发送，也可以作为电子邮件发送到与帐户关联的地址，或者发送到 Amazon SNS 主题。当您部署了 Console 代理或 Link 时，会出现 Console 警报。当您在 NetApp Console 中配置通知时，它将接管发送的所有权，并且 Workload Factory 控制台通知选项将变为只读。</block>
+  <block id="d7ee3b2613234f75673d566a3bab42ab" category="paragraph"><block ref="0f1ce4d71762937b69b0568d0ae57c21" category="inline-link-macro-rx"></block>。</block>
+  <block id="c715cf7cc77f2e4be7eb4ed4f3c6a761" category="paragraph-title">在使用 Amazon SNS 发送关键警报之前，我应该知道些什么？</block>
+  <block id="c3be4b800e1e92827e0a5eb7debcec75" category="paragraph">Workload Factory 仅支持标准 SNS 主题类型，这并不能保证通知按接收顺序到达订阅者。对于关键或紧急通知，请考虑这一点。默认情况下，订阅者会接收有关主题的所有通知，因此请使用 SNS 筛选策略（按资源类型、工作负载、优先级或通知类型）仅接收您需要的内容。</block>
+  <block id="f912528ec47e102ae659fd6f6548b6ae" category="paragraph-title">我应该在何时使用服务帐户，关于其密钥我应该了解些什么？</block>
+  <block id="fae4ecc373750f7dccbe360de9ac0642" category="paragraph">将服务帐户用于仅 API 的自动化，以便脚本不依赖于个人的用户帐户。客户端密钥仅显示一次，并且 Workload Factory 不会存储它，因此请在创建服务帐户时复制或下载它。从客户端 ID 和密钥生成的访问令牌具有时效性，仅持续几个小时。在 Workload Factory 控制台中，您只能创建或删除服务帐户。要获取新密钥，请删除该服务帐户并创建一个新帐户。</block>
+  <block id="03aa54cb5a47cde4e42505e8c8384fae" category="paragraph"><block ref="93eb8e5b87d24a63543aea86a604516f" category="inline-link-macro-rx"></block>。</block>
+  <block id="8a948f6b91ade8dec6067a62687b717b" category="paragraph-title">架构完善的分析是如何工作的，是否需要 Link？</block>
+  <block id="91783921cd3dae5a4a6b885d4d03590e" category="paragraph">Workload Factory 每天扫描 FSx for ONTAP 文件系统。它将配置评为优化或未优化，提供建议，并可以自动修复某些问题，而其他问题则需要手动步骤。您可以忽略不适用于您的环境的检查，或以简单语言创建自定义规则。要对文件系统进行全面分析，您需要创建一个 Link 并将其与之关联。</block>
+  <block id="7f99b4239013d581e4175d41d89e48b3" category="inline-link-macro">详细了解精心设计的分析</block>
+  <block id="05998f8a94c8dd39c2959e72a5cc0a4d" category="paragraph"><block ref="4bd7b547a4b03d63a929f0a0f402830f" category="inline-link-macro-rx"></block>。</block>
+  <block id="26b8a5f8cbb692e906c8eed4b88cc0bd" category="section-title">跟踪器</block>
+  <block id="9f084e19e558f21892dbf088a1cba8d6" category="paragraph-title">什么是 Tracker，它会保留作业历史记录多长时间，以及我可以对失败的作业做些什么？</block>
+  <block id="c87e869f8b021efbdb6851e15eb5835a" category="paragraph">Tracker 是 Workload Factory 中的监控工具，在用户界面中保留事件 30 天。您可以按时间范围、工作负载、状态和用户进行筛选，并以 CSV 文件的形式下载作业表。对于失败的操作，您可以重试，或者编辑其参数并重试。失败操作允许的重试次数是有限的。</block>
+  <block id="2e0c4c64c2671f5575eb184e577dcdae" category="inline-link-macro">使用 Tracker 监控操作</block>
+  <block id="7270a726118372aaeb47b8e33bd4d1c1" category="paragraph"><block ref="ea11b463bd2d4fec364e8c222ebaa7c5" category="inline-link-macro-rx"></block>。</block>
+  <block id="635d88dc962f992e37f4a4050b1dc029" category="section-title">AI 功能</block>
+  <block id="356bdb10de6892ad5955de2efa4bf736" category="paragraph-title">如何控制 AI 功能，如果关闭它们会发生什么？</block>
+  <block id="64f99842f5b8740d45095eeb06cec584" category="paragraph">在 AI 设置页面上，管理员可以选择 NetApp 托管的 Bedrock（推荐）或关闭所有 AI 功能。NetApp 托管的 Bedrock 不会使用您的数据来训练模型，也不需要额外的 AWS 设置。关闭 AI 功能会使 Ask Me、AI 代理、自定义仪表板、规则生成器、分析器以及 CloudShell 中的 AI 错误响应不可用。AI 功能在公共 AWS 区域中使用 AWS Bedrock，这对 GovCloud 帐户可能很重要。</block>
+  <block id="e3f4ec7a9767932d9e23eed00086f334" category="paragraph"><block ref="20107ed2ed721fbe2d743fcbfd53ba67" category="inline-link-macro-rx"></block>。</block>
+  <block id="bddde641534b8f6a477e84c43bdcfd76" category="paragraph-title">人工智能的使用是否有限制？</block>
+  <block id="4192c0892c087746a06605d472a9c0a7" category="paragraph">是的。对于受 NetApp 管理的 Bedrock，每个帐户对每个 AI 功能都有每月支出限制。当达到限制时，Workload Factory 会关闭 AI 功能，灰显界面的相关部分，并显示工具提示。要获得更多消费金，请联系您的 NetApp 代表。</block>
+  <block id="2723605c9d10447058488589ba3a9ee7" category="paragraph-title">AI 代理可以更改我的 AWS 或 ONTAP 资源吗？</block>
+  <block id="dad9c2d741b67a3bbde1e5e17d583b4c" category="paragraph">默认情况下，代理以只读模式运行，无法更改资源。在可选的读/写模式下，代理会总结每个操作，并仅在您批准后使用您选择的凭据执行该操作。代理只能访问您当前范围内的资源以及在代理设置中选择的凭据，并且选择凭据不会授予额外的 AWS 权限。</block>
+  <block id="19d60a92db64d17e51f2f55e18469ee0" category="list-text"><block ref="fd0b6331664a65cf7a31ea72bbff0ad8" category="inline-link-macro-rx"></block>。</block>
+  <block id="02624064a3737c86bf56dee1c0ebf11a" category="list-text"><block ref="f96519dcd31d8fc6ae26fb065d41298c" category="inline-link-macro-rx"></block>。</block>
+  <block id="5022b49408e60f4e2efd9cbc95dcbcfb" category="paragraph-title">谁可以查看、编辑或删除自定义仪表板？</block>
+  <block id="01c9d19d6385c96b33134d66267981fa" category="paragraph">新控制面板仅供创建者使用。共享会使控制面板对您的 Workload Factory 帐户中的所有人公开，并且您无法在帐户外部进行共享。只有创建者可以编辑控制面板，但帐户中的所有用户都可以将其删除。删除操作是永久性的，并且会为所有人删除该控制面板，因此请与您的团队进行协调。</block>
+  <block id="18b9aed9668d738ea518f7defa7c9673" category="list-text"><block ref="4d08aef0efa4142f0d67a028ef9610f0" category="inline-link-macro-rx"></block>。</block>
+  <block id="62f758c105a3c96482d98a142d998dc8" category="list-text"><block ref="09327b0cff12718fff46be13c240b39f" category="inline-link-macro-rx"></block>。</block>
+  <block id="fb28d89a6b0c6ce8708edc67fed69652" category="paragraph-title">要创建和使用自定义控制面板，我需要做些什么？</block>
+  <block id="548b72381df096d33b738a36b3370ab7" category="paragraph">您的账号管理员应启用 AI 功能。您需要具有要监视的服务的读取访问权限的 AWS 凭据。您需要一个 Link 来连接到 FSx for ONTAP 文件系统。仪表板是只读的，无法更改您的存储或工作负载设置。</block>
+  <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">常见问题解答</block>
 </blocks>

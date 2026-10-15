@@ -82,6 +82,8 @@ sidebar:
       url: "/use-cloudshell.html"
     - title: 删除凭据
       url: "/manage-credentials.html"
+  - title: 常见问题解答
+    url: "/faq-workload-factory.html"
   - title: 知识和支持
     entries:
     - title: 注册以获得支持

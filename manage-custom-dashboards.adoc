@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: manage-custom-dashboards.html 
-keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog 
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog, refresh data, load data, last updated 
 summary: 访问仪表板目录，在 Workload Factory 中查看、刷新和删除自定义仪表板。 
 ---
 = 在 NetApp Workload Factory 中管理自定义仪表板
@@ -60,9 +60,28 @@ summary: 访问仪表板目录，在 Workload Factory 中查看、刷新和删�
 [[refresh-dashboard-data]]
 == 刷新仪表板数据
 
-打开仪表板时会加载仪表板数据。您可以刷新它以查看最新信息。
+检查上次刷新仪表板的时间，并在需要当前数据时请求按需扫描。
 
-控制面板从您的工作负载重新加载数据。
+.关于此任务
+*刷新数据*工具提示显示带有上次刷新仪表板的日期和时间的*上次更新*时间戳。此时间戳指的是收集的数据，而不是上次更改仪表板配置的时间。
+
+选择*刷新数据*开始新的扫描。正在运行扫描时，该按钮将被禁用，其工具提示表示正在进行扫描。
+
+当您选择*刷新数据*或*立即加载*时，Workload Factory 会在 Tracker 中记录一个事件link:monitor-operations.html["了解如何使用 Tracker 监控操作"]。
+
+.步骤
+. 在控制面板目录中，打开要查看的控制面板。
+. 将鼠标悬停在*刷新数据*上可查看*上次更新*的日期和时间。
+. 要请求更新指标，请选择*刷新数据*。
++
+横幅指示扫描已启动。等待扫描完成。
+
+. 当有新数据可用时，横幅会显示以下消息：“有新数据可用。立即加载，或随时单击‘刷新数据’以更新视图。”
+. 在横幅中选择*立即加载*，将可用数据加载到控制面板中。或者，选择*刷新数据*以更新视图。
+
+
+.结果
+信息板显示已更新的指标。
 
 
 

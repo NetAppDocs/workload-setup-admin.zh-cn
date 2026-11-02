@@ -1,0 +1,54 @@
+= 检查和刷新自定义仪表板数据
+:allow-uri-read: 
+
+
+
+
+[[check-and-refresh-custom-dashboard-data]]
+=== 检查和刷新自定义仪表板数据
+
+现在，您可以查看上次更新自定义控制面板指标的时间，并手动刷新这些指标。将鼠标悬停在*刷新数据*上以查看上次更新的日期和时间。
+
+选择*刷新数据*以开始新的扫描。横幅将确认扫描已开始，并且该按钮将被禁用，直到扫描完成。
+
+有新数据可用时，请在通知横幅中选择*立即加载*以更新控制面板。
+
+*刷新数据*和*立即加载*均会在 Tracker 中创建数据收集事件。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html#refresh-dashboard-data["了解如何刷新自定义仪表板数据"]
+
+
+
+[[specify-regions-for-custom-dashboards]]
+=== 指定自定义仪表板的区域
+
+如果您的请求未包含区域，自定义控制面板现在会要求您选择一个或多个区域。控制面板数据仅限于您选择的区域。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html["了解如何创建自定义仪表板"]
+
+
+
+[[iam-policy-for-link-creation]]
+=== 链接创建的 IAM 策略
+
+用于创建链接的 CloudFormation 模板和 Terraform 代码现在使用 IAM 策略而不是内联 Lambda 权限。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html["了解如何创建链接"]
+
+
+
+[[audit-and-tracking-for-ai-agent-actions]]
+=== 审核和跟踪 AI 代理操作
+
+现在，您可以使用 Tracker 查看 AI 代理设置的更改，并在读写模式下查看每个审批请求，包括代理的问题和用户的答案。
+
+通过 Workload Factory API 所做的资源更改由执行此操作的 Workload Factory 服务记录。
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-agent.html#audit-and-tracking-for-agent-actions["了解审核和跟踪代理操作的相关信息"]
+
+
+
+[[link-creation-improvements]]
+=== 链路创建改进
+
+Workload Factory 已更新用于创建链接的 Codebox 输出，将内联 Lambda 权限替换为 CloudFormation 模板和 Terraform 的 IAM 策略。

@@ -106,6 +106,15 @@ NOTE: 在 *Agents settings* 中选择凭据不会授予其他 AWS 权限。确�
 
 
 
+[[audit-and-tracking-for-agent-actions]]
+=== 审核和跟踪代理操作
+
+在读写模式下，Tracker 会记录每个审批请求，包括代理的问题和用户的答案。通过 Workload Factory API 进行的资源更改由执行该操作的 Workload Factory 服务记录。例如，通过 Workload Factory 创建的卷会显示在 *Storage* 服务标签下，而不是 *Agent* 下。
+
+link:manage-agent-settings.html#audit-and-tracking-for-agent-actions["了解审核和跟踪代理操作的相关信息"]。
+
+
+
 [[what-users-see-when-ai-agents-have-no-data-or-activity]]
 == 当 AI 代理没有数据或活动时，用户会看到什么
 

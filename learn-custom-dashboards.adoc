@@ -69,6 +69,17 @@ link:manage-custom-dashboards.html#change-dashboard-visibility["了解如何更�
 
 
 
+[[check-if-the-data-is-up-to-date]]
+== 检查数据是否为最新
+
+您可以随时查看上次更新控制面板数据的时间，并请求刷新。工具提示显示上次更新日期和时间。
+
+选择*刷新数据*以开始新的扫描。正在进行扫描时，该按钮不可用。准备好新数据后，将显示一个横幅，其中包含更新控制面板的选项。
+
+link:manage-custom-dashboards.html#refresh-dashboard-data["了解如何刷新仪表板数据"]。
+
+
+
 [[considerations-and-limitations]]
 == 注意事项和限制
 

@@ -1856,9 +1856,7 @@
   <block id="14bda382780d759b676db8bd277841a9" category="paragraph">当较新的链接版本可用于不支持自动升级的链接时，您还将在 FSx for ONTAP 仪表板中收到警报。</block>
   <block id="2c8d2ace24ab724b2b9846dfbd1113fb" category="summary">了解 Workload Factory 的 AI 代理如何分析您的环境、识别风险和提高性能的方法，并在获得您的批准后为您采取行动。</block>
   <block id="a4988f1624f7fc0b4eaabf35a45c6593" category="doc">了解 NetApp Workload Factory 中的 AI 代理</block>
-  <block id="44930f32325dbab8392ff7743e877c7e" category="paragraph">Workload Factory AIOps 使用 AI 来分析您的环境并提出改进建议。如果您批准，它还可以使用您设置的凭据和权限执行操作。</block>
   <block id="9b96c88a6583aa0e9a0e03809f482d9e" category="admonition">如果您的账号管理员已关闭 AI 功能，您将看到一条消息，并且无法使用代理。请联系管理员或 <block ref="51cc9b1bceb3cdf8e5a226d8fb6d37eb" category="inline-link-macro-rx"></block>。</block>
-  <block id="29e96b144158fa2cf3ed37b1696584a9" category="paragraph">确保您的 Workload Factory 帐户具有 AWS 凭据以及代理访问所需资源的 IAM 权限。如果启用读写模式，则这些权限还必须允许支持的更改。</block>
   <block id="3b8e3eff2b9d5a25eecc8e879fab9225" category="section-title">数据使用和隐私</block>
   <block id="823764ac349552585c033c832c9a9119" category="paragraph">您的数据不用于训练 AI 模型。代理使用您的凭据通过标准 AWS API 安全地访问 AWS 资源，并根据您的实际环境做出响应。所有代理活动均遵循 NetApp 隐私政策和 AWS 安全控制。</block>
   <block id="a9ad35f78cf699132ce97296208021d6" category="section-title">为什么要使用AI代理</block>
@@ -1869,13 +1867,10 @@
   <block id="6fd44b1c4edd80ad7b595f1fcb4c7483" category="list-text">运行预定的检查，并在聊天历史记录中接收更新。</block>
   <block id="4eeb2bca1dddd7a796d908c266d60075" category="section-title">访问 AI 代理</block>
   <block id="e6478bab5c49062e219e1290c4442eed" category="list-text">从 Ask Me 主页</block>
-  <block id="b3c72178808d9fa6e9c876b76d5d1928" category="list-text">在"询问我"登录页面上，选择 *Explore Agents*。AI 代理侧面板随即打开，并显示一条欢迎消息，介绍代理的功能。</block>
   <block id="99b503a5e4373b0bc3054a025797d268" category="list-text">从座席重定向链接</block>
-  <block id="54fd5f6787cd568e4b9880863150bb93" category="list-text">使用 **Ask Me** 或其他功能时，您可能会看到将您重定向到座席以获得更高级帮助的链接。</block>
   <block id="98ff5af4adf0662fa0278d6e7332c116" category="section-title">AI 代理的工作原理</block>
   <block id="31fe269c620fcf2562efe2871e4398f8" category="section-title">代理如何访问您的环境</block>
   <block id="d6356702d2caa14ca196fe664fc1853e" category="inline-link-macro">代理设置</block>
-  <block id="dfee9e31025ca5f152cf22d64bfe765f" category="paragraph">只有当资源包含在当前 Workload Factory 范围内并受 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中选择的凭据支持时，代理才能访问这些资源。代理只能在两种控制均适用的情况下运行。它们可以访问的资源还取决于分配给其 AWS 凭据的权限。默认情况下将选择所有凭据，但您可以将其减少到已配置凭据的子集。</block>
   <block id="f19cfe1072c3d3c974b0cdafbcdde1ef" category="paragraph">您当前的范围包括：</block>
   <block id="676cd33769e7c44db0294ca1bdc4a818" category="list-text">*AWS accounts*：代理可以访问哪些 AWS 账户。</block>
   <block id="8f7fd41f1486852019ec1e81297e4749" category="list-text">*Credentials*：代理可以使用的凭据。</block>
@@ -1890,8 +1885,6 @@
   <block id="e863933d9a2c33d982a9403853ef5c8f" category="list-text">提供改进性能、可用性、保护和成本效益的建议。</block>
   <block id="0da32bbd416014e9a050dd9753a5f97c" category="list-text">对问题进行故障排除并提出补救措施。</block>
   <block id="5c5d131e2fde1dde32d484bb16b397d5" category="paragraph">它们无法在只读模式下更改资源。如果您请求需要写入权限的操作，代理将解释该限制并链接到代理设置。</block>
-  <block id="c43e0775dbe854488f7416962d78486c" category="section-title">读写模式（选择加入）</block>
-  <block id="8403b77cf5ff251eac80eb3fa63780ad" category="paragraph">您可以在 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中启用读写功能。在此模式下，代理将解释每个受支持的操作，并在进行任何更改之前需要获得您的批准。</block>
   <block id="601c01875f07f976aec59310ce582da5" category="paragraph">此审批流程适用于所有代理体验，包括 Slack 集成和 NetApp Console。</block>
   <block id="dbe095e1cf28fb37bfc9bc65e6db07ec" category="section-title">当 AI 代理没有数据或活动时，用户会看到什么</block>
   <block id="02a1c40d157b16f6b4bb75e05fed5d20" category="paragraph">如果客服代表没有凭据，他们仍然可以提供一般性指导。但是，他们无法查看您的资源或提供特定于您的环境的见解。</block>
@@ -2169,9 +2162,7 @@
   <block id="a0029b147e3a4c22ba57efcbb020c23e" category="list-text">请检查*上次更新*时间戳并选择*刷新数据*以请求更新的指标</block>
   <block id="6d852ab3090e66a5f1f1a6d5675164cb" category="paragraph-title">代理设置和操作在何处显示以供审核？</block>
   <block id="0f679622d131d4b9f3abef96c35743be" category="paragraph">Tracker 记录对代理设置的更改，并在读写模式下记录每个审批请求，包括代理的问题和用户的答案。通过 Workload Factory API 进行的资源更改由执行该操作的 Workload Factory 服务记录。</block>
-  <block id="4c1cd3a1bad23fecc0286da543614cd7" category="paragraph"><block ref="bc36590c397b325a073c2ae9b60e53fd" category="inline-link-macro-rx"></block>。</block>
   <block id="b70a9e9de689b4f17365d6060076d3b8" category="section-title">审核和跟踪代理操作</block>
-  <block id="774a23889a059a060f089bac423f3b00" category="paragraph">在读写模式下，Tracker 会记录每个审批请求，包括代理的问题和用户的答案。通过 Workload Factory API 进行的资源更改由执行该操作的 Workload Factory 服务记录。例如，通过 Workload Factory 创建的卷会显示在 *Storage* 服务标签下，而不是 *Agent* 下。</block>
   <block id="1c25d10ad7fe7b9def7bd90be9bb63ac" category="section-title">检查数据是否为最新</block>
   <block id="40d839f036c0870ce0f44a810dc01fd9" category="paragraph">您可以随时查看上次更新控制面板数据的时间，并请求刷新。工具提示显示上次更新日期和时间。</block>
   <block id="3943baa01d778cb77042aa99b8829491" category="paragraph">选择*刷新数据*以开始新的扫描。正在进行扫描时，该按钮不可用。准备好新数据后，将显示一个横幅，其中包含更新控制面板的选项。</block>
@@ -2189,4 +2180,13 @@
   <block id="f5f7ef3c1692aa4447b9fb26ad98940c" category="list-text">在横幅中选择*立即加载*，将可用数据加载到控制面板中。或者，选择*刷新数据*以更新视图。</block>
   <block id="abff96b75117f320254f372b6518244b" category="paragraph">信息板显示已更新的指标。</block>
   <block id="8b253c1d4259c21c8314fc85adcb31d6" category="section-title">2026年11月1日</block>
+  <block id="4780834933836e351b4c7c10d2b7421d" category="paragraph"><block ref="4610b98b2d531ad484f454316d243393" category="inline-link-macro-rx"></block>。</block>
+  <block id="ca57c3b08717a8e00b194598500db7a2" category="paragraph">Workload Factory AIOps 使用 AI 代理来分析您的环境、识别风险并提出改进建议。如果您批准，代理还可以使用您设置的凭据和权限执行操作。</block>
+  <block id="b78358ce9ebcde7e5d73719acc321aae" category="paragraph">确保您的 Workload Factory 帐户具有 AWS 凭据，以及代理访问所需资源的 IAM 权限。如果启用读/写模式，这些权限还必须允许支持的更改。</block>
+  <block id="0ea09b17a33e26f5dee626af8a16d5e1" category="list-text">在"询问我"登录页面上，选择 *Explore Agents*。AI 代理侧面板随即打开，并显示一条欢迎消息，介绍代理的功能。</block>
+  <block id="fda5768a6f47f136c2a35db55a5ac261" category="list-text">当您使用 **Ask Me** 或其他功能时，您可能会看到将您重定向到座席以获得更高级帮助的链接。</block>
+  <block id="6c6bddc94913852eb6a669f3be45250b" category="paragraph">只有当资源包含在您当前的 Workload Factory 范围内，并且受 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中选择的凭据支持时，代理才能访问这些资源。代理只能在两种控制都适用的情况下运行。它们可以访问的资源还取决于分配给其 AWS 凭据的权限。默认情况下，将选择所有凭据，但您可以将选择限制为已配置凭据的子集。</block>
+  <block id="96cfa5d0ba0465e0823c0e513cf4c99e" category="section-title">读/写模式（选择加入）</block>
+  <block id="d5d99b2701dfd466ab6b6fd722283931" category="paragraph">您可以在 <block ref="503a0786471e5d22d87709a40b737283" category="inline-link-macro-rx"></block> 中启用读/写功能。在此模式下，代理会解释每个支持的操作，并在进行任何更改之前需要您的批准。</block>
+  <block id="ab5a798de828a6dee38052f42293a03d" category="paragraph">在读/写模式下，Tracker 会记录每个审批请求，包括代理的问题和用户的答案。执行操作的 Workload Factory 服务会记录通过 Workload Factory API 所做的资源更改。例如，通过 Workload Factory 创建的卷会显示在 *Storage* 服务标签下，而不是 *Agent* 下。</block>
 </blocks>
